@@ -1,0 +1,16 @@
+title: UniversityJano.com
+description: "India's #1 AI-powered online degree and college discovery platform."
+url: "https://universityjano.com"
+baseurl: ""
+
+# Clean blog URLs like /blog/2026/08/21/post-title/
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - generate_blog_pages.js
+  - generate_static_pages.js
+  - README.md
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed

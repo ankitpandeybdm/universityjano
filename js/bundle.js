@@ -1970,17 +1970,17 @@ window.UniversityCard = function (_ref3) {
     className: "uni-card-body"
   }, React.createElement("div", {
     className: "uni-logo-col"
-  }, React.createElement("div", {
+  }, React.createElement("a", {
     className: "uni-logo-box",
+    href: "universities/".concat(university.slug, ".html"),
     style: {
       borderColor: university.logoColor,
-      color: university.logoColor
-    },
-    onClick: function onClick() {
-      return onViewDetails(university);
-    },
-    role: "button",
-    tabIndex: 0
+      color: university.logoColor,
+      textDecoration: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
   }, university.logoText), React.createElement("div", {
     className: "uni-rating-tag"
   }, React.createElement("span", null, "\u2605 ", university.metrics.rating), React.createElement("span", {
@@ -2001,10 +2001,11 @@ window.UniversityCard = function (_ref3) {
   }, "\u2713 UGC-DEB Verified"))), React.createElement("div", {
     className: "uni-info-col"
   }, React.createElement("h3", {
-    onClick: function onClick() {
-      return onViewDetails(university);
-    }
-  }, university.name), React.createElement("div", {
+    style: { cursor: 'pointer' }
+  }, React.createElement("a", {
+    href: "universities/".concat(university.slug, ".html"),
+    style: { color: 'inherit', textDecoration: 'none' }
+  }, university.name)), React.createElement("div", {
     className: "uni-meta-location"
   }, React.createElement("span", null, "\uD83D\uDCCD ", university.city, ", ", university.state), React.createElement("span", null, "\u2022"), React.createElement("span", null, "Est. ", university.foundedYear), React.createElement("span", null, "\u2022"), React.createElement("span", {
     style: {
