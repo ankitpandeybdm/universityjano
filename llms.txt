@@ -1,0 +1,29 @@
+# UniversityJano.com
+
+> UniversityJano helps Indian students find and join online degree programs without the usual confusion around fees and approvals. The platform lists 25 plus UGC-DEB approved universities offering courses like Online MBA, MCA, BBA, BCA and Data Science. Areas of work: Education & Training, Online Education, EdTech.
+
+- Company type: Private
+- Employees: Not Disclosed
+- Approx. annual revenue: Not Disclosed
+- Products: Online MBA Discovery (Compare UGC-DEB approved online MBA programs); MCA Program Finder (Filter and compare online MCA options); BBA & BCA Explorer (Browse undergraduate online degrees); Data Science Course Hub (Find approved data science programs)
+- Services: Free Expert Counselling (One-on-one guidance on university choices); Fee & EMI Verification (Check authentic fees and 0% EMI plans); Placement Record Access (View real placement data from universities)
+- Keywords: online mba india, ugc deb universities, online degree comparison, naac grade check, 0 emi online courses, mca online admission, bba distance learning, data science online, placement records universities, free education counselling, online bca india, approved online degrees, university comparison tool
+
+## Website
+
+- [Homepage](https://universityjano.com): Official UniversityJano.com website
+
+## Resources
+
+- [Company profile](https://amrut.ai/company/universityjano.com): Extended structured profile of UniversityJano.com
+- [llms-full.txt](https://amrut.ai/llms-txt-generator/universityjano.com): Full-content version of this file
+
+## Optional
+
+- [shiksha.com](https://shiksha.com): Competitor
+- [collegedunia.com](https://collegedunia.com): Competitor
+- [careers360.com](https://careers360.com): Competitor
+- [upgrad.com](https://upgrad.com): Competitor
+- [simplilearn.com](https://simplilearn.com): Competitor
+- [getmyuni.com](https://getmyuni.com): Competitor
+- [jaroeducation.com](https://jaroeducation.com): Competitor
