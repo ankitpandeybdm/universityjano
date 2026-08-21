@@ -1779,41 +1779,35 @@ window.Header = function (_ref) {
     onClick: function onClick() {
       return onNavigate('home');
     }
-  }, "\uD83C\uDFE0 Home")), React.createElement("li", null, React.createElement("span", {
+  }, "\uD83C\uDFE0 Home")), React.createElement("li", null, React.createElement("a", {
+    href: "universities/index.html",
     className: "nav-link ".concat(activePage === 'universities' ? 'active' : ''),
-    onClick: function onClick() {
-      return onNavigate('universities');
-    }
-  }, "\uD83C\uDFEB All Universities")), React.createElement("li", null, React.createElement("span", {
+    style: { textDecoration: 'none' }
+  }, "\uD83C\uDFEB All Universities")), React.createElement("li", null, React.createElement("a", {
+    href: "compare.html",
     className: "nav-link ".concat(activePage === 'compare' ? 'active' : ''),
-    onClick: function onClick() {
-      return onNavigate('compare');
-    }
+    style: { textDecoration: 'none' }
   }, "\u2696\uFE0F Compare Colleges ", compareList.length > 0 && React.createElement("span", {
     className: "badge badge-orange",
     style: {
       marginLeft: '4px'
     }
-  }, compareList.length))), React.createElement("li", null, React.createElement("span", {
+  }, compareList.length))), React.createElement("li", null, React.createElement("a", {
+    href: "roi-calculator.html",
     className: "nav-link ".concat(activePage === 'roi-calculator' ? 'active' : ''),
-    onClick: function onClick() {
-      return onNavigate('roi-calculator');
-    }
-  }, "\uD83D\uDCC8 Salary & ROI")), React.createElement("li", null, React.createElement("span", {
+    style: { textDecoration: 'none' }
+  }, "\uD83D\uDCC8 Salary & ROI")), React.createElement("li", null, React.createElement("a", {
+    href: "emi-calculator.html",
     className: "nav-link ".concat(activePage === 'emi-calculator' ? 'active' : ''),
-    onClick: function onClick() {
-      return onNavigate('emi-calculator');
-    }
-  }, "\uD83D\uDCB3 0% EMI Planner")), React.createElement("li", null, React.createElement("span", {
+    style: { textDecoration: 'none' }
+  }, "\uD83D\uDCB3 0% EMI Planner")), React.createElement("li", null, React.createElement("a", {
+    href: "ugc-verifier.html",
     className: "nav-link ".concat(activePage === 'ugc-verifier' ? 'active' : ''),
-    onClick: function onClick() {
-      return onNavigate('ugc-verifier');
-    }
-  }, "\uD83D\uDEE1\uFE0F UGC Approvals")), React.createElement("li", null, React.createElement("span", {
+    style: { textDecoration: 'none' }
+  }, "\uD83D\uDEE1\uFE0F UGC Approvals")), React.createElement("li", null, React.createElement("a", {
+    href: "blog/index.html",
     className: "nav-link ".concat(activePage === 'blog' || activePage === 'blog-post' ? 'active' : ''),
-    onClick: function onClick() {
-      return onNavigate('blog');
-    }
+    style: { textDecoration: 'none' }
   }, "\u270D\uFE0F Blog"))), React.createElement("div", {
     className: "header-actions"
   }, React.createElement("button", {
@@ -2079,17 +2073,16 @@ window.UniversityCard = function (_ref3) {
         source: 'University Card - Download Brochure'
       });
     }
-  }, "\uD83D\uDCE5 Download Prospectus"), React.createElement("button", {
+  }, "\uD83D\uDCE5 Download Prospectus"), React.createElement("a", {
     className: "btn btn-sm",
+    href: "universities/".concat(university.slug, ".html"),
     style: {
       background: 'transparent',
       color: 'var(--orange-600)',
       border: 'none',
       padding: '0.25rem',
-      fontWeight: '700'
-    },
-    onClick: function onClick() {
-      return onViewDetails(university);
+      fontWeight: '700',
+      textDecoration: 'none'
     }
   }, "Explore Full University Page \u2192"), React.createElement("label", {
     className: "compare-checkbox-label"
@@ -4667,34 +4660,18 @@ window.Footer = function (_ref14) {
       cursor: 'pointer'
     },
     onClick: onOpenWizard
-  }, "\u26A1 2-Minute AI College Finder")), React.createElement("li", null, React.createElement("span", {
-    style: {
-      cursor: 'pointer'
-    },
-    onClick: function onClick() {
-      return onNavigate('roi-calc');
-    }
-  }, "\uD83D\uDCC8 Salary & ROI Jump Calculator")), React.createElement("li", null, React.createElement("span", {
-    style: {
-      cursor: 'pointer'
-    },
-    onClick: function onClick() {
-      return onNavigate('emi-calc');
-    }
-  }, "\uD83D\uDCB3 0% Monthly EMI Budget Planner")), React.createElement("li", null, React.createElement("span", {
-    style: {
-      cursor: 'pointer'
-    },
-    onClick: function onClick() {
-      return onNavigate('ugc');
-    }
-  }, "\uD83D\uDEE1\uFE0F UGC-DEB Degree Validity Inspector")), React.createElement("li", null, React.createElement("span", {
-    style: {
-      cursor: 'pointer'
-    },
-    onClick: function onClick() {
-      return onNavigate('blog');
-    }
+  }, "\u26A1 2-Minute AI College Finder")), React.createElement("li", null, React.createElement("a", {
+    href: "roi-calculator.html",
+    style: { textDecoration: 'none', color: 'inherit' }
+  }, "\uD83D\uDCC8 Salary & ROI Jump Calculator")), React.createElement("li", null, React.createElement("a", {
+    href: "emi-calculator.html",
+    style: { textDecoration: 'none', color: 'inherit' }
+  }, "\uD83D\uDCB3 0% Monthly EMI Budget Planner")), React.createElement("li", null, React.createElement("a", {
+    href: "ugc-verifier.html",
+    style: { textDecoration: 'none', color: 'inherit' }
+  }, "\uD83D\uDEE1\uFE0F UGC-DEB Degree Validity Inspector")), React.createElement("li", null, React.createElement("a", {
+    href: "blog/index.html",
+    style: { textDecoration: 'none', color: 'inherit' }
   }, "\u270D\uFE0F Read Our Blog")), React.createElement("li", null, React.createElement("span", {
     style: {
       cursor: 'pointer'
@@ -7377,11 +7354,10 @@ function App() {
       alignItems: 'center',
       gap: '0.75rem'
     }
-  }, React.createElement("button", {
+  }, React.createElement("a", {
     className: "btn btn-secondary btn-sm",
-    onClick: function onClick() {
-      return navigateTo('universities');
-    }
+    href: "universities/index.html",
+    style: { textDecoration: 'none' }
   }, "View All Universities Page \u2192"))), React.createElement("div", {
     className: "university-grid"
   }, filteredUniversities.slice(0, 6).map(function (uni) {
@@ -7405,11 +7381,10 @@ function App() {
       textAlign: 'center',
       marginTop: '2.5rem'
     }
-  }, React.createElement("button", {
+  }, React.createElement("a", {
     className: "btn btn-primary btn-lg",
-    onClick: function onClick() {
-      return navigateTo('universities');
-    }
+    href: "universities/index.html",
+    style: { textDecoration: 'none' }
   }, "\u26A1 View All ", filteredUniversities.length, " Universities on Dedicated Page \u2192")))))), React.createElement(window.ROICalculator, {
     onOpenCounselling: function onOpenCounselling(data) {
       return setLeadModalData(data);
