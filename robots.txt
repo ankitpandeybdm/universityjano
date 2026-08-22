@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /team-portal-x7k2/
 
 Sitemap: https://universityjano.com/sitemap.xml

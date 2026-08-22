@@ -1748,18 +1748,7 @@ window.Header = function (_ref) {
       fontSize: '0.8rem',
       color: '#fed7aa'
     }
-  }, "\uD83D\uDCDE Helpline: ", React.createElement("strong", null, "1800-890-5266"), " (Toll Free)"), React.createElement("button", {
-    onClick: onOpenAdminCRM,
-    className: "btn btn-sm",
-    style: {
-      padding: '0.2rem 0.6rem',
-      fontSize: '0.75rem',
-      background: 'rgba(255,255,255,0.15)',
-      color: '#fff',
-      border: '1px solid rgba(255,255,255,0.3)'
-    },
-    title: "Admin CRM for Website Owner"
-  }, "\uD83D\uDCCA Leads CRM (", window.leadStore ? window.leadStore.getLeads().length : 0, ")")))), React.createElement("nav", {
+  }, "\uD83D\uDCDE Helpline: ", React.createElement("strong", null, "1800-890-5266"), " (Toll Free)")))), React.createElement("nav", {
     className: "header-nav"
   }, React.createElement("div", {
     className: "container header-container"

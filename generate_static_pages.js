@@ -6,6 +6,9 @@
 //   /emi-calculator.html
 //   /ugc-verifier.html
 //   /compare.html
+// All pages use the SAME real site header/footer (_includes/site-header.html,
+// _includes/site-footer.html) and CSS files as the blog and homepage, so
+// the whole site looks and feels like one consistent website.
 // Run any time UNIVERSITIES_DATA changes:
 //   node generate_static_pages.js
 //
@@ -13,8 +16,6 @@ const fs = require('fs');
 const path = require('path');
 
 global.window = {};
-// UNIVERSITIES_DATA lives inside bundle.js — extract it the same way the
-// generator does, so this script has no dependency other than bundle.js.
 const bundleSrc = fs.readFileSync(path.join(__dirname, 'js/bundle.js'), 'utf8');
 const marker = 'window.UNIVERSITIES_DATA = [';
 const startIdx = bundleSrc.indexOf(marker);
@@ -34,9 +35,15 @@ const SITE_URL = 'https://universityjano.com';
 const escapeHtml = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-function pageShell({ title, metaDescription, canonical, ogImage, bodyContent, depth = 0 }) {
-  const prefix = depth === 0 ? '' : '../'.repeat(depth);
-  return `<!DOCTYPE html>
+// pageShell now uses Jekyll front matter + {% include %} tags, so these
+// pages get rendered through the exact same header/footer as the blog.
+function pageShell({ title, metaDescription, canonical, ogImage, bodyContent, permalink }) {
+  return `---
+layout: null
+permalink: ${permalink}
+title: "${title.replace(/"/g, '\\"')}"
+---
+<!DOCTYPE html>
 <html lang="en-IN">
 <head>
 <meta charset="UTF-8">
@@ -53,16 +60,10 @@ function pageShell({ title, metaDescription, canonical, ogImage, bodyContent, de
 <meta property="og:image" content="${ogImage || `${SITE_URL}/images/logo.png`}">
 <meta property="og:site_name" content="UniversityJano.com">
 
-<link rel="icon" href="${prefix}images/logo.png">
-<link rel="stylesheet" href="${prefix}css/design-system.css">
-<link rel="stylesheet" href="${prefix}css/components.css">
+<link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
 <style>
-  .static-header{background:#0b1b3d;padding:1rem 0;}
-  .static-header .container{max-width:1100px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
-  .static-header img{height:40px;}
-  .static-header nav{display:flex;gap:1.25rem;flex-wrap:wrap;}
-  .static-header nav a{color:#cbd5e1;text-decoration:none;font-size:0.9rem;font-weight:600;}
-  .static-header nav a:hover{color:#fff;}
   .static-wrap{max-width:1000px;margin:0 auto;padding:2.5rem 1.25rem 4rem;}
   .static-wrap h1{font-size:2rem;line-height:1.25;margin-bottom:0.5rem;color:#0b1b3d;}
   .static-wrap h2{margin-top:2rem;color:#0b1b3d;}
@@ -78,30 +79,12 @@ function pageShell({ title, metaDescription, canonical, ogImage, bodyContent, de
   .course-block{border:1px solid #e2e8f0;border-radius:10px;padding:1rem;margin-bottom:1rem;}
   .cta-box{background:#f1f5f9;border-radius:12px;padding:1.25rem;margin-top:2rem;text-align:center;}
   .cta-box a{display:inline-block;background:#1d4ed8;color:#fff;padding:0.6rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:600;margin-top:0.5rem;}
-  .static-footer{background:#0b1b3d;color:#94a3b8;text-align:center;padding:2rem 1rem;font-size:0.85rem;margin-top:3rem;}
-  .static-footer a{color:#cbd5e1;}
 </style>
 </head>
 <body>
-<header class="static-header">
-  <div class="container">
-    <a href="${prefix}index.html"><img src="${prefix}images/logo.png" alt="UniversityJano.com"></a>
-    <nav>
-      <a href="${prefix}index.html">Home</a>
-      <a href="${prefix}universities/index.html">Universities</a>
-      <a href="${prefix}blog/index.html">Blog</a>
-      <a href="${prefix}roi-calculator.html">ROI Calculator</a>
-      <a href="${prefix}emi-calculator.html">EMI Planner</a>
-      <a href="${prefix}ugc-verifier.html">UGC Verifier</a>
-      <a href="${prefix}compare.html">Compare</a>
-    </nav>
-  </div>
-</header>
+{% include site-header.html %}
 ${bodyContent}
-<footer class="static-footer">
-  <div>&copy; ${new Date().getFullYear()} UniversityJano.com &mdash; All Rights Reserved.</div>
-  <div style="margin-top:0.5rem;"><a href="${prefix}index.html">Home</a> &middot; <a href="${prefix}universities/index.html">All Universities</a> &middot; <a href="${prefix}blog/index.html">Blog</a></div>
-</footer>
+{% include site-footer.html %}
 </body>
 </html>
 `;
@@ -140,7 +123,7 @@ universities.forEach(u => {
 
   const body = `
 <section class="static-wrap">
-  <a class="back-link" href="index.html">&larr; All Universities</a>
+  <a class="back-link" href="{{ '/universities/index.html' | relative_url }}">&larr; All Universities</a>
   <h1>${escapeHtml(u.name)}</h1>
   <p style="color:#64748b;">${escapeHtml(u.tagline || '')} &middot; ${escapeHtml(u.city || '')}, ${escapeHtml(u.state || '')}</p>
 
@@ -168,7 +151,7 @@ universities.forEach(u => {
 
   <div class="cta-box">
     <p>Want a personalised comparison and free counselling for ${escapeHtml(u.shortName || u.name)}?</p>
-    <a href="../index.html#/university/${u.slug}">Open Interactive Details &amp; Free Counselling</a>
+    <a href="{{ '/index.html' | relative_url }}#/university/${u.slug}">Open Interactive Details &amp; Free Counselling</a>
   </div>
 </section>`;
 
@@ -178,7 +161,7 @@ universities.forEach(u => {
     canonical: url,
     ogImage: u.heroImage,
     bodyContent: body,
-    depth: 1
+    permalink: `/universities/${u.slug}.html`
   });
   fs.writeFileSync(path.join(uniDir, `${u.slug}.html`), html);
   console.log('Wrote universities/' + u.slug + '.html');
@@ -201,7 +184,7 @@ const uniListHtml = universities.map(u => `
 
 const uniIndexBody = `
 <section class="static-wrap">
-  <a class="back-link" href="../index.html">&larr; Home</a>
+  <a class="back-link" href="{{ '/' | relative_url }}">&larr; Home</a>
   <h1>UGC-DEB Approved Online Universities in India</h1>
   <p style="color:#64748b;margin-bottom:2rem;">Compare fees, NAAC grades, placement records and EMI options across ${universities.length} online universities.</p>
   ${uniListHtml}
@@ -212,7 +195,7 @@ const uniIndexHtml = pageShell({
   metaDescription: `Compare ${universities.length} UGC-DEB approved online universities in India — fees, NAAC grades, placements and EMI options.`,
   canonical: `${SITE_URL}/universities/index.html`,
   bodyContent: uniIndexBody,
-  depth: 1
+  permalink: '/universities/index.html'
 });
 fs.writeFileSync(path.join(uniDir, 'index.html'), uniIndexHtml);
 console.log('Wrote universities/index.html');
@@ -276,12 +259,12 @@ const toolPages = [
 toolPages.forEach(tp => {
   const body = `
 <section class="static-wrap">
-  <a class="back-link" href="index.html">&larr; Home</a>
+  <a class="back-link" href="{{ '/' | relative_url }}">&larr; Home</a>
   <h1>${escapeHtml(tp.h1)}</h1>
   ${tp.body}
   <div class="cta-box">
     <p>Use the interactive version of this tool:</p>
-    <a href="index.html${tp.hash}">Open ${escapeHtml(tp.h1)}</a>
+    <a href="{{ '/index.html' | relative_url }}${tp.hash}">Open ${escapeHtml(tp.h1)}</a>
   </div>
 </section>`;
   const html = pageShell({
@@ -289,38 +272,10 @@ toolPages.forEach(tp => {
     metaDescription: tp.desc,
     canonical: `${SITE_URL}/${tp.file}`,
     bodyContent: body,
-    depth: 0
+    permalink: `/${tp.file}`
   });
   fs.writeFileSync(path.join(__dirname, tp.file), html);
   console.log('Wrote ' + tp.file);
 });
 
-// ---------------------------------------------------------------------
-// Update sitemap.xml with everything
-// ---------------------------------------------------------------------
-const blogDir = path.join(__dirname, 'blog');
-let blogUrls = [];
-if (fs.existsSync(blogDir)) {
-  blogUrls = fs.readdirSync(blogDir)
-    .filter(f => f.endsWith('.html'))
-    .map(f => ({ loc: `${SITE_URL}/blog/${f}`, priority: f === 'index.html' ? '0.9' : '0.7', changefreq: f === 'index.html' ? 'daily' : 'monthly' }));
-}
-
-const urls = [
-  { loc: `${SITE_URL}/`, priority: '1.0', changefreq: 'weekly' },
-  { loc: `${SITE_URL}/universities/index.html`, priority: '0.9', changefreq: 'weekly' },
-  ...universities.map(u => ({ loc: `${SITE_URL}/universities/${u.slug}.html`, priority: '0.8', changefreq: 'weekly' })),
-  { loc: `${SITE_URL}/roi-calculator.html`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${SITE_URL}/emi-calculator.html`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${SITE_URL}/ugc-verifier.html`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${SITE_URL}/compare.html`, priority: '0.6', changefreq: 'monthly' },
-  ...blogUrls
-];
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>\n    <loc>${u.loc}</loc>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`).join('\n')}
-</urlset>
-`;
-fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), sitemap);
-console.log('Updated sitemap.xml with', urls.length, 'URLs total');
+console.log('Done. jekyll-sitemap plugin will auto-include all these pages in sitemap.xml at build time.');
