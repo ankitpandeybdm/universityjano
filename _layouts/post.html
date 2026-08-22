@@ -41,12 +41,6 @@
 }
 </script>
 <style>
-  .static-header{background:#0b1b3d;padding:1rem 0;}
-  .static-header .container{max-width:1100px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
-  .static-header img{height:40px;}
-  .static-header nav{display:flex;gap:1.25rem;flex-wrap:wrap;}
-  .static-header nav a{color:#cbd5e1;text-decoration:none;font-size:0.9rem;font-weight:600;}
-  .static-header nav a:hover{color:#fff;}
   .blog-article{max-width:760px;margin:0 auto;padding:2.5rem 1.25rem 4rem;}
   .blog-article .meta{color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;}
   .blog-article h1{font-size:2rem;line-height:1.25;margin-bottom:0.75rem;color:#0b1b3d;}
@@ -54,23 +48,10 @@
   .blog-article h2{margin-top:2rem;color:#0b1b3d;}
   .blog-article p, .blog-article li{line-height:1.75;color:#334155;}
   .blog-article a.back-link{display:inline-block;margin-bottom:1.5rem;color:#0b1b3d;font-weight:600;text-decoration:none;}
-  .static-footer{background:#0b1b3d;color:#94a3b8;text-align:center;padding:2rem 1rem;font-size:0.85rem;margin-top:3rem;}
-  .static-footer a{color:#cbd5e1;}
 </style>
 </head>
 <body>
-<header class="static-header">
-  <div class="container">
-    <a href="{{ '/' | relative_url }}"><img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano.com"></a>
-    <nav>
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/universities/index.html' | relative_url }}">Universities</a>
-      <a href="{{ '/blog/' | relative_url }}">Blog</a>
-      <a href="{{ '/roi-calculator.html' | relative_url }}">ROI Calculator</a>
-      <a href="{{ '/emi-calculator.html' | relative_url }}">EMI Planner</a>
-    </nav>
-  </div>
-</header>
+{% include site-header.html %}
 
 <article class="blog-article">
   <a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; All Blog Posts</a>
@@ -78,11 +59,10 @@
   <h1>{{ page.title }}</h1>
   {% if page.coverImage %}<img class="cover" src="{{ page.coverImage }}" alt="{{ page.title }}">{% endif %}
   {{ content }}
+
+  {% include blog-cta.html %}
 </article>
 
-<footer class="static-footer">
-  <div>&copy; {{ 'now' | date: "%Y" }} UniversityJano.com &mdash; All Rights Reserved.</div>
-  <div style="margin-top:0.5rem;"><a href="{{ '/' | relative_url }}">Home</a> &middot; <a href="{{ '/blog/' | relative_url }}">All Blog Posts</a></div>
-</footer>
+{% include site-footer.html %}
 </body>
 </html>
