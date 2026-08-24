@@ -115,10 +115,10 @@ universities.forEach(u => {
         </ul>` : ''}
 
       <div style="display:flex;gap:0.75rem;flex-wrap:wrap;padding-top:1rem;border-top:1px solid #f1f5f9;">
-        <a href="https://wa.me/918920199723?text=Hi%2C%20I%20want%20to%20apply%20for%20${encodeURIComponent(u.shortName + ' ' + c.name)}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-decoration:none;font-weight:700;">
+        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20${encodeURIComponent(u.shortName + ' ' + c.name)}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-decoration:none;font-weight:700;">
           Apply for 2026 Batch &rarr;
         </a>
-        <a href="https://wa.me/918920199723?text=Please%20send%20me%20prospectus%20for%20${encodeURIComponent(u.shortName + ' ' + c.name)}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="text-decoration:none;">
+        <a href="https://wa.me/919599128500?text=Please%20send%20me%20prospectus%20for%20${encodeURIComponent(u.shortName + ' ' + c.name)}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="text-decoration:none;">
           📥 Download Syllabus &amp; Brochure
         </a>
       </div>
@@ -250,7 +250,7 @@ universities.forEach(u => {
           <h3 style="color:#0b1b3d;font-size:1.3rem;margin:0 0 0.5rem 0;">Talk to ${escapeHtml(u.shortName)} Advisor</h3>
           <p style="color:#64748b;font-size:0.85rem;line-height:1.5;margin-bottom:1.25rem;">Get complete fee structure, syllabus brochure, scholarship waivers, and 0% EMI eligibility.</p>
 
-          <a href="https://wa.me/918920199723?text=Hi%2C%20I%20need%20expert%20guidance%20for%20admission%20in%20${encodeURIComponent(u.name)}" target="_blank" rel="noopener" class="btn btn-primary btn-block" style="background:#25D366;border-color:#25D366;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-weight:700;margin-bottom:0.75rem;">
+          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20need%20expert%20guidance%20for%20admission%20in%20${encodeURIComponent(u.name)}" target="_blank" rel="noopener" class="btn btn-primary btn-block" style="background:#25D366;border-color:#25D366;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-weight:700;margin-bottom:0.75rem;">
             <span>💬</span> Chat on WhatsApp (Instant)
           </a>
 
@@ -327,7 +327,7 @@ const uniCardsGridHtml = universities.map(u => {
           <a href="${u.slug}.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
             Explore College &rarr;
           </a>
-          <a href="https://wa.me/918920199723?text=Hi%2C%20I%20want%20to%20apply%20for%20${encodeURIComponent(u.name)}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
+          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20${encodeURIComponent(u.name)}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
             Apply for Admission
           </a>
         </div>
@@ -402,7 +402,7 @@ const compareHtml = pageShell({
                 onAddUniversity: function(u) {},
                 onRemoveUniversity: function(id) {},
                 onOpenLeadModal: function(data) {
-                  window.location.href = 'https://wa.me/918920199723?text=' + encodeURIComponent('Hi, I want counselling for ' + (data.title || 'Online Degree'));
+                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want counselling for ' + (data.title || 'Online Degree'));
                 },
                 onOpenUniversityPage: function(u) {
                   window.location.href = '/universities/' + u.slug + '.html';
@@ -438,7 +438,7 @@ const roiHtml = pageShell({
             ReactDOM.createRoot(container).render(
               React.createElement(window.ROICalculatorPage, {
                 onOpenCounselling: function(data) {
-                  window.location.href = 'https://wa.me/918920199723?text=' + encodeURIComponent('Hi, I want a career transition roadmap for ' + (data.course || 'Online Degree'));
+                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want a career transition roadmap for ' + (data.course || 'Online Degree'));
                 }
               })
             );
@@ -471,7 +471,7 @@ const emiHtml = pageShell({
             ReactDOM.createRoot(container).render(
               React.createElement(window.EMICalculatorPage, {
                 onOpenCounselling: function(data) {
-                  window.location.href = 'https://wa.me/918920199723?text=' + encodeURIComponent('Hi, I want to apply for 0% EMI financing: ' + (data.notes || ''));
+                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want to apply for 0% EMI financing: ' + (data.notes || ''));
                 }
               })
             );
@@ -504,7 +504,7 @@ const ugcHtml = pageShell({
             ReactDOM.createRoot(container).render(
               React.createElement(window.UGCVerifierPage, {
                 onOpenCounselling: function(data) {
-                  window.location.href = 'https://wa.me/918920199723?text=' + encodeURIComponent('Hi, I want to verify UGC-DEB entitlement for ' + (data.title || 'Online Degree'));
+                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want to verify UGC-DEB entitlement for ' + (data.title || 'Online Degree'));
                 }
               })
             );

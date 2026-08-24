@@ -127,7 +127,7 @@ window.Header = function({
               ⚡ 2-Min Match
             </button>
             <a 
-              href="https://wa.me/918920199723?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees"
+              href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees"
               target="_blank"
               rel="noopener"
               className="btn btn-sm"
@@ -215,7 +215,7 @@ window.Header = function({
         </div>
 
         <div className="mobile-drawer-footer">
-          <a href="https://wa.me/918920199723?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" className="btn btn-primary btn-block" style={{ background: '#25D366', borderColor: '#25D366', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', fontWeight: '700' }}>
+          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" className="btn btn-primary btn-block" style={{ background: '#25D366', borderColor: '#25D366', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', fontWeight: '700' }}>
             <span>💬</span> WhatsApp Direct (Instant)
           </a>
           <a href="tel:18008905266" className="btn btn-secondary btn-block" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', fontWeight: '700' }}>
@@ -243,7 +243,7 @@ window.Header = function({
           <span className="dock-icon">📈</span>
           <span className="dock-label">ROI / EMI</span>
         </a>
-        <a href="https://wa.me/918920199723?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" className="dock-item" style={{ color: '#25D366' }}>
+        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" className="dock-item" style={{ color: '#25D366' }}>
           <span className="dock-icon">💬</span>
           <span className="dock-label">WhatsApp</span>
         </a>

@@ -2995,7 +2995,7 @@ window.Header = function (_ref) {
     className: "btn btn-primary btn-sm",
     onClick: onOpenWizard
   }, "\u26A1 2-Min Match"), React.createElement("a", {
-    href: "https://wa.me/918920199723?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees",
+    href: "https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees",
     target: "_blank",
     rel: "noopener",
     className: "btn btn-sm",
@@ -3116,7 +3116,7 @@ window.Header = function (_ref) {
   }, "\u26A1"), " Online BCA Programs")))), React.createElement("div", {
     className: "mobile-drawer-footer"
   }, React.createElement("a", {
-    href: "https://wa.me/918920199723?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees",
+    href: "https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees",
     target: "_blank",
     rel: "noopener",
     className: "btn btn-primary btn-block",
@@ -3174,7 +3174,7 @@ window.Header = function (_ref) {
   }, "\uD83D\uDCC8"), React.createElement("span", {
     className: "dock-label"
   }, "ROI / EMI")), React.createElement("a", {
-    href: "https://wa.me/918920199723?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees",
+    href: "https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees",
     target: "_blank",
     rel: "noopener",
     className: "dock-item",

@@ -56,7 +56,7 @@
 }
 
 .brand-logo-img {
-  height: 52px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1717,10 +1717,10 @@
   }
 
   .brand-logo-img {
-    height: 42px;
+    height: 54px;
   }
 
   .header-container {
-    height: 64px;
+    height: 70px;
   }
 }
