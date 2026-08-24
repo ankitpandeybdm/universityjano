@@ -1,0 +1,307 @@
+/* ==========================================================================
+   UniversityJano.com - App-Like Mobile Navigation & Animation Styles
+   ========================================================================== */
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.4); }
+  70% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(255, 122, 0, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.pulse-badge {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.float-icon {
+  animation: floatGentle 3s ease-in-out infinite;
+}
+
+/* Card Hover Elevation */
+.uni-card, .tool-feature-card, .blog-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.uni-card:hover, .tool-feature-card:hover, .blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Hamburger Menu Button for Mobile */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 960;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--orange-50);
+  border-color: var(--orange-300);
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: var(--navy-900);
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.mobile-menu-toggle.is-active span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.is-active span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Mobile Slide-Over Drawer */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 27, 61, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: #ffffff;
+  z-index: 1250;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 0 25px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.is-open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-surface);
+}
+
+.mobile-drawer-close {
+  background: var(--bg-surface-alt);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  cursor: pointer;
+}
+
+.mobile-drawer-body {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.mobile-drawer-section-title {
+  padding: 0.5rem 1.25rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.mobile-drawer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1.25rem;
+  color: var(--navy-900);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+}
+
+.mobile-drawer-link:hover, .mobile-drawer-link.is-active {
+  background: var(--orange-50);
+  color: var(--orange-600);
+  border-left-color: var(--orange-500);
+}
+
+.mobile-drawer-link .link-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.mobile-drawer-badge {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--orange-500);
+  color: #fff;
+}
+
+.mobile-drawer-footer {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-surface-alt);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* App-Like Native Mobile Bottom Dock (Screens <= 768px) */
+.mobile-bottom-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-light);
+  z-index: 900;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.06);
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  gap: 3px;
+  flex: 1;
+  padding: 0.35rem 0;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.dock-item.is-active, .dock-item:hover {
+  color: var(--orange-600);
+}
+
+.dock-item.is-active .dock-icon {
+  transform: translateY(-2px);
+}
+
+.dock-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.dock-badge {
+  position: absolute;
+  top: 2px;
+  right: 22%;
+  background: var(--orange-500);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+/* Extra space for body on mobile so bottom dock doesn't overlap footer */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .mobile-bottom-dock {
+    display: flex;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .brand-logo-img {
+    height: 42px;
+  }
+
+  .header-container {
+    height: 64px;
+  }
+}
