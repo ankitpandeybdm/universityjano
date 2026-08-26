@@ -23,11 +23,41 @@ title: "Compare Top Online Universities Side-by-Side | UniversityJano.com"
 <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<style>
+  html { scroll-behavior: smooth; }
+  .uni-tab-nav { position: sticky; top: 76px; z-index: 30; background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .uni-tab-nav .container { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
+  .uni-tab-nav .container::-webkit-scrollbar { display: none; }
+  .uni-tab-link { flex-shrink: 0; padding: 0.9rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: #64748b; text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .uni-tab-link:hover { color: #1a56db; }
+  .uni-tab-link.is-active { color: #1a56db; border-bottom-color: #1a56db; }
+  #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 130px; }
+  @media (max-width: 768px) {
+    .uni-tab-nav { top: 70px; }
+    #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 120px; }
+  }
+</style>
 </head>
 <body>
 {% include site-header.html %}
 
-    <div id="compare-app-root"></div>
+    <div id="compare-app-root">
+      <div class="container section-padding">
+        <span class="badge badge-blue">Compare Tool</span>
+        <h1 class="section-title">Compare Top Online Universities Side-by-Side</h1>
+        <p class="section-subtitle">A side-by-side comparison of fees, NAAC grades, 0% EMI options, placement support, and exam mode across UGC-DEB approved online universities in India — so you can shortlist with real data instead of marketing claims.</p>
+        <p>Choosing an online degree usually comes down to a handful of factors that matter more than a university's brand name: whether the specific programme is UGC-DEB approved for your admission session, the real fee structure after any discounts, placement support for working professionals, and whether exams are proctored online or held at a physical centre. This tool lines up that information across universities so you can compare them directly.</p>
+        <h2>What You Can Compare Here</h2>
+        <ul>
+          <li>Total fees and available 0% EMI plans.</li>
+          <li>NAAC accreditation grade and UGC-DEB approval status.</li>
+          <li>Placement support and average outcomes reported by each university.</li>
+          <li>Exam mode — online proctored vs offline exam centres.</li>
+        </ul>
+        <a href="{{ '/universities/index.html' | relative_url }}" class="btn btn-primary">🏫 Browse All Universities</a>
+        <p style="margin-top:1.5rem;font-size:0.85rem;">Loading the interactive comparison tool…</p>
+      </div>
+    </div>
     <script>
       (function() {
         function mountCompare() {
@@ -57,5 +87,27 @@ title: "Compare Top Online Universities Side-by-Side | UniversityJano.com"
   
 {% include site-footer.html %}
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
+<script>
+  (function() {
+    var tabLinks = document.querySelectorAll('.uni-tab-link');
+    var sections = Array.prototype.map.call(tabLinks, function(link) {
+      return document.querySelector(link.getAttribute('href'));
+    }).filter(Boolean);
+    if (!tabLinks.length || !sections.length) return;
+
+    function setActive() {
+      var scrollPos = window.scrollY + 160;
+      var activeIndex = 0;
+      sections.forEach(function(sec, i) {
+        if (sec.offsetTop <= scrollPos) activeIndex = i;
+      });
+      tabLinks.forEach(function(link, i) {
+        link.classList.toggle('is-active', i === activeIndex);
+      });
+    }
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  })();
+</script>
 </body>
 </html>

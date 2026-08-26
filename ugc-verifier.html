@@ -23,11 +23,41 @@ title: "UGC-DEB Government Approval & Legal Validity Inspector | UniversityJano.
 <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<style>
+  html { scroll-behavior: smooth; }
+  .uni-tab-nav { position: sticky; top: 76px; z-index: 30; background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .uni-tab-nav .container { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
+  .uni-tab-nav .container::-webkit-scrollbar { display: none; }
+  .uni-tab-link { flex-shrink: 0; padding: 0.9rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: #64748b; text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .uni-tab-link:hover { color: #1a56db; }
+  .uni-tab-link.is-active { color: #1a56db; border-bottom-color: #1a56db; }
+  #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 130px; }
+  @media (max-width: 768px) {
+    .uni-tab-nav { top: 70px; }
+    #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 120px; }
+  }
+</style>
 </head>
 <body>
 {% include site-header.html %}
 
-    <div id="ugc-app-root"></div>
+    <div id="ugc-app-root">
+      <div class="container section-padding">
+        <span class="badge badge-blue">UGC-DEB Verification Tool</span>
+        <h1 class="section-title">UGC-DEB Government Approval &amp; Legal Validity Inspector</h1>
+        <p class="section-subtitle">Check whether a university's online or distance-mode programme is entitled by the UGC Distance Education Bureau (DEB) for your exact course and admission session — the single approval that decides if your degree is valid for government jobs, UPSC, UGC NET, and further studies.</p>
+        <p>An online or distance degree is legally equivalent to a regular, on-campus degree only when the offering university holds valid <strong>UGC-DEB entitlement</strong> for that specific programme and academic session. Approval is granted programme-by-programme and session-by-session, not once for the whole university — so verifying it before you enrol, and before you pay any fee, is the single most important check a student can make.</p>
+        <h2>What This Tool Checks</h2>
+        <ul>
+          <li>Whether your chosen university is UGC-DEB entitled to offer Online or ODL programmes.</li>
+          <li>Whether that entitlement covers your specific programme (e.g. Online MBA, Online MCA, Online BBA).</li>
+          <li>Whether the entitlement is valid for your intended academic session.</li>
+          <li>Additional recognitions worth checking — NAAC grade, AICTE approval where applicable, and NCTE recognition for teacher-education programmes.</li>
+        </ul>
+        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20verify%20UGC-DEB%20entitlement%20for%20an%20online%20degree" class="btn btn-primary">💬 Get Verification Help on WhatsApp</a>
+        <p style="margin-top:1.5rem;font-size:0.85rem;">Loading the interactive verifier…</p>
+      </div>
+    </div>
     <script>
       (function() {
         function mountUgc() {
@@ -51,5 +81,27 @@ title: "UGC-DEB Government Approval & Legal Validity Inspector | UniversityJano.
   
 {% include site-footer.html %}
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
+<script>
+  (function() {
+    var tabLinks = document.querySelectorAll('.uni-tab-link');
+    var sections = Array.prototype.map.call(tabLinks, function(link) {
+      return document.querySelector(link.getAttribute('href'));
+    }).filter(Boolean);
+    if (!tabLinks.length || !sections.length) return;
+
+    function setActive() {
+      var scrollPos = window.scrollY + 160;
+      var activeIndex = 0;
+      sections.forEach(function(sec, i) {
+        if (sec.offsetTop <= scrollPos) activeIndex = i;
+      });
+      tabLinks.forEach(function(link, i) {
+        link.classList.toggle('is-active', i === activeIndex);
+      });
+    }
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  })();
+</script>
 </body>
 </html>
