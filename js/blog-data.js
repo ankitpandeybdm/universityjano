@@ -19,6 +19,46 @@
 
 window.BLOG_DATA = [
   {
+    id: "blog-6",
+    slug: "cheapest-online-mba-in-india-2026",
+    title: "Cheapest Online MBA in India 2026: UGC-DEB Approved Universities Under ₹1.5 Lakh",
+    metaTitle: "Cheapest Online MBA in India 2026 | UGC-DEB Approved List Under ₹1.5L",
+    excerpt: "Compare the cheapest UGC-DEB approved online MBA programs in India for 2026 — real fees, NAAC grades, and 0% EMI options.",
+    category: "Fees & EMI",
+    tags: ["Online MBA", "Fees & EMI", "UGC-DEB", "Budget Planning"],
+    author: "Team UniversityJano",
+    date: "2026-08-28",
+    readTime: "8 min read",
+    coverImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    content: "<p>An MBA still opens doors — better designations, bigger appraisals, a shot at management roles. But a full-time, on-campus MBA can cost anywhere from &#8377;6 lakh to &#8377;25 lakh, and most working professionals simply can't afford to quit their job for two years to get one.</p>" +
+      "<p>That's exactly why the <strong>cheapest online MBA in India</strong> has become one of the most searched terms among working professionals in 2026. The good news: you can now get a genuine, UGC-DEB approved online MBA for as little as &#8377;50,000&ndash;&#8377;1,50,000, without touching your job, your salary, or your city.</p>" +
+      "<p>The catch? Not every \"cheap\" online MBA is actually valid. Some are approved. Some are outdated. Some are outright fake. Here's a breakdown of real, verified, budget-friendly online MBA options for 2026.</p>" +
+      "<h2>Why \"Cheap\" Doesn't Have to Mean \"Fake\" &mdash; Understanding UGC-DEB Approval</h2>" +
+      "<p>The University Grants Commission's Distance Education Bureau (UGC-DEB) is the only body authorised to approve which Indian universities can legally offer online degrees. If a university &mdash; or even a specific programme within it &mdash; isn't on the current UGC-DEB approved list for your admission session, your MBA carries zero legal recognition for government jobs, PSU recruitment, or further studies.</p>" +
+      "<p>Approval is renewed every academic session, so the fee is only step one. Use our <strong><a href=\"../ugc-verifier.html\">free UGC-DEB Approval Checker</a></strong> to confirm any university's current status before you pay a single rupee.</p>" +
+      "<h2>What Actually Makes an Online MBA Affordable in 2026</h2>" +
+      "<ul>" +
+      "<li><strong>Government/Central Universities (&#8377;50,000&ndash;&#8377;80,000):</strong> Institutions like <a href=\"../universities/ignou-online.html\">IGNOU</a> and <a href=\"../universities/mizoram-university-online.html\">Mizoram University Online</a> offer the lowest fees, and the degree is fully valid for government exams and promotions.</li>" +
+      "<li><strong>NAAC A-grade Private Universities (&#8377;80,000&ndash;&#8377;1,50,000):</strong> The sweet spot for most working professionals &mdash; a recognised private university name plus semester-wise EMI. See <a href=\"../universities/chandigarh-university-online.html\">Chandigarh University Online</a> and <a href=\"../universities/jain-university-online.html\">Jain Online</a>.</li>" +
+      "<li><strong>Premium Private Universities (&#8377;1,50,000&ndash;&#8377;3,00,000+):</strong> Names like <a href=\"../universities/online-manipal.html\">Manipal</a>, <a href=\"../universities/amity-online.html\">Amity</a>, and <a href=\"../universities/nmims-online.html\">NMIMS</a> &mdash; higher fees, but stronger brand recall and larger alumni networks.</li>" +
+      "</ul>" +
+      "<h2>Cheapest UGC-DEB Approved Online MBA Universities: 2026 Snapshot</h2>" +
+      "<p>Always re-verify current fees and approval status directly before applying, since universities revise fee structures every admission cycle.</p>" +
+      "<ul>" +
+      "<li><strong>IGNOU</strong> &mdash; approx. &#8377;64,000&ndash;&#8377;66,000, NAAC A++</li>" +
+      "<li><strong>Mizoram University Online</strong> &mdash; approx. &#8377;54,000&ndash;&#8377;70,000, NAAC A</li>" +
+      "<li><strong>Chandigarh University Online</strong> &mdash; approx. &#8377;1,10,000&ndash;&#8377;1,40,000, NAAC A+, 0% EMI available</li>" +
+      "<li><strong>Jain Online</strong> &mdash; approx. &#8377;1,20,000&ndash;&#8377;1,60,000, NAAC A++, 0% EMI available</li>" +
+      "</ul>" +
+      "<p>Want the full fee, NAAC, and placement comparison side by side? Use our <strong><a href=\"../compare.html\">University Compare tool</a></strong>.</p>" +
+      "<h2>How 0% EMI Actually Works</h2>" +
+      "<p>Several universities offer genuine 0% interest EMI plans through NBFC partners &mdash; the total fee is split across semesters and repaid monthly with no added interest, provided payments are on time. Estimate your exact monthly instalment with our <strong><a href=\"../emi-calculator.html\">free EMI Calculator</a></strong> before you commit.</p>" +
+      "<h2>Cheap vs Premium: Which Should You Pick?</h2>" +
+      "<p>If your goal is eligibility &mdash; promotions, government exam cut-offs, or a PhD later &mdash; the cheapest valid option (IGNOU, Mizoram) is usually enough. If you're targeting large corporates where brand recall genuinely influences shortlisting, a premium option is worth the extra spend. A mid-tier NAAC A+ private university is the balanced middle ground for most working professionals.</p>" +
+      "<h2>The Bottom Line</h2>" +
+      "<p>The cheapest online MBA in India isn't the one with the lowest number on the ad &mdash; it's the one that's UGC-DEB approved for your session, fits your budget without financial strain, and actually matches what you need the degree for. <a href=\"../compare.html\"><strong>Compare every UGC-DEB approved online MBA university on UniversityJano</strong></a> and get 100% free expert counselling before you pay a single rupee.</p>"
+  },
+  {
     id: "blog-5",
     slug: "online-degree-jobs-corporate-acceptance",
     title: "Do Employers Accept Online Degrees? Here's What HR Managers Actually Say in 2026",
