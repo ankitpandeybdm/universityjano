@@ -1,0 +1,211 @@
+<!-- Universal Site Header with Mobile Drawer & App-Like Bottom Dock -->
+<header>
+  <!-- Top Ticker Notification -->
+  <div class="top-notice-bar">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:0.5rem;">
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <span class="notice-pill">🔥 2026 Admissions Open</span>
+        <span>UGC-DEB Approved Online Universities • Zero Cost 0% EMI Available</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.25rem;">
+        <span style="font-size:0.8rem;color:#fed7aa;">📞 Helpline: <a href="tel:18008905266" style="color:#ffffff;font-weight:700;text-decoration:none;">1800-890-5266</a> (Toll Free)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="header-nav">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <div class="brand-logo-wrap">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano.com - Sahi University Jano, Sahi Career Chuno" class="brand-logo-img">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="header-menu">
+        <li><a href="{{ '/' | relative_url }}" class="nav-link" style="text-decoration:none;">🏠 Home</a></li>
+        <li><a href="{{ '/universities/index.html' | relative_url }}" class="nav-link" style="text-decoration:none;">🏫 All Universities</a></li>
+        <li><a href="{{ '/compare.html' | relative_url }}" class="nav-link" style="text-decoration:none;">⚖️ Compare Colleges</a></li>
+        <li><a href="{{ '/roi-calculator.html' | relative_url }}" class="nav-link" style="text-decoration:none;">📈 Salary &amp; ROI</a></li>
+        <li><a href="{{ '/emi-calculator.html' | relative_url }}" class="nav-link" style="text-decoration:none;">💳 0% EMI Planner</a></li>
+        <li><a href="{{ '/ugc-verifier.html' | relative_url }}" class="nav-link" style="text-decoration:none;">🛡️ UGC Approvals</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" class="nav-link" style="text-decoration:none;">✍️ Blog</a></li>
+      </ul>
+
+      <!-- Desktop Action Buttons -->
+      <div class="header-actions" style="display:flex;align-items:center;gap:0.75rem;">
+        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" class="btn btn-sm" style="background:#25D366;color:#ffffff;text-decoration:none;display:flex;align-items:center;gap:0.35rem;font-weight:700;">
+          <span>💬</span> <span style="display:inline-block;">WhatsApp</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Slide-Over Navigation Drawer Backdrop -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- Mobile Slide-Over Navigation Drawer -->
+<div class="mobile-nav-drawer" id="mobileNavDrawer">
+  <div class="mobile-drawer-header">
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano Logo" style="height:48px;width:auto;">
+    </a>
+    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Menu">✕</button>
+  </div>
+
+  <div class="mobile-drawer-body">
+    <div class="mobile-drawer-section-title">Main Navigation</div>
+    <ul class="mobile-drawer-links">
+      <li>
+        <a href="{{ '/' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">🏠</span>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/universities/index.html' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">🏫</span>
+          <span>All 25+ Online Universities</span>
+          <span class="mobile-drawer-badge">Directory</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/compare.html' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">⚖️</span>
+          <span>Compare Universities</span>
+          <span class="mobile-drawer-badge" style="background:#1a56db;">4-Way</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/roi-calculator.html' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">📈</span>
+          <span>Salary Jump &amp; ROI Calculator</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/emi-calculator.html' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">💳</span>
+          <span>0% Interest EMI Planner</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/ugc-verifier.html' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">🛡️</span>
+          <span>UGC-DEB Government Approvals</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ '/blog/' | relative_url }}" class="mobile-drawer-link">
+          <span class="link-icon">✍️</span>
+          <span>Career &amp; Degree Blogs</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-drawer-section-title" style="margin-top:1.25rem;">Popular Online Degrees</div>
+    <ul class="mobile-drawer-links">
+      <li><a href="{{ '/universities/index.html' | relative_url }}?degree=MBA" class="mobile-drawer-link"><span class="link-icon">🎓</span> Online MBA Programs</a></li>
+      <li><a href="{{ '/universities/index.html' | relative_url }}?degree=MCA" class="mobile-drawer-link"><span class="link-icon">💻</span> Online MCA Programs</a></li>
+      <li><a href="{{ '/universities/index.html' | relative_url }}?degree=BBA" class="mobile-drawer-link"><span class="link-icon">📊</span> Online BBA Programs</a></li>
+      <li><a href="{{ '/universities/index.html' | relative_url }}?degree=BCA" class="mobile-drawer-link"><span class="link-icon">⚡</span> Online BCA Programs</a></li>
+    </ul>
+  </div>
+
+  <div class="mobile-drawer-footer">
+    <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" class="btn btn-primary btn-block" style="background:#25D366;border-color:#25D366;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-weight:700;">
+      <span>💬</span> Chat on WhatsApp (Instant)
+    </a>
+    <a href="tel:18008905266" class="btn btn-secondary btn-block" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-weight:700;">
+      <span>📞</span> Call Student Helpline (1800-890-5266)
+    </a>
+  </div>
+</div>
+
+<!-- Native App-Like Bottom Navigation Dock (Screens <= 768px) -->
+<div class="mobile-bottom-dock" id="mobileBottomDock">
+  <a href="{{ '/' | relative_url }}" class="dock-item">
+    <span class="dock-icon">🏠</span>
+    <span class="dock-label">Home</span>
+  </a>
+  <a href="{{ '/universities/index.html' | relative_url }}" class="dock-item">
+    <span class="dock-icon">🏫</span>
+    <span class="dock-label">Colleges</span>
+  </a>
+  <a href="{{ '/compare.html' | relative_url }}" class="dock-item">
+    <span class="dock-icon">⚖️</span>
+    <span class="dock-label">Compare</span>
+  </a>
+  <a href="{{ '/roi-calculator.html' | relative_url }}" class="dock-item">
+    <span class="dock-icon">📈</span>
+    <span class="dock-label">ROI / EMI</span>
+  </a>
+  <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" class="dock-item" style="color:#25D366;">
+    <span class="dock-icon">💬</span>
+    <span class="dock-label">WhatsApp</span>
+  </a>
+</div>
+
+<!-- Mobile Drawer Script -->
+<script>
+  (function() {
+    function setupMobileNav() {
+      var toggle = document.getElementById('mobileMenuToggle');
+      var drawer = document.getElementById('mobileNavDrawer');
+      var overlay = document.getElementById('mobileNavOverlay');
+      var closeBtn = document.getElementById('mobileDrawerClose');
+
+      if (!toggle || !drawer || !overlay) return;
+
+      function openDrawer() {
+        drawer.classList.add('is-open');
+        overlay.classList.add('is-open');
+        toggle.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (drawer.classList.contains('is-open')) closeDrawer();
+        else openDrawer();
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+
+      // Highlight active bottom dock link
+      var path = window.location.pathname;
+      var dockLinks = document.querySelectorAll('.dock-item');
+      dockLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && path.endsWith(href) && href !== '/') {
+          link.classList.add('is-active');
+        } else if (href === '/' && (path === '/' || path.endsWith('index.html') && !path.includes('universities'))) {
+          link.classList.add('is-active');
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupMobileNav);
+    } else {
+      setupMobileNav();
+    }
+  })();
+</script>

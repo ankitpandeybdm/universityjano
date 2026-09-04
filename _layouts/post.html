@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.metaTitle | default: page.title }} | UniversityJano.com</title>
+<meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ page.coverImage | default: page.image | absolute_url }}">
+<meta property="og:site_name" content="UniversityJano.com">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+<meta name="twitter:image" content="{{ page.coverImage | default: page.image | absolute_url }}">
+
+<link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/mobile-nav.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/blog.css' | relative_url }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }},
+  "image": {{ page.coverImage | default: page.image | absolute_url | jsonify }},
+  "author": { "@type": "Organization", "name": {{ page.author | default: "Team UniversityJano" | jsonify }} },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "UniversityJano.com",
+    "logo": { "@type": "ImageObject", "url": "{{ '/images/logo.png' | absolute_url }}" }
+  },
+  "mainEntityOfPage": "{{ page.url | absolute_url }}"
+}
+</script>
+{% assign breadcrumb_category = page.category | default: page.categories | first | default: "Blog" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+  ]
+}
+</script>
+</head>
+<body>
+{% include site-header.html %}
+
+<article class="blog-article">
+  <a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; All Blog Posts</a>
+  <div class="meta">
+    <span class="blog-category-pill">{{ breadcrumb_category }}</span>
+    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+    <span>&middot;</span>
+    <span>{{ page.readTime | default: "5 min read" }}</span>
+    <span>&middot;</span>
+    <span>By {{ page.author | default: "Team UniversityJano" }}</span>
+  </div>
+  <h1>{{ page.title }}</h1>
+  {% assign cover = page.coverImage | default: page.image %}
+  {% if cover %}<img class="cover" src="{{ cover }}" alt="{{ page.title }}">{% endif %}
+
+  {{ content }}
+
+  {% if page.tags and page.tags.size > 0 %}
+  <div class="blog-tags">
+    {% for tag in page.tags %}<span class="tag-pill">{{ tag }}</span>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% include blog-cta.html %}
+</article>
+
+{% include site-footer.html %}
+</body>
+</html>

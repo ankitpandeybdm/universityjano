@@ -1,3 +1,8 @@
+---
+layout: null
+permalink: /
+sitemap: true
+---
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
@@ -60,14 +65,74 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/mobile-nav.css">
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is UGC-DEB approval and why does it matter for an online degree?",
+        "acceptedAnswer": { "@type": "Answer", "text": "UGC-DEB (Distance Education Bureau) approval is what makes an online degree from an Indian university legally equivalent to a regular on-campus degree for jobs, higher education and most government eligibility. Always verify current-session approval for your exact program before paying any fee." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an online MBA cost in India in 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A UGC-DEB approved online MBA in India typically costs between ₹50,000 and ₹2,50,000 for the full program, depending on the university and specialization, with 0% EMI options available at most approved universities." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is UniversityJano's counselling and comparison service free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Comparing universities, checking UGC-DEB approval, using the fee and ROI calculators, and getting 1-on-1 expert counselling on UniversityJano.com are all completely free for students." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do employers in India accept online degrees?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, most Indian employers now accept UGC-DEB approved online degrees at par with regular degrees, since they carry the same legal recognition. Employer perception can still vary by industry and individual company." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Root React Container -->
   <div id="root"></div>
 
-  <!-- Blog Data & Components -->
-  <script src="js/blog-data.js"></script>
-  <script src="js/blog-components.js"></script>
+  <!-- ============================================================
+       Crawlable SEO content (static HTML, always present even
+       before JavaScript runs) — helps search engines index the
+       site's core value proposition, tools and FAQs.
+       ============================================================ -->
+  <section style="background:var(--bg-surface);padding:3rem 1.25rem;">
+    <div style="max-width:980px;margin:0 auto;">
+      <h2 style="color:var(--navy-900);font-size:1.6rem;margin-bottom:1rem;">India's Free Platform to Compare UGC-DEB Approved Online Degrees</h2>
+      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem;">UniversityJano.com helps Indian students and working professionals find and join <strong>UGC-DEB approved online degree programs</strong> — including Online MBA, Online MCA, Online BBA, Online BCA and Data Science — without the usual confusion around fees, approvals and admissions agents. We list 25+ UGC-DEB approved universities with verified, up-to-date fee structures, NAAC grades, 0% EMI plans and real placement records, so you can shortlist a program based on facts rather than a call-centre pitch.</p>
+      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2rem;">Start with our <a href="/ugc-verifier.html" style="color:var(--blue-600);font-weight:600;">free UGC-DEB Approval Checker</a> to confirm a university's current-session validity, use the <a href="/compare.html" style="color:var(--blue-600);font-weight:600;">university comparison tool</a> to see fees and placements side by side, run the numbers on the <a href="/emi-calculator.html" style="color:var(--blue-600);font-weight:600;">0% EMI calculator</a> and the <a href="/roi-calculator.html" style="color:var(--blue-600);font-weight:600;">ROI &amp; salary growth calculator</a>, or read in-depth guides on our <a href="/blog/" style="color:var(--blue-600);font-weight:600;">blog</a>.</p>
+
+      <h2 style="color:var(--navy-900);font-size:1.3rem;margin-bottom:1rem;">Frequently Asked Questions</h2>
+      <div style="display:grid;gap:1.25rem;">
+        <div>
+          <h3 style="color:var(--navy-900);font-size:1.02rem;margin-bottom:0.35rem;">What is UGC-DEB approval and why does it matter for an online degree?</h3>
+          <p style="color:var(--text-muted);line-height:1.75;">UGC-DEB (Distance Education Bureau) approval is what makes an online degree from an Indian university legally equivalent to a regular on-campus degree for jobs, higher education and most government eligibility. Always verify current-session approval for your exact program before paying any fee, using our <a href="/ugc-verifier.html" style="color:var(--blue-600);font-weight:600;">free checker</a>.</p>
+        </div>
+        <div>
+          <h3 style="color:var(--navy-900);font-size:1.02rem;margin-bottom:0.35rem;">How much does an online MBA cost in India in 2026?</h3>
+          <p style="color:var(--text-muted);line-height:1.75;">A UGC-DEB approved online MBA typically costs between ₹50,000 and ₹2,50,000 for the full program, depending on the university and specialization, with 0% EMI options at most approved universities. See exact, current fees on our <a href="/compare.html" style="color:var(--blue-600);font-weight:600;">comparison tool</a>.</p>
+        </div>
+        <div>
+          <h3 style="color:var(--navy-900);font-size:1.02rem;margin-bottom:0.35rem;">Is UniversityJano's counselling and comparison service free?</h3>
+          <p style="color:var(--text-muted);line-height:1.75;">Yes — comparing universities, checking UGC-DEB approval, using the fee and ROI calculators, and getting 1-on-1 expert counselling on UniversityJano.com are all completely free for students.</p>
+        </div>
+        <div>
+          <h3 style="color:var(--navy-900);font-size:1.02rem;margin-bottom:0.35rem;">Do employers in India accept online degrees?</h3>
+          <p style="color:var(--text-muted);line-height:1.75;">Yes, most Indian employers now accept UGC-DEB approved online degrees at par with regular degrees, since both carry the same legal recognition. Read more in our <a href="/blog/" style="color:var(--blue-600);font-weight:600;">career guides on the blog</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 100% Self-Contained Bundle (Includes React 18 + ReactDOM + 26 Universities + All Tools - Zero External CDN Dependencies) -->
   <script src="js/bundle.js"></script>

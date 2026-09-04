@@ -12,6 +12,12 @@
 ## Website
 
 - [Homepage](https://universityjano.com): Official UniversityJano.com website
+- [Compare Universities](https://universityjano.com/compare.html): Side-by-side comparison of fees, NAAC grades and placements across 25+ UGC-DEB approved universities
+- [UGC-DEB Approval Checker](https://universityjano.com/ugc-verifier.html): Free tool to verify a university's current-session UGC-DEB approval
+- [EMI Calculator](https://universityjano.com/emi-calculator.html): Calculate 0% EMI monthly payments for online degree fees
+- [ROI & Salary Calculator](https://universityjano.com/roi-calculator.html): Estimate salary growth and payback period for an online degree
+- [University Directory](https://universityjano.com/universities/index.html): Full list of UGC-DEB approved online universities with dedicated pages per university
+- [Blog](https://universityjano.com/blog/): Guides on online degrees, UGC-DEB approval, fees, EMI plans and career outcomes
 
 ## Resources
 

@@ -7,9 +7,13 @@ baseurl: ""
 permalink: /blog/:year/:month/:day/:title/
 
 exclude:
-  - generate_blog_pages.js
   - generate_static_pages.js
+  - build.js
+  - check_data.js
   - README.md
+  - blog-post-template.md
+  - HOW_TO_ADD_A_NEW_BLOG_POST.md
+  - "_posts/HOW_TO_ADD_A_NEW_BLOG_POST.md"
 
 plugins:
   - jekyll-sitemap
