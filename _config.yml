@@ -17,4 +17,5 @@ exclude:
 
 plugins:
   - jekyll-sitemap
-  - jekyll-feed
+  - jekyll-feed 
+future: true
