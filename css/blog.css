@@ -358,3 +358,89 @@
 .blog-cta-box .btn-outline:hover {
   background: var(--blue-50);
 }
+
+/* ===== New Stitch-design prose styling for {{ content }} markdown output ===== */
+.blog-prose h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #0F172A;
+  margin-top: 0.5rem;
+}
+.blog-prose h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-top: 0.25rem;
+}
+.blog-prose p {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: #475569;
+  margin: 0;
+}
+.blog-prose ul, .blog-prose ol {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: #475569;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.blog-prose ul { list-style: disc; }
+.blog-prose ol { list-style: decimal; }
+.blog-prose strong { color: #0F172A; font-weight: 700; }
+.blog-prose a { color: #FF7A00; font-weight: 600; text-decoration: underline; }
+.blog-prose a:hover { color: #EA580C; }
+.blog-prose blockquote {
+  border-left: 4px solid #FF7A00;
+  background: #F8FAFC;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  color: #475569;
+  font-style: italic;
+}
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(11,27,61,0.08);
+}
+.blog-prose th {
+  background: #0B1B3D;
+  color: #ffffff;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+.blog-prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #E2E8F0;
+  color: #475569;
+}
+.blog-prose tr:last-child td { border-bottom: none; }
+.blog-prose tr:nth-child(even) { background: #F8FAFC; }
+.blog-prose img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(11,27,61,0.08);
+  margin: 0.75rem 0;
+  display: block;
+}
+.blog-prose hr {
+  border: none;
+  border-top: 1px solid #E2E8F0;
+  margin: 1rem 0;
+}
