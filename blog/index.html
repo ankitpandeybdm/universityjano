@@ -57,65 +57,78 @@ layout: null
 <body>
 {% include site-header.html %}
 
+<main style="padding-top:88px;">
+
 <section class="blog-hero">
-  <div class="container">
+  <div class="blog-hero-bg"></div>
+  <div class="blog-hero-overlay"></div>
+  <div class="blog-hero-blob" style="width:320px;height:320px;background:rgba(255,122,0,0.28);top:-80px;right:8%;"></div>
+  <div class="blog-hero-blob" style="width:260px;height:260px;background:rgba(26,86,219,0.32);bottom:-70px;left:6%;animation-delay:2s;"></div>
+  <div class="container blog-hero-inner">
+    <span class="blog-hero-badge">🎓 Career &amp; Degree Guides</span>
     <h1>The UniversityJano Blog</h1>
     <p>Straight-talking, source-checked guides on online MBAs, MCAs, BBAs and BCAs in India — UGC-DEB approval, real fees, 0% EMI, NAAC grades, placements and career outcomes. No jargon, no sponsored rankings.</p>
+    <div class="blog-hero-stats">
+      <div class="blog-hero-stat"><b>25+</b><span>Universities Covered</span></div>
+      <div class="blog-hero-stat"><b>50+</b><span>In-Depth Guides</span></div>
+      <div class="blog-hero-stat"><b>100%</b><span>Free, No Ads</span></div>
+    </div>
   </div>
 </section>
 
 <div class="blog-listing-wrap">
   {% assign posts = site.posts %}
   {% if posts.size > 0 %}
-    <div class="blog-grid">
-      {% for post in posts %}
-        {% assign cat = post.category | default: post.categories | first | default: "Guide" %}
-        {% assign img = post.coverImage | default: post.image | default: "/images/logo.png" %}
-        {% assign desc = post.description | default: post.excerpt | strip_html | truncate: 150 %}
-        <a href="{{ post.url | relative_url }}" class="blog-card{% if forloop.first %} blog-featured-card{% endif %}">
-          <div class="blog-card-img-wrap">
-            <img src="{{ img }}" alt="{{ post.title }}" loading="lazy">
+  <div class="blog-grid">
+    {% for post in posts %}
+      {% assign cat = post.category | default: post.categories | first | default: "Guide" %}
+      {% assign img = post.coverImage | default: post.image | default: "/images/logo.png" %}
+      {% assign desc = post.description | default: post.excerpt | strip_html | truncate: 150 %}
+      <a href="{{ post.url | relative_url }}" class="blog-card{% if forloop.first %} blog-featured-card{% endif %}">
+        <div class="blog-card-img-wrap">
+          <img src="{{ img }}" alt="{{ post.title }}" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-category-pill">{{ cat }}</span>
+            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+            <span>&middot;</span>
+            <span>{{ post.readTime | default: "5 min read" }}</span>
           </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-category-pill">{{ cat }}</span>
-              <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-              <span>&middot;</span>
-              <span>{{ post.readTime | default: "5 min read" }}</span>
-            </div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ desc }}</p>
-            <span class="blog-card-readmore">Read the guide &rarr;</span>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
+          <h2>{{ post.title }}</h2>
+          <p>{{ desc }}</p>
+          <span class="blog-card-readmore">Read the guide &rarr;</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
   {% else %}
-    <div class="blog-empty-state">
-      <p>New guides are on the way — check back soon.</p>
-    </div>
+  <div class="blog-empty-state"><p>New guides are on the way — check back soon.</p></div>
   {% endif %}
 
-  <section style="max-width:760px;margin:4rem auto 0;padding-top:2.5rem;border-top:1px solid var(--border-light);">
-    <h2 style="color:var(--navy-900);font-size:1.5rem;margin-bottom:1rem;">About This Blog</h2>
-    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem;">UniversityJano.com helps Indian students and working professionals find and join UGC-DEB approved online degree programs — Online MBA, MCA, BBA, BCA and Data Science — without the usual confusion around fees, approvals, and admissions agents. Every guide on this blog is written to answer the exact questions students ask us during free counselling calls: is this degree valid, what does it really cost after EMI, and will employers accept it.</p>
-    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem;">Before you shortlist a program, two tools on this site are worth using alongside these guides: the <a href="/ugc-verifier.html" style="color:var(--blue-600);font-weight:600;">free UGC-DEB Approval Checker</a> to confirm a university's current-session entitlement, and the <a href="/compare.html" style="color:var(--blue-600);font-weight:600;">university comparison tool</a> to see real fees, NAAC grades and placement data side by side across 25+ approved universities.</p>
+  <section style="max-width:800px;margin:3.5rem auto 0;padding-top:2.5rem;border-top:1px solid var(--border-light);">
+    <h2 style="color:var(--navy-900);margin-bottom:1rem;">About This Blog</h2>
+    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.1rem;">UniversityJano.com helps Indian students and working professionals find and join UGC-DEB approved online degree programs — Online MBA, MCA, BBA, BCA and Data Science — without the usual confusion around fees, approvals, and admissions agents. Every guide on this blog is written to answer the exact questions students ask us during free counselling calls: is this degree valid, what does it really cost after EMI, and will employers accept it.</p>
+    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2rem;">Before you shortlist a program, two tools on this site are worth using alongside these guides: the <a href="/ugc-verifier.html" style="color:var(--blue-600);font-weight:600;">free UGC-DEB Approval Checker</a> to confirm a university's current-session entitlement, and the <a href="/compare.html" style="color:var(--blue-600);font-weight:600;">university comparison tool</a> to see real fees, NAAC grades and placement data side by side across 25+ approved universities.</p>
 
-    <h2 style="color:var(--navy-900);font-size:1.5rem;margin:2rem 0 1rem;">Frequently Asked Questions</h2>
-    <div style="margin-bottom:1.25rem;">
-      <h3 style="color:var(--navy-900);font-size:1.05rem;margin-bottom:0.35rem;">Are online degrees from UGC-DEB approved universities valid in India?</h3>
-      <p style="color:var(--text-muted);line-height:1.75;">Yes. Degrees from universities approved by the UGC's Distance Education Bureau (DEB) carry the same legal validity as regular on-campus degrees for employment, higher education and most government job eligibility, provided the specific program and academic session were approved at the time you enrolled.</p>
-    </div>
-    <div style="margin-bottom:1.25rem;">
-      <h3 style="color:var(--navy-900);font-size:1.05rem;margin-bottom:0.35rem;">How do I check if a university is UGC-DEB approved?</h3>
-      <p style="color:var(--text-muted);line-height:1.75;">Use our <a href="/ugc-verifier.html" style="color:var(--blue-600);font-weight:600;">free UGC-DEB Approval Checker</a> to confirm current-session approval before paying any fee — approval status can change year to year, so always verify for the exact session you're enrolling in.</p>
-    </div>
-    <div>
-      <h3 style="color:var(--navy-900);font-size:1.05rem;margin-bottom:0.35rem;">Is 0% EMI really interest-free for online degree fees?</h3>
-      <p style="color:var(--text-muted);line-height:1.75;">Genuine no-cost EMI plans split your total fee across months with no added interest, though eligibility depends on your credit profile and the partner lender. Use our <a href="/emi-calculator.html" style="color:var(--blue-600);font-weight:600;">EMI calculator</a> to see exact monthly numbers before committing.</p>
+    <h2 style="color:var(--navy-900);margin-bottom:1rem;">Frequently Asked Questions</h2>
+    <div style="display:flex;flex-direction:column;gap:0.9rem;">
+      <div>
+        <h3 style="color:var(--navy-900);font-size:1.05rem;margin-bottom:0.35rem;">Are online degrees from UGC-DEB approved universities valid in India?</h3>
+        <p style="color:var(--text-muted);line-height:1.75;">Yes. Degrees from universities approved by the UGC's Distance Education Bureau (DEB) carry the same legal validity as regular on-campus degrees for employment, higher education and most government job eligibility, provided the specific program and academic session were approved at the time you enrolled.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--navy-900);font-size:1.05rem;margin-bottom:0.35rem;">How do I check if a university is UGC-DEB approved?</h3>
+        <p style="color:var(--text-muted);line-height:1.75;">Use our <a href="/ugc-verifier.html" style="color:var(--blue-600);font-weight:600;">free UGC-DEB Approval Checker</a> to confirm current-session approval before paying any fee — approval status can change year to year, so always verify for the exact session you're enrolling in.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--navy-900);font-size:1.05rem;margin-bottom:0.35rem;">Is 0% EMI really interest-free for online degree fees?</h3>
+        <p style="color:var(--text-muted);line-height:1.75;">Genuine no-cost EMI plans split your total fee across months with no added interest, though eligibility depends on your credit profile and the partner lender. Use our <a href="/emi-calculator.html" style="color:var(--blue-600);font-weight:600;">EMI calculator</a> to see exact monthly numbers before committing.</p>
+      </div>
     </div>
   </section>
 </div>
+</main>
 
 {% include site-footer.html %}
 </body>
