@@ -26,6 +26,8 @@ WILP (Work Integrated Learning Programme) is an academic delivery model where co
 
 The term WILP is most closely associated with **BITS Pilani**, which pioneered this model in India in 1979 and remains the most well-known WILP provider today. Several other universities and institutes now run similarly structured work-integrated programs, though BITS Pilani's WILP is the benchmark most students compare against.
 
+**How fast WILP is actually growing right now:** BITS Pilani's WILP division held its 2026 convocation with **15,153 working professionals** graduating across 30 disciplines — more than double the previous year's cohort — with 46% coming from technology and digital domains and 35% from engineering, manufacturing, and infrastructure sectors. New employer partnerships are launching just as fast: BITS Pilani WILP opened India's first Automotive Competency Centre in Chennai in February 2026, signed a joint PCB Design and Analysis certification with Siemens the same month, and inked a banking-AI focused MoU with Lloyds Technology Centre in March 2026. If you were wondering whether WILP is a niche, dated format — this is current, and it's scaling fast.
+
 **Key features that define a genuine WILP program:**
 - Classes conducted through a technology-enabled platform, typically live sessions on weekends or evenings
 - A minimum work experience requirement for admission (usually 1-2 years)
