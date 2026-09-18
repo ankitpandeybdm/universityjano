@@ -23,36 +23,809 @@ title: "Online Degree Salary Jump & ROI Calculator | UniversityJano.com"
 <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"surface-container-highest":"#d3e4fe","orange-light":"#FFF7ED","surface-variant":"#d3e4fe","navy-subtle":"#1E3A8A","on-primary-fixed-variant":"#38466a","surface-dim":"#cbdbf5","tertiary-fixed":"#97f5cc","surface-tint":"#505e83","navy-deep":"#070F22","on-secondary-container":"#592600","secondary-container":"#fb7800","tertiary":"#000301","emerald-badge":"#047857","surface-container-lowest":"#ffffff","error":"#ba1a1a","text-secondary":"#475569","primary":"#00020a","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","outline-variant":"#c5c6cf","on-secondary-fixed":"#321200","emerald-surface":"#ECFDF5","tertiary-fixed-dim":"#7bd8b1","on-tertiary-fixed-variant":"#00513a","slate-border":"#E2E8F0","navy-surface":"#0F2654","emerald-border":"#A7F3D0","inverse-on-surface":"#eaf1ff","inverse-surface":"#213145","on-background":"#0b1c30","slate-divider":"#CBD5E1","on-secondary":"#ffffff","on-secondary-fixed-variant":"#753400","on-primary-fixed":"#0a1a3c","secondary":"#994700","text-tertiary":"#64748B","background":"#f8f9ff","surface-container-low":"#eff4ff","on-tertiary-container":"#349571","outline":"#75777f","orange-vivid":"#FF7A00","primary-fixed-dim":"#b7c6f1","secondary-fixed":"#ffdbc8","slate-muted":"#F1F5F9","on-tertiary-fixed":"#002115","inverse-primary":"#b7c6f1","surface-container-high":"#dce9ff","on-primary":"#ffffff","orange-hover":"#EA580C","on-primary-container":"#7684ac","primary-container":"#0b1b3d","on-error-container":"#93000a","on-error":"#ffffff","primary-fixed":"dae2ff","tertiary-container":"#002216","slate-canvas":"#F8FAFC","error-container":"#ffdad6","on-surface":"#0b1c30","slate-surface":"#FFFFFF","surface":"#f8f9ff","on-surface-variant":"#45464e","text-primary":"#0F172A","secondary-fixed-dim":"#ffb68b","surface-container":"#e5eeff","badge-ugc-bg":"#ECFDF5","badge-nirf-text":"#1D4ED8","surface-card":"#FFFFFF","border-subtle":"#E2E8F0","brand-whatsapp-hover":"#1EBE5D","badge-nirf-bg":"#EFF6FF","badge-ugc-text":"#047857","badge-naac-text":"#4338CA","surface-canvas":"#F8FAFC","text-muted":"#64748B","badge-naac-bg":"#EEF2FF","brand-whatsapp":"#25D366"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","space-md":"1rem","space-3xl":"4rem","container-max":"1280px","space-2xs":"0.25rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-2xl":"3rem","space-xl":"2rem","space-xs":"0.5rem","space-sm":"0.75rem","container-editorial":"840px","gutter":"1.5rem","margin-mobile":"1rem","margin":"2rem"},"fontFamily":{"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"data-metric-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"label-table-header":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-badge":["Inter"],"display-hero":["Plus Jakarta Sans"],"data-metric-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"label-md":["Inter"],"display-lg":["Plus Jakarta Sans"],"label-lg":["Inter"]},"fontSize":{"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"data-metric-sm":["16px",{"lineHeight":"20px","fontWeight":"700"}],"display-hero-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-table-header":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"800"}],"data-metric-lg":["24px",{"lineHeight":"28px","fontWeight":"800"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script>
 </head>
-<body>
+<body class="bg-slate-canvas font-body-md text-body-md text-on-surface antialiased">
 {% include site-header.html %}
+<main class="w-full bg-slate-canvas min-h-screen"><div class="flex flex-col w-full">
+<!-- BREADCRUMBS -->
+<div class="w-full bg-slate-surface">
+<div class="max-w-container-max mx-auto px-gutter-desktop py-space-sm">
+<nav class="flex items-center gap-2 font-body-sm text-body-sm text-text-tertiary">
+<a class="hover:text-secondary-container transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span> Home
+        </a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-secondary-container cursor-pointer">Calculators</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-text-primary font-headline-sm text-headline-sm">Online Degree Salary Hike &amp; Career ROI Calculator</span>
+</nav>
+</div>
+</div>
+<!-- HERO SECTION -->
+<section class="w-full bg-primary-container text-on-primary relative overflow-hidden py-space-2xl">
+<div class="absolute -right-16 -top-24 w-96 h-96 rounded-full bg-navy-subtle/20 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/4 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter-desktop relative z-10 flex flex-col items-start gap-space-md">
+<div class="inline-flex items-center gap-2 bg-slate-surface/10 backdrop-blur-md px-space-sm py-1.5 rounded-full">
+<span class="material-symbols-outlined text-tertiary-fixed text-[16px]">query_stats</span>
+<span class="font-label-badge text-label-badge tracking-wider text-tertiary-fixed uppercase font-semibold">
+          ALGORITHMIC PLACEMENT &amp; SALARY DATA • 5,000+ PLACED ALUMNI BENCHMARK
+        </span>
+</div>
+<div class="max-w-3xl flex flex-col gap-space-xs">
+<h1 class="font-headline-xl text-headline-xl text-on-primary tracking-tight">
+          Online Degree Salary Hike &amp; Career ROI Calculator
+        </h1>
+<p class="font-body-lg text-body-lg text-surface-container-high leading-relaxed">
+          Calculate your projected post-degree salary increment, total course fee break-even timeline, and 5-year compounding earnings uplift based on verified alumni placement benchmarks across India.
+        </p>
+</div>
+<!-- Quick Trust Counters -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md pt-space-xs w-full max-w-4xl">
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-xl">
+<div class="font-data-metric-lg text-data-metric-lg text-tertiary-fixed font-bold">76.4%</div>
+<div class="font-body-sm text-body-sm text-surface-container-high">Average 1st-Year CTC Jump</div>
+</div>
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-xl">
+<div class="font-data-metric-lg text-data-metric-lg text-secondary-fixed font-bold">4.2 Mos</div>
+<div class="font-body-sm text-body-sm text-surface-container-high">Median Payback Horizon</div>
+</div>
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-xl">
+<div class="font-data-metric-lg text-data-metric-lg text-on-primary font-bold">₹18.4L</div>
+<div class="font-body-sm text-body-sm text-surface-container-high">Avg. 5-Yr Compounded Net Gain</div>
+</div>
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-xl">
+<div class="font-data-metric-lg text-data-metric-lg text-tertiary-fixed font-bold">₹0</div>
+<div class="font-body-sm text-body-sm text-surface-container-high">Opportunity Cost (Keep Working)</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CALCULATOR MAIN ENGINE INTERFACE -->
+<section class="w-full max-w-container-max mx-auto px-gutter-desktop py-space-2xl -mt-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: INPUT CONTROLS -->
+<div class="lg:col-span-6 flex flex-col gap-space-md bg-slate-surface p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm">1</span>
+<h2 class="font-headline-md text-headline-md text-text-primary">Career &amp; Degree Parameters</h2>
+</div>
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-emerald-badge bg-emerald-surface px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Live AI Engine
+          </span>
+</div>
+<!-- Step 1: Degree Select -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-table-header text-label-table-header text-text-secondary uppercase">Step 1: Select Target Online Degree</label>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="degree-pills">
+<button class="degree-pill active bg-primary text-on-primary px-3 py-2 rounded font-headline-sm text-headline-sm text-center transition-all" data-boost="1.76" data-degree="mba" type="button">
+              Online MBA
+            </button>
+<button class="degree-pill bg-slate-muted text-text-primary hover:bg-surface-container-highest px-3 py-2 rounded font-headline-sm text-headline-sm text-center transition-all" data-boost="1.72" data-degree="mca" type="button">
+              Online MCA
+            </button>
+<button class="degree-pill bg-slate-muted text-text-primary hover:bg-surface-container-highest px-3 py-2 rounded font-headline-sm text-headline-sm text-center transition-all" data-boost="1.84" data-degree="ds-ai" type="button">
+              Exec Data &amp; AI
+            </button>
+<button class="degree-pill bg-slate-muted text-text-primary hover:bg-surface-container-highest px-3 py-2 rounded font-headline-sm text-headline-sm text-center transition-all" data-boost="1.55" data-degree="bba" type="button">
+              Online BBA
+            </button>
+<button class="degree-pill bg-slate-muted text-text-primary hover:bg-surface-container-highest px-3 py-2 rounded font-headline-sm text-headline-sm text-center transition-all" data-boost="1.62" data-degree="bca" type="button">
+              Online BCA
+            </button>
+<button class="degree-pill bg-slate-muted text-text-primary hover:bg-surface-container-highest px-3 py-2 rounded font-headline-sm text-headline-sm text-center transition-all" data-boost="1.48" data-degree="mcom" type="button">
+              Online M.Com
+            </button>
+</div>
+</div>
+<!-- Step 2: Specialization -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-table-header text-label-table-header text-text-secondary uppercase" for="spec-select">Step 2: Specialization / Domain Track</label>
+<div class="relative">
+<select class="w-full bg-slate-muted text-text-primary py-2.5 px-3 rounded font-body-md text-body-md appearance-none outline-none focus:bg-surface-container-high transition-colors cursor-pointer" id="spec-select">
+<option selected="" value="1.0">Finance &amp; FinTech (+22% Multiplier)</option>
+<option value="1.05">Data Analytics &amp; Artificial Intelligence (+28% Multiplier)</option>
+<option value="0.96">Marketing, Growth &amp; Brand Strategy (+18% Multiplier)</option>
+<option value="0.98">Operations &amp; Supply Chain 4.0 (+20% Multiplier)</option>
+<option value="0.90">HR Tech, People Analytics &amp; OD (+14% Multiplier)</option>
+<option value="0.92">Information Technology &amp; Cloud Management (+24% Multiplier)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-text-tertiary pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Step 3: Current Annual CTC Slider -->
+<div class="flex flex-col gap-2 bg-slate-muted/50 p-space-sm rounded-lg">
+<div class="flex items-center justify-between">
+<label class="font-label-table-header text-label-table-header text-text-secondary uppercase" for="ctc-slider">Step 3: Current Annual CTC (Fixed + Variable)</label>
+<div class="flex items-center bg-slate-surface px-2.5 py-1 rounded shadow-sm">
+<span class="text-text-primary font-headline-sm text-headline-sm">₹</span>
+<input class="w-24 text-right font-data-metric-sm text-data-metric-sm text-text-primary outline-none bg-transparent" id="ctc-input" max="3500000" min="200000" step="25000" type="number" value="500000"/>
+<span class="font-body-sm text-body-sm text-text-tertiary ml-1">/yr</span>
+</div>
+</div>
+<input class="w-full accent-secondary-container cursor-pointer" id="ctc-slider" max="3000000" min="200000" step="25000" type="range" value="500000"/>
+<div class="flex justify-between font-body-sm text-body-sm text-text-tertiary">
+<span>₹2.0 Lakhs</span>
+<span>₹15 Lakhs</span>
+<span>₹30.0 Lakhs</span>
+</div>
+</div>
+<!-- Step 4: Total Work Experience -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-table-header text-label-table-header text-text-secondary uppercase">Step 4: Total Work Experience</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="exp-segments">
+<button class="exp-btn bg-slate-muted text-text-primary hover:bg-surface-container-highest py-2 px-2 rounded font-body-sm text-body-sm text-center transition-all" data-exp="0.92" type="button">
+              Fresher (0-1 yr)
+            </button>
+<button class="exp-btn active bg-primary text-on-primary py-2 px-2 rounded font-body-sm text-body-sm text-center transition-all font-semibold" data-exp="1.0" type="button">
+              Early (2-4 yrs)
+            </button>
+<button class="exp-btn bg-slate-muted text-text-primary hover:bg-surface-container-highest py-2 px-2 rounded font-body-sm text-body-sm text-center transition-all" data-exp="1.12" type="button">
+              Mid (5-8 yrs)
+            </button>
+<button class="exp-btn bg-slate-muted text-text-primary hover:bg-surface-container-highest py-2 px-2 rounded font-body-sm text-body-sm text-center transition-all" data-exp="1.22" type="button">
+              Senior (8+ yrs)
+            </button>
+</div>
+</div>
+<!-- Step 5: Target University Tier & Fee -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<label class="font-label-table-header text-label-table-header text-text-secondary uppercase" for="fee-select">Step 5: Target University &amp; Total Tuition Fee</label>
+<span class="font-body-sm text-body-sm text-text-tertiary" id="custom-fee-label">Total: ₹1,75,000</span>
+</div>
+<div class="relative">
+<select class="w-full bg-slate-muted text-text-primary py-2.5 px-3 rounded font-body-md text-body-md appearance-none outline-none focus:bg-surface-container-high transition-colors cursor-pointer" id="fee-select">
+<option selected="" value="175000">NAAC A++ Tier-1 (Amity / Manipal / Jain) — ₹1,75,000</option>
+<option value="260000">Premium Brand (Symbiosis / NMIMS / SPJIMR Exec) — ₹2,60,000</option>
+<option value="120000">Value Accredited (LPU Online / Chandigarh Univ) — ₹1,20,000</option>
+<option value="60000">Central &amp; State Distance (IGNOU / DU-SOL) — ₹60,000</option>
+<option value="custom">Custom Investment Amount</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-text-tertiary pointer-events-none text-[20px]">expand_more</span>
+</div>
+<div class="hidden mt-2" id="custom-fee-box">
+<input class="w-full bg-slate-muted text-text-primary py-2 px-3 rounded font-body-md text-body-md outline-none" id="custom-fee-input" placeholder="Enter Total Fee in ₹ (e.g. 150000)" type="number"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full mt-space-xs bg-orange-vivid hover:bg-orange-hover text-on-secondary font-headline-sm text-headline-sm py-3.5 px-6 rounded shadow-md transition-all flex items-center justify-center gap-2" id="calculate-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+<span>Calculate My Projected 3-Year Career Hike &amp; ROI</span>
+</button>
+<p class="font-body-sm text-body-sm text-text-tertiary text-center">
+          ⚡ Based on empirical self-reported &amp; LinkedIn verified career trajectories of 5,420+ online alumni.
+        </p>
+</div>
+<!-- RIGHT COLUMN: DYNAMIC ROI & SALARY DASHBOARD -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- TOP METRIC CARDS -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-lg relative overflow-hidden shadow-md">
+<div class="absolute right-0 top-0 w-64 h-64 bg-secondary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm relative z-10">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-tertiary-fixed bg-tertiary-fixed/10 px-2.5 py-1 rounded-full font-bold">
+              AI Forecast Dashboard
+            </span>
+<span class="font-body-sm text-body-sm text-surface-container-high flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-badge"></span> High Confidence Score (94%)
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm relative z-10">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-lg flex flex-col justify-between">
+<span class="font-body-sm text-body-sm text-surface-container-high">Projected Post-Degree CTC</span>
+<div class="my-1">
+<div class="font-headline-xl text-headline-xl text-on-primary" id="res-post-ctc">₹8.80 L</div>
+<div class="font-label-badge text-label-badge text-tertiary-fixed font-bold flex items-center gap-0.5" id="res-jump-badge">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +76% Average Jump
+                </div>
+</div>
+<span class="font-body-sm text-body-sm text-surface-container-highest">Immediate 1st Year</span>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-lg flex flex-col justify-between">
+<span class="font-body-sm text-body-sm text-surface-container-high">Course Fee Payback</span>
+<div class="my-1">
+<div class="font-headline-xl text-headline-xl text-secondary-fixed" id="res-payback">4.2 Mos</div>
+<div class="font-label-badge text-label-badge text-secondary-fixed font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Break-Even Speed
+                </div>
+</div>
+<span class="font-body-sm text-body-sm text-surface-container-highest">Against Incremental Pay</span>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest/10 p-space-sm rounded-lg flex flex-col justify-between">
+<span class="font-body-sm text-body-sm text-surface-container-high">5-Yr Net Gain</span>
+<div class="my-1">
+<div class="font-headline-xl text-headline-xl text-tertiary-fixed" id="res-5yr-gain">+₹18.4 L</div>
+<div class="font-label-badge text-label-badge text-tertiary-fixed font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">account_balance</span> Cumulative Upside
+                </div>
+</div>
+<span class="font-body-sm text-body-sm text-surface-container-highest">After Subtracting Fee</span>
+</div>
+</div>
+</div>
+<!-- TRAJECTORY CHART / VISUAL COMPARISON -->
+<div class="bg-slate-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">5-Year CTC Trajectory Comparison</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">With Online Degree Upskilling vs. Stagnant Normal Appraisal (8%/yr)</p>
+</div>
+<div class="flex items-center gap-3 font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="text-text-primary font-medium">With Degree</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-slate-divider"></span>
+<span class="text-text-tertiary">Without Degree</span>
+</div>
+</div>
+</div>
+<!-- SVG Bar Chart -->
+<div class="w-full bg-slate-muted/40 p-space-sm rounded-lg">
+<div class="grid grid-cols-4 gap-2 text-center">
+<!-- Year 0 -->
+<div class="flex flex-col items-center gap-2">
+<div class="h-44 w-full flex items-end justify-center gap-1.5">
+<div class="w-6 sm:w-10 bg-slate-divider rounded-t" style="height: 30%;"></div>
+<div class="w-6 sm:w-10 bg-secondary-container rounded-t" style="height: 30%;"></div>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-primary" id="bar-y0">₹5.0L</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Year 0 (Now)</div>
+</div>
+<!-- Year 1 -->
+<div class="flex flex-col items-center gap-2">
+<div class="h-44 w-full flex items-end justify-center gap-1.5">
+<div class="w-6 sm:w-10 bg-slate-divider rounded-t" style="height: 33%;"></div>
+<div class="w-6 sm:w-10 bg-secondary-container rounded-t" style="height: 52%;"></div>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-primary" id="bar-y1">₹8.8L</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Year 1 (Grad)</div>
+</div>
+<!-- Year 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="h-44 w-full flex items-end justify-center gap-1.5">
+<div class="w-6 sm:w-10 bg-slate-divider rounded-t" style="height: 39%;"></div>
+<div class="w-6 sm:w-10 bg-secondary-container rounded-t" style="height: 74%;"></div>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-primary" id="bar-y3">₹13.5L</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Year 3 (Lateral)</div>
+</div>
+<!-- Year 5 -->
+<div class="flex flex-col items-center gap-2">
+<div class="h-44 w-full flex items-end justify-center gap-1.5">
+<div class="w-6 sm:w-10 bg-slate-divider rounded-t" style="height: 46%;"></div>
+<div class="w-6 sm:w-10 bg-secondary-container rounded-t" style="height: 98%;"></div>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-primary" id="bar-y5">₹19.2L</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Year 5 (Lead)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TOP 3 UNIVERSITY ROI MATCHES -->
+<div class="bg-slate-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Top High-ROI Accredited Matches</h3>
+<span class="font-label-badge text-label-badge text-emerald-badge bg-emerald-surface px-2 py-0.5 rounded font-bold">UGC-DEB Validated</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Univ 1 -->
+<div class="bg-slate-muted/50 p-space-sm rounded-lg flex items-center justify-between gap-space-xs flex-wrap sm:flex-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-surface flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">school</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Manipal University Jaipur (MUJ Online)</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">NAAC A++ • NIRF #64 • 100% Proctored Exams</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-headline-sm text-headline-sm text-emerald-badge">3.8 Mo Payback</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Median CTC: ₹8.50 LPA</div>
+</div>
+</div>
+<!-- Univ 2 -->
+<div class="bg-slate-muted/50 p-space-sm rounded-lg flex items-center justify-between gap-space-xs flex-wrap sm:flex-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-surface flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">account_balance</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Amity University Online</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">NAAC A+ • QS World Ranked • Global Faculty Masterclasses</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-headline-sm text-headline-sm text-emerald-badge">4.5 Mo Payback</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Median CTC: ₹8.20 LPA</div>
+</div>
+</div>
+<!-- Univ 3 -->
+<div class="bg-slate-muted/50 p-space-sm rounded-lg flex items-center justify-between gap-space-xs flex-wrap sm:flex-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-surface flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">verified</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Jain (Deemed-to-be) University Online</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">NAAC A++ • AICTE Approved • 70+ Hiring Partners</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-headline-sm text-headline-sm text-emerald-badge">3.5 Mo Payback</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Median CTC: ₹7.80 LPA</div>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs pt-space-2xs">
+<button class="bg-orange-light text-secondary hover:bg-orange-vivid hover:text-on-secondary font-headline-sm text-headline-sm py-2.5 px-4 rounded transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download ROI PDF Report</span>
+</button>
+<button class="bg-emerald-surface text-emerald-badge hover:bg-emerald-badge hover:text-on-tertiary font-headline-sm text-headline-sm py-2.5 px-4 rounded transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Talk to Counselor Free</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- VALUE MATRIX SECTION: ONLINE VS ON-CAMPUS VS NO DEGREE -->
+<section class="w-full bg-slate-surface py-space-3xl">
+<div class="max-w-container-max mx-auto px-gutter-desktop flex flex-col gap-space-xl">
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-space-2xs">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-secondary-container font-bold">Comprehensive Capital Allocation Comparison</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">The True Mathematics of Higher Education ROI</h2>
+<p class="font-body-md text-body-md text-text-secondary">Why working professionals achieve a 3.4x higher net return via accredited online programs compared to full-time regular degrees.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left bg-slate-muted/20 rounded-xl overflow-hidden shadow-sm">
+<thead class="bg-primary-container text-on-primary font-label-table-header text-label-table-header uppercase">
+<tr>
+<th class="py-4 px-5">Financial &amp; Career Vectors</th>
+<th class="py-4 px-5 bg-navy-surface text-tertiary-fixed">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stars</span> UGC Online Degree
+                </div>
+</th>
+<th class="py-4 px-5">Regular On-Campus MBA</th>
+<th class="py-4 px-5">No Degree (Status Quo)</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-text-primary">
+<!-- Row 1 -->
+<tr class="bg-slate-surface">
+<td class="py-4 px-5 font-semibold">Total Tuition &amp; Academic Fees</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge">₹1.5 L – ₹2.8 Lakhs</td>
+<td class="py-4 px-5 text-text-secondary">₹12.0 L – ₹25.0 Lakhs</td>
+<td class="py-4 px-5 text-text-tertiary">₹0</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-slate-muted/30">
+<td class="py-4 px-5 font-semibold">Opportunity Cost (2-Year Salary Forgone)</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-emerald-badge text-[18px]">check_circle</span> ₹0 (Continue Full-Time Job)
+                </div>
+</td>
+<td class="py-4 px-5 text-error">₹10.0 L – ₹16.0 Lakhs (Lost Income)</td>
+<td class="py-4 px-5 text-text-tertiary">₹0</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-slate-surface">
+<td class="py-4 px-5 font-semibold">Living &amp; Relocation Expenses</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge">₹0 (Study from Home)</td>
+<td class="py-4 px-5 text-text-secondary">₹3.0 L – ₹6.0 Lakhs (Hostel + Food)</td>
+<td class="py-4 px-5 text-text-tertiary">₹0</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-slate-muted/30">
+<td class="py-4 px-5 font-semibold">Total Financial Investment Burden</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge">₹1.5 L – ₹2.8 Lakhs</td>
+<td class="py-4 px-5 text-error font-semibold">₹25.0 L – ₹47.0 Lakhs</td>
+<td class="py-4 px-5 text-text-tertiary">₹0</td>
+</tr>
+<!-- Row 5 -->
+<tr class="bg-slate-surface">
+<td class="py-4 px-5 font-semibold">Work Experience Gained During Degree</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge">+2 Years Solid Tenure</td>
+<td class="py-4 px-5 text-text-secondary">0 Years (Career Resume Pause)</td>
+<td class="py-4 px-5 text-text-secondary">+2 Years Routine Tenure</td>
+</tr>
+<!-- Row 6 -->
+<tr class="bg-slate-muted/30">
+<td class="py-4 px-5 font-semibold">Average Payback / Break-Even Horizon</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge">3 to 6 Months</td>
+<td class="py-4 px-5 text-text-secondary">36 to 60 Months (3-5 Years)</td>
+<td class="py-4 px-5 text-text-tertiary">N/A (No Uplift)</td>
+</tr>
+<!-- Row 7 -->
+<tr class="bg-slate-surface">
+<td class="py-4 px-5 font-semibold">5-Year Net Compounded Wealth Added</td>
+<td class="py-4 px-5 bg-emerald-surface/40 font-bold text-emerald-badge text-data-metric-sm">+₹22.5 Lakhs (Net)</td>
+<td class="py-4 px-5 text-text-primary font-semibold">+₹14.8 Lakhs (After Heavy Debt)</td>
+<td class="py-4 px-5 text-text-tertiary font-semibold">+₹4.2 Lakhs (Baseline only)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ALUMNI TRANSITIONS (PHOTO-RICH PROOF SECTION) -->
+<section class="w-full max-w-container-max mx-auto px-gutter-desktop py-space-3xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-sm">
+<div class="flex flex-col gap-space-2xs max-w-xl">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-secondary-container font-bold">Empirical Career Proof</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Verified Alumni Career Transitions</h2>
+<p class="font-body-md text-body-md text-text-secondary">Real salary shifts documented from working executives who completed UGC-DEB approved degrees while continuing full-time jobs.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-badge">security</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Audited via LinkedIn &amp; Offer Letters</span>
+</div>
+</div>
+<!-- Alumni Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-slate-surface p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Professional headshot of a confident Indian male corporate analyst wearing modern navy blazer in a bright contemporary tech office with glass walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3i7wG8IeZ8eWRNQxn_0gRp2Q1DDNWqhrn9oupvbGsevh5tcGDgYVfIMZywYW6rGiKcEEAQlBO2WCoCO2ijtUR1fPyAfGf5FNOpUrx9Cu0KDn3n1-OInCoDsSlFwedTup4SsPuG5ZPTTjrJpTWzFmk1N2xrIN6WPYTtJud3ppG6JilFXsS36vo2tgzzhRJanHYIF2T1Q8lYqtrtXDOVlF7TauwYJi3P-pgX2miulMwuEfjrLBRFNpLsQ"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Ankit Srivastava</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Online MBA (Data Analytics) • MUJ</div>
+</div>
+</div>
+<div class="bg-slate-muted/50 p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-tertiary">Previous Role:</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-secondary">Tech Support • ₹3.8 LPA</span>
+</div>
+<div class="flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</div>
+<div class="flex items-center justify-between bg-emerald-surface p-2 rounded">
+<span class="font-body-sm text-body-sm font-semibold text-emerald-badge">New Role:</span>
+<span class="font-headline-sm text-headline-sm text-emerald-badge">Senior BI Analyst • ₹8.9 LPA</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary italic">
+            "I completed my MBA weekend assignments without quitting my tech support shift. Within 2 months of graduation, Accenture hired me into their BI division with a 134% hike."
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-badge text-label-badge text-text-tertiary">
+<span>Payback: 3.2 Months</span>
+<span class="text-emerald-badge font-bold">Hired at Accenture</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-slate-surface p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Professional studio portrait of an ambitious young Indian female corporate marketing specialist smiling in a minimalist workspace with soft warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXTpCTsVhNd6g2FNgKI1V-KKs20r816veXv1q3-NnDsc0Q1xy06oPpTk9J_yTLWCb_3o_v9UMAu7BPLDY_EbfmNS5oyg8myWwb8jLZ0k0k2Kh73pef-1YZ40Vw6FQigAMJj2C50OMOwKda7wvMRSh_QyKXRyWFK27Yb7Rla4sjSjveJ2ze_zX-VeNUN5eqUnh7gktfwx36-mas8Bu5tkoFd6-30JQKDNvEwzJusbTiqoAbjyU408kCXw"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Pooja Nambiar</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Online MBA (Digital Growth) • Amity</div>
+</div>
+</div>
+<div class="bg-slate-muted/50 p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-tertiary">Previous Role:</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-secondary">Sales Exec • ₹4.2 LPA</span>
+</div>
+<div class="flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</div>
+<div class="flex items-center justify-between bg-emerald-surface p-2 rounded">
+<span class="font-body-sm text-body-sm font-semibold text-emerald-badge">New Role:</span>
+<span class="font-headline-sm text-headline-sm text-emerald-badge">Product Marketing Lead • ₹9.8 LPA</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary italic">
+            "The brand project capstones gave me concrete portfolio artifacts. I wasn't just talking theory during interviews — I had live campaign numbers to prove my capability."
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-badge text-label-badge text-text-tertiary">
+<span>Payback: 3.9 Months</span>
+<span class="text-emerald-badge font-bold">Hired at Zomato</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-slate-surface p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of an experienced Indian male software engineer in spectacles looking confident in an ultra-modern high-tech software development lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpoEljVSz2zBYXzBQsUqqcdqIetC5qOp_KJN5pRmhvmUtEYyaVJQ2kbQ73q6_bWJJntHuWr9pGlZuahesfg6mnDWmT7NRTzD1wTztMYMnFgE09qGaBq3wtfppbAuuy2at73ZjUGTpUpTH3f74LzEGkNe4rbQrpiGo71gUPAt6p6FIxNLT8BsBE6frDPIxQ3uaVyKpp5ubqKkmleiU26QKEXti6b3mofW-yuvxV-tdueJJmO5g9BH66RQ"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Rohan Sengupta</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Online MCA (Cloud Computing) • Jain</div>
+</div>
+</div>
+<div class="bg-slate-muted/50 p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-tertiary">Previous Role:</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-secondary">Junior Web Dev • ₹4.5 LPA</span>
+</div>
+<div class="flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</div>
+<div class="flex items-center justify-between bg-emerald-surface p-2 rounded">
+<span class="font-body-sm text-body-sm font-semibold text-emerald-badge">New Role:</span>
+<span class="font-headline-sm text-headline-sm text-emerald-badge">Cloud Solutions Architect • ₹12.4 LPA</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary italic">
+            "Having an accredited master's degree eliminated the statutory glass ceiling at Tier-1 MNCs. My compensation jumped almost 3x within 14 months of enrollment."
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-badge text-label-badge text-text-tertiary">
+<span>Payback: 2.8 Months</span>
+<span class="text-emerald-badge font-bold">Hired at Cognizant</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQS ACCORDION SECTION -->
+<section class="w-full bg-slate-surface py-space-3xl">
+<div class="max-w-container-editorial mx-auto px-gutter-desktop flex flex-col gap-space-xl">
+<div class="text-center flex flex-col gap-space-2xs">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-secondary-container font-bold">Knowledge Base</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Frequently Asked Questions: Career ROI &amp; Degree Legality</h2>
+<p class="font-body-md text-body-md text-text-secondary">Answers to the most critical employer acceptance and regulatory questions.</p>
+</div>
+<div class="flex flex-col gap-space-sm" id="faq-accordion">
+<!-- FAQ 1 -->
+<div class="bg-slate-muted/40 rounded-xl p-space-md cursor-pointer faq-item">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Do top MNCs and corporates accept online degrees at par with regular on-campus degrees?</h3>
+<span class="material-symbols-outlined text-text-tertiary transition-transform">expand_more</span>
+</div>
+<div class="faq-answer pt-space-sm text-text-secondary font-body-md text-body-md">
+            Yes. As per the official University Grants Commission (Open and Distance Learning Programmes and Online Programmes) Regulations, 2020 (Gazette Notification Section 22), degrees acquired through UGC-DEB entitled online and ODL modes from recognized universities are treated at par with degrees acquired through conventional regular face-to-face higher education modes for both corporate hiring and central/state government examinations.
+          </div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-slate-muted/40 rounded-xl p-space-md cursor-pointer faq-item">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">How does UniversityJano compute the payback period and 5-year ROI?</h3>
+<span class="material-symbols-outlined text-text-tertiary transition-transform">expand_more</span>
+</div>
+<div class="faq-answer pt-space-sm text-text-secondary font-body-md text-body-md">
+            Our algorithm measures the net difference between your post-degree starting package and your baseline salary trajectory. The payback period formula is: <code class="bg-slate-surface px-1.5 py-0.5 rounded text-secondary-container font-semibold">Total Course Fee ÷ (Post-Degree Monthly In-hand Salary – Pre-Degree Monthly In-hand Salary)</code>. The 5-year compounding wealth metric assumes standard lateral transitions at Year 3 and leadership appraisals at Year 5 based on verified alumni benchmark metrics.
+          </div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-slate-muted/40 rounded-xl p-space-md cursor-pointer faq-item">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Does the final degree certificate say "Online Mode" or look different?</h3>
+<span class="material-symbols-outlined text-text-tertiary transition-transform">expand_more</span>
+</div>
+<div class="faq-answer pt-space-sm text-text-secondary font-body-md text-body-md">
+            UGC regulations state that the degree certificate confers the recognized title (e.g. Master of Business Administration, Master of Computer Applications). Some universities indicate the mode in accordance with UGC guidelines, but statutory equivalence remains equal. Employers focus primarily on your portfolio, practical execution skills, and institutional accreditation (NAAC A++, NIRF ranking).
+          </div>
+</div>
+<!-- FAQ 4 -->
+<div class="bg-slate-muted/40 rounded-xl p-space-md cursor-pointer faq-item">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Can I finance my online degree through 0% interest monthly EMI?</h3>
+<span class="material-symbols-outlined text-text-tertiary transition-transform">expand_more</span>
+</div>
+<div class="faq-answer pt-space-sm text-text-secondary font-body-md text-body-md">
+            Yes. Most premier partner universities (Manipal, Amity, Jain, NMIMS, LPU) offer direct 0% interest monthly installments across 10 to 24 months through NBFC education financing partners (such as GrayQuest, Propelld, LiquiLoans). You can start an online degree with monthly payments as low as ₹4,999 without any upfront collateral.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- HIGH-CONVERSION FOOTER BANNER -->
+<section class="w-full bg-navy-deep text-on-primary py-space-3xl relative overflow-hidden">
+<div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter-desktop relative z-10">
+<div class="bg-gradient-to-r from-primary-container to-navy-surface p-space-xl sm:p-space-2xl rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-space-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-1.5 text-tertiary-fixed font-label-badge text-label-badge uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">verified</span> 100% Free • Neutral • Student-First Advice
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary">
+            Confused Between 3+ Universities? Let Our AI &amp; Counselors Assist.
+          </h2>
+<p class="font-body-md text-body-md text-surface-container-high leading-relaxed">
+            Get an unbiased, customized degree comparison report evaluating semester fees, LMS technology, proctored exam difficulty, and official UGC gazette approvals.
+          </p>
+<div class="flex items-center gap-space-md pt-space-2xs text-surface-container-highest font-body-sm text-body-sm flex-wrap">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-tertiary-fixed text-[16px]">check</span> Zero Spam Guarantee</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-tertiary-fixed text-[16px]">check</span> No Commission Bias</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-tertiary-fixed text-[16px]">check</span> Direct Admission Link</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full lg:w-auto shrink-0">
+<a class="w-full sm:w-auto text-center bg-orange-vivid hover:bg-orange-hover text-on-secondary font-headline-sm text-headline-sm px-6 py-3.5 rounded shadow-lg transition-all flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+<span>Book Free Counselor Call</span>
+</a>
+<a class="w-full sm:w-auto text-center bg-emerald-badge hover:bg-emerald-badge/90 text-on-tertiary font-headline-sm text-headline-sm px-6 py-3.5 rounded shadow-lg transition-all flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Career Expert</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE LOGIC JAVASCRIPT -->
+<script>
+    (function() {
+      // DOM Elements
+      var ctcSlider = document.getElementById('ctc-slider');
+      var ctcInput = document.getElementById('ctc-input');
+      var degreePills = document.querySelectorAll('.degree-pill');
+      var expBtns = document.querySelectorAll('.exp-btn');
+      var specSelect = document.getElementById('spec-select');
+      var feeSelect = document.getElementById('fee-select');
+      var customFeeBox = document.getElementById('custom-fee-box');
+      var customFeeInput = document.getElementById('custom-fee-input');
+      var customFeeLabel = document.getElementById('custom-fee-label');
+      var calculateBtn = document.getElementById('calculate-btn');
 
-    <div style="max-width:900px;margin:0 auto;padding:2rem 1.25rem 0;">
-      <h1 style="color:var(--navy-900);font-size:1.6rem;">Online Degree Salary Jump &amp; ROI Calculator</h1>
-      <p style="color:var(--text-muted);">Estimate your expected salary hike, payback period, and 5-year career return before investing in an online degree.</p>
-    </div>
-    <div id="roi-app-root"></div>
-    <script>
-      (function() {
-        function mountRoi() {
-          var container = document.getElementById('roi-app-root');
-          if (container && window.ROICalculatorPage) {
-            ReactDOM.createRoot(container).render(
-              React.createElement(window.ROICalculatorPage, {
-                onOpenCounselling: function(data) {
-                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want a career transition roadmap for ' + (data.course || 'Online Degree'));
-                }
-              })
-            );
+      // Result Elements
+      var resPostCtc = document.getElementById('res-post-ctc');
+      var resJumpBadge = document.getElementById('res-jump-badge');
+      var resPayback = document.getElementById('res-payback');
+      var res5yrGain = document.getElementById('res-5yr-gain');
+      var barY0 = document.getElementById('bar-y0');
+      var barY1 = document.getElementById('bar-y1');
+      var barY3 = document.getElementById('bar-y3');
+      var barY5 = document.getElementById('bar-y5');
+
+      var currentDegreeBoost = 1.76; // MBA Default
+      var currentExpMultiplier = 1.0; // Early Career
+
+      // Synchronize Slider & Input
+      if (ctcSlider && ctcInput) {
+        ctcSlider.addEventListener('input', function() {
+          ctcInput.value = ctcSlider.value;
+          updateCalculations();
+        });
+
+        ctcInput.addEventListener('input', function() {
+          var val = parseInt(ctcInput.value, 10) || 200000;
+          if (val > 3000000) val = 3000000;
+          ctcSlider.value = val;
+          updateCalculations();
+        });
+      }
+
+      // Handle Degree Selection
+      degreePills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          degreePills.forEach(function(p) {
+            p.classList.remove('active', 'bg-primary', 'text-on-primary');
+            p.classList.add('bg-slate-muted', 'text-text-primary');
+          });
+          pill.classList.add('active', 'bg-primary', 'text-on-primary');
+          pill.classList.remove('bg-slate-muted', 'text-text-primary');
+          currentDegreeBoost = parseFloat(pill.getAttribute('data-boost')) || 1.76;
+          updateCalculations();
+        });
+      });
+
+      // Handle Experience Selection
+      expBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          expBtns.forEach(function(b) {
+            b.classList.remove('active', 'bg-primary', 'text-on-primary', 'font-semibold');
+            b.classList.add('bg-slate-muted', 'text-text-primary');
+          });
+          btn.classList.add('active', 'bg-primary', 'text-on-primary', 'font-semibold');
+          btn.classList.remove('bg-slate-muted', 'text-text-primary');
+          currentExpMultiplier = parseFloat(btn.getAttribute('data-exp')) || 1.0;
+          updateCalculations();
+        });
+      });
+
+      // Handle Fee Dropdown Change
+      if (feeSelect) {
+        feeSelect.addEventListener('change', function() {
+          if (feeSelect.value === 'custom') {
+            customFeeBox.classList.remove('hidden');
           } else {
-            setTimeout(mountRoi, 50);
+            customFeeBox.classList.add('hidden');
+            var val = parseInt(feeSelect.value, 10);
+            customFeeLabel.textContent = 'Total: ₹' + val.toLocaleString('en-IN');
           }
+          updateCalculations();
+        });
+      }
+
+      if (customFeeInput) {
+        customFeeInput.addEventListener('input', function() {
+          var val = parseInt(customFeeInput.value, 10) || 175000;
+          customFeeLabel.textContent = 'Total: ₹' + val.toLocaleString('en-IN');
+          updateCalculations();
+        });
+      }
+
+      if (specSelect) {
+        specSelect.addEventListener('change', updateCalculations);
+      }
+
+      if (calculateBtn) {
+        calculateBtn.addEventListener('click', updateCalculations);
+      }
+
+      function updateCalculations() {
+        var baseCtc = parseInt(ctcSlider.value, 10) || 500000;
+        var specMult = parseFloat(specSelect.value) || 1.0;
+
+        // Effective Hike calculation based on inputs
+        // Formula: baseCtc * (Degree Boost * Spec * Exp)
+        // With diminishing factor for higher base packages to stay realistic
+        var hikeRatio = currentDegreeBoost * specMult * currentExpMultiplier;
+        if (baseCtc > 1200000) {
+          hikeRatio = 1 + (hikeRatio - 1) * 0.75;
         }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountRoi);
-        else mountRoi();
-      })();
-    </script>
-  
+
+        var postCtc = Math.round(baseCtc * hikeRatio);
+        var hikePct = Math.round(((postCtc - baseCtc) / baseCtc) * 100);
+
+        // Course fee
+        var totalFee = 175000;
+        if (feeSelect.value === 'custom') {
+          totalFee = parseInt(customFeeInput.value, 10) || 175000;
+        } else {
+          totalFee = parseInt(feeSelect.value, 10) || 175000;
+        }
+
+        // Payback period in months: totalFee / ((postCtc - baseCtc) / 12)
+        var monthlyIncremental = (postCtc - baseCtc) / 12;
+        var paybackMonths = monthlyIncremental > 0 ? (totalFee / monthlyIncremental).toFixed(1) : '12.0';
+        if (paybackMonths < 1.0) paybackMonths = '1.0';
+
+        // 5-Year net compound upside
+        var year1 = postCtc;
+        var year3 = Math.round(year1 * 1.48);
+        var year5 = Math.round(year3 * 1.42);
+
+        // Compounded without degree baseline (8% per year)
+        var baseYear1 = Math.round(baseCtc * 1.08);
+        var baseYear2 = Math.round(baseYear1 * 1.08);
+        var baseYear3 = Math.round(baseYear2 * 1.08);
+        var baseYear4 = Math.round(baseYear3 * 1.08);
+        var baseYear5 = Math.round(baseYear4 * 1.08);
+        var totalBase5Yr = baseYear1 + baseYear2 + baseYear3 + baseYear4 + baseYear5;
+
+        var withDegYear2 = Math.round(year1 * 1.20);
+        var withDegYear4 = Math.round(year3 * 1.22);
+        var totalWithDeg5Yr = year1 + withDegYear2 + year3 + withDegYear4 + year5;
+
+        var net5YrGain = (totalWithDeg5Yr - totalBase5Yr - totalFee);
+        var net5YrLakhs = (net5YrGain / 100000).toFixed(1);
+
+        // Format outputs
+        resPostCtc.textContent = '₹' + (postCtc / 100000).toFixed(2) + ' L';
+        resJumpBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">trending_up</span> +' + hikePct + '% Projected Jump';
+        resPayback.textContent = paybackMonths + ' Mos';
+        res5yrGain.textContent = '+₹' + net5YrLakhs + ' L';
+
+        // Update bar chart indicators
+        barY0.textContent = '₹' + (baseCtc / 100000).toFixed(1) + 'L';
+        barY1.textContent = '₹' + (year1 / 100000).toFixed(1) + 'L';
+        barY3.textContent = '₹' + (year3 / 100000).toFixed(1) + 'L';
+        barY5.textContent = '₹' + (year5 / 100000).toFixed(1) + 'L';
+      }
+
+      // Initialize calculation on load
+      updateCalculations();
+    })();
+  </script>
+</div></main>
 {% include site-footer.html %}
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
 </body>

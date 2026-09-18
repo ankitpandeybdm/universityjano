@@ -23,36 +23,687 @@ title: "0% Interest Monthly EMI & Fee Budget Planner | UniversityJano.com"
 <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"surface-container-highest":"#d3e4fe","orange-light":"#FFF7ED","surface-variant":"#d3e4fe","navy-subtle":"#1E3A8A","on-primary-fixed-variant":"#38466a","surface-dim":"#cbdbf5","tertiary-fixed":"#97f5cc","surface-tint":"#505e83","navy-deep":"#070F22","on-secondary-container":"#592600","secondary-container":"#fb7800","tertiary":"#000301","emerald-badge":"#047857","surface-container-lowest":"#ffffff","error":"#ba1a1a","text-secondary":"#475569","primary":"#00020a","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","outline-variant":"#c5c6cf","on-secondary-fixed":"#321200","emerald-surface":"#ECFDF5","tertiary-fixed-dim":"#7bd8b1","on-tertiary-fixed-variant":"#00513a","slate-border":"#E2E8F0","navy-surface":"#0F2654","emerald-border":"#A7F3D0","inverse-on-surface":"#eaf1ff","inverse-surface":"#213145","on-background":"#0b1c30","slate-divider":"#CBD5E1","on-secondary":"#ffffff","on-secondary-fixed-variant":"#753400","on-primary-fixed":"#0a1a3c","secondary":"#994700","text-tertiary":"#64748B","background":"#f8f9ff","surface-container-low":"#eff4ff","on-tertiary-container":"#349571","outline":"#75777f","orange-vivid":"#FF7A00","primary-fixed-dim":"#b7c6f1","secondary-fixed":"#ffdbc8","slate-muted":"#F1F5F9","on-tertiary-fixed":"#002115","inverse-primary":"#b7c6f1","surface-container-high":"#dce9ff","on-primary":"#ffffff","orange-hover":"#EA580C","on-primary-container":"#7684ac","primary-container":"#0b1b3d","on-error-container":"#93000a","on-error":"#ffffff","primary-fixed":"dae2ff","tertiary-container":"#002216","slate-canvas":"#F8FAFC","error-container":"#ffdad6","on-surface":"#0b1c30","slate-surface":"#FFFFFF","surface":"#f8f9ff","on-surface-variant":"#45464e","text-primary":"#0F172A","secondary-fixed-dim":"#ffb68b","surface-container":"#e5eeff","badge-ugc-bg":"#ECFDF5","badge-nirf-text":"#1D4ED8","surface-card":"#FFFFFF","border-subtle":"#E2E8F0","brand-whatsapp-hover":"#1EBE5D","badge-nirf-bg":"#EFF6FF","badge-ugc-text":"#047857","badge-naac-text":"#4338CA","surface-canvas":"#F8FAFC","text-muted":"#64748B","badge-naac-bg":"#EEF2FF","brand-whatsapp":"#25D366"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","space-md":"1rem","space-3xl":"4rem","container-max":"1280px","space-2xs":"0.25rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-2xl":"3rem","space-xl":"2rem","space-xs":"0.5rem","space-sm":"0.75rem","container-editorial":"840px","gutter":"1.5rem","margin-mobile":"1rem","margin":"2rem"},"fontFamily":{"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"data-metric-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"label-table-header":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-badge":["Inter"],"display-hero":["Plus Jakarta Sans"],"data-metric-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"label-md":["Inter"],"display-lg":["Plus Jakarta Sans"],"label-lg":["Inter"]},"fontSize":{"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"data-metric-sm":["16px",{"lineHeight":"20px","fontWeight":"700"}],"display-hero-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-table-header":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"800"}],"data-metric-lg":["24px",{"lineHeight":"28px","fontWeight":"800"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script>
 </head>
-<body>
+<body class="bg-slate-canvas font-body-md text-body-md text-on-surface antialiased">
 {% include site-header.html %}
+<main class="w-full bg-slate-canvas min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Background Top Accent Banner -->
+<section class="relative bg-primary-container text-on-primary py-space-xl px-gutter-desktop overflow-hidden">
+<div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-navy-subtle/20 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-24 w-80 h-80 rounded-full bg-emerald-badge/10 blur-2xl pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="flex flex-wrap items-center gap-2 mb-space-xs">
+<span class="bg-emerald-surface text-emerald-badge font-label-badge text-label-badge uppercase px-space-xs py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">lock_reset</span> 100% Zero Cost Financing
+        </span>
+<span class="bg-surface-container-highest/20 text-surface-container-high font-label-badge text-label-badge uppercase px-space-xs py-0.5 rounded-full">
+          NBFC &amp; RBI Approved Partners
+        </span>
+<span class="text-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">bolt</span> Instant Pre-Approval
+        </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end">
+<div class="lg:col-span-8">
+<h1 class="font-headline-xl text-headline-xl text-on-primary tracking-tight mb-space-xs">
+            Online Degree 0% EMI &amp; Monthly Budget Calculator
+          </h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl leading-relaxed">
+            Transparent fee schedules with absolutely zero hidden processing fees, no collateral, and instantaneous soft eligibility verification that will never impact your CIBIL score.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-xs justify-end">
+<div class="bg-navy-surface p-space-sm rounded-xl flex items-center gap-space-sm shadow-md">
+<div class="w-10 h-10 rounded-full bg-emerald-surface text-emerald-badge flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-primary">₹38.4+ Crore</div>
+<div class="font-body-sm text-body-sm text-surface-variant">Tuition Financed at 0% in 2024-25</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dual-Pane Interactive Calculator Workstation -->
+<section class="py-space-xl px-gutter-desktop max-w-container-max mx-auto w-full -mt-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANE: Interactive Controls -->
+<div class="lg:col-span-7 bg-slate-surface rounded-xl shadow-md p-space-md lg:p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b-0">
+<div>
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-text-tertiary">Step 1 • Customize Plan</span>
+<h2 class="font-headline-md text-headline-md text-text-primary">Configure Your Degree Program</h2>
+</div>
+<button class="font-body-sm text-body-sm text-navy-subtle hover:text-orange-vivid transition-colors flex items-center gap-1" id="resetDefaultsBtn">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span> Reset
+          </button>
+</div>
+<!-- Course Selector -->
+<div>
+<label class="block font-headline-sm text-headline-sm text-text-primary mb-space-2xs">Select Program / Degree</label>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="courseButtonContainer">
+<button class="course-pill py-2 px-3 rounded-lg text-left transition-all bg-surface-container-high text-primary font-headline-sm text-headline-sm shadow-sm" data-course-fee="180000" data-course-name="Online MBA" type="button">
+<span class="block font-headline-sm text-headline-sm">Online MBA</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Avg ₹1,80,000</span>
+</button>
+<button class="course-pill py-2 px-3 rounded-lg text-left transition-all bg-slate-muted text-text-secondary hover:bg-surface-container" data-course-fee="140000" data-course-name="Online MCA" type="button">
+<span class="block font-headline-sm text-headline-sm">Online MCA</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Avg ₹1,40,000</span>
+</button>
+<button class="course-pill py-2 px-3 rounded-lg text-left transition-all bg-slate-muted text-text-secondary hover:bg-surface-container" data-course-fee="120000" data-course-name="Online BBA" type="button">
+<span class="block font-headline-sm text-headline-sm">Online BBA</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Avg ₹1,20,000</span>
+</button>
+<button class="course-pill py-2 px-3 rounded-lg text-left transition-all bg-slate-muted text-text-secondary hover:bg-surface-container" data-course-fee="135000" data-course-name="Online BCA" type="button">
+<span class="block font-headline-sm text-headline-sm">Online BCA</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Avg ₹1,35,000</span>
+</button>
+<button class="course-pill py-2 px-3 rounded-lg text-left transition-all bg-slate-muted text-text-secondary hover:bg-surface-container col-span-2 sm:col-span-2" data-course-fee="240000" data-course-name="Data Science PG" type="button">
+<span class="block font-headline-sm text-headline-sm">Executive Data Science &amp; AI</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Avg ₹2,40,000</span>
+</button>
+</div>
+</div>
+<!-- University Selector Quick Preset -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-navy-subtle text-[20px]">school</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Featured Partner Universities</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Auto-loads accredited tuition structures</div>
+</div>
+</div>
+<select class="bg-slate-surface text-text-primary font-body-md text-body-md py-1.5 px-3 rounded-lg shadow-sm focus:outline-none focus:ring-0" id="universityPreset">
+<option value="custom">Custom / Other Institution</option>
+<option value="185000">Manipal University Online (₹1,85,000)</option>
+<option value="160000">Amity University Online (₹1,60,000)</option>
+<option value="210000">NMIMS CDOE Online (₹2,10,000)</option>
+<option value="130000">Jain University Online (₹1,30,000)</option>
+<option value="260000">BITS Pilani Work Integrated (₹2,60,000)</option>
+</select>
+</div>
+<!-- Fee Slider Control -->
+<div class="bg-slate-canvas p-space-md rounded-xl shadow-inner">
+<div class="flex items-center justify-between mb-2">
+<label class="font-headline-sm text-headline-sm text-text-primary" for="feeSlider">Tuition / Total Program Fee</label>
+<div class="flex items-center bg-slate-surface px-3 py-1 rounded shadow-sm text-text-primary font-data-metric-sm text-data-metric-sm">
+              ₹ <span class="ml-1" id="feeDisplayInput">1,80,000</span>
+</div>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-orange-vivid" id="feeSlider" max="400000" min="60000" step="5000" type="range" value="180000"/>
+<div class="flex justify-between font-body-sm text-body-sm text-text-tertiary mt-1">
+<span>₹60,000</span>
+<span>₹2,00,000</span>
+<span>₹4,00,000</span>
+</div>
+</div>
+<!-- Repayment Tenure Options -->
+<div>
+<label class="block font-headline-sm text-headline-sm text-text-primary mb-space-2xs">Repayment Duration</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="tenureContainer">
+<button class="tenure-btn py-2.5 px-2 rounded-lg text-center transition-all bg-slate-muted text-text-secondary hover:bg-surface-container" data-months="6" type="button">
+<span class="block font-headline-sm text-headline-sm">6 Months</span>
+<span class="block font-body-sm text-body-sm text-emerald-badge">Fast Track</span>
+</button>
+<button class="tenure-btn py-2.5 px-2 rounded-lg text-center transition-all bg-surface-container-high text-primary font-headline-sm text-headline-sm shadow-sm" data-months="12" type="button">
+<span class="block font-headline-sm text-headline-sm">12 Months</span>
+<span class="block font-body-sm text-body-sm text-secondary font-label-badge text-label-badge uppercase">Most Popular</span>
+</button>
+<button class="tenure-btn py-2.5 px-2 rounded-lg text-center transition-all bg-slate-muted text-text-secondary hover:bg-surface-container" data-months="24" type="button">
+<span class="block font-headline-sm text-headline-sm">24 Months</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Affordable</span>
+</button>
+<button class="tenure-btn py-2.5 px-2 rounded-lg text-center transition-all bg-slate-muted text-text-secondary hover:bg-surface-container" data-months="36" type="button">
+<span class="block font-headline-sm text-headline-sm">36 Months</span>
+<span class="block font-body-sm text-body-sm text-text-tertiary">Lowest EMI</span>
+</button>
+</div>
+</div>
+<!-- Down Payment Toggle & Preset -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm text-text-primary">
+<span class="material-symbols-outlined text-emerald-badge text-[18px]">verified</span>
+<span>Down Payment Option</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-tertiary">No upfront advance token required under verified quota</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="downpay-btn px-3 py-1.5 rounded text-on-secondary bg-orange-vivid font-headline-sm text-headline-sm shadow-sm transition-all" id="zeroDownBtn" type="button">
+              ₹0 Downpayment
+            </button>
+<button class="downpay-btn px-3 py-1.5 rounded text-text-secondary bg-slate-surface hover:bg-surface-container font-headline-sm text-headline-sm shadow-sm transition-all" id="tenPercentDownBtn" type="button">
+              10% Down
+            </button>
+</div>
+</div>
+<!-- Direct Soft-Check Form Fields -->
+<div class="pt-space-xs">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-text-tertiary">Step 2 • Instant Verification</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs mt-1">
+<div>
+<label class="block font-body-sm text-body-sm text-text-secondary mb-1" for="applicantPhone">WhatsApp / Phone (For Pre-Sanction)</label>
+<input class="w-full bg-slate-surface text-text-primary font-body-md text-body-md px-3 py-2 rounded shadow-sm focus:outline-none placeholder:text-outline-variant" id="applicantPhone" placeholder="+91 98765 43210" type="tel"/>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-text-secondary mb-1" for="employmentStatus">Current Work Profile</label>
+<select class="w-full bg-slate-surface text-text-primary font-body-md text-body-md px-3 py-2 rounded shadow-sm focus:outline-none" id="employmentStatus">
+<option value="salaried">Salaried (Min ₹15,000 / mo)</option>
+<option value="self">Self-Employed / Business</option>
+<option value="student">Student (With Co-Applicant / Parent)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: Live Calculation Card & Conversion Engine -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Primary Sticky Breakdown Card -->
+<div class="bg-primary-container text-on-primary rounded-xl shadow-xl p-space-md lg:p-space-lg relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-8 -translate-y-8 w-44 h-44 rounded-full bg-orange-vivid/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<span class="bg-emerald-badge text-on-tertiary font-label-badge text-label-badge uppercase px-space-xs py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> 0% Guaranteed
+            </span>
+<span class="font-body-sm text-body-sm text-surface-container-high flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span> Soft Sanction: 2 Mins
+            </span>
+</div>
+<div class="mb-space-md">
+<span class="text-surface-variant font-body-md text-body-md block">Your Monthly Outflow</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-xl text-[44px] leading-none text-orange-vivid font-bold" id="monthlyEmiDisplay">₹15,000</span>
+<span class="text-surface-container-high font-body-md text-body-md">/ month</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant" id="repaymentSubnote">Spread over 12 months • Zero additional charges</p>
+</div>
+<!-- Fee Table Breakdown -->
+<div class="bg-navy-surface/80 rounded-lg p-space-sm mb-space-md flex flex-col gap-2 shadow-inner">
+<div class="flex justify-between items-center font-body-md text-body-md text-surface-variant">
+<span>Total Course Tuition:</span>
+<span class="text-on-primary font-headline-sm text-headline-sm" id="summaryTotalFee">₹1,80,000</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-surface-variant">
+<span>Down Payment (Advance):</span>
+<span class="text-tertiary-fixed font-headline-sm text-headline-sm" id="summaryDownPay">₹0</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-surface-variant">
+<span class="flex items-center gap-1">One-time Processing Fee: <span class="bg-emerald-surface text-emerald-badge px-1 rounded text-[10px] font-bold">FREE</span></span>
+<span class="text-emerald-badge font-headline-sm text-headline-sm">₹0 (Waived)</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-surface-variant">
+<span>Subsidized Interest Rate:</span>
+<span class="text-emerald-badge font-headline-sm text-headline-sm">0.00% (No-Cost)</span>
+</div>
+<div class="pt-2 mt-1 flex justify-between items-center font-headline-sm text-headline-sm text-on-primary">
+<span>Total Repayable:</span>
+<span class="text-orange-vivid text-data-metric-lg font-data-metric-lg" id="summaryTotalRepay">₹1,80,000</span>
+</div>
+</div>
+<!-- Conversion CTA Button -->
+<button class="w-full bg-orange-vivid hover:bg-orange-hover text-on-secondary py-3 px-space-md rounded-lg font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg transition-all transform active:scale-95" id="claimEmiButton" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Check Instant 0% EMI Approval</span>
+</button>
+<div class="text-center mt-2">
+<span class="font-body-sm text-body-sm text-surface-container-high flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-emerald-badge">shield</span>
+<span>Soft inquiry • No impact on credit bureau score</span>
+</span>
+</div>
+<!-- Partner Trust Badges -->
+<div class="mt-space-md pt-space-xs border-t-0">
+<span class="block font-label-badge text-label-badge uppercase tracking-wider text-surface-variant text-center mb-2">Statutory Financing Consortium</span>
+<div class="grid grid-cols-4 gap-2 text-center">
+<div class="bg-surface-container-lowest/10 py-1.5 px-1 rounded">
+<span class="font-label-badge text-label-badge text-on-primary block font-bold">PROPELLED</span>
+<span class="text-[9px] text-surface-variant block">NBFC Registered</span>
+</div>
+<div class="bg-surface-container-lowest/10 py-1.5 px-1 rounded">
+<span class="font-label-badge text-label-badge text-on-primary block font-bold">LIQUILOANS</span>
+<span class="text-[9px] text-surface-variant block">RBI Regulated</span>
+</div>
+<div class="bg-surface-container-lowest/10 py-1.5 px-1 rounded">
+<span class="font-label-badge text-label-badge text-on-primary block font-bold">EDUVANZ</span>
+<span class="text-[9px] text-surface-variant block">Academic Desk</span>
+</div>
+<div class="bg-surface-container-lowest/10 py-1.5 px-1 rounded">
+<span class="font-label-badge text-label-badge text-on-primary block font-bold">GRAYQUEST</span>
+<span class="text-[9px] text-surface-variant block">Zero Collateral</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Eligibility Checklist Card -->
+<div class="bg-slate-surface rounded-xl shadow-md p-space-md flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-navy-subtle text-[22px]">assignment_turned_in</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Instant Eligibility Benchmark</h3>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-text-secondary">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px]">check</span>
+<span><strong>Monthly Income:</strong> Min ₹15,000/month (Self or Parent/Spouse Co-Applicant).</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px]">check</span>
+<span><strong>Identity Validation:</strong> Aadhaar OTP e-KYC authentication.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px]">check</span>
+<span><strong>Tax Identifier:</strong> Active Indian PAN card for statutory mandate.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px]">check</span>
+<span><strong>Banking Mode:</strong> Active Net Banking or UPI for auto-debit clearance.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Comparison Module: Bank Education Loan vs UniversityJano 0% EMI -->
+<section class="py-space-xl px-gutter-desktop max-w-container-max mx-auto w-full">
+<div class="text-center max-w-2xl mx-auto mb-space-lg">
+<span class="bg-orange-light text-secondary font-label-badge text-label-badge uppercase px-space-xs py-0.5 rounded-full">Financial Audit</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary mt-1">Why Choose UniversityJano 0% EMI Over Traditional Loans?</h2>
+<p class="font-body-md text-body-md text-text-tertiary">Avoid high interest traps, cumbersome branch visits, and processing fees charged by nationalized and private banks.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Option 1: Traditional Bank Loan Card -->
+<div class="bg-slate-surface rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[28px]">account_balance</span>
+<span class="font-headline-md text-headline-md text-text-primary">Traditional Bank Education Loan</span>
+</div>
+<span class="bg-error-container text-on-error-container font-label-badge text-label-badge px-2 py-0.5 rounded">Costly • Slow</span>
+</div>
+<div class="space-y-space-xs font-body-md text-body-md text-text-secondary">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">close</span>
+<div><strong>Interest Surcharge:</strong> 11.5% to 14.75% compounding interest over program tenure.</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">close</span>
+<div><strong>Processing Charges:</strong> 1% to 2% non-refundable processing fee upfront (₹2,000 - ₹5,000).</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">close</span>
+<div><strong>Approval Turnaround:</strong> 14 to 28 banking days with physical verification.</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">close</span>
+<div><strong>Documentation Burden:</strong> 12+ physical paperwork sets, ITR filings, and guarantor mandates.</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs bg-slate-muted p-space-sm rounded-lg">
+<div class="font-body-sm text-body-sm text-text-tertiary">Extra Interest Burden for ₹1,80,000 Degree:</div>
+<div class="font-headline-sm text-headline-sm text-error">Additional ₹22,800 to ₹31,500 Out-of-Pocket</div>
+</div>
+</div>
+<!-- Option 2: UniversityJano 0% EMI Card -->
+<div class="bg-emerald-surface rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[28px]">verified_user</span>
+<span class="font-headline-md text-headline-md text-emerald-badge">UniversityJano 0% EMI Partner</span>
+</div>
+<span class="bg-emerald-badge text-on-tertiary font-label-badge text-label-badge px-2 py-0.5 rounded">Recommended</span>
+</div>
+<div class="space-y-space-xs font-body-md text-body-md text-text-primary">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px] shrink-0">check_circle</span>
+<div><strong>Zero Interest (0%):</strong> Institutional subsidy absorbs interest entirely. Course fee = Repaid fee.</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px] shrink-0">check_circle</span>
+<div><strong>Zero Processing Fees:</strong> ₹0 processing fee, zero documentation charges.</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px] shrink-0">check_circle</span>
+<div><strong>Digital 2-Hour Approval:</strong> 100% paperless e-mandate clearance directly on smartphone.</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-badge text-[18px] shrink-0">check_circle</span>
+<div><strong>Flexible Tenures:</strong> Custom 6, 12, 24, or 36 month repayment structures matching payroll.</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs bg-slate-surface p-space-sm rounded-lg shadow-sm">
+<div class="font-body-sm text-body-sm text-text-tertiary">Total Extra Cost to Applicant:</div>
+<div class="font-headline-sm text-headline-sm text-emerald-badge">₹0 Extra • Exactly ₹0 Interest Charged</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rich Media Student Feedback Showcase -->
+<section class="py-space-xl px-gutter-desktop max-w-container-max mx-auto w-full">
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-space-lg">
+<div>
+<span class="bg-surface-container-high text-navy-subtle font-label-badge text-label-badge uppercase px-space-xs py-0.5 rounded-full">Real Case Studies</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary mt-1">Working Professionals Who Financed Degrees at 0%</h2>
+</div>
+<div class="text-text-tertiary font-body-sm text-body-sm mt-2 md:mt-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-emerald-badge">verified</span> Verified Student Enrolment Cohorts
+      </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Student Card 1 -->
+<div class="bg-slate-surface rounded-xl shadow-md p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Close up professional portrait of an Indian male software engineer in formal blue shirt smiling warmly in a modern tech office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArkBOfDxFkrMO6EFFk5wzsCtUw23CdNa80QIzfKtizFj8og5k53uAp8mvlwc471_kOjv_VObvaLQ_oSlyEoeJ88z64XyPq8w1ecttiXU9N9Lv1jnF6z6Ovxs1vIN_ImAo9oZW93JPIabNs4Q0wimSxZhF8OyhKEsdZlhKIkleyjWYg9DrlVq1NcFpvnVBUMOH2McIeFgbi5s1O_g29y8wlwYfe3qcJbh3KSEC15VN8TUdTQqvyDweNCA"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Rahul Deshmukh</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Online MCA • Manipal University</div>
+</div>
+</div>
+<div class="flex items-center gap-1 mb-2 text-orange-vivid">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            “I couldn't pay ₹1,40,000 upfront while supporting my family. UniversityJano linked me to LiquiLoans with a 12-month EMI of ₹11,666. No processing fees, no follow-up calls, fully automated deduction.”
+          </p>
+</div>
+<div class="mt-space-md pt-2 border-t-0 flex items-center justify-between text-[11px] font-bold text-emerald-badge">
+<span>APPROVED IN 45 MINS</span>
+<span class="text-text-tertiary">₹0 Down Payment</span>
+</div>
+</div>
+<!-- Student Card 2 -->
+<div class="bg-slate-surface rounded-xl shadow-md p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of an Indian woman marketing associate with gentle smile wearing smart casual beige blazer in a bright contemporary co-working space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp9lzrjMBo9wZ-_0j4B-rmTiSeCGHsUl8vYuIY7K2GEUk4PKRU4a8FehgpBtrNYeo7yXpQ3GdigHEk9g5uDpHVEBVAIlzw_tJBD_MiveD6UD56s8h2XnlrY3HT3DnWlfLY1DoVNypnfddfTlfHy89RCNSO1iEZstz9tC0lh3ruqzbiBHRFBVUYGaK594D9ItK-MIIWbmDYTkRauJRMbjTpFW7V0Xw_NMAcgniRmJ3J-E-CRal9EDYilg"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Pooja Nambiar</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Online MBA • Amity University</div>
+</div>
+</div>
+<div class="flex items-center gap-1 mb-2 text-orange-vivid">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            “My local bank quoted an 11.8% rate which added nearly ₹25,000 extra. Here I availed 0% EMI via Propelld with ₹0 processing charges. The transparent repayment plan gave me zero budget stress.”
+          </p>
+</div>
+<div class="mt-space-md pt-2 border-t-0 flex items-center justify-between text-[11px] font-bold text-emerald-badge">
+<span>₹15,000/MONTH EMI</span>
+<span class="text-text-tertiary">Zero Bank Markup</span>
+</div>
+</div>
+<!-- Student Card 3 -->
+<div class="bg-slate-surface rounded-xl shadow-md p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Headshot of an Indian young male analytics consultant wearing crisp white collared shirt against neutral grey architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3pL4tlaMvvhr7vZVRTAM84AmstwZRQ4P4CKOL3W-Rl_v7Vep_tEgKgfXqpU-j3OFZ8suiJQSPcUhmeuuiLNWxTfxVHQIZvVaDxKZd0JuRJwSY26l8cW0op6t7oXdYwL42vP6DFylSTe8_iin4Zvsj1TDptAELXGovDLp7gLNuzdhVLxtNWHw3_JQ-CZDvlrrCZfYu1Y2_5s-hRzhrzi5Xqpxl6J1S3sQo4jyOiZvwkswFEmz6wnoaMA"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary">Arjun Sengupta</div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Executive PG • Data Science</div>
+</div>
+</div>
+<div class="flex items-center gap-1 mb-2 text-orange-vivid">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            “The online verification took under 5 minutes through Aadhaar e-Sign. Paying ₹10,000 monthly over 24 months allowed me to continue my full-time job while learning cloud architecture seamlessly.”
+          </p>
+</div>
+<div class="mt-space-md pt-2 border-t-0 flex items-center justify-between text-[11px] font-bold text-emerald-badge">
+<span>AADHAAR E-KYC DONE</span>
+<span class="text-text-tertiary">Co-Applicant Enrolled</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Frequently Asked Questions Accordion Grid -->
+<section class="py-space-xl px-gutter-desktop bg-surface-container-low w-full">
+<div class="max-w-container-editorial mx-auto">
+<div class="text-center mb-space-lg">
+<span class="bg-emerald-surface text-emerald-badge font-label-badge text-label-badge uppercase px-space-xs py-0.5 rounded-full">Clarity Desk</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary mt-1">Frequently Asked Questions on 0% EMI</h2>
+<p class="font-body-md text-body-md text-text-tertiary">Clear answers about RBI regulations, interest subsidies, and cancellation terms.</p>
+</div>
+<div class="space-y-space-xs" id="faqAccordion">
+<!-- FAQ 1 -->
+<div class="bg-slate-surface rounded-lg p-space-md shadow-sm">
+<button class="w-full text-left flex justify-between items-center font-headline-sm text-headline-sm text-text-primary gap-4 focus:outline-none" onclick="toggleFaq(this)">
+<span>How does "0% No-Cost EMI" actually work? Who pays the interest?</span>
+<span class="material-symbols-outlined text-text-tertiary transition-transform transform">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-xs font-body-md text-body-md text-text-secondary leading-relaxed">
+            The interest is subsidized directly by our UGC-recognized partner universities as an educational grant to promote digital higher education. The financing partner (Propelld, Eduvanz, GrayQuest, LiquiLoans) disburses the full tuition to the college, while you simply repay the exact tuition fee divided equally over your selected months.
+          </div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-slate-surface rounded-lg p-space-md shadow-sm">
+<button class="w-full text-left flex justify-between items-center font-headline-sm text-headline-sm text-text-primary gap-4 focus:outline-none" onclick="toggleFaq(this)">
+<span>Does checking my EMI eligibility reduce my CIBIL score?</span>
+<span class="material-symbols-outlined text-text-tertiary transition-transform transform">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-xs font-body-md text-body-md text-text-secondary leading-relaxed">
+            No. The initial verification on UniversityJano executes a soft bureau inquiry which does not alter or degrade your credit score. A formal hard pull is only carried out after you accept the sanction letter and complete e-mandate registration.
+          </div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-slate-surface rounded-lg p-space-md shadow-sm">
+<button class="w-full text-left flex justify-between items-center font-headline-sm text-headline-sm text-text-primary gap-4 focus:outline-none" onclick="toggleFaq(this)">
+<span>What if I am a fresher or unemployed student without salary slips?</span>
+<span class="material-symbols-outlined text-text-tertiary transition-transform transform">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-xs font-body-md text-body-md text-text-secondary leading-relaxed">
+            Students without personal earnings can simply add an earning co-applicant (father, mother, spouse, or working sibling) with an active bank account earning at least ₹15,000 per month. Instant Aadhaar OTP verification completes the co-applicant approval.
+          </div>
+</div>
+<!-- FAQ 4 -->
+<div class="bg-slate-surface rounded-lg p-space-md shadow-sm">
+<button class="w-full text-left flex justify-between items-center font-headline-sm text-headline-sm text-text-primary gap-4 focus:outline-none" onclick="toggleFaq(this)">
+<span>Can I foreclose or pay off the entire balance early without penalty?</span>
+<span class="material-symbols-outlined text-text-tertiary transition-transform transform">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-xs font-body-md text-body-md text-text-secondary leading-relaxed">
+            Yes. All UniversityJano education financing partners comply with RBI fair practice codes. You may foreclose or prepay your outstanding fee balance anytime with zero prepayment penalties or foreclosure fees.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Quick Conversion Anchor for Mobile / Compact View -->
+<div class="sticky bottom-0 left-0 w-full bg-slate-surface shadow-2xl p-space-xs sm:p-space-sm z-30 lg:hidden flex items-center justify-between">
+<div>
+<div class="font-body-sm text-body-sm text-text-tertiary">Selected Plan EMI</div>
+<div class="font-headline-sm text-headline-sm text-orange-vivid" id="stickyEmiDisplay">₹15,000 / mo</div>
+</div>
+<button class="bg-orange-vivid text-on-secondary py-2 px-space-md rounded-lg font-headline-sm text-headline-sm shadow-md flex items-center gap-1" onclick="document.getElementById('claimEmiButton').click()">
+<span class="material-symbols-outlined text-[18px]">bolt</span> Check Eligibility
+    </button>
+</div>
+</div>
+<!-- Inline Interactive Micro-Script -->
+<script>
+  (function() {
+    // DOM Element References
+    const feeSlider = document.getElementById('feeSlider');
+    const feeDisplayInput = document.getElementById('feeDisplayInput');
+    const monthlyEmiDisplay = document.getElementById('monthlyEmiDisplay');
+    const stickyEmiDisplay = document.getElementById('stickyEmiDisplay');
+    const summaryTotalFee = document.getElementById('summaryTotalFee');
+    const summaryDownPay = document.getElementById('summaryDownPay');
+    const summaryTotalRepay = document.getElementById('summaryTotalRepay');
+    const repaymentSubnote = document.getElementById('repaymentSubnote');
+    const universityPreset = document.getElementById('universityPreset');
+    const resetDefaultsBtn = document.getElementById('resetDefaultsBtn');
+    const zeroDownBtn = document.getElementById('zeroDownBtn');
+    const tenPercentDownBtn = document.getElementById('tenPercentDownBtn');
+    const claimEmiButton = document.getElementById('claimEmiButton');
 
-    <div style="max-width:900px;margin:0 auto;padding:2rem 1.25rem 0;">
-      <h1 style="color:var(--navy-900);font-size:1.6rem;">0% Interest Monthly EMI &amp; Fee Budget Planner</h1>
-      <p style="color:var(--text-muted);">Calculate zero-cost monthly installments and check scholarship discount eligibility for your online degree.</p>
-    </div>
-    <div id="emi-app-root"></div>
-    <script>
-      (function() {
-        function mountEmi() {
-          var container = document.getElementById('emi-app-root');
-          if (container && window.EMICalculatorPage) {
-            ReactDOM.createRoot(container).render(
-              React.createElement(window.EMICalculatorPage, {
-                onOpenCounselling: function(data) {
-                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want to apply for 0% EMI financing: ' + (data.notes || ''));
-                }
-              })
-            );
-          } else {
-            setTimeout(mountEmi, 50);
-          }
+    let currentFee = 180000;
+    let currentMonths = 12;
+    let downPaymentRate = 0; // 0 for zero down, 0.1 for 10%
+
+    // Calculation Routine
+    function updateCalculations() {
+      const downPaymentAmount = Math.round(currentFee * downPaymentRate);
+      const financedPrincipal = currentFee - downPaymentAmount;
+      const calculatedEmi = Math.round(financedPrincipal / currentMonths);
+
+      // Formatting currency values
+      const formatRupee = (val) => new Intl.NumberFormat('en-IN').format(val);
+
+      feeDisplayInput.textContent = formatRupee(currentFee);
+      summaryTotalFee.textContent = '₹' + formatRupee(currentFee);
+      summaryDownPay.textContent = downPaymentAmount > 0 ? '₹' + formatRupee(downPaymentAmount) : '₹0';
+      summaryTotalRepay.textContent = '₹' + formatRupee(currentFee);
+      monthlyEmiDisplay.textContent = '₹' + formatRupee(calculatedEmi);
+      if (stickyEmiDisplay) {
+        stickyEmiDisplay.textContent = '₹' + formatRupee(calculatedEmi) + ' / mo';
+      }
+
+      repaymentSubnote.textContent = `Spread over ${currentMonths} months • Zero additional charges`;
+    }
+
+    // Slider Event
+    if (feeSlider) {
+      feeSlider.addEventListener('input', (e) => {
+        currentFee = parseInt(e.target.value, 10);
+        updateCalculations();
+      });
+    }
+
+    // Course Selector Pills
+    const courseButtons = document.querySelectorAll('.course-pill');
+    courseButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        courseButtons.forEach(b => {
+          b.className = 'course-pill py-2 px-3 rounded-lg text-left transition-all bg-slate-muted text-text-secondary hover:bg-surface-container';
+        });
+        btn.className = 'course-pill py-2 px-3 rounded-lg text-left transition-all bg-surface-container-high text-primary font-headline-sm text-headline-sm shadow-sm';
+        const fee = parseInt(btn.getAttribute('data-course-fee'), 10);
+        currentFee = fee;
+        feeSlider.value = fee;
+        if (universityPreset) universityPreset.value = 'custom';
+        updateCalculations();
+      });
+    });
+
+    // University Select Presets
+    if (universityPreset) {
+      universityPreset.addEventListener('change', (e) => {
+        if (e.target.value !== 'custom') {
+          const presetFee = parseInt(e.target.value, 10);
+          currentFee = presetFee;
+          feeSlider.value = presetFee;
+          updateCalculations();
         }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountEmi);
-        else mountEmi();
-      })();
-    </script>
-  
+      });
+    }
+
+    // Tenure Selection
+    const tenureButtons = document.querySelectorAll('.tenure-btn');
+    tenureButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tenureButtons.forEach(b => {
+          b.className = 'tenure-btn py-2.5 px-2 rounded-lg text-center transition-all bg-slate-muted text-text-secondary hover:bg-surface-container';
+        });
+        btn.className = 'tenure-btn py-2.5 px-2 rounded-lg text-center transition-all bg-surface-container-high text-primary font-headline-sm text-headline-sm shadow-sm';
+        currentMonths = parseInt(btn.getAttribute('data-months'), 10);
+        updateCalculations();
+      });
+    });
+
+    // Down Payment Toggle
+    if (zeroDownBtn && tenPercentDownBtn) {
+      zeroDownBtn.addEventListener('click', () => {
+        downPaymentRate = 0;
+        zeroDownBtn.className = 'downpay-btn px-3 py-1.5 rounded text-on-secondary bg-orange-vivid font-headline-sm text-headline-sm shadow-sm transition-all';
+        tenPercentDownBtn.className = 'downpay-btn px-3 py-1.5 rounded text-text-secondary bg-slate-surface hover:bg-surface-container font-headline-sm text-headline-sm shadow-sm transition-all';
+        updateCalculations();
+      });
+
+      tenPercentDownBtn.addEventListener('click', () => {
+        downPaymentRate = 0.10;
+        tenPercentDownBtn.className = 'downpay-btn px-3 py-1.5 rounded text-on-secondary bg-orange-vivid font-headline-sm text-headline-sm shadow-sm transition-all';
+        zeroDownBtn.className = 'downpay-btn px-3 py-1.5 rounded text-text-secondary bg-slate-surface hover:bg-surface-container font-headline-sm text-headline-sm shadow-sm transition-all';
+        updateCalculations();
+      });
+    }
+
+    // Reset Defaults
+    if (resetDefaultsBtn) {
+      resetDefaultsBtn.addEventListener('click', () => {
+        currentFee = 180000;
+        currentMonths = 12;
+        downPaymentRate = 0;
+        feeSlider.value = 180000;
+        if (universityPreset) universityPreset.value = 'custom';
+        if (zeroDownBtn) zeroDownBtn.click();
+        const defaultCourse = document.querySelector('[data-course-name="Online MBA"]');
+        if (defaultCourse) defaultCourse.click();
+        const defaultTenure = document.querySelector('[data-months="12"]');
+        if (defaultTenure) defaultTenure.click();
+        updateCalculations();
+      });
+    }
+
+    // CTA Trigger Alert / Demo Form Feedback
+    if (claimEmiButton) {
+      claimEmiButton.addEventListener('click', () => {
+        const phoneInput = document.getElementById('applicantPhone');
+        const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        if (!phoneVal || phoneVal.length < 8) {
+          alert('Please enter a valid WhatsApp or contact number for your soft sanction eligibility.');
+          if (phoneInput) phoneInput.focus();
+        } else {
+          claimEmiButton.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> Checking Instant Limit...`;
+          claimEmiButton.disabled = true;
+          setTimeout(() => {
+            alert(`Great news! Pre-approved 0% EMI eligibility verified for ₹${new Intl.NumberFormat('en-IN').format(currentFee)}. Our authorized NBFC counselor is dispatching the digital offer letter to ${phoneVal}.`);
+            claimEmiButton.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span> Pre-Approved at 0% EMI`;
+            claimEmiButton.className = "w-full bg-emerald-badge text-on-tertiary py-3 px-space-md rounded-lg font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg";
+          }, 1200);
+        }
+      });
+    }
+
+    // Initial Run
+    updateCalculations();
+  })();
+
+  // Global accordion toggle
+  window.toggleFaq = function(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isHidden = content.classList.contains('hidden');
+    
+    // Close other FAQ items
+    document.querySelectorAll('#faqAccordion .faq-content').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('#faqAccordion button span.material-symbols-outlined').forEach(ic => ic.classList.remove('rotate-180'));
+
+    if (isHidden) {
+      content.classList.remove('hidden');
+      if (icon) icon.classList.add('rotate-180');
+    }
+  };
+</script></main>
 {% include site-footer.html %}
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
 </body>
