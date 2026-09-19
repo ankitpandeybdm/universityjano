@@ -105,6 +105,10 @@ sitemap: true
 <!-- HERO SECTION : AUTHORITY & AI MATCHING     -->
 <!-- ========================================== -->
 <section class="relative bg-primary-container text-on-primary py-space-3xl px-gutter-desktop overflow-hidden">
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<img alt="Students achieving their career goals" class="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity" src="https://images.unsplash.com/photo-1750379046723-5ed69ff11571?auto=format&fit=crop&w=1600&q=70"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/95 to-primary-container/75"></div>
+</div>
 <!-- Subtle Background Glow Elements -->
 <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-navy-subtle/30 blur-3xl pointer-events-none"></div>
 <div class="absolute top-1/2 -right-32 w-80 h-80 rounded-full bg-orange-vivid/15 blur-3xl pointer-events-none"></div>
@@ -127,9 +131,9 @@ sitemap: true
 <div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-xl flex flex-col sm:flex-row gap-space-xs mt-space-xs">
 <div class="flex items-center gap-space-xs flex-1 px-space-sm text-text-secondary">
 <span class="material-symbols-outlined text-primary-container text-[22px]">search</span>
-<input class="w-full bg-transparent font-body-md text-body-md text-text-primary focus:outline-none placeholder:text-text-tertiary" placeholder="Search by University (e.g. Manipal, Amity) or Degree (MBA, MCA)..." type="text"/>
+<input id="homeUniversitySearch" class="w-full bg-transparent font-body-md text-body-md text-text-primary focus:outline-none placeholder:text-text-tertiary" placeholder="Search by University (e.g. Manipal, Amity) or Degree (MBA, MCA)..." type="text" onkeydown="if(event.key==='Enter'){window.location.href='/universities/index.html?q='+encodeURIComponent(this.value);}"/>
 </div>
-<button class="bg-orange-vivid hover:bg-orange-hover text-on-secondary px-space-lg py-3 rounded-lg font-headline-sm text-headline-sm transition-all flex items-center justify-center gap-1.5 shadow-md">
+<button onclick="window.location.href='/universities/index.html?q='+encodeURIComponent(document.getElementById('homeUniversitySearch').value)" class="bg-orange-vivid hover:bg-orange-hover text-on-secondary px-space-lg py-3 rounded-lg font-headline-sm text-headline-sm transition-all flex items-center justify-center gap-1.5 shadow-md">
 <span>Search Universities</span>
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </button>
