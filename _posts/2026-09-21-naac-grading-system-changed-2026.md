@@ -1,27 +1,30 @@
 ---
 layout: post
-title: "NAAC Grading Just Changed: What A++, A+ and A Actually Mean for Your Online Degree in 2026"
-metaTitle: "NAAC Grading System 2026 Explained — A++ vs A+ vs A for Online Degrees"
-excerpt: "NAAC replaced its familiar A++ to D letter-grade system with a new Binary + MBGL framework in 2025. Here's what that actually means if you're comparing online degrees in 2026."
+title: "NAAC's New Grading System Is Still Not Live in 2026 — What That Means for Your Online Degree"
+metaTitle: "NAAC Grading System 2026 — Binary Accreditation Delay Explained"
+excerpt: "NAAC announced a new Binary + MBGL grading system in 2025, but the portal still hasn't launched as of late 2026. Here's what that actually means if you're comparing online degrees right now."
 category: "Online Degrees"
 author: "Team UniversityJano"
 readTime: "8 min read"
 coverImage: "https://images.unsplash.com/photo-1638636241638-aef5120c5153?auto=format&fit=crop&w=1200&q=80"
 ---
-<p>Every comparison article you've read — including several of ours — tells you to "check the NAAC grade" before picking a university. Fair advice, except NAAC itself changed the rules in the middle of the game. Since February 2025, the familiar A++ to D letter-grade scale you've seen plastered across every university homepage is no longer how new institutions get assessed. If you're comparing online degrees in 2026 and you don't know this happened, you're reading half the picture.</p>
+<p>Every comparison article you've read — including several of ours — tells you to "check the NAAC grade" before picking a university. Fair advice, except NAAC itself has been in the middle of overhauling how that grade even gets assigned — and as of late 2026, that overhaul is still stuck between "announced" and "actually working." If you're comparing online degrees right now and don't know what's actually going on, you're reading half the picture.</p>
 
-<h2>What Actually Changed</h2>
-<p>NAAC (the National Assessment and Accreditation Council) spent nearly three decades grading institutions on a single Cumulative Grade Point Average, mapped to letter grades from A++ down to D. As of 10 February 2025, that system stopped accepting new applications. It's been replaced by a two-tier framework:</p>
+<h2>What Was Announced — and What's Actually Live</h2>
+<p>On 10 February 2025, NAAC (the National Assessment and Accreditation Council) announced it would replace its familiar single-number CGPA grading scale — the A++ down to D letters you've seen on every university homepage — with a new two-tier framework:</p>
 <ul>
-<li><strong>Tier 1 — Binary Accreditation:</strong> a university is now assessed as simply "Accredited" or "Not Accredited." No letter grade, no CGPA number.</li>
-<li><strong>Tier 2 — Maturity-Based Graded Levels (MBGL):</strong> an optional second layer, with five levels from Level 1 (Basic) to Level 5 (Global Excellence), that institutions can opt into once they clear binary accreditation.</li>
+<li><strong>Tier 1 — Binary Accreditation:</strong> a university is assessed simply as "Accredited" or "Not Accredited." No letter grade, no CGPA number.</li>
+<li><strong>Tier 2 — Maturity-Based Graded Levels (MBGL):</strong> an optional second layer, with five levels from Level 1 (Basic) to Level 5 (Global Excellence), for institutions that clear binary accreditation and want to show differentiation.</li>
 </ul>
-<p>The old CGPA-based grades don't disappear overnight — they remain valid until they expire, typically five years from the date they were awarded. That means a university showing "NAAC A+" on its website today could be operating under a grade awarded in 2022 (valid until 2027) or one from 2021 that's already technically due for renewal. The letter grade you're looking at doesn't tell you which.</p>
+<p><strong>Here's the part that actually matters for 2026:</strong> NAAC originally indicated the new Binary + MBGL portal would go live around April–May 2025. As of mid-to-late 2026, multiple independent sources confirm the portal still hasn't officially launched, and no firm revised date has been announced. In practice, this means almost every university you'll research right now is still operating under a <em>legacy</em> CGPA letter grade — not because they're behind, but because the new system genuinely isn't accepting live applications yet for most institutions.</p>
 
 <div class="cta-box" style="background:#f1f5f9;border-radius:12px;padding:1.5rem;margin:2rem 0;text-align:center;">
   <p style="font-weight:600;color:#0b1b3d;margin-bottom:0.75rem;">Want to see current NAAC grades across 25+ universities side by side?</p>
   <a href="{{ '/compare.html' | relative_url }}" style="display:inline-block;background:#1d4ed8;color:#fff;padding:0.65rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:600;">Compare Universities →</a>
 </div>
+
+<h2>What Happens to Grades That Expire While the New Portal Is Delayed</h2>
+<p>This is a genuinely practical wrinkle worth knowing. Legacy CGPA grades are normally valid for five years from the date awarded, after which a university must reapply. But with the new portal delayed, institutions whose grade is set to expire within a year of the (still-unknown) portal launch date reportedly get an automatic short extension — commonly reported as around three months — as a buffer, not a permanent fix. If a university's marketing page still shows an old letter grade in late 2026, it may genuinely be operating on a valid extension rather than an outdated claim — but it's also exactly the kind of detail worth asking about directly rather than assuming either way.</p>
 
 <h2>The Old Letter Grades, for Reference</h2>
 <p>If you're still seeing legacy grades quoted (and you will be, for the next few years), here's what they map to on the old 0–4.00 CGPA scale. Worth flagging upfront: NAAC has revised these exact band boundaries more than once over the years, so you'll find slightly different ranges quoted across sources — treat this as the most commonly cited version, and don't rely on the CGPA number down to the decimal.</p>
@@ -37,7 +40,7 @@ coverImage: "https://images.unsplash.com/photo-1638636241638-aef5120c5153?auto=f
 
 <h2>Does This Actually Change Anything for You as a Student?</h2>
 <p>Mostly, no — and that's the important part to understand before you panic-reread every university page you've bookmarked. Your degree's <em>legal</em> validity in India has never come from NAAC directly; it comes from <strong>UGC-DEB approval</strong>, which is a separate process. NAAC accreditation is a quality signal — a real and useful one — but it's not the thing that makes your degree count for a government job or further studies. That's UGC-DEB's job, and UGC-DEB approval is unaffected by this NAAC framework change. Our guide on <a href="{{ '/blog/online-degree-valid-for-government-jobs-india-2026/' | relative_url }}" style="color:#1d4ed8;font-weight:600;">online degree validity for government jobs</a> and our <a href="{{ '/ugc-verifier.html' | relative_url }}" style="color:#1d4ed8;font-weight:600;">free approval checker</a> cover this distinction directly.</p>
-<p>What does change is how you should read a "NAAC A++" claim going forward. It's no longer safe to assume every university proudly displaying a letter grade earned it under the same rules, at the same time, with the same rigor. Some of those grades are legacy CGPA awards nearing expiry; a growing number of universities will start showing "Binary Accredited" or an MBGL Level instead, and there's no simple universal ranking between an old A+ and a new MBGL Level 3 — they're different measurement systems entirely.</p>
+<p>What does change is how confidently you should read a "NAAC A++" claim going forward. That letter grade you're seeing right now is almost certainly a legacy CGPA award, possibly nearing its expiry, and possibly running on an unannounced grace-period extension because the replacement system still isn't operational. None of that makes the grade fake — it just means the number carries more fine print than the marketing page lets on.</p>
 
 <img src="https://images.unsplash.com/photo-1658235081483-8f06aa0882cf?auto=format&fit=crop&w=1200&q=80" alt="Graduation cap held up in front of a university building" style="width:100%;border-radius:12px;margin:1.5rem 0;">
 
