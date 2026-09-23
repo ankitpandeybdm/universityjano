@@ -42,79 +42,47 @@
   "mainEntityOfPage": "{{ page.url | absolute_url }}"
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"surface-container-highest":"#d3e4fe","orange-light":"#FFF7ED","surface-variant":"#d3e4fe","navy-subtle":"#1E3A8A","on-primary-fixed-variant":"#38466a","surface-dim":"#cbdbf5","tertiary-fixed":"#97f5cc","surface-tint":"#505e83","navy-deep":"#070F22","on-secondary-container":"#592600","secondary-container":"#fb7800","tertiary":"#000301","emerald-badge":"#047857","surface-container-lowest":"#ffffff","error":"#ba1a1a","text-secondary":"#475569","primary":"#00020a","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","outline-variant":"#c5c6cf","on-secondary-fixed":"#321200","emerald-surface":"#ECFDF5","tertiary-fixed-dim":"#7bd8b1","on-tertiary-fixed-variant":"#00513a","slate-border":"#E2E8F0","navy-surface":"#0F2654","emerald-border":"#A7F3D0","inverse-on-surface":"#eaf1ff","inverse-surface":"#213145","on-background":"#0b1c30","slate-divider":"#CBD5E1","on-secondary":"#ffffff","on-secondary-fixed-variant":"#753400","on-primary-fixed":"#0a1a3c","secondary":"#994700","text-tertiary":"#64748B","background":"#f8f9ff","surface-container-low":"#eff4ff","on-tertiary-container":"#349571","outline":"#75777f","orange-vivid":"#FF7A00","primary-fixed-dim":"#b7c6f1","secondary-fixed":"#ffdbc8","slate-muted":"#F1F5F9","on-tertiary-fixed":"#002115","inverse-primary":"#b7c6f1","surface-container-high":"#dce9ff","on-primary":"#ffffff","orange-hover":"#EA580C","on-primary-container":"#7684ac","primary-container":"#0b1b3d","on-error-container":"#93000a","on-error":"#ffffff","primary-fixed":"dae2ff","tertiary-container":"#002216","slate-canvas":"#F8FAFC","error-container":"#ffdad6","on-surface":"#0b1c30","slate-surface":"#FFFFFF","surface":"#f8f9ff","on-surface-variant":"#45464e","text-primary":"#0F172A","secondary-fixed-dim":"#ffb68b","surface-container":"#e5eeff","badge-ugc-bg":"#ECFDF5","badge-nirf-text":"#1D4ED8","surface-card":"#FFFFFF","border-subtle":"#E2E8F0","brand-whatsapp-hover":"#1EBE5D","badge-nirf-bg":"#EFF6FF","badge-ugc-text":"#047857","badge-naac-text":"#4338CA","surface-canvas":"#F8FAFC","text-muted":"#64748B","badge-naac-bg":"#EEF2FF","brand-whatsapp":"#25D366"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","space-md":"1rem","space-3xl":"4rem","container-max":"1280px","space-2xs":"0.25rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-2xl":"3rem","space-xl":"2rem","space-xs":"0.5rem","space-sm":"0.75rem","container-editorial":"840px","gutter":"1.5rem","margin-mobile":"1rem","margin":"2rem"},"fontFamily":{"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"data-metric-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"label-table-header":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-badge":["Inter"],"display-hero":["Plus Jakarta Sans"],"data-metric-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"label-md":["Inter"],"display-lg":["Plus Jakarta Sans"],"label-lg":["Inter"]},"fontSize":{"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"data-metric-sm":["16px",{"lineHeight":"20px","fontWeight":"700"}],"display-hero-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-table-header":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"800"}],"data-metric-lg":["24px",{"lineHeight":"28px","fontWeight":"800"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script>
+{% assign breadcrumb_category = page.category | default: page.categories | first | default: "Blog" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+  ]
+}
+</script>
 </head>
 <body>
 {% include site-header.html %}
 
-<!-- Post Hero: real background image, no illegible-text risk since colors are hardcoded per component -->
-<div class="blog-post-hero" style="background-image: url('{{ page.coverImage | default: page.image }}');">
-  <div class="blog-post-hero-overlay"></div>
-</div>
-
-<div class="container">
-  <nav aria-label="Breadcrumb" class="blog-post-breadcrumb">
-    <a href="{{ '/' | relative_url }}">Home</a> &rsaquo;
-    <a href="{{ '/blog/' | relative_url }}">Blog</a> &rsaquo;
-    <span>{{ page.title }}</span>
-  </nav>
-
-  <div class="blog-post-layout">
-    <article>
-      <h1 class="blog-post-title">{{ page.title }}</h1>
-      <div class="blog-post-meta-row">
-        <span>By <strong>{{ page.author | default: "Team UniversityJano" }}</strong></span>
-        <span>&bull;</span>
-        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-        <span>&bull;</span>
-        <span>{{ page.readTime | default: "5 min read" }}</span>
-        {% assign cat = page.category | default: page.categories | first %}
-        {% if cat %}<span>&bull;</span><span class="blog-category-pill">{{ cat }}</span>{% endif %}
-      </div>
-
-      <div class="blog-post-content">
-        {{ content }}
-      </div>
-
-      {% if page.tags and page.tags.size > 0 %}
-      <div class="blog-post-tags">
-        {% for tag in page.tags %}<span class="blog-tag-pill">{{ tag }}</span>{% endfor %}
-      </div>
-      {% endif %}
-
-      <div class="blog-cta-box" style="margin-top:2.5rem;">
-        <p>Not sure which university fits your goals?</p>
-        <p>Compare fees, placements and 0% EMI plans across 25+ UGC-DEB approved universities, or get free 1-on-1 counselling from our team.</p>
-        <a href="{{ '/universities/index.html' | relative_url }}" class="btn-primary">Compare Universities</a>
-        <a href="tel:18008905266" class="btn-outline">Call for Free Counselling</a>
-      </div>
-
-      <div class="blog-related-section">
-        <a href="{{ '/blog/' | relative_url }}" class="btn-secondary">&larr; All Blog Posts</a>
-      </div>
-    </article>
-
-    <aside class="blog-post-sidebar">
-      <div class="sidebar-lead-card">
-        <h3 style="color:var(--navy-900);font-size:1.1rem;margin-bottom:0.5rem;">Confused about which degree to pick?</h3>
-        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">Talk to a counsellor for an unbiased fee, ROI and eligibility breakdown &mdash; 100% free.</p>
-        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20read%20your%20blog%20and%20want%20free%20counselling" target="_blank" class="btn-accent btn-block" style="margin-bottom:0.6rem;">💬 Chat on WhatsApp</a>
-        <a href="tel:18008905266" class="btn-outline btn-block">Call 1800-890-5266</a>
-      </div>
-      <div class="filter-card" style="margin-top:1.25rem;">
-        <div class="filter-title" style="margin-bottom:0.75rem;">Popular Tools</div>
-        <div style="display:flex;flex-direction:column;gap:0.6rem;">
-          <a href="{{ '/emi-calculator.html' | relative_url }}" class="nav-link">🧮 0% EMI Calculator</a>
-          <a href="{{ '/roi-calculator.html' | relative_url }}" class="nav-link">📈 Salary &amp; ROI Calculator</a>
-          <a href="{{ '/ugc-verifier.html' | relative_url }}" class="nav-link">✅ UGC-DEB Verifier</a>
-          <a href="{{ '/compare.html' | relative_url }}" class="nav-link">⚖️ Compare Universities</a>
-        </div>
-      </div>
-    </aside>
+<article class="blog-article">
+  <a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; All Blog Posts</a>
+  <div class="meta">
+    <span class="blog-category-pill">{{ breadcrumb_category }}</span>
+    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+    <span>&middot;</span>
+    <span>{{ page.readTime | default: "5 min read" }}</span>
+    <span>&middot;</span>
+    <span>By {{ page.author | default: "Team UniversityJano" }}</span>
   </div>
-</div>
+  <h1>{{ page.title }}</h1>
+  {% assign cover = page.coverImage | default: page.image %}
+  {% if cover %}<img class="cover" src="{{ cover }}" alt="{{ page.title }}">{% endif %}
+
+  {{ content }}
+
+  {% if page.tags and page.tags.size > 0 %}
+  <div class="blog-tags">
+    {% for tag in page.tags %}<span class="tag-pill">{{ tag }}</span>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% include blog-cta.html %}
+</article>
 
 {% include site-footer.html %}
-<script src="{{ '/js/bundle.js' | relative_url }}"></script>
 </body>
 </html>
