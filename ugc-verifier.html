@@ -8,100 +8,265 @@ title: "UGC-DEB Government Approval & Legal Validity Inspector | UniversityJano.
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UGC-DEB Government Approval &amp; Legal Validity Inspector | UniversityJano.com</title>
-<meta name="description" content="Official UGC-DEB recognition guide, Gazette of India mandate, UPSC/Govt job validity rules, and WES foreign equivalence verification.">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://universityjano.com/ugc-verifier.html">
-
-<meta property="og:title" content="UGC-DEB Government Approval &amp; Legal Validity Inspector | UniversityJano.com">
-<meta property="og:description" content="Official UGC-DEB recognition guide, Gazette of India mandate, UPSC/Govt job validity rules, and WES foreign equivalence verification.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://universityjano.com/ugc-verifier.html">
-<meta property="og:image" content="https://universityjano.com/images/logo.png">
-<meta property="og:site_name" content="UniversityJano.com">
-
+<title>{{ page.title }}</title>
+<meta name="description" content="Verify any Indian university's UGC-DEB online-degree approval status instantly. Cross-checked against UGC's official Fake Universities list and the 2025-26 Online-mode entitled institutions list.">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
-<style>
-  html { scroll-behavior: smooth; }
-  .uni-tab-nav { position: sticky; top: 92px; z-index: 30; background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-  .uni-tab-nav .container { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
-  .uni-tab-nav .container::-webkit-scrollbar { display: none; }
-  .uni-tab-link { flex-shrink: 0; padding: 0.9rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: #64748b; text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; }
-  .uni-tab-link:hover { color: #1a56db; }
-  .uni-tab-link.is-active { color: #1a56db; border-bottom-color: #1a56db; }
-  #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 146px; }
-  @media (max-width: 768px) {
-    .uni-tab-nav { top: 78px; }
-    #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 134px; }
-  }
-</style>
+<link rel="stylesheet" href="{{ '/css/mobile-nav.css' | relative_url }}">
 </head>
 <body>
 {% include site-header.html %}
 
-    <div id="ugc-app-root">
-      <div class="container section-padding">
-        <span class="badge badge-blue">UGC-DEB Verification Tool</span>
-        <h1 class="section-title">UGC-DEB Government Approval &amp; Legal Validity Inspector</h1>
-        <p class="section-subtitle">Check whether a university's online or distance-mode programme is entitled by the UGC Distance Education Bureau (DEB) for your exact course and admission session — the single approval that decides if your degree is valid for government jobs, UPSC, UGC NET, and further studies.</p>
-        <p>An online or distance degree is legally equivalent to a regular, on-campus degree only when the offering university holds valid <strong>UGC-DEB entitlement</strong> for that specific programme and academic session. Approval is granted programme-by-programme and session-by-session, not once for the whole university — so verifying it before you enrol, and before you pay any fee, is the single most important check a student can make.</p>
-        <h2>What This Tool Checks</h2>
-        <ul>
-          <li>Whether your chosen university is UGC-DEB entitled to offer Online or ODL programmes.</li>
-          <li>Whether that entitlement covers your specific programme (e.g. Online MBA, Online MCA, Online BBA).</li>
-          <li>Whether the entitlement is valid for your intended academic session.</li>
-          <li>Additional recognitions worth checking — NAAC grade, AICTE approval where applicable, and NCTE recognition for teacher-education programmes.</li>
-        </ul>
-        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20verify%20UGC-DEB%20entitlement%20for%20an%20online%20degree" class="btn btn-primary">💬 Get Verification Help on WhatsApp</a>
-        <p style="margin-top:1.5rem;font-size:0.85rem;">Loading the interactive verifier…</p>
+<main>
+  <section class="hero-wrapper">
+    <div class="container" style="text-align:center;">
+      <span class="hero-badge-tag">🛡️ Official Statutory Compliance Engine</span>
+      <h1 class="hero-title" style="font-size:2.2rem;">UGC-DEB Approval &amp; Legal Validity Checker</h1>
+      <p class="hero-desc" style="max-width:640px;margin:0 auto;">Type any Indian university's name to check it against UGC's official Fake Universities list and the current UGC-DEB Online-mode entitled institutions list — before you pay a single rupee in fees.</p>
+    </div>
+  </section>
+
+  <div class="container" style="padding:2rem 1.5rem 3rem;">
+    <div class="uni-detail-section-card" style="max-width:760px;margin:0 auto 2rem;">
+      <div style="display:flex;flex-direction:column;sm:flex-direction:row;gap:0.75rem;">
+        <input id="univ-input" type="text" placeholder="e.g. Manipal Jaipur, Amity, Chandigarh University" style="flex:1;padding:0.85rem 1rem;border-radius:var(--radius-md);border:1px solid var(--border-light);font-size:1rem;font-family:inherit;">
+        <button onclick="runVerification()" class="btn btn-primary btn-lg" style="white-space:nowrap;">
+          <span class="material-symbols-outlined" style="font-size:20px;">verified</span> Verify Legal Approval
+        </button>
       </div>
     </div>
-    <script>
-      (function() {
-        function mountUgc() {
-          var container = document.getElementById('ugc-app-root');
-          if (container && window.UGCVerifierPage) {
-            ReactDOM.createRoot(container).render(
-              React.createElement(window.UGCVerifierPage, {
-                onOpenCounselling: function(data) {
-                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want to verify UGC-DEB entitlement for ' + (data.title || 'Online Degree'));
-                }
-              })
-            );
-          } else {
-            setTimeout(mountUgc, 50);
-          }
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountUgc);
-        else mountUgc();
-      })();
-    </script>
-  
+
+    <div id="resultContainer" class="uni-detail-section-card" style="max-width:760px;margin:0 auto 2rem;text-align:center;">
+      <p style="color:var(--text-muted);">Enter a university name above and click "Verify Legal Approval" to check it against UGC's official records.</p>
+    </div>
+
+    <div class="uni-detail-section-card" style="max-width:760px;margin:0 auto;">
+      <h2>🚫 UGC's Full List of Fake Universities in India</h2>
+      <p style="color:var(--text-muted);margin-bottom:1rem;">These 32 institutions are <strong>not empowered to confer any degree</strong> under Section 22 of the UGC Act, 1956 — published and periodically updated by UGC itself.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Christ New Testament Deemed University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Guntur, Andhra Pradesh</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Bible Open University of India</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Visakhapatnam, Andhra Pradesh</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Indian Institute of Alternative Medicine (Arunachal Pradesh)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Arunachal Pradesh</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Mountain Institute of Management & Technology</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Nehru Place, New Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">World Peace of United Nations University (WPUNU)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Pitampura, New Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Institute of Management and Engineering</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Kotla Mubarakpur, Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">National Institute of Management Solution</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Janakpuri, Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">All India Institute of Public & Physical Health Sciences (AIIPHS)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Alipur, Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Commercial University Ltd.</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Daryaganj, Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">United Nations University (Delhi)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Vocational University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">ADR-Centric Juridical University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Rajendra Place, New Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Indian Institute of Science and Engineering (Delhi)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">New Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Viswakarma Open University for Self-Employment</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Sanjay Enclave, Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Adhyatmik Vishwavidyalaya (Spiritual University)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Rithala, Rohini, Delhi</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Magic & Art University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Faridabad, Haryana</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Daksha University (Vocational and Life Skill Education)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Ranchi, Jharkhand</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Global Human Peace University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Rajaji Nagar, Bangalore</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Sarva Bharatiya Shiksha Peeth</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Tumkur, Karnataka</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">International Islamic University of Prophetic Medicine (IIUPM)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Kozhikode, Kerala</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">St. John's University (Kerala)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Kishanattam, Kerala</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Raja Arabic University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Nagpur, Maharashtra</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">National Backward Krushi Vidyapeeth</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Solapur, Maharashtra</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Usha Latchumanan College of Education</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Puducherry</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Sree Bodhi Academy of Higher Education</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Puducherry</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Rajeev Gandhi Institute of Technology & Management</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Bhiwadi, Alwar, Rajasthan</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Gandhi Hindi Vidyapith</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Prayag, Allahabad, Uttar Pradesh</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Netaji Subhash Chandra Bose University (Open University)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Aligarh, Uttar Pradesh</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Bhartiya Shiksha Parishad</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Faizabad Road, Lucknow</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Mahamaya Technical University</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Noida, Uttar Pradesh</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Indian Institute of Alternative Medicine (Kolkata)</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Kolkata, West Bengal</span>
+</div>
+<div style="padding:0.6rem 0.75rem;background:var(--bg-surface-alt);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:0.15rem;">
+<span style="font-weight:700;color:var(--navy-900);font-size:0.95rem;">Institute of Alternative Medicine and Research</span>
+<span style="color:var(--text-subtle);font-size:0.82rem;">Thakurpukur, Kolkata</span>
+</div>
+      </div>
+      <a href="https://www.ugc.gov.in/oldpdf/fakeuniversity/fake_university_list.pdf" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;color:var(--blue-600);font-weight:600;">
+        View the original official UGC notification (PDF) <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span>
+      </a>
+    </div>
+  </div>
+</main>
+
 {% include site-footer.html %}
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
 <script>
-  (function() {
-    var tabLinks = document.querySelectorAll('.uni-tab-link');
-    var sections = Array.prototype.map.call(tabLinks, function(link) {
-      return document.querySelector(link.getAttribute('href'));
-    }).filter(Boolean);
-    if (!tabLinks.length || !sections.length) return;
+const FAKE_UNIVERSITIES = [{"name": "Christ New Testament Deemed University", "state": "Andhra Pradesh", "address": "Guntur, Andhra Pradesh"}, {"name": "Bible Open University of India", "state": "Andhra Pradesh", "address": "Visakhapatnam, Andhra Pradesh"}, {"name": "Indian Institute of Alternative Medicine (Arunachal Pradesh)", "state": "Arunachal Pradesh", "address": "Arunachal Pradesh"}, {"name": "Mountain Institute of Management & Technology", "state": "Delhi", "address": "Nehru Place, New Delhi"}, {"name": "World Peace of United Nations University (WPUNU)", "state": "Delhi", "address": "Pitampura, New Delhi"}, {"name": "Institute of Management and Engineering", "state": "Delhi", "address": "Kotla Mubarakpur, Delhi"}, {"name": "National Institute of Management Solution", "state": "Delhi", "address": "Janakpuri, Delhi"}, {"name": "All India Institute of Public & Physical Health Sciences (AIIPHS)", "state": "Delhi", "address": "Alipur, Delhi"}, {"name": "Commercial University Ltd.", "state": "Delhi", "address": "Daryaganj, Delhi"}, {"name": "United Nations University (Delhi)", "state": "Delhi", "address": "Delhi"}, {"name": "Vocational University", "state": "Delhi", "address": "Delhi"}, {"name": "ADR-Centric Juridical University", "state": "Delhi", "address": "Rajendra Place, New Delhi"}, {"name": "Indian Institute of Science and Engineering (Delhi)", "state": "Delhi", "address": "New Delhi"}, {"name": "Viswakarma Open University for Self-Employment", "state": "Delhi", "address": "Sanjay Enclave, Delhi"}, {"name": "Adhyatmik Vishwavidyalaya (Spiritual University)", "state": "Delhi", "address": "Rithala, Rohini, Delhi"}, {"name": "Magic & Art University", "state": "Haryana", "address": "Faridabad, Haryana"}, {"name": "Daksha University (Vocational and Life Skill Education)", "state": "Jharkhand", "address": "Ranchi, Jharkhand"}, {"name": "Global Human Peace University", "state": "Karnataka", "address": "Rajaji Nagar, Bangalore"}, {"name": "Sarva Bharatiya Shiksha Peeth", "state": "Karnataka", "address": "Tumkur, Karnataka"}, {"name": "International Islamic University of Prophetic Medicine (IIUPM)", "state": "Kerala", "address": "Kozhikode, Kerala"}, {"name": "St. John's University (Kerala)", "state": "Kerala", "address": "Kishanattam, Kerala"}, {"name": "Raja Arabic University", "state": "Maharashtra", "address": "Nagpur, Maharashtra"}, {"name": "National Backward Krushi Vidyapeeth", "state": "Maharashtra", "address": "Solapur, Maharashtra"}, {"name": "Usha Latchumanan College of Education", "state": "Puducherry", "address": "Puducherry"}, {"name": "Sree Bodhi Academy of Higher Education", "state": "Puducherry", "address": "Puducherry"}, {"name": "Rajeev Gandhi Institute of Technology & Management", "state": "Rajasthan", "address": "Bhiwadi, Alwar, Rajasthan"}, {"name": "Gandhi Hindi Vidyapith", "state": "Uttar Pradesh", "address": "Prayag, Allahabad, Uttar Pradesh"}, {"name": "Netaji Subhash Chandra Bose University (Open University)", "state": "Uttar Pradesh", "address": "Aligarh, Uttar Pradesh"}, {"name": "Bhartiya Shiksha Parishad", "state": "Uttar Pradesh", "address": "Faizabad Road, Lucknow"}, {"name": "Mahamaya Technical University", "state": "Uttar Pradesh", "address": "Noida, Uttar Pradesh"}, {"name": "Indian Institute of Alternative Medicine (Kolkata)", "state": "West Bengal", "address": "Kolkata, West Bengal"}, {"name": "Institute of Alternative Medicine and Research", "state": "West Bengal", "address": "Thakurpukur, Kolkata"}];
+const ONLINE_ENTITLED = [{"name": "Andhra University", "state": "Andhra Pradesh", "type": "State University", "programs": ["B.Com (Accountancy)", "B.A. (History, Economics, Politics)", "B.Com", "M.A. (Sociology)", "MBA", "MCA", "M.Com", "M.A. (Political Science)", "M.A. (Economics)", "M.A. (English)", "M.A. (HRM)", "M.A. (Journalism & Mass Communication)"]}, {"name": "Koneru Lakshmaiah Education Foundation", "state": "Andhra Pradesh", "type": "Deemed-to-be University", "programs": ["BBA", "BCA", "MBA (Digital Marketing)", "MBA (Entrepreneurship)", "MBA (Data Science)", "MBA (Logistics & Supply Chain)", "MBA", "MCA"]}, {"name": "Vignan's Foundation for Science, Technology and Research", "state": "Andhra Pradesh", "type": "Deemed-to-be University", "programs": ["BBA (General)", "BCA", "MBA (HR)", "MBA (Finance)", "MBA (General)", "MCA"]}, {"name": "Mohan Babu University", "state": "Andhra Pradesh", "type": "Private University", "programs": ["B.Com", "BBA", "BCA", "MBA", "MCA"]}, {"name": "Assam Down Town University", "state": "Assam", "type": "Private University", "programs": ["BBA", "BCA", "MCA", "MBA"]}, {"name": "Guru Ghasidas Vishwavidyalaya", "state": "Chhattisgarh", "type": "Central University", "programs": ["BCA", "B.Com (Hons)", "B.Lib. & Info. Sciences", "MSW", "M.Lib. & Info. Sciences", "M.Com", "M.A. (Political Science)", "M.A. (Economics)", "M.A. (History)", "M.A. (Journalism & Mass Comm)", "M.A. (English Literature)", "MBA (General)", "MCA"]}, {"name": "MATS University", "state": "Chhattisgarh", "type": "Private University", "programs": ["B.Com", "BBA", "BCA", "MBA", "MCA"]}, {"name": "Jamia Hamdard", "state": "Delhi", "type": "Deemed-to-be University", "programs": ["B.Com (Hons) (Accountancy)", "BBA", "BCA", "M.A. (Human Rights)", "M.A. (Islamic Studies)", "M.A. (Political Science)", "MCA", "MBA"]}, {"name": "Jamia Millia Islamia University", "state": "Delhi", "type": "Central University", "programs": ["BBA (Finance and Accounts)", "B.A. (General)", "B.Com (General)", "M.A. (Education)", "M.A. (Public Administration)", "M.A. (English)", "M.A. (Hindi)", "M.A. (History)", "M.A. (Urdu)", "M.A. (Political Science)", "M.A. (Sociology)", "M.Com (General)"]}, {"name": "Jawaharlal Nehru University", "state": "Delhi", "type": "Central University", "programs": ["M.A. (Sanskrit)"]}, {"name": "Central Sanskrit University", "state": "Delhi", "type": "Central University", "programs": ["Shastri (Vyakarana Shastram)", "Shastri (Sahityam)", "Acharya (Phalita Jyotisha)", "Acharya (Sahityam)", "Acharya (Vyakarana Shastram)", "Shastri Hons. (Phalit Jyotisha)"]}, {"name": "Guru Gobind Singh Indraprastha Vishwavidyalaya", "state": "Delhi", "type": "State University", "programs": ["BBA", "B.Com", "M.A. (Mass Communication)", "MCA"]}, {"name": "Indian Institute of Foreign Trade", "state": "Delhi", "type": "Deemed-to-be University", "programs": ["MBA (International Business)"]}, {"name": "Gujarat University", "state": "Gujarat", "type": "State University", "programs": ["B.A. (English)", "B.Com (General)", "BCA", "M.A. (English)", "M.Com (General)", "M.Sc (Mathematics)"]}, {"name": "Charotar University of Science & Technology", "state": "Gujarat", "type": "Private University", "programs": ["BBA", "BCA", "MBA (General)", "MCA"]}, {"name": "Dr. Babasaheb Ambedkar Open University", "state": "Gujarat", "type": "State Open University", "programs": ["B.A. (English)", "B.Com (Accountancy)", "BCA", "M.A. (Sociology)", "M.A. (Gujarati)", "M.A. (English)", "M.A. (Journalism & Mass Comm)", "M.Com", "M.Lib. & Info. Sciences", "MCA"]}, {"name": "Parul University", "state": "Gujarat", "type": "Private University", "programs": ["B.A. (General)", "BBA", "BCA", "M.A. (Journalism & Mass Comm)", "MSW", "M.Com", "M.A. (English Language Teaching)", "MBA", "MCA", "M.Sc (Applied Mathematics)"]}, {"name": "Marwadi University", "state": "Gujarat", "type": "Private University", "programs": ["B.Com (General)", "BBA", "BCA", "M.A. (English)", "M.Sc (Mathematics)", "MBA (General)", "MCA"]}, {"name": "Gujarat Technological University", "state": "Gujarat", "type": "State University", "programs": ["MBA (International Business)"]}, {"name": "G.L.S. University", "state": "Gujarat", "type": "Private University", "programs": ["B.Com (General)", "BCA (General)", "BBA (General)", "M.Com (General)", "MCA (General)", "MBA (General)"]}, {"name": "P.P. Savani University", "state": "Gujarat", "type": "Private University", "programs": ["BCA", "M.A. (French)", "M.Com (General)", "MBA", "M.Sc (Data Science)"]}, {"name": "Guru Jambheshwar University of Science and Technology", "state": "Haryana", "type": "State University", "programs": ["B.Com (General)", "M.A. (Mass Communication)", "M.Com (General)", "MBA (General)", "MCA", "M.Sc (Mathematics)", "M.A. (Hindi)", "M.A. (English)"]}, {"name": "Kurukshetra University", "state": "Haryana", "type": "State University", "programs": ["BBA (Management)", "B.A.", "B.Com", "M.A. (Mass Communication)", "M.Com", "M.A. (English)", "M.A. (Political Science)", "MCA", "MBA"]}, {"name": "Maharshi Dayanand University", "state": "Haryana", "type": "State University", "programs": ["B.A. (English, Hindi, History, Economics, Public Admin, Political Science, Maths, Sanskrit)", "M.Com (General)", "M.Sc (Mathematics)", "M.A. (Hindi)", "M.A. (History)", "M.A. (Political Science)", "M.A. (Economics)", "M.A. (Public Administration)"]}, {"name": "Maharishi Markandeshwar (Deemed to be University)", "state": "Haryana", "type": "Deemed-to-be University", "programs": ["BBA", "B.Com (Hons)", "BCA", "MBA", "M.Sc (Mathematics)", "MCA"]}, {"name": "Manav Rachna International Institute of Research & Studies", "state": "Haryana", "type": "Deemed-to-be University", "programs": ["B.A. (Hons) (English)", "MBA", "MCA", "M.A. (Economics)", "M.A. (English)"]}, {"name": "Shree Guru Gobind Singh Tricentenary University", "state": "Haryana", "type": "Private University", "programs": ["BBA", "BCA", "B.Com (General)", "MBA", "MCA"]}, {"name": "Shoolini University of Biotechnology and Management Sciences", "state": "Himachal Pradesh", "type": "Private University", "programs": ["BCA", "BBA", "B.Com (Hons) (General)", "M.A. (English Literature)", "MBA", "MCA", "M.Sc (Data Science)", "M.A. (Journalism & Mass Comm)"]}, {"name": "Central University of Himachal Pradesh", "state": "Himachal Pradesh", "type": "Central University", "programs": ["MCA", "MBA", "M.A. (Political Science)", "M.A. (History)", "M.A. (Economics)"]}, {"name": "University of Jammu", "state": "Jammu & Kashmir", "type": "State University", "programs": ["M.A. (English)", "M.Com"]}, {"name": "Birla Institute of Technology (Mesra)", "state": "Jharkhand", "type": "Deemed-to-be University", "programs": ["MBA"]}, {"name": "Jain (Deemed-to-be University)", "state": "Karnataka", "type": "Deemed-to-be University", "programs": ["BBA", "BCA", "B.Com", "M.Com", "M.A. (English)", "M.A. (Journalism & Mass Comm)", "M.A. (Economics)", "M.A. (Public Policy)", "M.A. (Jainology, Comparative Religion & Philosophy)", "MBA", "MCA"]}, {"name": "JSS Academy of Education and Research", "state": "Karnataka", "type": "Deemed-to-be University", "programs": ["BBA (Hospital & Health System Management)", "MBA (Hospital Administration)", "MBA (Pharmacy Administration)"]}, {"name": "Manipal Academy of Higher Education", "state": "Karnataka", "type": "Deemed-to-be University", "programs": ["BBA (4 years)", "B.Com (Professional)", "M.Sc (Business Analytics)", "M.Sc (Data Science)", "MBA (Banking and Financial Services)", "MBA", "MCA"]}, {"name": "Bangalore University", "state": "Karnataka", "type": "State University", "programs": ["B.Com (General)", "M.A. (Economics)", "M.A. (English)", "M.A. (History)", "M.A. (Sociology)", "M.A. (Political Science)", "M.A. (Hindi)", "M.Com (General)", "M.Sc (Mathematics)", "M.A. (Kannada)"]}, {"name": "University of Mysore", "state": "Karnataka", "type": "State University", "programs": ["B.Com", "BBA", "BCA", "M.Com", "MCA", "MBA (Supply Chain Management)", "MBA (Operations)", "MBA (HRM)", "MBA (Finance)", "MBA (Dual)", "MBA (Marketing)", "MBA"]}, {"name": "Yenepoya (Deemed to be University)", "state": "Karnataka", "type": "Deemed-to-be University", "programs": ["B.Com", "BBA", "BCA", "M.Lib. & Info. Sciences", "MBA", "MCA"]}, {"name": "Visveswaraiah Technological University", "state": "Karnataka", "type": "State University", "programs": ["BBA (Digital Marketing)", "BCA (Data Sciences)", "BCA (Data Analytics)", "MCA (AI & Data Science)", "MCA (Cyber Security & Cloud Computing)", "MBA (Business Analytics)", "MBA (HR/MM/FM)", "MBA (Digital Marketing)", "MCA", "PGD (Big Data Analytics)", "PGD (Software Testing)", "PGD (Investment/Risk/Financial/Retail Mgmt)", "PGD (Financial/Marketing/HR Analytics)"]}, {"name": "Karnataka State Open University", "state": "Karnataka", "type": "State Open University", "programs": ["B.A. (History, Economics, Political Science)", "B.Com", "M.A. (Sanskrit)", "M.Sc (Mathematics)", "M.A. (Economics)", "M.A. (Hindi)", "M.A. (English)", "M.A. (Kannada)", "M.Com", "MBA"]}, {"name": "Christ (Deemed to be University)", "state": "Karnataka", "type": "Deemed-to-be University", "programs": ["BCA", "B.Com (Commerce)", "M.A. (Applied Economics)", "M.A. (English with Communication Studies)", "MCA", "M.Sc (AI & ML)", "M.Sc (Data Science)"]}, {"name": "Dayanand Sagar University", "state": "Karnataka", "type": "Private University", "programs": ["B.Com (General)", "BCA", "BBA", "MBA", "MCA"]}, {"name": "Alliance University", "state": "Karnataka", "type": "Private University", "programs": ["B.Com (Hons) (General) - 4 years", "BBA", "MBA"]}, {"name": "Adichunchanagiri University", "state": "Karnataka", "type": "Private University", "programs": ["MBA"]}, {"name": "Mahatma Gandhi University", "state": "Kerala", "type": "State University", "programs": ["B.Com (Hons) (General) 4yr", "BBA (4yr)", "B.A. (Hons) (Political Science) 4yr", "M.A. (Economics)", "M.Com (Finance)", "M.A. (Multimedia)", "M.A. (Animation)", "M.A. (Graphic Design)", "M.A. (Sociology)", "M.A. (English)", "M.A. (Journalism & Mass Comm)", "M.Sc (Statistics)", "MBA"]}, {"name": "University of Kerala", "state": "Kerala", "type": "State University", "programs": ["B.Com (Finance)", "BBA (General)", "M.Com (Finance)", "MBA (General)"]}, {"name": "Devi Ahilya Vishwavidyalaya", "state": "Madhya Pradesh", "type": "State University", "programs": ["M.A. (Economics)", "M.A. (Sociology)", "MBA"]}, {"name": "Sage University", "state": "Madhya Pradesh", "type": "Private University", "programs": ["BCA", "BBA", "M.Sc (Mathematics)", "M.A. (Journalism & Mass Comm)", "M.A. (Economics)", "MBA (Banking & Finance)", "MBA (Core)", "MCA", "M.Com (Finance and Accounts)"]}, {"name": "Dr. D.Y. Patil Vidyapeeth (Pune)", "state": "Maharashtra", "type": "Deemed-to-be University", "programs": ["BBA", "MBA", "MCA"]}, {"name": "D.Y. Patil (Navi Mumbai)", "state": "Maharashtra", "type": "Deemed-to-be University", "programs": ["BBA", "BCA", "MBA", "MCA"]}, {"name": "Symbiosis International (Deemed University)", "state": "Maharashtra", "type": "Deemed-to-be University", "programs": ["B.Sc (Hons) (Economics)", "BCA", "BBA", "MBA", "M.A. (International Studies)", "M.A. (Mass Communication)", "M.Sc (Computer Applications)", "M.Sc (Economics)", "M.Sc (Data Science)", "M.Sc (Applied Statistics)"]}, {"name": "Bharati Vidyapeeth (Deemed to be University)", "state": "Maharashtra", "type": "Deemed-to-be University", "programs": ["BBA", "BCA", "MBA", "MCA"]}, {"name": "Datta Meghe Institute of Higher Education and Research", "state": "Maharashtra", "type": "Deemed-to-be University", "programs": ["B.Com (General)", "BBA", "BCA", "MCA", "MBA"]}, {"name": "University of Mumbai", "state": "Maharashtra", "type": "State University", "programs": ["M.A. (Sociology)"]}, {"name": "Narsee Monjee Institute of Management Studies (NMIMS)", "state": "Maharashtra", "type": "Deemed-to-be University", "programs": ["BBA", "B.Com", "MBA (Working Executive)", "MBA"]}, {"name": "Shivaji University", "state": "Maharashtra", "type": "State University", "programs": ["MBA", "M.Com", "M.Sc (Mathematics)"]}, {"name": "Savitribai Phule Pune University", "state": "Maharashtra", "type": "State University", "programs": ["BBA", "BCA", "M.Com", "MBA", "MCA"]}, {"name": "Mizoram University", "state": "Mizoram", "type": "Central University", "programs": ["B.Com (E-Commerce, E-Accountancy & Tally)", "BBA (E-Business)", "BCA", "M.Com (E-Commerce)", "MSW", "M.A. (Education)", "MBA (Entrepreneurship)", "MBA (Logistics and Supply Chain Mgmt)", "MBA (Financial Management)", "MBA (General)", "MBA (Big Data Analytics)", "MBA (Marketing Management)"]}, {"name": "Kalinga Institute of Industrial Technology", "state": "Odisha", "type": "Deemed-to-be University", "programs": ["B.Com (Hons) (Accountancy)", "B.A. (Journalism and Mass Comm)", "M.A. (Tribal Studies)", "M.A. (Journalism & Mass Comm)", "M.Com (International Business)", "M.Com (Accountancy)", "M.A. (Sociology)", "M.A. (Economics)"]}, {"name": "Centurion University of Technology and Management", "state": "Odisha", "type": "Private University", "programs": ["B.Com", "BCA (Data Sciences)", "BBA (Marketing Management)", "M.Sc (Mathematics)", "MBA", "MCA"]}, {"name": "Chandigarh University", "state": "Punjab", "type": "Private University", "programs": ["BBA", "BCA", "B.A. (Journalism and Mass Comm)", "M.A. (Journalism and Mass Comm)", "M.Sc (Data Science)", "M.A. (Economics)", "M.A. (English)", "M.Sc (Mathematics)", "MBA", "MCA"]}, {"name": "Chitkara University", "state": "Punjab", "type": "Private University", "programs": ["MBA", "BBA"]}, {"name": "Lovely Professional University", "state": "Punjab", "type": "Private University", "programs": ["BCA", "B.A. (Economics, Computer Applications, Management, History, Political Science, Sociology, English, Hindi)", "BBA", "M.Sc (Economics)", "M.Sc (Mathematics)", "M.A. (History)", "M.A. (Political Science)", "M.A. (Sociology)", "M.A. (English)", "M.Com", "MCA", "MBA"]}, {"name": "Guru Nanak Dev University", "state": "Punjab", "type": "State University", "programs": ["BCA", "B.Com", "B.A.", "M.A. (English)", "M.A. (Punjabi)", "M.Com", "MBA (Financial Management)", "MBA", "MBA (Marketing Management)", "MBA (HRM)", "MCA"]}, {"name": "Guru Kashi University", "state": "Punjab", "type": "Private University", "programs": ["BCA", "BBA", "B.A. (English/Hindi/Punjabi Lit, Economics/Sociology/Social Work, Public Admin/Maths/Political Science, History)", "M.A. (History)", "M.Com (Finance & Taxation Mgmt)", "M.A. (English)", "M.A. (Economics)", "M.A. (Political Science)", "M.A. (Sociology)", "M.A. (Hindi)", "M.Lib. & Info. Sciences", "MBA (General)", "MCA"]}, {"name": "Desh Bhagat University", "state": "Punjab", "type": "Private University", "programs": ["BBA", "B.Com (General)", "B.A. (General English, History, Political Science, Sociology, General Punjabi)", "M.A. (Journalism & Mass Comm)", "M.Com (Commerce)", "M.Lib. & Info. Sciences", "M.A. (English)", "M.A. (Punjabi)", "M.A. (Hindi)", "M.A. (History)", "M.A. (Political Science)", "MCA", "MBA"]}, {"name": "Manipal University Jaipur", "state": "Rajasthan", "type": "Private University", "programs": ["BCA", "BBA", "B.Com (General)", "M.A. (Economics)", "MCA", "M.Com (General)", "M.A. (Journalism & Mass Comm)", "MBA"]}, {"name": "Vivekananda Global University", "state": "Rajasthan", "type": "Private University", "programs": ["B.A. (Economics, Political Science, Public Policy, International Relations, English, History, Computer Applications)", "BCA", "BBA", "M.Sc (Mathematics)", "M.A. (English)", "MBA", "MCA", "M.A. (Journalism & Mass Comm)", "MBA (International Finance)"]}, {"name": "Banasthali Vidyapith", "state": "Rajasthan", "type": "Deemed-to-be University", "programs": ["B.A.", "B.Com", "M.Sc (Statistics)", "M.Com", "M.Sc (Mathematics)", "M.A. (English)", "M.A. (History)", "M.A. (Political Science)", "MBA", "M.A. (Sociology)", "M.A. (Economics)"]}, {"name": "Mody University of Science and Technology", "state": "Rajasthan", "type": "Private University", "programs": ["B.Com (General)", "B.A. (General)", "BCA", "M.Com (General)", "M.A. (Journalism)", "MBA", "MCA"]}, {"name": "Amity University (Rajasthan)", "state": "Rajasthan", "type": "Private University", "programs": ["B.Com (Hons)", "BBA", "BCA", "M.Sc (Mathematics)", "M.A. (Journalism & Mass Comm)", "M.A. (English)", "M.Sc (Data Science)", "MBA", "MCA"]}, {"name": "Jaipur National University", "state": "Rajasthan", "type": "Private University", "programs": ["BBA", "BCA", "B.Com", "M.A. (English)", "M.A. (Journalism & Mass Comm)", "M.Sc (Mathematics)", "MBA", "MCA"]}, {"name": "Sikkim Manipal University", "state": "Sikkim", "type": "Private University", "programs": ["B.A. (English, Political Science, Sociology)", "B.Com (General)", "BBA", "MCA", "MBA", "M.A. (Political Science)", "M.Com (General)", "M.A. (English)", "M.A. (Sociology)"]}, {"name": "Shri Ramasamy Memorial University (Sikkim)", "state": "Sikkim", "type": "Private University", "programs": ["BBA (General)", "BCA (General)", "B.Com (General)", "M.Com (General)", "MBA", "MCA"]}, {"name": "Bharathidasan University", "state": "Tamil Nadu", "type": "State University", "programs": ["B.A. (Tamil)", "B.A. (English)", "BBA", "M.A. (Economics)", "M.A. (English)", "M.A. (History)", "M.A. (Political Science)", "M.A. (Public Administration)", "M.A. (Tamil)", "MBA"]}, {"name": "Bharath Institute of Higher Education and Research", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.A. (English)", "B.Com (General)", "M.Com (General)"]}, {"name": "B.S. Abdur Rahman Institute of Science and Technology", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.A. (Islamic Studies)", "MBA", "MCA"]}, {"name": "Madurai Kamaraj University", "state": "Tamil Nadu", "type": "State University", "programs": ["B.A. (Political Science)", "B.Com", "BBA", "M.A. (English)", "M.A. (Gandhian Thoughts)", "M.Sc (Mathematics)", "M.A. (Political Science)", "M.A. (Journalism and Mass Comm)", "M.Com"]}, {"name": "Dr. M.G.R. Educational and Research Institute", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Com", "M.Com (General)", "M.Sc (Statistics)", "M.A. (Journalism & Mass Comm)", "M.Sc (Data Science and AI)", "MBA", "MCA"]}, {"name": "Shanmugha Arts, Science, Technology & Research Academy", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Com", "BBA", "BCA (General)", "M.Sc (Business Analytics)", "M.Com", "M.A. (Divya Prabandham)", "M.A. (Sanskrit)", "M.Sc (Data Science)", "MBA", "MCA"]}, {"name": "Sathyabama Institute of Science and Technology", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["BBA", "B.Com", "B.A. (English)", "M.A. (English)", "M.Sc (Mathematics)", "MBA"]}, {"name": "S.R.M. Institute of Sciences and Technology", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["BCA (Data Science)", "BBA (Digital Marketing)", "MCA", "M.Com", "MBA"]}, {"name": "University of Madras", "state": "Tamil Nadu", "type": "State University", "programs": ["B.Com (General)", "B.A. (French)", "BBA (General)", "M.A. (Journalism & Mass Comm)", "M.A. (Public Administration)", "M.A. (Anthropology)", "M.A. (Economics)", "M.A. (English)", "M.Com (General)"]}, {"name": "Kalasalingam Academy of Research and Higher Education", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["BBA", "B.Com (General)", "BCA", "M.Sc (Data Science)", "M.A. (English)", "MBA", "MCA"]}, {"name": "Amrita Vishwa Vidyapeetham University", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Com", "M.Com", "M.Sc (Mathematics)", "M.A. (Communication)", "M.A. (Journalism and Mass Comm)", "M.A. (Philosophy)", "MBA", "MCA"]}, {"name": "Alagappa University", "state": "Tamil Nadu", "type": "State University", "programs": ["B.A. (Tamil)", "BBA (Management)", "B.Com", "M.Com", "M.A. (Tamil)", "M.A. (English)", "M.A. (Journalism and Mass Comm)", "MBA"]}, {"name": "Bharathiar University", "state": "Tamil Nadu", "type": "State University", "programs": ["B.A. (English Literature)", "B.Com (General)", "BBA (General)", "M.Com", "M.A. (Economics)", "M.A. (Tamil Literature)", "M.A. (English Literature)", "M.Com (Finance and Accounting)", "M.A. (Career Guidance)", "MBA", "MCA"]}, {"name": "Vellore Institute of Technology", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Com (General)", "MCA", "MBA", "M.Sc (Data Science)"]}, {"name": "Manonmaniam Sundaranar University", "state": "Tamil Nadu", "type": "State University", "programs": ["B.Com", "BBA (General)", "B.A. (English)", "M.A. (Tamil)", "M.A. (English)", "M.A. (History)", "M.A. (Economics)", "M.Com", "M.A. (Journalism & Mass Comm)", "MBA (General)"]}, {"name": "Hindustan Institute of Technology and Science (HITS)", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Com (General)", "BBA (General)", "BCA (General)", "MBA (General)", "MCA (General)"]}, {"name": "Karunya Institute of Technology and Sciences", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Com (General)", "MBA"]}, {"name": "Meenakshi Academy of Higher Education and Research", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.A.", "B.Com", "M.A. (English)"]}, {"name": "Anna University", "state": "Tamil Nadu", "type": "State University", "programs": ["MBA (General Management)", "MBA (Business Analytics)"]}, {"name": "Vel's Institute of Science, Technology & Advanced Studies (VISTAS)", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["BBA (4yr)", "MBA"]}, {"name": "Sri Ramachandra Institute of Higher Education and Research", "state": "Tamil Nadu", "type": "Deemed-to-be University", "programs": ["B.Sc (Hons) (Data Science)"]}, {"name": "ICFAI Foundation for Higher Education", "state": "Telangana", "type": "Deemed-to-be University", "programs": ["BBA", "MBA (General)"]}, {"name": "International Institute of Information Technology", "state": "Telangana", "type": "Deemed-to-be University", "programs": ["M.Sc (Data Science)"]}, {"name": "Aligarh Muslim University", "state": "Uttar Pradesh", "type": "Central University", "programs": ["B.Com", "B.A. (Economics, History, Political Science, English, Urdu, Hindi)", "M.A. (Economics)", "M.A. (History)", "M.A. (Political Science)", "M.A. (English)", "M.A. (Urdu)", "M.A. (Hindi)", "M.Com", "MBA", "M.Lib. & Info. Sciences"]}, {"name": "Amity University (Uttar Pradesh)", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BCA (General)", "BBA (General)", "B.A. (Political Science, Economics, English, Sociology)", "M.A. (Journalism & Mass Comm)", "M.Com (Financial Mgmt/FinTech)", "M.A. (Economics)", "MCA", "MBA", "PGD (Management)", "PGD (Logistics)", "PGD (Data Science)", "PGD (Machine Learning and AI)"]}, {"name": "Sharda University", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BBA (General)", "BCA (General)", "B.A. (Hons) (Political Science)", "M.Com (General)", "MBA", "MCA", "M.A. (English)"]}, {"name": "Mangalayatan University", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BBA", "BCA", "B.A. (English, History, Political Science, Economics, Sociology)", "M.A. (Political Science)", "M.A. (Journalism & Mass Comm)", "M.Com", "M.Sc (Mathematics)", "M.A. (English)", "M.A. (Education)", "M.A. (Public Administration)", "MCA", "MBA"]}, {"name": "Shiv Nadar Institution of Eminence", "state": "Uttar Pradesh", "type": "Deemed-to-be University", "programs": ["MBA"]}, {"name": "Integral University", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BCA", "B.Com", "B.A. (History, Sociology, Economics, Philosophy, Public Admin, Political Science, English, Hindi)", "MSW", "M.Sc (Mathematics)", "M.Com", "M.A. (Economics)", "M.A. (English)", "M.A. (History)", "M.A. (Political Science)", "M.A. (Sociology)", "MBA", "MCA"]}, {"name": "G.L.A. University", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BCA", "MBA", "MCA"]}, {"name": "Dayal Bagh Educational Institute", "state": "Uttar Pradesh", "type": "Deemed-to-be University", "programs": ["B.Com (Hons)", "B.A. (Hons) (Social Science)", "BBA", "M.Com (International Business)", "M.A. (Theology)"]}, {"name": "University of Lucknow", "state": "Uttar Pradesh", "type": "State University", "programs": ["B.Com", "BBA", "M.Com", "M.A. (Sanskrit)", "M.A. (Political Science)", "M.A. (English)", "M.A. (Economics)", "MSW", "MBA"]}, {"name": "Noida International University", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BBA", "B.Com (Hons)", "BCA", "M.Com", "M.A. (International Relations)", "M.Sc (Mathematics)", "M.A. (Journalism & Mass Comm)", "MBA", "MCA"]}, {"name": "Chatrapati Shahuji Maharaj University", "state": "Uttar Pradesh", "type": "State University", "programs": ["B.Com", "BBA", "BCA", "M.Com", "MBA", "MCA"]}, {"name": "Galgotias University", "state": "Uttar Pradesh", "type": "Private University", "programs": ["BBA", "BCA", "M.A. (Political Science)", "M.A. (Economics)", "M.A. (English)", "MBA", "M.Com", "MCA"]}, {"name": "Mahatma Jyotiba Phule Rohilkhand University", "state": "Uttar Pradesh", "type": "State University", "programs": ["B.A. (Hindi, English, Political Science, Sociology, History, Education, Urdu, Economics)", "M.A. (Education)", "M.A. (Economics)", "M.A. (English)", "M.A. (Hindi)", "M.Com", "M.A. (History)", "M.Sc (Mathematics)"]}, {"name": "Deen Dayal Upadhyay Gorakhpur University", "state": "Uttar Pradesh", "type": "State University", "programs": ["BBA", "B.Com (Hons) 4yr", "MBA", "M.A. (English)", "M.Com"]}, {"name": "Graphic Era (Deemed to be University)", "state": "Uttarakhand", "type": "Deemed-to-be University", "programs": ["BBA", "BCA", "B.Com (Hons)", "MCA", "MBA"]}, {"name": "University of Petroleum and Energy Studies", "state": "Uttarakhand", "type": "Private University", "programs": ["BBA (General)", "BCA", "MBA (Oil and Gas Mgmt)", "MBA (Logistics and Supply Chain Mgmt)", "MBA (General)", "MBA (Power Management)", "MBA (Infrastructure Management)", "MCA"]}, {"name": "Uttaranchal University", "state": "Uttarakhand", "type": "Private University", "programs": ["B.A.", "BBA", "BCA", "MCA", "MBA"]}];
 
-    function setActive() {
-      var scrollPos = window.scrollY + 160;
-      var activeIndex = 0;
-      sections.forEach(function(sec, i) {
-        if (sec.offsetTop <= scrollPos) activeIndex = i;
-      });
-      tabLinks.forEach(function(link, i) {
-        link.classList.toggle('is-active', i === activeIndex);
-      });
-    }
-    window.addEventListener('scroll', setActive, { passive: true });
-    setActive();
-  })();
+function normalizeName(s) {
+  return (s || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+const GENERIC_WORDS = new Set(['university','college','institute','institution','national','international','global','education','educational','higher','studies','science','sciences','technology','technologies','foundation','academy','deemed','private','state','open','the','and','for','of','vidyapeeth','vidyapith','vishwavidyalaya','centre','center']);
+
+function significantWords(s) {
+  return normalizeName(s).split(' ').filter(w => w.length > 2 && !GENERIC_WORDS.has(w));
+}
+
+function findMatch(query, list, nameKey) {
+  const nq = normalizeName(query);
+  if (!nq || nq.length < 3) return null;
+  let match = list.find(item => {
+    const iname = normalizeName(item[nameKey]);
+    return iname === nq || iname.includes(nq) || nq.includes(iname);
+  });
+  if (match) return match;
+  const qWords = significantWords(query);
+  if (qWords.length === 0) return null;
+  match = list.find(item => {
+    const iWords = significantWords(item[nameKey]);
+    return qWords.every(w => iWords.includes(w));
+  });
+  return match || null;
+}
+
+function runVerification() {
+  const query = document.getElementById('univ-input').value.trim();
+  const container = document.getElementById('resultContainer');
+  if (!query) {
+    container.innerHTML = '<p style="color:var(--text-muted);">Please type a university name first.</p>';
+    return;
+  }
+
+  const fakeMatch = findMatch(query, FAKE_UNIVERSITIES, 'name');
+  if (fakeMatch) {
+    container.innerHTML = `
+      <div style="text-align:left;">
+        <span class="badge badge-danger" style="margin-bottom:0.75rem;">⚠ On UGC's Official Fake Universities List</span>
+        <h2 style="color:var(--navy-900);margin-bottom:0.25rem;">${fakeMatch.name}</h2>
+        <p style="color:var(--text-subtle);margin-bottom:1rem;">${fakeMatch.address}</p>
+        <p style="background:var(--bg-surface-alt);padding:1rem;border-radius:var(--radius-md);color:var(--text-main);">This institution appears on UGC's official list of fake/non-recognized universities. It is <strong>not entitled to award any valid degree</strong>. Do not enroll or pay any fee.</p>
+        <a href="https://www.ugc.gov.in/oldpdf/fakeuniversity/fake_university_list.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--blue-600);font-weight:600;display:inline-block;margin-top:0.75rem;">View official UGC notification &rarr;</a>
+      </div>`;
+    return;
+  }
+
+  const entitledMatch = findMatch(query, ONLINE_ENTITLED, 'name');
+  if (entitledMatch) {
+    const progList = entitledMatch.programs.map(p => `<span class="badge badge-blue" style="margin:0.15rem;">${p}</span>`).join('');
+    container.innerHTML = `
+      <div style="text-align:left;">
+        <span class="badge badge-success" style="margin-bottom:0.75rem;">✓ Found on UGC-DEB Online-Entitled List</span>
+        <h2 style="color:var(--navy-900);margin-bottom:0.25rem;">${entitledMatch.name}</h2>
+        <p style="color:var(--text-subtle);margin-bottom:1rem;">${entitledMatch.state} &bull; ${entitledMatch.type}</p>
+        <p style="background:var(--accent-emerald-bg);padding:1rem;border-radius:var(--radius-md);color:var(--text-main);">Entitled to offer <strong>Online mode</strong> programmes for academic year 2025-26, session beginning July-August 2025, as per official UGC-DEB notification.</p>
+        <div style="margin-top:1rem;">
+          <span style="font-weight:700;color:var(--navy-900);display:block;margin-bottom:0.5rem;">Entitled Programmes:</span>
+          <div>${progList}</div>
+        </div>
+        <p style="color:var(--text-subtle);font-size:0.85rem;margin-top:1rem;">Entitlement is granted per session and can change. Always confirm your exact program on the <a href="https://deb.ugc.ac.in/" target="_blank" rel="noopener noreferrer" style="color:var(--blue-600);font-weight:600;">official UGC-DEB portal</a> before paying any fee.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div style="text-align:left;">
+      <span class="badge badge-amber" style="margin-bottom:0.75rem;">? Not Found in Our Records</span>
+      <h2 style="color:var(--navy-900);margin-bottom:0.75rem;">"${query}"</h2>
+      <p style="background:var(--bg-surface-alt);padding:1rem;border-radius:var(--radius-md);color:var(--text-main);margin-bottom:0.75rem;">We couldn't find this name on either the official UGC Fake Universities list or the current UGC-DEB Online-mode entitled list (113 institutions, 2025-26 session). This does <strong>not necessarily mean it's invalid</strong> &mdash; it could mean:</p>
+      <ul style="color:var(--text-muted);padding-left:1.25rem;margin-bottom:1rem;">
+        <li>The university offers only <strong>ODL (distance)</strong> mode rather than "Online" mode &mdash; a separate UGC list we don't yet have loaded</li>
+        <li>It operates under a special regulatory provision (e.g. Institute of Eminence, IGNOU-style central open university)</li>
+        <li>The name you typed doesn't exactly match official records &mdash; try the shorter/official name</li>
+      </ul>
+      <a href="https://deb.ugc.ac.in/" target="_blank" rel="noopener noreferrer" class="btn btn-navy">Verify Directly on Official UGC-DEB Portal &rarr;</a>
+    </div>`;
+}
 </script>
 </body>
 </html>
