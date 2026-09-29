@@ -24,89 +24,101 @@ title: "Compare Top Online Universities Side-by-Side | UniversityJano.com"
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
 <style>
-  html { scroll-behavior: smooth; }
-  .uni-tab-nav { position: sticky; top: 92px; z-index: 30; background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-  .uni-tab-nav .container { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
-  .uni-tab-nav .container::-webkit-scrollbar { display: none; }
-  .uni-tab-link { flex-shrink: 0; padding: 0.9rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: #64748b; text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; }
-  .uni-tab-link:hover { color: #1a56db; }
-  .uni-tab-link.is-active { color: #1a56db; border-bottom-color: #1a56db; }
-  #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 146px; }
-  @media (max-width: 768px) {
-    .uni-tab-nav { top: 78px; }
-    #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 134px; }
+  .cmp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-bottom: 1.25rem; }
+  .cmp-head > div { min-width: 0; flex: 1 1 320px; }
+  .cmp-add { cursor: pointer; border: 0; background: #f97316; color: #fff; font-weight: 700; font-size: .92rem; padding: .75rem 1.2rem; border-radius: 10px; }
+  .cmp-add:hover { background: #ea580c; }
+  .cmp-msg { padding: 2rem 1rem; text-align: center; color: #64748b; }
+
+  /* Overflow fix: long university names stay inside their boxes */
+  #compare-mount { max-width: 100%; overflow-x: auto; }
+  #compare-mount * { min-width: 0; }
+  #compare-mount h1, #compare-mount h2, #compare-mount h3, #compare-mount h4,
+  #compare-mount th, #compare-mount td, #compare-mount a, #compare-mount p, #compare-mount span {
+    overflow-wrap: anywhere; word-break: break-word;
   }
+  #compare-mount img { max-width: 100%; height: auto; }
+  #compare-mount table { width: 100%; }
+  #compare-mount th, #compare-mount td { vertical-align: top; }
+  .cmp-about { max-width: 820px; }
 </style>
 </head>
 <body>
 {% include site-header.html %}
 
-    <div id="compare-app-root">
-      <div class="container section-padding">
-        <span class="badge badge-blue">Compare Tool</span>
-        <h1 class="section-title">Compare Top Online Universities Side-by-Side</h1>
-        <p class="section-subtitle">A side-by-side comparison of fees, NAAC grades, 0% EMI options, placement support, and exam mode across UGC-DEB approved online universities in India — so you can shortlist with real data instead of marketing claims.</p>
-        <p>Choosing an online degree usually comes down to a handful of factors that matter more than a university's brand name: whether the specific programme is UGC-DEB approved for your admission session, the real fee structure after any discounts, placement support for working professionals, and whether exams are proctored online or held at a physical centre. This tool lines up that information across universities so you can compare them directly.</p>
-        <h2>What You Can Compare Here</h2>
-        <ul>
-          <li>Total fees and available 0% EMI plans.</li>
-          <li>NAAC accreditation grade and UGC-DEB approval status.</li>
-          <li>Placement support and average outcomes reported by each university.</li>
-          <li>Exam mode — online proctored vs offline exam centres.</li>
-        </ul>
-        <a href="{{ '/universities/index.html' | relative_url }}" class="btn btn-primary">🏫 Browse All Universities</a>
-        <p style="margin-top:1.5rem;font-size:0.85rem;">Loading the interactive comparison tool…</p>
-      </div>
+<main class="container section-padding">
+  <div class="cmp-head">
+    <div>
+      <span class="badge badge-blue">Compare Tool</span>
+      <h1 class="section-title">Compare Top Online Universities Side-by-Side</h1>
+      <p class="section-subtitle">Fees, NAAC grade, 0% EMI, placements aur exam mode — 4 universities tak ek saath compare karo.</p>
     </div>
-    <script>
-      (function() {
-        function mountCompare() {
-          var container = document.getElementById('compare-app-root');
-          if (container && window.ComparePage && window.UNIVERSITIES_DATA) {
-            ReactDOM.createRoot(container).render(
-              React.createElement(window.ComparePage, {
-                compareList: window.UNIVERSITIES_DATA.slice(0, 3),
-                onAddUniversity: function(u) {},
-                onRemoveUniversity: function(id) {},
-                onOpenLeadModal: function(data) {
-                  window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want counselling for ' + (data.title || 'Online Degree'));
-                },
-                onOpenUniversityPage: function(u) {
-                  window.location.href = '/universities/' + u.slug + '.html';
-                }
-              })
-            );
-          } else {
-            setTimeout(mountCompare, 50);
-          }
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountCompare);
-        else mountCompare();
-      })();
-    </script>
-  
+    <button type="button" class="cmp-add" data-compare-open="1">＋ University add karo</button>
+  </div>
+
+  <div id="compare-mount"><p class="cmp-msg">Loading the interactive comparison tool…</p></div>
+
+  <section class="cmp-about" style="margin-top:2.5rem">
+    <h2>What You Can Compare Here</h2>
+    <p>Choosing an online degree usually comes down to a handful of factors that matter more than brand name: whether the programme is UGC-DEB approved for your admission session, the real fee structure after discounts, placement support for working professionals, and whether exams are proctored online or held at a physical centre.</p>
+    <ul>
+      <li>Total fees and available 0% EMI plans.</li>
+      <li>NAAC accreditation grade and UGC-DEB approval status.</li>
+      <li>Placement support and average outcomes reported by each university.</li>
+      <li>Exam mode — online proctored vs offline exam centres.</li>
+    </ul>
+    <a href="{{ '/universities/index.html' | relative_url }}" class="btn btn-primary">🏫 Browse All Universities</a>
+  </section>
+</main>
+
 {% include site-footer.html %}
+<script src="{{ '/js/compare-tray.js' | relative_url }}"></script>
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
 <script>
-  (function() {
-    var tabLinks = document.querySelectorAll('.uni-tab-link');
-    var sections = Array.prototype.map.call(tabLinks, function(link) {
-      return document.querySelector(link.getAttribute('href'));
-    }).filter(Boolean);
-    if (!tabLinks.length || !sections.length) return;
+  (function () {
+    var mount = document.getElementById('compare-mount');
+    var reactRoot = null, tries = 0;
 
-    function setActive() {
-      var scrollPos = window.scrollY + 160;
-      var activeIndex = 0;
-      sections.forEach(function(sec, i) {
-        if (sec.offsetTop <= scrollPos) activeIndex = i;
-      });
-      tabLinks.forEach(function(link, i) {
-        link.classList.toggle('is-active', i === activeIndex);
-      });
+    function selected() {
+      var all = window.UNIVERSITIES_DATA || [];
+      return window.UJCompare.get().map(function (s) {
+        return all.filter(function (u) { return String(u.id) === String(s.id); })[0];
+      }).filter(Boolean);
     }
-    window.addEventListener('scroll', setActive, { passive: true });
-    setActive();
+
+    function render() {
+      var list = selected();
+      if (!list.length) {
+        if (reactRoot) reactRoot.render(null);
+        mount.innerHTML = '<p class="cmp-msg">Abhi koi university select nahi hai. Upar "University add karo" dabao.</p>';
+        return;
+      }
+      if (!reactRoot) { mount.innerHTML = ''; reactRoot = ReactDOM.createRoot(mount); }
+      reactRoot.render(React.createElement(window.ComparePage, {
+        compareList: list,
+        onAddUniversity: function (u) { if (u) window.UJCompare.add(u.id, u.name || u.title); else window.UJCompare.openPicker(); },
+        onRemoveUniversity: function (id) { window.UJCompare.remove(id); },
+        onOpenLeadModal: function (d) {
+          window.location.href = 'https://wa.me/919599128500?text=' + encodeURIComponent('Hi, I want counselling for ' + ((d && d.title) || 'Online Degree'));
+        },
+        onOpenUniversityPage: function (u) { window.location.href = '/universities/' + u.slug + '.html'; }
+      }));
+    }
+
+    function start() {
+      if (window.ComparePage && window.UNIVERSITIES_DATA && window.React && window.ReactDOM && window.UJCompare) {
+        if (!window.UJCompare.get().length) {
+          window.UNIVERSITIES_DATA.slice(0, 3).forEach(function (u) { window.UJCompare.add(u.id, u.name || u.title); });
+        }
+        render();
+        window.addEventListener('uj-compare-change', render);
+      } else if (++tries < 200) {
+        setTimeout(start, 50);
+      } else {
+        mount.innerHTML = '<p class="cmp-msg">Comparison tool load nahi ho paya. Page refresh karo.</p>';
+      }
+    }
+    start();
   })();
 </script>
 </body>
