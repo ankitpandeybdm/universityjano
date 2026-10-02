@@ -18,7 +18,7 @@ coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=form
 <li><strong>The university is recognised as a degree-granting institution.</strong> Almost every legitimate university has this, and it says nothing about online delivery.</li>
 <li><strong>The specific online programme is entitled or recognised by UGC-DEB.</strong> This is what makes an online degree valid, and it is granted per programme and per academic session.</li>
 </ul>
-<p>UGC-DEB entitles some universities to offer online programmes and separately recognises others. The latest lists we reviewed show 113 institutions entitled to offer online programmes (offering over 750 programmes between them) and 13 recognised institutions offering 46 programmes. So even among legitimate universities, only certain courses qualify. The list is refreshed each year, and UGC has opened its application window for the 2026-27 cycle, but an application is not an approval.</p>
+<p>UGC-DEB entitles some universities to offer online programmes and separately recognises others. For the August 2026 session, 121 universities are entitled to offer full-fledged online programmes, up from 113 the year before. UGC also separately recognises a smaller group of institutions (13 were listed for 2025-26). So even among legitimate universities, only certain courses qualify. The list is refreshed each year, and UGC has opened its application window for the 2026-27 cycle, but an application is not an approval.</p>
 
 <h2>How to Verify a University in Five Minutes</h2>
 <h3>Step 1: Check the programme on the DEB portal</h3>
