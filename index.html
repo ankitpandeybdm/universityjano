@@ -24,7 +24,7 @@ sitemap: true
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://universityjano.com/">
   <meta property="og:site_name" content="UniversityJano.com">
-  <meta property="og:image" content="https://universityjano.com/{{ '/images/logo.png' | relative_url }}">
+  <meta property="og:image" content="https://universityjano.com/images/logo.png">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta property="og:locale" content="en_IN">
@@ -33,7 +33,7 @@ sitemap: true
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="UniversityJano.com — Sahi University Jano, Sahi Career Chuno">
   <meta name="twitter:description" content="Compare fees, UGC-DEB approvals, 0% EMI plans and placement records across 25+ online universities in India. 100% free expert counselling.">
-  <meta name="twitter:image" content="https://universityjano.com/{{ '/images/logo.png' | relative_url }}">
+  <meta name="twitter:image" content="https://universityjano.com/images/logo.png">
 
   <!-- Favicon -->
   <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
@@ -46,7 +46,7 @@ sitemap: true
     "@type": "Organization",
     "name": "UniversityJano.com",
     "url": "https://universityjano.com/",
-    "logo": "https://universityjano.com/{{ '/images/logo.png' | relative_url }}",
+    "logo": "https://universityjano.com/images/logo.png",
     "description": "India's AI-powered platform to discover and compare UGC-DEB approved online universities — fees, NAAC grades, EMI plans and placement records.",
     "sameAs": []
   }
@@ -75,31 +75,59 @@ sitemap: true
   <!-- Structured Data: FAQ -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is UGC-DEB approval and why does it matter for an online degree?",
-        "acceptedAnswer": { "@type": "Answer", "text": "UGC-DEB (Distance Education Bureau) approval is what makes an online degree from an Indian university legally equivalent to a regular on-campus degree for jobs, higher education and most government eligibility. Always verify current-session approval for your exact program before paying any fee." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does an online MBA cost in India in 2026?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A UGC-DEB approved online MBA in India typically costs between ₹50,000 and ₹2,50,000 for the full program, depending on the university and specialization, with 0% EMI options available at most approved universities." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is UniversityJano's counselling and comparison service free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Comparing universities, checking UGC-DEB approval, using the fee and ROI calculators, and getting 1-on-1 expert counselling on UniversityJano.com are all completely free for students." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do employers in India accept online degrees?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, most Indian employers now accept UGC-DEB approved online degrees at par with regular degrees, since they carry the same legal recognition. Employer perception can still vary by industry and individual company." }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is UGC-DEB approval and why does it matter for an online degree?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UGC-DEB (Distance Education Bureau) approval is what makes an online degree from an Indian university legally equivalent to a regular on-campus degree for jobs, higher education and most government eligibility. Always verify current-session approval for your exact program before paying any fee."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an online MBA cost in India in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A UGC-DEB approved online MBA in India typically costs between ₹50,000 and ₹2,50,000 for the full program, depending on the university and specialization, with 0% EMI options available at most approved universities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is UniversityJano's counselling and comparison service free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Comparing universities, checking UGC-DEB approval, using the fee and ROI calculators, and getting 1-on-1 expert counselling on UniversityJano.com are all completely free for students."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do employers in India accept online degrees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most Indian employers now accept UGC-DEB approved online degrees at par with regular degrees, since they carry the same legal recognition. Employer perception can still vary by industry and individual company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between online, distance and regular degrees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regular means classroom study on campus. Online means you study through a learning portal with live and recorded lectures, and most exams are proctored from home. Distance (ODL) is self-paced study with printed or digital material, and exams are often held at study centres. Approved online and distance degrees carry the same standing as regular ones under UGC regulations, but check the notification of any specific job or exam you are aiming for."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check whether a university is fake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Match the exact university name against UGC's list of fake universities, confirm that your programme is approved for online or distance mode in your admission session on the UGC-DEB portal, and pay fees only to the university's official account. The UniversityJano UGC-DEB verifier checks a name against UGC's fake-university and online-entitled lists."
+      }
+    }
+  ]
+}
   </script>
 
 <style>
@@ -119,6 +147,121 @@ sitemap: true
 .uj-pulse-cta { animation: ujPulseSoft 2.5s infinite; }
 .calc-live-badge { display:inline-flex; align-items:center; gap:0.35rem; background:var(--accent-emerald-bg); color:var(--accent-emerald); font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:var(--radius-full); }
 .calc-live-dot { width:7px; height:7px; border-radius:50%; background:var(--accent-emerald); animation: ujPulseSoft 1.8s infinite; }
+/* ===================== Homepage additions (shorts, journey, fee ladder, content) ===================== */
+:root { --uj-ease: cubic-bezier(.22, 1, .36, 1); }
+.uj-sec-alt { background: var(--bg-surface-alt, #f8fafc); border-radius: var(--radius-xl, 24px); }
+.uj-lead { max-width: 760px; margin: 0 auto 1.6rem; text-align: center; color: var(--text-muted, #64748b); }
+.uj-lead a, .uj-prose a { color: var(--blue-600, #1a56db); font-weight: 700; }
+.uj-note { font-size: .85rem; color: var(--text-muted, #64748b); margin-top: 1rem; text-align: center; }
+
+/* ---------- Shorts ---------- */
+.uj-shorts-rail { display: flex; gap: 1.1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .6rem .3rem 1.4rem; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.uj-short { flex: 0 0 min(232px, 66vw); scroll-snap-align: start; }
+.uj-short-media { position: relative; aspect-ratio: 9 / 16; border-radius: 20px; overflow: hidden; background: var(--navy-900, #0b1b3d); box-shadow: 0 16px 30px -16px rgba(11,27,61,.6); transition: transform .35s var(--uj-ease), box-shadow .35s; }
+.uj-short:hover .uj-short-media { transform: translateY(-6px) rotate(-.7deg); box-shadow: 0 24px 40px -18px rgba(255,122,0,.5); }
+.uj-short-media img, .uj-short-media video, .uj-short-media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.uj-play { position: absolute; inset: 0; width: 100%; display: grid; place-items: center; border: 0; cursor: pointer; padding: 0; background: linear-gradient(180deg, rgba(11,27,61,.05) 30%, rgba(11,27,61,.82)); }
+.uj-play i { width: 62px; height: 62px; border-radius: 50%; background: var(--orange-500, #ff7a00); display: grid; place-items: center; animation: ujPulseSoft 2.2s infinite; }
+.uj-play i::after { content: ""; margin-left: 5px; border-left: 18px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+.uj-short-kw { position: absolute; left: .85rem; right: .85rem; bottom: .8rem; color: #fff; font-weight: 800; font-size: .95rem; line-height: 1.25; text-align: left; text-shadow: 0 2px 8px rgba(0,0,0,.55); pointer-events: none; }
+.uj-short-kw small { display: block; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: #fed7aa; margin-bottom: .2rem; }
+.uj-short h3 { font-size: 1rem; line-height: 1.35; margin: .85rem 0 .3rem; color: var(--navy-900, #0b1b3d); }
+.uj-short a.uj-short-link { font-size: .86rem; font-weight: 800; color: var(--orange-600, #e06000); text-decoration: none; }
+.uj-short a.uj-short-link:hover { text-decoration: underline; }
+.uj-short--soon .uj-short-media { background: linear-gradient(150deg, var(--navy-900, #0b1b3d), var(--navy-700, #13306b)); display: grid; place-items: center; padding: 1.2rem; text-align: center; color: #fff; }
+.uj-short--soon .uj-short-media::before { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.16) 50%, transparent 65%); transform: translateX(-100%); animation: ujShimmer 3.2s infinite; }
+.uj-short--soon b { position: relative; font-size: 1rem; line-height: 1.35; }
+.uj-short--soon span.uj-soon-tag { position: relative; display: inline-block; margin-top: .8rem; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--orange-500, #ff7a00); padding: .25rem .6rem; border-radius: 99px; }
+@keyframes ujShimmer { to { transform: translateX(100%); } }
+.uj-shorts-cta { text-align: center; margin-top: .4rem; }
+
+/* ---------- Journey (scroll-drawn path) ---------- */
+.uj-journey { position: relative; }
+.uj-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; position: relative; z-index: 1; }
+.uj-step { text-align: center; }
+.uj-node { width: 54px; height: 54px; margin: 0 auto 1rem; border-radius: 50%; background: #fff; border: 3px solid var(--border-light, #e2e8f0); display: grid; place-items: center; font-weight: 800; font-size: 1.1rem; color: var(--navy-900, #0b1b3d); transition: background .4s, border-color .4s, color .4s, transform .5s var(--uj-ease), box-shadow .5s; }
+.uj-step.is-on .uj-node { background: var(--orange-500, #ff7a00); border-color: var(--orange-500, #ff7a00); color: #fff; transform: scale(1.1); box-shadow: 0 0 0 9px rgba(255,122,0,.16); }
+.uj-step h3 { font-size: 1.08rem; margin: 0 0 .4rem; color: var(--navy-900, #0b1b3d); }
+.uj-step p { font-size: .92rem; color: var(--text-muted, #64748b); margin: 0 0 .6rem; line-height: 1.55; }
+.uj-step a { font-weight: 800; font-size: .88rem; color: var(--blue-600, #1a56db); text-decoration: none; }
+.uj-step a:hover { text-decoration: underline; }
+.uj-track { position: absolute; z-index: 0; border-radius: 4px; background: var(--border-light, #e2e8f0); }
+.uj-fill { position: absolute; left: 0; top: 0; width: 0; height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--navy-700, #13306b), var(--orange-500, #ff7a00)); }
+.uj-track.is-v .uj-fill { width: 100%; height: 0; background: linear-gradient(180deg, var(--navy-700, #13306b), var(--orange-500, #ff7a00)); }
+.uj-cap { position: absolute; left: 0; top: 50%; z-index: 2; font-size: 1.7rem; line-height: 1; transform: translate(-50%, -50%); filter: drop-shadow(0 4px 6px rgba(11,27,61,.35)); animation: ujBob 1.6s ease-in-out infinite; }
+@keyframes ujBob { 0%, 100% { margin-top: -3px; } 50% { margin-top: 3px; } }
+.uj-conf { position: absolute; width: 8px; height: 8px; border-radius: 2px; pointer-events: none; z-index: 3; animation: ujConf .95s ease-out forwards; }
+@keyframes ujConf { from { transform: translate(-50%, -50%) scale(1); opacity: 1; } to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--r)) scale(.4); opacity: 0; } }
+@media (max-width: 767px) {
+  .uj-steps { grid-template-columns: 1fr; gap: 1.6rem; }
+  .uj-step { display: grid; grid-template-columns: 54px 1fr; gap: 1rem; text-align: left; align-items: start; }
+  .uj-node { margin: 0; }
+  .uj-cap { left: 50%; top: 0; }
+}
+
+/* ---------- Fee ladder ---------- */
+.uj-tabs { display: flex; justify-content: center; margin-bottom: 1.2rem; }
+.uj-tabs-in { display: inline-flex; gap: .3rem; padding: .3rem; border-radius: 99px; background: #fff; border: 1px solid var(--border-light, #e2e8f0); }
+.uj-tab { appearance: none; border: 0; background: transparent; padding: .5rem 1.15rem; border-radius: 99px; font: inherit; font-weight: 800; font-size: .92rem; color: var(--navy-900, #0b1b3d); cursor: pointer; transition: background .2s, color .2s; }
+.uj-tab[aria-selected="true"] { background: var(--navy-900, #0b1b3d); color: #fff; }
+.uj-fee-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; max-width: 760px; margin: 0 auto 1.3rem; }
+.uj-fee-stats div { background: #fff; border: 1px solid var(--border-light, #e2e8f0); border-radius: 14px; padding: .8rem 1rem; text-align: center; }
+.uj-fee-stats small { display: block; color: var(--text-muted, #64748b); font-size: .78rem; }
+.uj-fee-stats b { font-size: 1.15rem; color: var(--navy-900, #0b1b3d); }
+.uj-fee-stats span { display: block; font-size: .78rem; color: var(--text-muted, #64748b); }
+.uj-ladder { display: grid; gap: .25rem; max-width: 900px; margin: 0 auto; background: #fff; border: 1px solid var(--border-light, #e2e8f0); border-radius: 18px; padding: .8rem; }
+.uj-rung { display: grid; grid-template-columns: minmax(130px, 200px) 1fr 92px; gap: .9rem; align-items: center; padding: .42rem .6rem; border-radius: 10px; text-decoration: none; color: inherit; transition: background .15s; }
+.uj-rung:hover { background: var(--orange-50, #fff4e8); }
+.uj-rung-name { font-weight: 700; font-size: .92rem; color: var(--navy-900, #0b1b3d); line-height: 1.25; }
+.uj-rung-name small { display: block; font-weight: 600; font-size: .72rem; color: var(--text-muted, #64748b); }
+.uj-bar { height: 12px; border-radius: 99px; background: var(--bg-surface-alt, #f1f5f9); overflow: hidden; }
+.uj-bar i { display: block; height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--navy-700, #13306b), var(--orange-500, #ff7a00)); transition: width 1s var(--uj-ease); }
+.uj-rung-fee { text-align: right; font-weight: 800; font-size: .92rem; color: var(--navy-900, #0b1b3d); }
+@media (max-width: 640px) {
+  .uj-rung { grid-template-columns: 1fr auto; row-gap: .3rem; }
+  .uj-bar { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* ---------- Content blocks ---------- */
+.uj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1.1rem; }
+.uj-card { background: #fff; border: 1px solid var(--border-light, #e2e8f0); border-radius: 18px; padding: 1.4rem; display: flex; flex-direction: column; transition: transform .3s var(--uj-ease), box-shadow .3s; }
+.uj-card:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -18px rgba(11,27,61,.35); }
+.uj-card h3 { margin: .2rem 0 .35rem; font-size: 1.15rem; color: var(--navy-900, #0b1b3d); }
+.uj-card p { margin: 0 0 .7rem; font-size: .92rem; line-height: 1.55; color: #475569; }
+.uj-card ul { margin: 0 0 1rem; padding-left: 1.1rem; font-size: .9rem; color: #475569; line-height: 1.6; }
+.uj-card .uj-meta { margin-top: auto; padding-top: .8rem; border-top: 1px solid var(--border-light, #e2e8f0); font-size: .85rem; color: var(--text-muted, #64748b); }
+.uj-card .uj-meta b { color: var(--navy-900, #0b1b3d); display: block; font-size: 1.02rem; }
+.uj-pill { display: inline-block; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 99px; background: rgba(19,48,107,.09); color: var(--navy-700, #13306b); }
+.uj-card--navy { border-top: 4px solid var(--navy-900, #0b1b3d); }
+.uj-card--orange { border-top: 4px solid var(--orange-500, #ff7a00); }
+.uj-card--green { border-top: 4px solid var(--accent-emerald, #059669); }
+.uj-tablewrap { overflow-x: auto; border: 1px solid var(--border-light, #e2e8f0); border-radius: 16px; background: #fff; }
+.uj-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: .92rem; }
+.uj-table th, .uj-table td { padding: .85rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light, #e2e8f0); line-height: 1.5; }
+.uj-table thead th { background: var(--navy-900, #0b1b3d); color: #fff; font-size: .82rem; letter-spacing: .05em; text-transform: uppercase; }
+.uj-table thead th.is-hl { background: var(--orange-500, #ff7a00); }
+.uj-table tbody th { color: var(--navy-900, #0b1b3d); font-weight: 800; width: 150px; background: var(--bg-surface-alt, #f8fafc); }
+.uj-table td.is-hl { background: var(--orange-50, #fff4e8); }
+.uj-table tr:last-child th, .uj-table tr:last-child td { border-bottom: 0; }
+.uj-flags { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: .9rem; }
+.uj-flag { display: grid; grid-template-columns: 34px 1fr; gap: .8rem; background: #fff; border: 1px solid #fecaca; border-radius: 14px; padding: 1rem 1.1rem; }
+.uj-flag i { width: 34px; height: 34px; border-radius: 50%; background: #fee2e2; color: #b91c1c; display: grid; place-items: center; font-style: normal; font-weight: 800; }
+.uj-flag b { display: block; color: var(--navy-900, #0b1b3d); margin-bottom: .15rem; }
+.uj-flag span { font-size: .9rem; color: #475569; line-height: 1.5; }
+.uj-faq { max-width: 860px; margin: 0 auto; }
+.uj-faq details { background: #fff; border: 1px solid var(--border-light, #e2e8f0); border-radius: 14px; padding: .95rem 1.2rem; margin: .6rem 0; transition: border-color .2s, box-shadow .2s; }
+.uj-faq details[open] { border-color: var(--orange-500, #ff7a00); box-shadow: 0 10px 22px -16px rgba(255,122,0,.7); }
+.uj-faq summary { cursor: pointer; font-weight: 800; color: var(--navy-900, #0b1b3d); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.uj-faq summary::-webkit-details-marker { display: none; }
+.uj-faq summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--orange-500, #ff7a00); transition: transform .25s; }
+.uj-faq details[open] summary::after { transform: rotate(45deg); }
+.uj-faq details p { margin: .7rem 0 0; color: #475569; line-height: 1.65; }
+
+@media (prefers-reduced-motion: reduce) {
+  .uj-cap, .uj-play i, .uj-short--soon .uj-short-media::before { animation: none; }
+  .uj-bar i, .uj-node, .uj-card, .uj-short-media { transition: none; }
+}
+
 </style>
 </head>
 <body>
@@ -307,6 +450,100 @@ sitemap: true
     </div>
   </section>
 
+  <!-- ============ SHORTS / VIDEOS ============ -->
+  <section class="section-padding container" id="shorts" aria-labelledby="shorts-title">
+    <div class="section-header">
+      <span class="section-tag">Jano in 30 Seconds</span>
+      <h2 class="section-title" id="shorts-title">One Question, One Short, One Straight Answer</h2>
+      <p class="section-subtitle">Fees, approvals, EMI, exams &mdash; each video answers one thing students actually search for, and links to the full guide.</p>
+    </div>
+
+    <!-- ================= EDIT HERE: add each new short to `videos` =================
+         YouTube Short:  { id: "dQw4w9WgXcQ", title: "...", keyword: "online mba fees", date: "2026-10-05", link: "/blog/xxx.html", linkLabel: "Read the full guide" }
+         Self-hosted:    { src: "/videos/online-mba-fees.mp4", poster: "/images/shorts/online-mba-fees.jpg", title: "...", keyword: "...", date: "2026-10-05" }
+         Optional per video: description (used for video schema), duration ("PT45S").
+         Newest first. `date` (YYYY-MM-DD) is needed for Google video rich results.
+         Leave `videos` empty and the "coming soon" cards show instead. -->
+    <script>
+    window.UJ_VIDEO_CONFIG = {
+      channelUrl: "",   // e.g. "https://www.youtube.com/@yourchannel" — shows a "Watch more" button when filled
+      videos: [
+      ]
+    };
+    </script>
+
+    <div class="uj-shorts-rail" id="ujShortsRail" role="list" aria-label="UniversityJano short videos"></div>
+    <p class="uj-shorts-cta" id="ujShortsCta" hidden></p>
+  </section>
+
+  <!-- ============ JOURNEY (scroll-drawn path) ============ -->
+  <section class="section-padding container uj-sec-alt" id="journey" aria-labelledby="journey-title">
+    <div class="section-header">
+      <span class="section-tag blue">The Order Matters</span>
+      <h2 class="section-title" id="journey-title">From Confused to Convocation: 4 Checkpoints</h2>
+      <p class="section-subtitle">Most students pick the university first and check approval last. Flip it &mdash; scroll down and watch the path.</p>
+    </div>
+    <div class="uj-journey" id="ujJourney">
+      <ol class="uj-steps">
+        <li class="uj-step">
+          <span class="uj-node" aria-hidden="true">1</span>
+          <div>
+            <h3>Check approval, programme-wise</h3>
+            <p>A university being recognised isn't the same as <em>your</em> programme being approved for online mode in <em>your</em> session. Look up both.</p>
+            <a href="/ugc-verifier.html">Open the UGC-DEB verifier &rarr;</a>
+          </div>
+        </li>
+        <li class="uj-step">
+          <span class="uj-node" aria-hidden="true">2</span>
+          <div>
+            <h3>Do the fee maths</h3>
+            <p>Ask for the full programme fee, not just the first-semester amount &mdash; then see what the monthly number looks like.</p>
+            <a href="#fee-ladder">See the fee ladder &darr;</a>
+          </div>
+        </li>
+        <li class="uj-step">
+          <span class="uj-node" aria-hidden="true">3</span>
+          <div>
+            <h3>Compare three, not thirty</h3>
+            <p>Shortlist three universities and put exam mode, NAAC, EMI and placements side by side. Decision fatigue is real.</p>
+            <a href="/compare.html">Start comparing &rarr;</a>
+          </div>
+        </li>
+        <li class="uj-step">
+          <span class="uj-node" aria-hidden="true">4</span>
+          <div>
+            <h3>Know your exam mode, then apply</h3>
+            <p>Remote-proctored from home, or pen-and-paper at a study centre? It changes your semester plans. Check it before you pay.</p>
+            <a href="/universities/index.html">Browse all universities &rarr;</a>
+          </div>
+        </li>
+      </ol>
+      <div class="uj-track" aria-hidden="true"><i class="uj-fill"></i><span class="uj-cap">🎓</span></div>
+    </div>
+  </section>
+
+  <!-- ============ FEE LADDER ============ -->
+  <section class="section-padding container" id="fee-ladder" aria-labelledby="ladder-title">
+    <div class="section-header">
+      <span class="section-tag">Real Numbers</span>
+      <h2 class="section-title" id="ladder-title">What Do Online Degrees Really Cost? The Fee Ladder</h2>
+      <p class="section-subtitle">We lined up every Online MBA on this site from cheapest to costliest: <strong>₹62,000 – ₹2,10,000</strong> across 23 universities. Pick a degree to see where each one sits.</p>
+    </div>
+
+    <div class="uj-tabs"><div class="uj-tabs-in" role="tablist" aria-label="Choose a degree">
+      <button class="uj-tab" role="tab" aria-selected="true" data-key="MBA">Online MBA</button>
+      <button class="uj-tab" role="tab" aria-selected="false" data-key="MCA">Online MCA</button>
+      <button class="uj-tab" role="tab" aria-selected="false" data-key="BBA">Online BBA</button>
+      <button class="uj-tab" role="tab" aria-selected="false" data-key="BCA">Online BCA</button>
+    </div></div>
+
+    <div class="uj-fee-stats" id="ujFeeStats" aria-live="polite"></div>
+    <div class="uj-ladder" id="ujLadder"></div>
+
+    <p class="uj-lead" style="margin-top:1.4rem;">The cheapest isn't automatically the best deal, and the costliest isn't automatically the best brand. The pricier programmes tend to advertise live masterclasses, case-study libraries or mentoring; the budget ones lean on self-study and, in IGNOU's case, pen-and-paper exams at study centres. Open any row to see what the extra rupees actually buy &mdash; then run the <a href="#emi-calc">EMI calculator</a> below.</p>
+    <p class="uj-note">Fees are as listed on each university's page on this site (total programme fee). Confirm the latest figure on the official admission portal before paying.</p>
+  </section>
+
   <!-- ============ EMI CALCULATOR (WORKING) ============ -->
   <section class="section-padding container" id="emi-calc">
     <div class="section-header">
@@ -381,6 +618,133 @@ sitemap: true
       </div>
     </div>
   </section>
+
+  <!-- ============ WHICH DEGREE FITS ============ -->
+  <section class="section-padding container" id="which-degree" aria-labelledby="degree-title">
+    <div class="section-header">
+      <span class="section-tag">Pick the Right Degree</span>
+      <h2 class="section-title" id="degree-title">Which Online Degree Fits Where You Are Right Now?</h2>
+      <p class="section-subtitle">Duration, eligibility and fee range for the four degrees students ask about most &mdash; pulled from the university pages on this site.</p>
+    </div>
+    <div class="uj-grid">
+      <article class="uj-card uj-card--navy">
+        <span class="uj-pill">Postgraduate</span>
+        <h3>Online MBA</h3>
+        <p>For graduates who want a management track or a role change, usually after a few years of work &mdash; though many programmes accept fresh graduates too.</p>
+        <ul><li>2 years (4 semesters)</li><li>Bachelor's degree, mostly 50% marks (45% for reserved categories at several universities)</li><li>Specialisations from HR and Finance to Data Analytics</li></ul>
+        <div class="uj-meta"><b>₹62,000 – ₹2,10,000</b>across 23 universities</div>
+      </article>
+      <article class="uj-card uj-card--navy">
+        <span class="uj-pill">Postgraduate</span>
+        <h3>Online MCA</h3>
+        <p>For BCA / B.Sc (CS/IT) graduates &mdash; or maths-background graduates &mdash; heading toward software, cloud, AI or data roles.</p>
+        <ul><li>2 years (4 semesters)</li><li>BCA / B.Sc CS-IT, or a bachelor's with Mathematics, usually 50%</li><li>Some offer AI, Data Science or Cyber tracks</li></ul>
+        <div class="uj-meta"><b>₹98,000 – ₹1,60,000</b>across 6 universities</div>
+      </article>
+      <article class="uj-card uj-card--orange">
+        <span class="uj-pill">Undergraduate</span>
+        <h3>Online BBA</h3>
+        <p>For students finishing 10+2 who want a business degree without relocating &mdash; or who are already working and never completed a degree.</p>
+        <ul><li>3 years (6 semesters)</li><li>10+2 from a recognised board (45&ndash;50% depending on university)</li></ul>
+        <div class="uj-meta"><b>₹78,000 – ₹1,50,000</b>across 4 universities</div>
+      </article>
+      <article class="uj-card uj-card--orange">
+        <span class="uj-pill">Undergraduate</span>
+        <h3>Online BCA</h3>
+        <p>For 10+2 students from any stream who want an entry into computing and software without a campus move.</p>
+        <ul><li>3 years (6 semesters)</li><li>10+2 in any stream, min 45% at the university listed here</li></ul>
+        <div class="uj-meta"><b>₹1,35,000</b>1 university listed so far</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ MODES TABLE ============ -->
+  <section class="section-padding container uj-sec-alt" id="study-modes" aria-labelledby="modes-title">
+    <div class="section-header">
+      <span class="section-tag blue">Regular vs Online vs Distance</span>
+      <h2 class="section-title" id="modes-title">Same Degree Level, Three Very Different Ways to Study</h2>
+      <p class="section-subtitle">The menu at the top of this page splits universities by study mode. Here's what actually changes day to day.</p>
+    </div>
+    <div class="uj-tablewrap">
+      <table class="uj-table">
+        <thead><tr><th scope="col"></th><th scope="col">Regular</th><th scope="col" class="is-hl">Online</th><th scope="col">Distance (ODL)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">How you study</th><td>Classroom lectures on campus, fixed timetable</td><td class="is-hl">LMS with live and recorded lectures, from anywhere</td><td>Printed or digital study material, occasional contact sessions</td></tr>
+          <tr><th scope="row">Exams</th><td>In person, on campus</td><td class="is-hl">Mostly proctored from home; a few universities use exam centres</td><td>Often pen-and-paper at designated study centres (IGNOU on our list)</td></tr>
+          <tr><th scope="row">Flexibility</th><td>Low &mdash; you relocate and attend</td><td class="is-hl">High &mdash; works alongside a job</td><td>Highest &mdash; self-paced, but you need discipline</td></tr>
+          <tr><th scope="row">Support</th><td>Faculty and campus life</td><td class="is-hl">Live masterclasses, mentors, doubt sessions</td><td>Mostly self-study; help via regional centres</td></tr>
+          <tr><th scope="row">Fee range on this site</th><td>Not listed here &mdash; we focus on online and distance</td><td class="is-hl">About ₹78,000 to ₹2,10,000 depending on degree</td><td>Lowest &mdash; IGNOU's MBA is the cheapest on our ladder</td></tr>
+          <tr><th scope="row">Best for</th><td>School-leavers who can relocate full-time</td><td class="is-hl">Working professionals and anyone who can't relocate</td><td>Budget-first students comfortable with self-study</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="uj-note">UGC regulations give approved online and ODL degrees the same standing as regular degrees. Individual employers and exams can still look at details, so check the notification of the job or exam you're aiming for.</p>
+  </section>
+
+  <!-- ============ APPROVALS EXPLAINER ============ -->
+  <section class="section-padding container" id="approvals-explained" aria-labelledby="approvals-title">
+    <div class="section-header">
+      <span class="section-tag green">Don't Mix These Up</span>
+      <h2 class="section-title" id="approvals-title">UGC-DEB, NAAC and NIRF: Three Terms, Three Different Jobs</h2>
+      <p class="section-subtitle">Every university page throws all three at you. Only one of them decides whether your online degree is valid.</p>
+    </div>
+    <div class="uj-grid">
+      <article class="uj-card uj-card--navy">
+        <span class="uj-pill">The one that matters most</span>
+        <h3>UGC-DEB</h3>
+        <p>The Distance Education Bureau of the UGC says whether a university may offer a specific programme in online or distance mode for a given session. If this is missing, nothing else on the brochure rescues the degree.</p>
+        <div class="uj-meta"><b>Ask:</b>Is <em>this programme</em> approved for <em>this session</em>?</div>
+      </article>
+      <article class="uj-card uj-card--orange">
+        <span class="uj-pill">Quality grade</span>
+        <h3>NAAC</h3>
+        <p>A grade (A++, A+, A&hellip;) and a score out of 4 for overall quality. UGC's online-education rules use a minimum NAAC score &mdash; or a top-100 NIRF rank &mdash; as a threshold for starting online programmes, and institutions just below it can apply for approval. Those rules have been amended since 2020, so confirm the current criteria on the DEB portal.</p>
+        <div class="uj-meta"><b>Ask:</b>Is the grade current, and is the score listed?</div>
+      </article>
+      <article class="uj-card uj-card--green">
+        <span class="uj-pill">A ranking, not a licence</span>
+        <h3>NIRF</h3>
+        <p>A government ranking of institutions. It's a helpful signal, but a rank is not an approval, and it describes the university overall &mdash; not its online programme specifically.</p>
+        <div class="uj-meta"><b>Ask:</b>Which category and year is this rank from?</div>
+      </article>
+    </div>
+    <p class="uj-lead" style="margin-top:1.4rem;">Rule of thumb: <strong>approval first, grade second, rank last.</strong> You can check any university on our <a href="/ugc-verifier.html">UGC-DEB verifier</a>, and see all three numbers side by side for up to three universities in <a href="/compare.html">Compare</a>.</p>
+  </section>
+
+  <!-- ============ FAKE UNIVERSITY RED FLAGS ============ -->
+  <section class="section-padding container uj-sec-alt" id="fake-universities" aria-labelledby="fake-title">
+    <div class="section-header">
+      <span class="section-tag orange">Protect Your Money</span>
+      <h2 class="section-title" id="fake-title">How to Spot a Fake University Before You Pay</h2>
+      <p class="section-subtitle">UGC publishes a list of fake universities every few months. Scammers don't wait for it &mdash; these are the patterns to watch for.</p>
+    </div>
+    <div class="uj-flags">
+      <div class="uj-flag"><i>1</i><div><b>The name is almost a real one</b><span>One word added, one word changed. Always match the exact name against UGC's list, not the brochure's spelling.</span></div></div>
+      <div class="uj-flag"><i>2</i><div><b>Fees go to a personal account</b><span>Genuine universities collect fees in an institutional account. Be wary of a personal UPI ID or a "send it to our agent" request.</span></div></div>
+      <div class="uj-flag"><i>3</i><div><b>"Degree in 6 months" promises</b><span>Skipped years, "direct second-year entry", or credit for work experience in place of study &mdash; recognised degrees don't work this way.</span></div></div>
+      <div class="uj-flag"><i>4</i><div><b>A generic "UGC Approved" badge</b><span>Approval is per programme and per session. A logo with no programme name or session is not proof.</span></div></div>
+      <div class="uj-flag"><i>5</i><div><b>Pressure to pay today</b><span>"Seats closing tonight" or a discount that vanishes at midnight. Real admission windows are published and can be checked.</span></div></div>
+      <div class="uj-flag"><i>6</i><div><b>A website you only found via WhatsApp</b><span>Open the university's site from its listing on UGC's page, not from a link someone forwarded.</span></div></div>
+    </div>
+    <p class="uj-lead" style="margin-top:1.4rem;"><a href="/ugc-verifier.html">Run any university through the verifier &rarr;</a> It checks the name against UGC's fake-university and online-entitled lists.</p>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section-padding container" id="faqs" aria-labelledby="faq-title">
+    <div class="section-header">
+      <span class="section-tag blue">Quick Answers</span>
+      <h2 class="section-title" id="faq-title">Questions Students Ask Us Most</h2>
+    </div>
+    <div class="uj-faq">
+      <details><summary>What is UGC-DEB approval and why does it matter for an online degree?</summary><p>UGC-DEB (Distance Education Bureau) approval is what makes an online degree from an Indian university legally equivalent to a regular on-campus degree for jobs, higher education and most government eligibility. Always verify current-session approval for your exact program before paying any fee.</p></details>
+      <details><summary>How much does an online MBA cost in India in 2026?</summary><p>A UGC-DEB approved online MBA in India typically costs between ₹50,000 and ₹2,50,000 for the full program, depending on the university and specialization, with 0% EMI options available at most approved universities.</p></details>
+      <details><summary>Is UniversityJano&#x27;s counselling and comparison service free?</summary><p>Yes. Comparing universities, checking UGC-DEB approval, using the fee and ROI calculators, and getting 1-on-1 expert counselling on UniversityJano.com are all completely free for students.</p></details>
+      <details><summary>Do employers in India accept online degrees?</summary><p>Yes, most Indian employers now accept UGC-DEB approved online degrees at par with regular degrees, since they carry the same legal recognition. Employer perception can still vary by industry and individual company.</p></details>
+      <details><summary>What is the difference between online, distance and regular degrees?</summary><p>Regular means classroom study on campus. Online means you study through a learning portal with live and recorded lectures, and most exams are proctored from home. Distance (ODL) is self-paced study with printed or digital material, and exams are often held at study centres. Approved online and distance degrees carry the same standing as regular ones under UGC regulations, but check the notification of any specific job or exam you are aiming for.</p></details>
+      <details><summary>How do I check whether a university is fake?</summary><p>Match the exact university name against UGC&#x27;s list of fake universities, confirm that your programme is approved for online or distance mode in your admission session on the UGC-DEB portal, and pay fees only to the university&#x27;s official account. The UniversityJano UGC-DEB verifier checks a name against UGC&#x27;s fake-university and online-entitled lists.</p></details>
+    </div>
+  </section>
+
 
   <!-- ============ FINAL CTA ============ -->
   <section class="section-padding container" style="text-align:center;">
@@ -458,6 +822,194 @@ function updateROI() {
 
 updateEMI();
 updateROI();
+</script>
+<script>
+// ===================== Homepage additions =====================
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function inr(n) { return '\u20B9' + Math.round(n).toLocaleString('en-IN'); }
+
+  /* ---------- 1. Stats bar count-up ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    [].forEach.call(document.querySelectorAll('.stats-bar-section .stat-item h3'), function (h) {
+      var m = h.textContent.trim().match(/^(\D*)([\d,]+(?:\.\d+)?)(.*)$/);
+      if (!m) return;
+      var target = parseFloat(m[2].replace(/,/g, '')), dec = (m[2].split('.')[1] || '').length, comma = m[2].indexOf(',') > -1;
+      function fmt(v) { return comma ? v.toLocaleString('en-IN', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : v.toFixed(dec); }
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          io.disconnect();
+          var t0 = performance.now();
+          (function tick(t) {
+            var k = Math.min(1, (t - t0) / 1300), v = target * (1 - Math.pow(1 - k, 3));
+            h.textContent = k < 1 ? m[1] + fmt(v) + m[3] : m[1] + m[2] + m[3];
+            if (k < 1) requestAnimationFrame(tick);
+          })(t0);
+        });
+      }, { threshold: 0.6 });
+      h.textContent = m[1] + fmt(0) + m[3];
+      io.observe(h);
+    });
+  }
+
+  /* ---------- 2. Shorts / videos ---------- */
+  (function () {
+    var rail = document.getElementById('ujShortsRail');
+    if (!rail) return;
+    var cfg = window.UJ_VIDEO_CONFIG || {}, vids = cfg.videos || [];
+    var planned = [
+      'Online MBA fees: kitni lagti hai?',
+      'UGC-DEB approval kaise check karein?',
+      'Online degree valid hai ya nahi?',
+      '0% EMI mein hidden charges?'
+    ];
+    function thumb(v) { return v.poster || (v.id ? 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/hqdefault.jpg' : ''); }
+
+    if (!vids.length) {
+      rail.innerHTML = planned.map(function (t) {
+        return '<div class="uj-short uj-short--soon" role="listitem"><div class="uj-short-media"><div style="position:relative"><b>' + esc(t) + '</b><br><span class="uj-soon-tag">Coming soon</span></div></div></div>';
+      }).join('');
+    } else {
+      rail.innerHTML = vids.map(function (v, i) {
+        var link = v.link ? '<a class="uj-short-link" href="' + esc(v.link) + '">' + esc(v.linkLabel || 'Read the full guide') + ' &rarr;</a>' : '';
+        var img = thumb(v) ? '<img src="' + esc(thumb(v)) + '" alt="' + esc(v.title) + '" loading="lazy">' : '';
+        return '<div class="uj-short" role="listitem"><div class="uj-short-media" data-i="' + i + '">' + img +
+          '<button class="uj-play" type="button" aria-label="Play: ' + esc(v.title) + '"><i></i></button>' +
+          (v.keyword ? '<div class="uj-short-kw"><small>Short</small>' + esc(v.keyword) + '</div>' : '') + '</div>' +
+          '<h3>' + esc(v.title) + '</h3>' + link + '</div>';
+      }).join('');
+
+      rail.addEventListener('click', function (e) {
+        var btn = e.target.closest('.uj-play');
+        if (!btn) return;
+        var box = btn.parentNode, v = vids[+box.getAttribute('data-i')];
+        if (!v) return;
+        var kw = box.querySelector('.uj-short-kw'); if (kw) kw.remove();
+        if (v.id) {
+          box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        } else if (v.src) {
+          box.innerHTML = '<video src="' + esc(v.src) + '" poster="' + esc(v.poster || '') + '" controls autoplay playsinline></video>';
+        }
+      });
+
+      // VideoObject schema for videos that have a date
+      var ld = vids.filter(function (v) { return v.date && thumb(v); }).map(function (v) {
+        var o = { '@context': 'https://schema.org', '@type': 'VideoObject', name: v.title, description: v.description || v.title, thumbnailUrl: [thumb(v)], uploadDate: v.date };
+        if (v.duration) o.duration = v.duration;
+        if (v.id) o.embedUrl = 'https://www.youtube.com/embed/' + v.id; else if (v.src) o.contentUrl = new URL(v.src, location.origin).href;
+        return o;
+      });
+      if (ld.length) { var s = document.createElement('script'); s.type = 'application/ld+json'; s.text = JSON.stringify(ld); document.head.appendChild(s); }
+    }
+    if (cfg.channelUrl) {
+      var cta = document.getElementById('ujShortsCta');
+      cta.hidden = false;
+      cta.innerHTML = '<a class="btn btn-navy btn-lg" href="' + esc(cfg.channelUrl) + '" target="_blank" rel="noopener">Watch more shorts &rarr;</a>';
+    }
+  })();
+
+  /* ---------- 3. Journey: scroll-drawn path ---------- */
+  (function () {
+    var wrap = document.getElementById('ujJourney');
+    if (!wrap) return;
+    var steps = [].slice.call(wrap.querySelectorAll('.uj-step'));
+    var track = wrap.querySelector('.uj-track'), fill = track.querySelector('.uj-fill'), cap = track.querySelector('.uj-cap');
+    var vertical = false, len = 0, centers = [], done = false;
+
+    function burst() {
+      if (reduce) return;
+      var c = centers[centers.length - 1], cols = ['#ff7a00', '#0b1b3d', '#059669', '#fbbf24'];
+      for (var i = 0; i < 18; i++) {
+        var b = document.createElement('b'), a = Math.PI * 2 * i / 18 + Math.random() * 0.4, d = 40 + Math.random() * 55;
+        b.className = 'uj-conf';
+        b.style.cssText = 'left:' + c.x + 'px;top:' + c.y + 'px;background:' + cols[i % 4] + ';--dx:' + (Math.cos(a) * d) + 'px;--dy:' + (Math.sin(a) * d) + 'px;--r:' + Math.round(Math.random() * 360) + 'deg';
+        wrap.appendChild(b);
+        (function (n) { setTimeout(function () { n.remove(); }, 1000); })(b);
+      }
+    }
+    function update() {
+      var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
+      var p = reduce ? 1 : Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (r.height + vh * 0.3)));
+      var px = p * len;
+      if (vertical) { fill.style.height = px + 'px'; fill.style.width = '100%'; cap.style.top = px + 'px'; cap.style.left = '50%'; }
+      else { fill.style.width = px + 'px'; fill.style.height = '100%'; cap.style.left = px + 'px'; cap.style.top = '50%'; }
+      steps.forEach(function (s, i) {
+        var pos = vertical ? centers[i].y - centers[0].y : centers[i].x - centers[0].x;
+        s.classList.toggle('is-on', px >= pos - 1);
+      });
+      if (p >= 0.995 && !done) { done = true; burst(); }
+      if (p < 0.9) done = false;
+    }
+    function measure() {
+      vertical = window.matchMedia('(max-width: 767px)').matches;
+      var wr = wrap.getBoundingClientRect();
+      centers = steps.map(function (s) {
+        var r = s.querySelector('.uj-node').getBoundingClientRect();
+        return { x: r.left - wr.left + r.width / 2, y: r.top - wr.top + r.height / 2 };
+      });
+      var a = centers[0], b = centers[centers.length - 1];
+      track.classList.toggle('is-v', vertical);
+      if (vertical) { len = b.y - a.y; track.style.cssText = 'left:' + (a.x - 2) + 'px;top:' + a.y + 'px;width:4px;height:' + len + 'px'; }
+      else { len = b.x - a.x; track.style.cssText = 'left:' + a.x + 'px;top:' + (a.y - 2) + 'px;height:4px;width:' + len + 'px'; }
+      update();
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+    measure();
+  })();
+
+  /* ---------- 4. Fee ladder ---------- */
+  (function () {
+    var root = document.getElementById('ujLadder');
+    if (!root) return;
+    var DATA = {"MBA":[{"n":"Amity","f":179000,"s":"amity-online"},{"n":"Amrita Vishwa Vidyapeetham","f":170000,"s":"amrita-online"},{"n":"Andhra University","f":85000,"s":"andhra-university-online"},{"n":"Bharati Vidyapeeth (BVDU)","f":120000,"s":"bvdu-online"},{"n":"Chandigarh University","f":150000,"s":"chandigarh-university-online"},{"n":"DY Patil (DPU)","f":140000,"s":"dy-patil-online"},{"n":"GLA University","f":120000,"s":"gla-university-online"},{"n":"GNDU Amritsar","f":110000,"s":"gndu-online"},{"n":"ICFAI (IFHE)","f":200000,"s":"ifhe-online"},{"n":"IGNOU","f":62000,"s":"ignou-online","note":"Pen-and-paper exams at study centres"},{"n":"Jain University","f":160000,"s":"jain-university-online"},{"n":"Kurukshetra University","f":108000,"s":"kurukshetra-university-online"},{"n":"LPU","f":120000,"s":"lpu-online"},{"n":"Mizoram University","f":98000,"s":"mizoram-university-online"},{"n":"NMIMS","f":196000,"s":"nmims-online"},{"n":"Manipal University Jaipur","f":175000,"s":"online-manipal"},{"n":"Sharda University","f":140000,"s":"sharda-university-online"},{"n":"Shiv Nadar University","f":210000,"s":"shiv-nadar-online"},{"n":"SRM","f":150000,"s":"srm-online"},{"n":"Symbiosis","f":140000,"s":"symbiosis-online"},{"n":"UPES","f":165000,"s":"upes-online"},{"n":"Uttaranchal University","f":104000,"s":"uttaranchal-university-online"},{"n":"Vignan's","f":130000,"s":"vignan-university-online"}],"MCA":[{"n":"Amity","f":160000,"s":"amity-online"},{"n":"Chandigarh University","f":130000,"s":"chandigarh-university-online"},{"n":"GNDU Amritsar","f":98000,"s":"gndu-online"},{"n":"Jain University","f":140000,"s":"jain-university-online"},{"n":"LPU","f":112000,"s":"lpu-online"},{"n":"Manipal University Jaipur","f":158000,"s":"online-manipal"}],"BBA":[{"n":"Amity","f":150000,"s":"amity-online"},{"n":"AMU","f":78000,"s":"amu-online"},{"n":"Bharati Vidyapeeth (BVDU)","f":90000,"s":"bvdu-online"},{"n":"Manipal University Jaipur","f":135000,"s":"online-manipal"}],"BCA":[{"n":"Manipal University Jaipur","f":135000,"s":"online-manipal"}]};
+    var MAXF = 220000, current = 'MBA', visible = false;
+    var stats = document.getElementById('ujFeeStats');
+    var tabs = [].slice.call(document.querySelectorAll('.uj-tab'));
+
+    function render(key) {
+      current = key;
+      var rows = DATA[key].slice().sort(function (a, b) { return a.f - b.f; });
+      var fees = rows.map(function (r) { return r.f; });
+      var mid = fees.length % 2 ? fees[(fees.length - 1) / 2] : (fees[fees.length / 2 - 1] + fees[fees.length / 2]) / 2;
+      var lo = rows[0], hi = rows[rows.length - 1];
+      stats.innerHTML = rows.length === 1
+        ? '<div><small>Listed fee</small><b>' + inr(lo.f) + '</b><span>' + esc(lo.n) + '</span></div><div><small>Universities listed</small><b>1</b><span>more coming</span></div>'
+        : '<div><small>Lowest</small><b>' + inr(lo.f) + '</b><span>' + esc(lo.n) + '</span></div>' +
+          '<div><small>Median</small><b>' + inr(mid) + '</b><span>of ' + rows.length + ' universities</span></div>' +
+          '<div><small>Highest</small><b>' + inr(hi.f) + '</b><span>' + esc(hi.n) + '</span></div>';
+      root.innerHTML = rows.map(function (r) {
+        return '<a class="uj-rung" href="/universities/' + esc(r.s) + '.html"><span class="uj-rung-name">' + esc(r.n) + (r.note ? '<small>' + esc(r.note) + '</small>' : '') +
+          '</span><span class="uj-bar" aria-hidden="true"><i data-w="' + (r.f / MAXF * 100).toFixed(1) + '"></i></span><span class="uj-rung-fee">' + inr(r.f) + '</span></a>';
+      }).join('');
+      if (visible) grow();
+    }
+    function grow() {
+      var bars = [].slice.call(root.querySelectorAll('.uj-bar i'));
+      requestAnimationFrame(function () {
+        bars.forEach(function (b, i) {
+          setTimeout(function () { b.style.width = b.getAttribute('data-w') + '%'; }, reduce ? 0 : i * 35);
+        });
+      });
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+        render(t.getAttribute('data-key'));
+      });
+    });
+    render('MBA');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { visible = true; io.disconnect(); grow(); } });
+      }, { threshold: 0.2 });
+      io.observe(root);
+    } else { visible = true; grow(); }
+  })();
+})();
 </script>
 </body>
 </html>
