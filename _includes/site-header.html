@@ -8,8 +8,8 @@
 .ujnav::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--navy-950, #08142e) 0%, var(--navy-700, #13306b) 55%, var(--orange-500, #ff7a00) 100%); }
 .ujnav-bar { position: relative; display: flex; align-items: center; justify-content: space-between; height: 92px; padding-top: 4px; }
 .ujnav-logo { display: flex; align-items: center; flex-shrink: 0; }
-.ujnav-logo img { height: 58px; width: auto; display: block; }
-.ujnav-links { display: flex; align-items: center; gap: 2rem; margin-left: auto; }
+.ujnav-logo img { height: 30px; width: auto; display: block; }
+.ujnav-links { display: flex; align-items: center; gap: 1.25rem; margin-left: auto; }
 .ujnav-link, .ujnav-trigger { appearance: none; background: none; border: 0; padding: .5rem 0; font: inherit; font-size: 1.02rem; font-weight: 700; color: var(--navy-900, #0b1b3d); text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; transition: color .2s; }
 .ujnav-link:hover, .ujnav-trigger:hover, .ujnav-trigger[aria-expanded="true"], .ujnav-link[aria-current="page"] { color: var(--orange-500, #ff7a00); }
 .ujnav-chev { width: 10px; height: 10px; transition: transform .25s; }
@@ -52,9 +52,9 @@
 .ujnav.is-nav-open .ujnav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .ujnav.is-nav-open .ujnav-burger span:nth-child(2) { opacity: 0; }
 .ujnav.is-nav-open .ujnav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .ujnav-bar { height: 78px; }
-  .ujnav-logo img { height: 48px; }
+  .ujnav-logo img { height: 28px; }
   .ujnav-burger { display: flex; }
   .ujnav-links { display: none; position: fixed; top: 78px; left: 0; right: 0; bottom: 0; margin: 0; padding: 1rem 1.25rem 2rem; flex-direction: column; align-items: stretch; gap: 0; overflow-y: auto; background: #fff; }
   .ujnav.is-nav-open .ujnav-links { display: flex; }
@@ -70,7 +70,7 @@
 
 <div class="container ujnav-bar">
   <a class="ujnav-logo" href="{{ '/' | relative_url }}" aria-label="UniversityJano.com home">
-    <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano.com" width="170" height="58">
+    <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano.com" width="211" height="30">
   </a>
 
   <button class="ujnav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ujnav-links"><span></span><span></span><span></span></button>
@@ -143,7 +143,7 @@
   var nav = document.getElementById('ujnav');
   if (!nav) return;
   var items = [].slice.call(nav.querySelectorAll('.ujnav-has-menu'));
-  var desktop = window.matchMedia('(min-width: 1024px)');
+  var desktop = window.matchMedia('(min-width: 1200px)');
   var burger = nav.querySelector('.ujnav-burger');
 
   function setOpen(item, open) {
