@@ -1,206 +1,184 @@
-<!-- Universal Site Header with Mobile Drawer & App-Like Bottom Dock -->
-<header>
-  <!-- Top Ticker Notification -->
-  <div class="top-notice-bar">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:0.5rem;">
-      <div style="display:flex;align-items:center;gap:0.75rem;">
-        <span class="notice-pill">🔥 2026 Admissions Open</span>
-        <span>UGC-DEB Approved Online Universities • Zero Cost 0% EMI Available</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:1.25rem;">
-        <span style="font-size:0.8rem;color:#fed7aa;">📞 Helpline: <a href="tel:18008905266" style="color:#ffffff;font-weight:700;text-decoration:none;">1800-890-5266</a> (Toll Free)</span>
+<!-- UniversityJano site header — drop-in replacement for _includes/site-header.html
+     Self-contained (CSS + JS inline, all classes prefixed "ujnav"). Uses the site's design tokens
+     (--navy-*, --orange-*, --border-light ...) with hex fallbacks. -->
+<header class="ujnav" id="ujnav">
+<style>
+.ujnav, .ujnav * { box-sizing: border-box; }
+.ujnav { position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 1px 0 var(--border-light, #e2e8f0); }
+.ujnav::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--navy-950, #08142e) 0%, var(--navy-700, #13306b) 55%, var(--orange-500, #ff7a00) 100%); }
+.ujnav-bar { position: relative; display: flex; align-items: center; justify-content: space-between; height: 92px; padding-top: 4px; }
+.ujnav-logo { display: flex; align-items: center; flex-shrink: 0; }
+.ujnav-logo img { height: 58px; width: auto; display: block; }
+.ujnav-links { display: flex; align-items: center; gap: 2rem; margin-left: auto; }
+.ujnav-link, .ujnav-trigger { appearance: none; background: none; border: 0; padding: .5rem 0; font: inherit; font-size: 1.02rem; font-weight: 700; color: var(--navy-900, #0b1b3d); text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; transition: color .2s; }
+.ujnav-link:hover, .ujnav-trigger:hover, .ujnav-trigger[aria-expanded="true"], .ujnav-link[aria-current="page"] { color: var(--orange-500, #ff7a00); }
+.ujnav-chev { width: 10px; height: 10px; transition: transform .25s; }
+.ujnav-trigger[aria-expanded="true"] .ujnav-chev { transform: rotate(180deg); }
+.ujnav-item { position: static; }
+.ujnav-wa { margin-left: .5rem; background: #22c55e; color: #fff; font-weight: 800; font-size: .95rem; padding: .65rem 1.15rem; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 14px -6px rgba(34,197,94,.7); transition: transform .2s, box-shadow .2s; }
+.ujnav-wa:hover { transform: translateY(-1px); box-shadow: 0 10px 18px -8px rgba(34,197,94,.8); }
+
+/* ---- mega panel ---- */
+.ujnav-panel { position: absolute; top: 100%; left: 50%; width: min(780px, 94vw); background: #fff; border: 1px solid var(--border-light, #e2e8f0); border-top: 3px solid var(--orange-500, #ff7a00); border-radius: 0 0 18px 18px; box-shadow: 0 28px 50px -18px rgba(11,27,61,.32); padding: 1.5rem 1.5rem 1rem; opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 10px); transition: opacity .22s ease, transform .22s ease, visibility .22s; }
+.ujnav-item.is-open > .ujnav-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+.ujnav-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+.ujnav-col-title { display: flex; align-items: center; gap: .65rem; margin: 0 0 .8rem; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--navy-700, #13306b); }
+.ujnav-tag { display: inline-grid; place-items: center; min-width: 36px; height: 30px; padding: 0 .55rem; border-radius: 8px; font-size: .78rem; font-weight: 800; letter-spacing: .04em; color: #fff; }
+.ujnav-tag--navy { background: var(--navy-900, #0b1b3d); }
+.ujnav-tag--orange { background: var(--orange-500, #ff7a00); }
+.ujnav-opt { display: flex; align-items: flex-start; gap: .8rem; padding: .6rem .7rem; margin: 0 -.7rem; border-radius: 12px; text-decoration: none; color: inherit; position: relative; transition: background .18s, transform .18s; }
+.ujnav-opt b { display: block; font-size: 1rem; color: var(--navy-900, #0b1b3d); line-height: 1.25; transition: color .18s; }
+.ujnav-opt small { display: block; margin-top: .15rem; font-size: .84rem; color: var(--text-muted, #64748b); line-height: 1.35; }
+.ujnav-opt:hover, .ujnav-opt:focus-visible { background: var(--orange-50, #fff4e8); transform: translateX(3px); outline: none; }
+.ujnav-opt:hover b, .ujnav-opt:focus-visible b { color: var(--orange-600, #e06000); }
+.ujnav-opt::after { content: "→"; position: absolute; right: .7rem; top: .65rem; color: var(--orange-500, #ff7a00); opacity: 0; transform: translateX(-4px); transition: opacity .18s, transform .18s; font-weight: 800; }
+.ujnav-opt:hover::after, .ujnav-opt:focus-visible::after { opacity: 1; transform: none; }
+.ujnav-dot { flex: 0 0 auto; width: 10px; height: 10px; margin-top: .4rem; border-radius: 50%; background: var(--navy-700, #13306b); box-shadow: 0 0 0 4px rgba(19,48,107,.1); }
+.ujnav-dot--o { background: var(--orange-500, #ff7a00); box-shadow: 0 0 0 4px rgba(255,122,0,.14); }
+.ujnav-ico { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-size: 1.05rem; background: rgba(19,48,107,.08); }
+.ujnav-ico--o { background: rgba(255,122,0,.12); }
+.ujnav-opt--warn .ujnav-ico { background: #fee2e2; }
+.ujnav-opt--warn:hover { background: #fef2f2; }
+.ujnav-opt--warn:hover b { color: #b91c1c; }
+.ujnav-badge { display: inline-block; margin-left: .4rem; padding: .08rem .45rem; border-radius: 99px; font-size: .68rem; font-weight: 800; letter-spacing: .03em; vertical-align: middle; background: #fee2e2; color: #b91c1c; }
+.ujnav-foot { margin: 1rem -1.5rem 0; padding: .85rem 1.5rem; background: var(--bg-surface-alt, #f8fafc); border-top: 1px solid var(--border-light, #e2e8f0); border-radius: 0 0 17px 17px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: .88rem; color: var(--text-muted, #64748b); }
+.ujnav-foot a { font-weight: 800; color: var(--navy-900, #0b1b3d); text-decoration: none; }
+.ujnav-foot a:hover { color: var(--orange-500, #ff7a00); }
+.ujnav-subhead { margin: 1.1rem 0 .5rem; padding-top: .9rem; border-top: 1px dashed var(--border-light, #e2e8f0); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #b91c1c; }
+
+/* ---- mobile ---- */
+.ujnav-burger { display: none; width: 46px; height: 46px; border: 1px solid var(--border-light, #e2e8f0); border-radius: 12px; background: #fff; cursor: pointer; padding: 0; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+.ujnav-burger span { display: block; width: 20px; height: 2px; background: var(--navy-900, #0b1b3d); border-radius: 2px; transition: transform .25s, opacity .2s; }
+.ujnav.is-nav-open .ujnav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ujnav.is-nav-open .ujnav-burger span:nth-child(2) { opacity: 0; }
+.ujnav.is-nav-open .ujnav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 1023px) {
+  .ujnav-bar { height: 78px; }
+  .ujnav-logo img { height: 48px; }
+  .ujnav-burger { display: flex; }
+  .ujnav-links { display: none; position: fixed; top: 78px; left: 0; right: 0; bottom: 0; margin: 0; padding: 1rem 1.25rem 2rem; flex-direction: column; align-items: stretch; gap: 0; overflow-y: auto; background: #fff; }
+  .ujnav.is-nav-open .ujnav-links { display: flex; }
+  .ujnav-link, .ujnav-trigger { width: 100%; justify-content: space-between; padding: 1rem .25rem; border-bottom: 1px solid var(--border-light, #e2e8f0); font-size: 1.05rem; }
+  .ujnav-panel { position: static; display: none; width: auto; transform: none; opacity: 1; visibility: visible; pointer-events: auto; box-shadow: none; border: 0; border-left: 3px solid var(--orange-500, #ff7a00); border-radius: 0; padding: .75rem 0 .5rem .9rem; margin: .4rem 0 .6rem; background: var(--bg-surface-alt, #f8fafc); }
+  .ujnav-item.is-open > .ujnav-panel { display: block; transform: none; }
+  .ujnav-cols { grid-template-columns: 1fr; gap: 1rem; }
+  .ujnav-foot { margin: .8rem 0 0; padding: .7rem 0; background: none; border-top: 1px solid var(--border-light, #e2e8f0); }
+  .ujnav-wa { margin: 1.25rem 0 0; text-align: center; padding: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) { .ujnav-panel, .ujnav-opt, .ujnav-chev { transition: none; } }
+</style>
+
+<div class="container ujnav-bar">
+  <a class="ujnav-logo" href="{{ '/' | relative_url }}" aria-label="UniversityJano.com home">
+    <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano.com" width="170" height="58">
+  </a>
+
+  <button class="ujnav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ujnav-links"><span></span><span></span><span></span></button>
+
+  <nav class="ujnav-links" id="ujnav-links" aria-label="Main navigation">
+
+    <!-- ALL UNIVERSITIES -->
+    <div class="ujnav-item ujnav-has-menu">
+      <button class="ujnav-trigger" type="button" aria-expanded="false" aria-controls="ujmenu-unis">All Universities
+        <svg class="ujnav-chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ujnav-panel" id="ujmenu-unis">
+        <div class="ujnav-cols">
+          <div>
+            <p class="ujnav-col-title"><span class="ujnav-tag ujnav-tag--navy">MODE</span> Study Mode</p>
+            <a class="ujnav-opt" href="/universities/index.html"><span class="ujnav-ico">💻</span><span><b>Online Universities</b><small>UGC-DEB approved · live + recorded classes</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?mode=distance"><span class="ujnav-ico">📮</span><span><b>Distance Learning (ODL)</b><small>Self-paced · study material + exam centres</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?mode=regular"><span class="ujnav-ico">🏫</span><span><b>Regular Universities</b><small>On-campus, full-time programmes</small></span></a>
+          </div>
+          <div>
+            <p class="ujnav-col-title"><span class="ujnav-tag ujnav-tag--orange">TYPE</span> University Type</p>
+            <a class="ujnav-opt" href="/universities/index.html?type=private"><span class="ujnav-ico ujnav-ico--o">🏢</span><span><b>Private Universities</b><small>State-approved private institutions</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?type=deemed"><span class="ujnav-ico ujnav-ico--o">🎓</span><span><b>Deemed Universities</b><small>Deemed-to-be, UGC-recognised</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?type=government"><span class="ujnav-ico ujnav-ico--o">🏛️</span><span><b>Government Universities</b><small>Central &amp; State universities</small></span></a>
+            <a class="ujnav-opt ujnav-opt--warn" href="/ugc-verifier.html"><span class="ujnav-ico">⚠️</span><span><b>Fake Universities <span class="ujnav-badge">CHECK FIRST</span></b><small>Verify against UGC's list before you pay</small></span></a>
+          </div>
+        </div>
+        <div class="ujnav-foot"><span>Not sure which university fits?</span><a href="/universities/index.html">Browse all 25+ universities &rarr;</a></div>
       </div>
     </div>
-  </div>
 
-  <style>.header-menu .nav-link{white-space:nowrap;}.header-menu li{flex-shrink:0;}.has-mega{position:relative}.mega-panel{display:none;position:absolute;top:100%;left:50%;transform:translateX(-35%);padding-top:14px;z-index:60}.has-mega:hover .mega-panel,.has-mega:focus-within .mega-panel{display:block}.mg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;width:620px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.25rem 1.5rem;box-shadow:0 18px 40px rgba(15,31,77,.18)}.mg-h{display:flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:800;letter-spacing:.06em;color:#64748b;margin-bottom:.6rem}.mg-b{font-style:normal;color:#fff;border-radius:6px;padding:.25rem .5rem;font-size:.75rem}.mg-b.PG{background:#1e3a8a}.mg-b.UG{background:#c0392b}.mg-item{display:flex;gap:.7rem;align-items:flex-start;padding:.5rem .4rem;border-radius:10px;text-decoration:none;color:#0f1f4d}.mg-item:hover{background:#f1f5f9}.mg-item i{width:9px;height:9px;border-radius:50%;margin-top:.45rem;flex-shrink:0}.mg-item b{display:block;font-size:.92rem}.mg-item small{display:block;font-size:.76rem;color:#64748b;line-height:1.3}</style>
-  <!-- Main Navigation Bar -->
-  <nav class="header-nav">
-    <div class="container header-container">
-      <!-- Brand Logo -->
-      <div class="brand-logo-wrap">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano.com - Sahi University Jano, Sahi Career Chuno" class="brand-logo-img">
-        </a>
-      </div>
-
-      <!-- Desktop Navigation Menu -->
-      <ul class="header-menu">
-        <li><a href="{{ '/universities/index.html' | relative_url }}" class="nav-link" style="text-decoration:none;">All Universities</a></li>
-        <li class="has-mega"><a href="#" class="nav-link" style="text-decoration:none;" aria-haspopup="true">Courses &#9662;</a><div class="mega-panel"><div class="mg-grid"><div class="mg-col"><div class="mg-h"><em class="mg-b PG">PG</em>POSTGRADUATE PROGRAMS</div><a class="mg-item" href="/online-mba.html"><i style="background:#1e3a8a"></i><span><b>Online MBA</b><small>Master of Business Administration</small></span></a><a class="mg-item" href="/online-mca.html"><i style="background:#c0392b"></i><span><b>Online MCA</b><small>Master of Computer Applications</small></span></a><a class="mg-item" href="/online-mcom.html"><i style="background:#8e44ad"></i><span><b>Online MCom</b><small>Master of Commerce</small></span></a><a class="mg-item" href="/online-ma.html"><i style="background:#16a085"></i><span><b>Online MA</b><small>Master of Arts</small></span></a><a class="mg-item" href="/online-pgdm.html"><i style="background:#27ae60"></i><span><b>Online PGDM</b><small>PG Diploma in Management</small></span></a><a class="mg-item" href="/online-pg-diploma.html"><i style="background:#d35400"></i><span><b>Online PG Diploma</b><small>Specialised Postgraduate Diploma Programmes</small></span></a></div><div class="mg-col"><div class="mg-h"><em class="mg-b UG">UG</em>UNDERGRADUATE PROGRAMS</div><a class="mg-item" href="/online-bba.html"><i style="background:#e67e22"></i><span><b>Online BBA</b><small>Bachelor of Business Administration</small></span></a><a class="mg-item" href="/online-bca.html"><i style="background:#1abc9c"></i><span><b>Online BCA</b><small>Bachelor of Computer Applications</small></span></a><a class="mg-item" href="/online-bcom.html"><i style="background:#2980b9"></i><span><b>Online BCom</b><small>Bachelor of Commerce</small></span></a><a class="mg-item" href="/online-ba.html"><i style="background:#8e44ad"></i><span><b>Online BA</b><small>Bachelor of Arts</small></span></a></div></div></div></li>
-        <li><a href="{{ '/compare.html' | relative_url }}" class="nav-link" style="text-decoration:none;">Compare Colleges</a></li>
-        <li><a href="{{ '/roi-calculator.html' | relative_url }}" class="nav-link" style="text-decoration:none;">Salary &amp; ROI</a></li>
-        <li><a href="{{ '/emi-calculator.html' | relative_url }}" class="nav-link" style="text-decoration:none;">0% EMI Planner</a></li>
-        <li><a href="{{ '/ugc-verifier.html' | relative_url }}" class="nav-link" style="text-decoration:none;">UGC Approvals</a></li>
-      </ul>
-
-      <!-- Desktop Action Buttons -->
-      <div class="header-actions" style="display:flex;align-items:center;gap:0.75rem;">
-        <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" class="btn btn-sm" style="background:#25D366;color:#ffffff;text-decoration:none;display:flex;align-items:center;gap:0.35rem;font-weight:700;">
-          <span style="display:inline-block;">WhatsApp</span>
-        </a>
-
-        <!-- Mobile Hamburger Toggle Button -->
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Navigation Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <!-- COURSES -->
+    <div class="ujnav-item ujnav-has-menu">
+      <button class="ujnav-trigger" type="button" aria-expanded="false" aria-controls="ujmenu-courses">Courses
+        <svg class="ujnav-chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ujnav-panel" id="ujmenu-courses">
+        <div class="ujnav-cols">
+          <div>
+            <p class="ujnav-col-title"><span class="ujnav-tag ujnav-tag--navy">PG</span> Postgraduate Programs</p>
+            <a class="ujnav-opt" href="/universities/index.html?q=MBA"><span class="ujnav-dot"></span><span><b>Online MBA</b><small>Master of Business Administration</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=MCA"><span class="ujnav-dot"></span><span><b>Online MCA</b><small>Master of Computer Applications</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=MCom"><span class="ujnav-dot"></span><span><b>Online MCom</b><small>Master of Commerce</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=MA"><span class="ujnav-dot"></span><span><b>Online MA</b><small>Master of Arts</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=PGDM"><span class="ujnav-dot"></span><span><b>Online PGDM</b><small>PG Diploma in Management</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=PG%20Diploma"><span class="ujnav-dot"></span><span><b>Online PG Diploma</b><small>Specialised Postgraduate Diploma Programmes</small></span></a>
+          </div>
+          <div>
+            <p class="ujnav-col-title"><span class="ujnav-tag ujnav-tag--orange">UG</span> Undergraduate Programs</p>
+            <a class="ujnav-opt" href="/universities/index.html?q=BBA"><span class="ujnav-dot ujnav-dot--o"></span><span><b>Online BBA</b><small>Bachelor of Business Administration</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=BCA"><span class="ujnav-dot ujnav-dot--o"></span><span><b>Online BCA</b><small>Bachelor of Computer Applications</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=BCom"><span class="ujnav-dot ujnav-dot--o"></span><span><b>Online BCom</b><small>Bachelor of Commerce</small></span></a>
+            <a class="ujnav-opt" href="/universities/index.html?q=BA"><span class="ujnav-dot ujnav-dot--o"></span><span><b>Online BA</b><small>Bachelor of Arts</small></span></a>
+          </div>
+        </div>
+        <div class="ujnav-foot"><span>Can't decide between two degrees?</span><a href="/compare.html">Compare universities side by side &rarr;</a></div>
       </div>
     </div>
+
+    <a class="ujnav-link" href="/compare.html">Compare Colleges</a>
+    <a class="ujnav-link" href="/roi-calculator.html">Salary &amp; ROI</a>
+    <a class="ujnav-link" href="/emi-calculator.html">0% EMI Planner</a>
+    <a class="ujnav-link" href="/ugc-verifier.html">UGC Approvals</a>
+    <a class="ujnav-wa" href="https://wa.me/919599128500?text=Hi%2C%20I%20need%20help%20choosing%20an%20online%20university" target="_blank" rel="noopener">WhatsApp</a>
   </nav>
-</header>
-
-<!-- Mobile Slide-Over Navigation Drawer Backdrop -->
-<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-
-<!-- Mobile Slide-Over Navigation Drawer -->
-<div class="mobile-nav-drawer" id="mobileNavDrawer">
-  <div class="mobile-drawer-header">
-    <a href="{{ '/' | relative_url }}">
-      <img src="{{ '/images/logo.png' | relative_url }}" alt="UniversityJano Logo" style="height:48px;width:auto;">
-    </a>
-    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Menu">✕</button>
-  </div>
-
-  <div class="mobile-drawer-body">
-    <div class="mobile-drawer-section-title">Main Navigation</div>
-    <ul class="mobile-drawer-links">
-      <li>
-        <a href="{{ '/' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">🏠</span>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/universities/index.html' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">🏫</span>
-          <span>All 25+ Online Universities</span>
-          <span class="mobile-drawer-badge">Directory</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/compare.html' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">⚖️</span>
-          <span>Compare Universities</span>
-          <span class="mobile-drawer-badge" style="background:#1a56db;">4-Way</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/roi-calculator.html' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">📈</span>
-          <span>Salary Jump &amp; ROI Calculator</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/emi-calculator.html' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">💳</span>
-          <span>0% Interest EMI Planner</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/ugc-verifier.html' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">🛡️</span>
-          <span>UGC-DEB Government Approvals</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/blog/' | relative_url }}" class="mobile-drawer-link">
-          <span class="link-icon">✍️</span>
-          <span>Career &amp; Degree Blogs</span>
-        </a>
-      </li>
-    </ul>
-
-    <div class="mobile-drawer-section-title" style="margin-top:1.25rem;">Popular Online Degrees</div>
-    <ul class="mobile-drawer-links"><li><a href="/online-mba.html" class="mobile-drawer-link"><span>Online MBA</span></a></li><li><a href="/online-mca.html" class="mobile-drawer-link"><span>Online MCA</span></a></li><li><a href="/online-mcom.html" class="mobile-drawer-link"><span>Online MCom</span></a></li><li><a href="/online-ma.html" class="mobile-drawer-link"><span>Online MA</span></a></li><li><a href="/online-pgdm.html" class="mobile-drawer-link"><span>Online PGDM</span></a></li><li><a href="/online-pg-diploma.html" class="mobile-drawer-link"><span>Online PG Diploma</span></a></li><li><a href="/online-bba.html" class="mobile-drawer-link"><span>Online BBA</span></a></li><li><a href="/online-bca.html" class="mobile-drawer-link"><span>Online BCA</span></a></li><li><a href="/online-bcom.html" class="mobile-drawer-link"><span>Online BCom</span></a></li><li><a href="/online-ba.html" class="mobile-drawer-link"><span>Online BA</span></a></li></ul>
-  </div>
-
-  <div class="mobile-drawer-footer">
-    <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" class="btn btn-primary btn-block" style="background:#25D366;border-color:#25D366;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-weight:700;">
-      <span>💬</span> Chat on WhatsApp (Instant)
-    </a>
-    <a href="tel:18008905266" class="btn btn-secondary btn-block" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-weight:700;">
-      <span>📞</span> Call Student Helpline (1800-890-5266)
-    </a>
-  </div>
 </div>
 
-<!-- Native App-Like Bottom Navigation Dock (Screens <= 768px) -->
-<div class="mobile-bottom-dock" id="mobileBottomDock">
-  <a href="{{ '/' | relative_url }}" class="dock-item">
-    <span class="dock-icon">🏠</span>
-    <span class="dock-label">Home</span>
-  </a>
-  <a href="{{ '/universities/index.html' | relative_url }}" class="dock-item">
-    <span class="dock-icon">🏫</span>
-    <span class="dock-label">Colleges</span>
-  </a>
-  <a href="{{ '/compare.html' | relative_url }}" class="dock-item">
-    <span class="dock-icon">⚖️</span>
-    <span class="dock-label">Compare</span>
-  </a>
-  <a href="{{ '/roi-calculator.html' | relative_url }}" class="dock-item">
-    <span class="dock-icon">📈</span>
-    <span class="dock-label">ROI / EMI</span>
-  </a>
-  <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20free%20counselling%20for%20Online%20Degrees" target="_blank" rel="noopener" class="dock-item" style="color:#25D366;">
-    <span class="dock-icon">💬</span>
-    <span class="dock-label">WhatsApp</span>
-  </a>
-</div>
-
-<!-- Mobile Drawer Script -->
 <script>
-  (function() {
-    function setupMobileNav() {
-      var toggle = document.getElementById('mobileMenuToggle');
-      var drawer = document.getElementById('mobileNavDrawer');
-      var overlay = document.getElementById('mobileNavOverlay');
-      var closeBtn = document.getElementById('mobileDrawerClose');
+(function () {
+  var nav = document.getElementById('ujnav');
+  if (!nav) return;
+  var items = [].slice.call(nav.querySelectorAll('.ujnav-has-menu'));
+  var desktop = window.matchMedia('(min-width: 1024px)');
+  var burger = nav.querySelector('.ujnav-burger');
 
-      if (!toggle || !drawer || !overlay) return;
+  function setOpen(item, open) {
+    item.classList.toggle('is-open', open);
+    item.querySelector('.ujnav-trigger').setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeAll(except) { items.forEach(function (i) { if (i !== except) setOpen(i, false); }); }
 
-      function openDrawer() {
-        drawer.classList.add('is-open');
-        overlay.classList.add('is-open');
-        toggle.classList.add('is-active');
-        document.body.style.overflow = 'hidden';
-      }
+  items.forEach(function (item) {
+    var btn = item.querySelector('.ujnav-trigger'), timer;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var willOpen = !item.classList.contains('is-open');
+      closeAll(item); setOpen(item, willOpen);
+    });
+    item.addEventListener('mouseenter', function () { if (!desktop.matches) return; clearTimeout(timer); closeAll(item); setOpen(item, true); });
+    item.addEventListener('mouseleave', function () { if (!desktop.matches) return; timer = setTimeout(function () { setOpen(item, false); }, 140); });
+  });
 
-      function closeDrawer() {
-        drawer.classList.remove('is-open');
-        overlay.classList.remove('is-open');
-        toggle.classList.remove('is-active');
-        document.body.style.overflow = '';
-      }
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeAll(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeAll(); setNav(false); } });
 
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (drawer.classList.contains('is-open')) closeDrawer();
-        else openDrawer();
-      });
+  function setNav(open) {
+    nav.classList.toggle('is-nav-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.documentElement.style.overflow = (open && !desktop.matches) ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function () { setNav(!nav.classList.contains('is-nav-open')); });
+  window.addEventListener('resize', function () { if (desktop.matches) { setNav(false); closeAll(); } });
 
-      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-      overlay.addEventListener('click', closeDrawer);
-
-      // Highlight active bottom dock link
-      var path = window.location.pathname;
-      var dockLinks = document.querySelectorAll('.dock-item');
-      dockLinks.forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href && path.endsWith(href) && href !== '/') {
-          link.classList.add('is-active');
-        } else if (href === '/' && (path === '/' || path.endsWith('index.html') && !path.includes('universities'))) {
-          link.classList.add('is-active');
-        }
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupMobileNav);
-    } else {
-      setupMobileNav();
-    }
-  })();
+  // mark the current page's link
+  [].forEach.call(nav.querySelectorAll('.ujnav-link'), function (a) {
+    if (a.getAttribute('href') === location.pathname) a.setAttribute('aria-current', 'page');
+  });
+})();
 </script>
+</header>
