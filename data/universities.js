@@ -501,7 +501,7 @@ window.UNIVERSITIES_DATA = [
         level: "Postgraduate",
         name: "Online MBA / PGDBA",
         duration: "2 Years (4 Semesters)",
-        eligibility: "Bachelor's degree in any discipline",
+        eligibility: "Graduate from any recognised university with min 50% marks (45% for SC/ST)",
         totalFee: 140000,
         perSemFee: 35000,
         monthlyEmi: 3500,
