@@ -25,1386 +25,162 @@ title: "All UGC-DEB Approved Online Universities in India (2026 Directory) | Uni
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
 <style>
-  html { scroll-behavior: smooth; }
-  .uni-tab-nav { position: sticky; top: 92px; z-index: 30; background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-  .uni-tab-nav .container { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
-  .uni-tab-nav .container::-webkit-scrollbar { display: none; }
-  .uni-tab-link { flex-shrink: 0; padding: 0.9rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: #64748b; text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; }
-  .uni-tab-link:hover { color: #1a56db; }
-  .uni-tab-link.is-active { color: #1a56db; border-bottom-color: #1a56db; }
-  #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 146px; }
-  @media (max-width: 768px) {
-    .uni-tab-nav { top: 78px; }
-    #overview, #courses-fees, #placements, #exam-mode, #highlights { scroll-margin-top: 134px; }
-  }
+:root{--ud-navy:#0b1b3d;--ud-ink:#1e293b;--ud-mut:#5b6b85;--ud-bg:#f4f6fb;--ud-card:#fff;--ud-line:#e2e8f0;--ud-soft:#f1f5f9;--ud-or:#e06000;--ud-or2:#ff7a00;--ud-sh:0 1px 2px rgba(11,27,61,.06),0 8px 24px rgba(11,27,61,.06)}
+
+
+.ud{background:var(--ud-bg);color:var(--ud-ink);font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif;padding-bottom:56px;--ud-top:0px}
+.ud *{box-sizing:border-box}
+.ud a{text-decoration:none}
+.ud-w{max-width:1240px;margin:0 auto;padding:0 20px}
+.ud-hero{background:radial-gradient(90% 140% at 90% 0%,rgba(255,122,0,.28),transparent 55%),linear-gradient(135deg,#0b1b3d,#17327a);color:#fff;padding:30px 0 28px}
+.ud-bc{font-size:13px;opacity:.85;margin-bottom:14px}.ud-bc a{color:#ffb066;font-weight:700}
+.ud-hero h1{margin:0 0 10px;font-size:clamp(26px,4vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#fff;max-width:880px}
+.ud-hero p{margin:0;max-width:760px;font-size:16px;line-height:1.6;color:#d6e0fa}
+.ud-kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0 18px;max-width:820px}
+.ud-kpi div{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+.ud-kpi b{display:block;font-size:20px;font-weight:800}.ud-kpi span{font-size:12px;color:#c3d1f3}
+.ud-pop{display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.ud-pop::-webkit-scrollbar{display:none}.ud-pop em{font-style:normal;font-size:13px;font-weight:700;color:#ffc999;white-space:nowrap}
+.ud-pop a{flex:none;font-size:12.5px;font-weight:600;color:#fff;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);white-space:nowrap}
+.ud-pop a:hover{background:rgba(255,255,255,.2)}.ud-pop a.all{background:var(--ud-or2);border-color:transparent}
+.ud-bar{position:sticky;top:var(--ud-top);z-index:20;background:var(--ud-bg);border-bottom:1px solid var(--ud-line);padding:12px 0}
+.ud-r1{display:flex;gap:10px;flex-wrap:wrap}
+.ud-in,.ud-sel{height:44px;border-radius:12px;border:1px solid var(--ud-line);background:var(--ud-card);color:var(--ud-ink);font:600 14px inherit;font-family:inherit;padding:0 14px}
+.ud-in{flex:1 1 260px;min-width:0}.ud-sel{flex:0 1 170px}
+.ud-in:focus,.ud-sel:focus,.ud-chip:focus-visible,.ud-btn:focus-visible,.ud-reset:focus-visible{outline:2px solid var(--ud-or2);outline-offset:2px}
+.ud-r2{display:flex;gap:8px 22px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.ud-g{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.ud-g>span{font-size:12px;font-weight:700;color:var(--ud-mut);margin-right:2px}
+.ud-chip{border:1px solid var(--ud-line);background:var(--ud-card);color:var(--ud-ink);font:700 13px inherit;font-family:inherit;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s}
+.ud-chip[aria-pressed="true"]{background:var(--ud-or2);border-color:var(--ud-or2);color:#fff}
+.ud-cnt{margin-left:auto;font-size:13px;font-weight:700;color:var(--ud-mut);display:flex;gap:12px;align-items:center}
+.ud-reset{background:none;border:0;color:var(--ud-or);font:700 13px inherit;font-family:inherit;cursor:pointer;text-decoration:underline}
+.ud-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:22px 0 8px}
+.ud-c{display:flex;flex-direction:column;min-width:0;position:relative;background:var(--ud-card);border:1px solid var(--ud-line);border-top:4px solid var(--c);border-radius:18px;padding:16px 18px 18px;box-shadow:var(--ud-sh);transition:transform .2s,box-shadow .2s}
+.ud-c[hidden]{display:none}.ud-c:hover{transform:translateY(-3px)}
+.ud-top{display:flex;gap:12px;align-items:flex-start}.ud-tt{flex:1;min-width:0}
+.ud-mono{flex:none;width:50px;height:50px;border-radius:14px;background:var(--c);display:grid;place-items:center;font-weight:800;font-size:16px}
+.ud-name{margin:0;font-size:16px;line-height:1.3;font-weight:800;color:var(--ud-navy);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
+.ud-name a{color:inherit}.ud-name a:hover{color:var(--ud-or)}
+.ud-loc{font-size:12.5px;color:var(--ud-mut);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ud-rate{flex:none;font-size:12.5px;font-weight:800;color:var(--ud-or);background:rgba(255,122,0,.12);padding:4px 9px;border-radius:999px}
+.ud-tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 6px}
+.ud-tag{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px}
+.ud-tag.ok{background:#d1fae5;color:#065f46}.ud-tag.na{background:#ede9fe;color:#5b21b6}.ud-tag.hot{background:#ffedd5;color:#9a3412}
+.ud-rank{font-size:12.5px;font-weight:600;color:var(--ud-mut);min-height:1.4em}
+.ud-stats{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px;margin:12px 0;padding:12px;border-radius:14px;background:var(--ud-soft)}
+.ud-stats small{display:block;font-size:11px;font-weight:600;color:var(--ud-mut);margin-bottom:2px}
+.ud-stats b{font-size:14px;color:var(--ud-navy);white-space:nowrap}.ud-stats .f b{font-size:17px}.ud-stats i{font-style:normal;font-size:11px;font-weight:600;color:var(--ud-mut)}
+.ud-stats div:nth-child(3) b{color:#059669}
+.ud-meta{margin:0 0 16px;font-size:12.5px;line-height:1.55;color:var(--ud-mut)}.ud-meta b{color:var(--ud-ink)}
+.ud-act{display:grid;grid-template-columns:1.15fr 1fr;gap:8px;margin-top:auto}
+.ud-btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:8px 10px;border-radius:12px;font-weight:700;font-size:13px;line-height:1.2;transition:transform .15s,box-shadow .15s}
+.ud-btn:hover{transform:translateY(-1px)}
+.ud-btn.p{background:linear-gradient(180deg,var(--ud-or2),#e86500);color:#fff;box-shadow:0 6px 14px rgba(255,122,0,.3)}
+.ud-btn.w{border:1.5px solid #16a34a;color:#16a34a}.ud-btn.w:hover{background:#16a34a;color:#fff}
+.ud-empty{text-align:center;padding:48px 16px;color:var(--ud-mut);font-weight:600}
+.ud-note{margin:14px 0 26px;font-size:12.5px;line-height:1.6;color:var(--ud-mut)}
+.ud-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:26px 30px;border-radius:22px;color:#fff;background:radial-gradient(70% 160% at 100% 0%,rgba(255,122,0,.35),transparent 60%),linear-gradient(135deg,#0b1b3d,#17327a)}
+.ud-cta h2{margin:0 0 4px;font-size:22px;color:#fff}.ud-cta p{margin:0;color:#d6e0fa;font-size:14.5px}
+.ud-cta .ud-btn{min-height:48px;padding:10px 24px;font-size:15px}.ud-cta .ud-btn.w{background:#16a34a;color:#fff;border-color:#16a34a}.ud-cta .ud-btn.c{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.ud-cta div:last-child{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:1020px){.ud-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.ud-bar{position:static}.ud-grid{grid-template-columns:1fr}.ud-kpi{grid-template-columns:repeat(2,minmax(0,1fr))}.ud-sel{flex:1 1 140px}.ud-cnt{margin-left:0;width:100%;justify-content:space-between}.ud-cta{padding:22px}.ud-w{padding:0 14px}}
+@media (prefers-reduced-motion:reduce){.ud-c,.ud-btn{transition:none}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "UGC-DEB Approved Online Universities in India", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Online Manipal (Manipal University Jaipur)", "url": "https://universityjano.com/universities/online-manipal.html"}, {"@type": "ListItem", "position": 2, "name": "Amity University Online", "url": "https://universityjano.com/universities/amity-online.html"}, {"@type": "ListItem", "position": 3, "name": "Chandigarh University Online (CU Online)", "url": "https://universityjano.com/universities/chandigarh-university-online.html"}, {"@type": "ListItem", "position": 4, "name": "Jain (Deemed-to-be-University) Online", "url": "https://universityjano.com/universities/jain-university-online.html"}, {"@type": "ListItem", "position": 5, "name": "NMIMS Centre for Distance & Online Education (CDOE)", "url": "https://universityjano.com/universities/nmims-online.html"}, {"@type": "ListItem", "position": 6, "name": "Symbiosis Online (SSODL / SCDL)", "url": "https://universityjano.com/universities/symbiosis-online.html"}, {"@type": "ListItem", "position": 7, "name": "Dr. D.Y. Patil Vidyapeeth Centre for Online Learning (DPU COL)", "url": "https://universityjano.com/universities/dy-patil-online.html"}, {"@type": "ListItem", "position": 8, "name": "UPES Online (University of Petroleum & Energy Studies)", "url": "https://universityjano.com/universities/upes-online.html"}, {"@type": "ListItem", "position": 9, "name": "Lovely Professional University Online (LPU Online)", "url": "https://universityjano.com/universities/lpu-online.html"}, {"@type": "ListItem", "position": 10, "name": "Uttaranchal University Online", "url": "https://universityjano.com/universities/uttaranchal-university-online.html"}, {"@type": "ListItem", "position": 11, "name": "SRM Institute of Science and Technology Online", "url": "https://universityjano.com/universities/srm-online.html"}, {"@type": "ListItem", "position": 12, "name": "BITS Pilani WILP (Work Integrated Learning Programmes)", "url": "https://universityjano.com/universities/bits-pilani-wilp.html"}, {"@type": "ListItem", "position": 13, "name": "IGNOU (Indira Gandhi National Open University)", "url": "https://universityjano.com/universities/ignou-online.html"}, {"@type": "ListItem", "position": 14, "name": "Amrita Vishwa Vidyapeetham Ahead Online", "url": "https://universityjano.com/universities/amrita-online.html"}, {"@type": "ListItem", "position": 15, "name": "Shiv Nadar University Online (SNU Online)", "url": "https://universityjano.com/universities/shiv-nadar-online.html"}, {"@type": "ListItem", "position": 16, "name": "GLA University Online (Mathura)", "url": "https://universityjano.com/universities/gla-university-online.html"}, {"@type": "ListItem", "position": 17, "name": "Vignan's Foundation for Science, Technology & Research Online", "url": "https://universityjano.com/universities/vignan-university-online.html"}, {"@type": "ListItem", "position": 18, "name": "Sharda University Online (Greater Noida)", "url": "https://universityjano.com/universities/sharda-university-online.html"}, {"@type": "ListItem", "position": 19, "name": "Mizoram University Online (A Central University)", "url": "https://universityjano.com/universities/mizoram-university-online.html"}, {"@type": "ListItem", "position": 20, "name": "Kurukshetra University Online (KUK Online)", "url": "https://universityjano.com/universities/kurukshetra-university-online.html"}, {"@type": "ListItem", "position": 21, "name": "Andhra University Online (School of Distance Education)", "url": "https://universityjano.com/universities/andhra-university-online.html"}, {"@type": "ListItem", "position": 22, "name": "Aligarh Muslim University Centre for Distance and Online Education", "url": "https://universityjano.com/universities/amu-online.html"}, {"@type": "ListItem", "position": 23, "name": "Bharati Vidyapeeth Deemed University Online (BVDU)", "url": "https://universityjano.com/universities/bvdu-online.html"}, {"@type": "ListItem", "position": 24, "name": "Guru Nanak Dev University Online (GNDU Amritsar)", "url": "https://universityjano.com/universities/gndu-online.html"}, {"@type": "ListItem", "position": 25, "name": "ICFAI Foundation for Higher Education Online (IFHE Hyderabad)", "url": "https://universityjano.com/universities/ifhe-online.html"}]}</script>
 </head>
 <body>
 {% include site-header.html %}
 
-<div style="background:#f8fafc;min-height:100vh;padding:2.5rem 0 4.5rem 0;">
-  <div class="container">
-    <div style="margin-bottom:2rem;">
-      <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:#64748b;margin-bottom:0.75rem;">
-        <a href="{{ '/' | relative_url }}" style="color:#e06000;text-decoration:none;font-weight:700;">Home</a>
-        <span>/</span>
-        <span style="color:#0b1b3d;font-weight:700;">Directory of All Online Universities in India</span>
-      </div>
+<div class="ud">
+  <section class="ud-hero"><div class="ud-w">
+    <div class="ud-bc"><a href="{{ '/' | relative_url }}">Home</a> / Directory of Online Universities</div>
+    <h1>All UGC-DEB Approved Online Universities in India (2026 Directory)</h1>
+    <p>Compare official accreditation (UGC-DEB, NAAC, NIRF), transparent fees, 0% EMI, placement data and exam format across 25 recognised universities. Filter by budget, NAAC grade and state, then shortlist.</p>
+    <div class="ud-kpi"><div><b>25</b><span>UGC-DEB universities</span></div><div><b>11</b><span>with NAAC A++</span></div><div><b>₹62,000</b><span>lowest fee</span></div><div><b>₹35 LPA</b><span>highest CTC</span></div></div>
+    <div class="ud-pop"><em>Popular comparisons:</em><a href="{{ '/vs/manipal-vs-amity-online-mba.html' | relative_url }}">Manipal Online vs Amity Online MBA</a><a href="{{ '/vs/nmims-vs-manipal-online-mba.html' | relative_url }}">NMIMS Online vs Manipal Online MBA</a><a href="{{ '/vs/amity-vs-jain-online-mba.html' | relative_url }}">Amity Online vs Jain Online MBA</a><a href="{{ '/vs/lpu-vs-chandigarh-university-online-mba.html' | relative_url }}">LPU Online vs Chandigarh University Online MBA</a><a href="{{ '/vs/nmims-vs-symbiosis-online-mba.html' | relative_url }}">NMIMS Online vs Symbiosis Online MBA</a><a href="{{ '/vs/amity-vs-lpu-online-mba.html' | relative_url }}">Amity Online vs LPU Online MBA</a><a href="{{ '/vs/manipal-vs-jain-online-mba.html' | relative_url }}">Manipal Online vs Jain Online MBA</a><a href="{{ '/vs/amity-vs-chandigarh-university-online-mba.html' | relative_url }}">Amity Online vs Chandigarh University Online MBA</a><a href="{{ '/vs/nmims-vs-amity-online-mba.html' | relative_url }}">NMIMS Online vs Amity Online MBA</a><a href="{{ '/vs/symbiosis-vs-manipal-online-mba.html' | relative_url }}">Symbiosis Online vs Manipal Online MBA</a><a href="{{ '/vs/lpu-vs-manipal-online-mba.html' | relative_url }}">LPU Online vs Manipal Online MBA</a><a href="{{ '/vs/chandigarh-university-vs-manipal-online-mba.html' | relative_url }}">Chandigarh University Online vs Manipal Online MBA</a><a href="{{ '/vs/nmims-vs-jain-online-mba.html' | relative_url }}">NMIMS Online vs Jain Online MBA</a><a href="{{ '/vs/symbiosis-vs-amity-online-mba.html' | relative_url }}">Symbiosis Online vs Amity Online MBA</a><a href="{{ '/vs/dy-patil-vs-symbiosis-online-mba.html' | relative_url }}">D.Y. Patil Online vs Symbiosis Online MBA</a><a href="{{ '/vs/' | relative_url }}" class="all">All comparisons →</a></div>
+  </div></section>
 
-      <h1 style="font-size:2.4rem;color:#0b1b3d;margin-bottom:0.5rem;">
-        Directory of All UGC-DEB Approved Online Universities in India (25 Institutions)
-      </h1>
-      <p style="font-size:1.05rem;color:#64748b;max-width:850px;">
-        Compare official accreditations (UGC-DEB, NAAC A++, NIRF), transparent course fees, 0% EMI options, placement records, and examination formats across all recognized Indian universities offering online degrees.
-      </p>
+  <div class="ud-bar"><div class="ud-w">
+    <div class="ud-r1">
+      <input class="ud-in" id="q" type="search" placeholder="Search university or city, e.g. Manipal, Pune" aria-label="Search universities">
+      <select class="ud-sel" id="st" aria-label="Filter by state"><option value="">All states</option><option>Andhra Pradesh</option><option>Delhi</option><option>Haryana</option><option>Karnataka</option><option>Maharashtra</option><option>Mizoram</option><option>Punjab</option><option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option><option>Uttar Pradesh</option><option>Uttarakhand</option></select>
+      <select class="ud-sel" id="so" aria-label="Sort universities"><option value="rec">Recommended</option><option value="feeA">Fee: low to high</option><option value="feeD">Fee: high to low</option><option value="ctc">Highest CTC</option><option value="rate">Top rated</option></select>
     </div>
-
-    <!-- uj-vs:start -->
-<style>
-.uj-cmp-bar{display:flex;align-items:center;gap:1rem;background:#eef2f7;border-radius:12px;padding:.85rem 1.1rem;margin:0 0 1.5rem}
-.uj-cmp-bar>b{color:#2a4466;white-space:nowrap}
-.uj-marquee{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
-.uj-track{display:flex;width:max-content;animation:uj-ltr 80s linear infinite}
-.uj-marquee:hover .uj-track,.uj-marquee:focus-within .uj-track{animation-play-state:paused}
-.uj-pill{display:inline-block;white-space:nowrap;color:#3f72c4;font-weight:600;padding:.2rem 1.1rem .2rem 0;text-decoration:none}
-.uj-pill:hover{text-decoration:underline}.uj-pill-all{color:#2a4466;font-weight:800}
-@keyframes uj-ltr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-@media (prefers-reduced-motion:reduce){.uj-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.uj-track{animation:none}}
-@media (max-width:640px){.uj-cmp-bar{flex-direction:column;align-items:flex-start;gap:.4rem}.uj-marquee{width:100%}}
-</style>
-<div class="uj-cmp-bar"><b>Popular comparisons:</b><div class="uj-marquee"><div class="uj-track"><a class="uj-pill" href="{{ '/vs/manipal-vs-amity-online-mba.html' | relative_url }}">Manipal Online vs Amity Online MBA</a><a class="uj-pill" href="{{ '/vs/nmims-vs-manipal-online-mba.html' | relative_url }}">NMIMS Online vs Manipal Online MBA</a><a class="uj-pill" href="{{ '/vs/amity-vs-jain-online-mba.html' | relative_url }}">Amity Online vs Jain Online MBA</a><a class="uj-pill" href="{{ '/vs/lpu-vs-chandigarh-university-online-mba.html' | relative_url }}">LPU Online vs Chandigarh University Online MBA</a><a class="uj-pill" href="{{ '/vs/nmims-vs-symbiosis-online-mba.html' | relative_url }}">NMIMS Online vs Symbiosis Online MBA</a><a class="uj-pill" href="{{ '/vs/amity-vs-lpu-online-mba.html' | relative_url }}">Amity Online vs LPU Online MBA</a><a class="uj-pill" href="{{ '/vs/manipal-vs-jain-online-mba.html' | relative_url }}">Manipal Online vs Jain Online MBA</a><a class="uj-pill" href="{{ '/vs/amity-vs-chandigarh-university-online-mba.html' | relative_url }}">Amity Online vs Chandigarh University Online MBA</a><a class="uj-pill" href="{{ '/vs/nmims-vs-amity-online-mba.html' | relative_url }}">NMIMS Online vs Amity Online MBA</a><a class="uj-pill" href="{{ '/vs/symbiosis-vs-manipal-online-mba.html' | relative_url }}">Symbiosis Online vs Manipal Online MBA</a><a class="uj-pill" href="{{ '/vs/lpu-vs-manipal-online-mba.html' | relative_url }}">LPU Online vs Manipal Online MBA</a><a class="uj-pill" href="{{ '/vs/chandigarh-university-vs-manipal-online-mba.html' | relative_url }}">Chandigarh University Online vs Manipal Online MBA</a><a class="uj-pill" href="{{ '/vs/nmims-vs-jain-online-mba.html' | relative_url }}">NMIMS Online vs Jain Online MBA</a><a class="uj-pill" href="{{ '/vs/symbiosis-vs-amity-online-mba.html' | relative_url }}">Symbiosis Online vs Amity Online MBA</a><a class="uj-pill" href="{{ '/vs/dy-patil-vs-symbiosis-online-mba.html' | relative_url }}">D.Y. Patil Online vs Symbiosis Online MBA</a><a class="uj-pill uj-pill-all" href="{{ '/vs/' | relative_url }}">All comparisons &rarr;</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/manipal-vs-amity-online-mba.html' | relative_url }}">Manipal Online vs Amity Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/nmims-vs-manipal-online-mba.html' | relative_url }}">NMIMS Online vs Manipal Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/amity-vs-jain-online-mba.html' | relative_url }}">Amity Online vs Jain Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/lpu-vs-chandigarh-university-online-mba.html' | relative_url }}">LPU Online vs Chandigarh University Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/nmims-vs-symbiosis-online-mba.html' | relative_url }}">NMIMS Online vs Symbiosis Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/amity-vs-lpu-online-mba.html' | relative_url }}">Amity Online vs LPU Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/manipal-vs-jain-online-mba.html' | relative_url }}">Manipal Online vs Jain Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/amity-vs-chandigarh-university-online-mba.html' | relative_url }}">Amity Online vs Chandigarh University Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/nmims-vs-amity-online-mba.html' | relative_url }}">NMIMS Online vs Amity Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/symbiosis-vs-manipal-online-mba.html' | relative_url }}">Symbiosis Online vs Manipal Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/lpu-vs-manipal-online-mba.html' | relative_url }}">LPU Online vs Manipal Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/chandigarh-university-vs-manipal-online-mba.html' | relative_url }}">Chandigarh University Online vs Manipal Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/nmims-vs-jain-online-mba.html' | relative_url }}">NMIMS Online vs Jain Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/symbiosis-vs-amity-online-mba.html' | relative_url }}">Symbiosis Online vs Amity Online MBA</a><a class="uj-pill" tabindex="-1" aria-hidden="true" href="{{ '/vs/dy-patil-vs-symbiosis-online-mba.html' | relative_url }}">D.Y. Patil Online vs Symbiosis Online MBA</a><a class="uj-pill uj-pill-all" tabindex="-1" aria-hidden="true" href="{{ '/vs/' | relative_url }}">All comparisons &rarr;</a></div></div></div>
-<!-- uj-vs:end -->
-<!-- uj-tiles:start -->
-<style>
-.uj-tiles-h{margin:0 0 1.1rem;font-size:1.4rem;color:var(--navy-900)}
-.uj-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;margin:0 0 2.75rem}
-.uj-tile{display:block;background:#fff;border:1px solid var(--border-light);border-radius:18px;overflow:hidden;color:inherit;text-decoration:none;box-shadow:0 1px 2px rgba(42,68,102,.05);transition:transform .25s,box-shadow .25s,border-color .25s}
-.uj-tile:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(42,68,102,.12);border-color:#e8c7a8}
-.uj-tile-media{position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.uj-tile-media span{color:var(--navy-900);font-weight:700;font-size:1.15rem;letter-spacing:.05em;text-align:center;padding:0 .75rem;opacity:.85}
-.uj-tile-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.uj-tile-body{padding:.95rem 1.05rem 1.05rem}.uj-tile-body h3{margin:0 0 .3rem;font-size:.98rem;font-weight:700;line-height:1.35;color:var(--navy-900);min-height:2.7em}
-.uj-tile-body p{margin:0 0 .7rem;font-size:.82rem;color:var(--text-muted)}
-.uj-tile-meta{display:flex;justify-content:space-between;align-items:center;gap:.4rem;flex-wrap:wrap}.uj-chip{font-size:.7rem;font-weight:600;background:var(--accent-emerald-bg);color:#2a7d62;border-radius:999px;padding:.18rem .55rem;white-space:nowrap}.uj-fee{font-size:.82rem;font-weight:700;color:var(--navy-900);white-space:nowrap}
-@media (max-width:1100px){.uj-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:760px){.uj-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.uj-tile-body{padding:.75rem .8rem .85rem}.uj-tile-body h3{font-size:.88rem}.uj-fee{font-size:.76rem}}
-</style>
-<h2 class="uj-tiles-h" id="all-universities">Browse All 25 Online Universities</h2>
-<div class="uj-tiles">
-<a class="uj-tile" href="{{ '/universities/online-manipal.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#EE43261f,#EE432647)"><span>MANIPAL</span><img src="{{ '/images/universities/online-manipal.jpg' | relative_url }}" alt="Online Manipal (Manipal University Jaipur) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Online Manipal (Manipal University Jaipur)</h3><p>📍 Jaipur, Rajasthan</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,35,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/amity-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#FFA0001f,#FFA00047)"><span>AMITY</span><img src="{{ '/images/universities/amity-online.jpg' | relative_url }}" alt="Amity University Online campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Amity University Online</h3><p>📍 Noida, Uttar Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,50,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/chandigarh-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#C628281f,#C6282847)"><span>CU ONLINE</span><img src="{{ '/images/universities/chandigarh-university-online.jpg' | relative_url }}" alt="Chandigarh University Online (CU Online) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Chandigarh University Online (CU Online)</h3><p>📍 Mohali / Chandigarh, Punjab</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,30,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/jain-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#1565C01f,#1565C047)"><span>JAIN ONLINE</span><img src="{{ '/images/universities/jain-university-online.jpg' | relative_url }}" alt="Jain (Deemed-to-be-University) Online campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Jain (Deemed-to-be-University) Online</h3><p>📍 Bangalore, Karnataka</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,40,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/nmims-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#9900001f,#99000047)"><span>NMIMS CDOE</span><img src="{{ '/images/universities/nmims-online.jpg' | relative_url }}" alt="NMIMS Centre for Distance &amp; Online Education (CDOE) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>NMIMS Centre for Distance &amp; Online Education (CDOE)</h3><p>📍 Mumbai, Maharashtra</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,96,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/symbiosis-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#B71C1C1f,#B71C1C47)"><span>SYMBIOSIS</span><img src="{{ '/images/universities/symbiosis-online.jpg' | relative_url }}" alt="Symbiosis Online (SSODL / SCDL) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Symbiosis Online (SSODL / SCDL)</h3><p>📍 Pune, Maharashtra</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,40,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/dy-patil-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#0D47A11f,#0D47A147)"><span>DPU ONLINE</span><img src="{{ '/images/universities/dy-patil-online.jpg' | relative_url }}" alt="Dr. D.Y. Patil Vidyapeeth Centre for Online Learning (DPU COL) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Dr. D.Y. Patil Vidyapeeth Centre for Online Learning (DPU COL)</h3><p>📍 Pune, Maharashtra</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,40,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/upes-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#E651001f,#E6510047)"><span>UPES ON</span><img src="{{ '/images/universities/upes-online.jpg' | relative_url }}" alt="UPES Online (University of Petroleum &amp; Energy Studies) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>UPES Online (University of Petroleum &amp; Energy Studies)</h3><p>📍 Dehradun, Uttarakhand</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,65,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/lpu-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#D81B601f,#D81B6047)"><span>LPU ONLINE</span><img src="{{ '/images/universities/lpu-online.jpg' | relative_url }}" alt="Lovely Professional University Online (LPU Online) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Lovely Professional University Online (LPU Online)</h3><p>📍 Jalandhar, Punjab</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,12,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/uttaranchal-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#00695C1f,#00695C47)"><span>UTTARANCHAL</span><img src="{{ '/images/universities/uttaranchal-university-online.jpg' | relative_url }}" alt="Uttaranchal University Online campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Uttaranchal University Online</h3><p>📍 Dehradun, Uttarakhand</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,04,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/srm-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#1A237E1f,#1A237E47)"><span>SRM ONLINE</span><img src="{{ '/images/universities/srm-online.jpg' | relative_url }}" alt="SRM Institute of Science and Technology Online campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>SRM Institute of Science and Technology Online</h3><p>📍 Chennai, Tamil Nadu</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,50,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/bits-pilani-wilp.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#004D401f,#004D4047)"><span>BITS PILANI</span><img src="{{ '/images/universities/bits-pilani-wilp.jpg' | relative_url }}" alt="BITS Pilani WILP (Work Integrated Learning Programmes) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>BITS Pilani WILP (Work Integrated Learning Programmes)</h3><p>📍 Pilani, Rajasthan</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹2,68,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/ignou-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#0D47A11f,#0D47A147)"><span>IGNOU</span><img src="{{ '/images/universities/ignou-online.jpg' | relative_url }}" alt="IGNOU (Indira Gandhi National Open University) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>IGNOU (Indira Gandhi National Open University)</h3><p>📍 New Delhi, Delhi</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹62,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/amrita-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#880E4F1f,#880E4F47)"><span>AMRITA</span><img src="{{ '/images/universities/amrita-online.jpg' | relative_url }}" alt="Amrita Vishwa Vidyapeetham Ahead Online campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Amrita Vishwa Vidyapeetham Ahead Online</h3><p>📍 Coimbatore, Tamil Nadu</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,70,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/shiv-nadar-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#1B5E201f,#1B5E2047)"><span>SNU ONLINE</span><img src="{{ '/images/universities/shiv-nadar-online.jpg' | relative_url }}" alt="Shiv Nadar University Online (SNU Online) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Shiv Nadar University Online (SNU Online)</h3><p>📍 Greater Noida, Uttar Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹2,10,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/gla-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#0277BD1f,#0277BD47)"><span>GLA ONLINE</span><img src="{{ '/images/universities/gla-university-online.jpg' | relative_url }}" alt="GLA University Online (Mathura) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>GLA University Online (Mathura)</h3><p>📍 Mathura, Uttar Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,20,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/vignan-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#C2185B1f,#C2185B47)"><span>VIGNAN</span><img src="{{ '/images/universities/vignan-university-online.jpg' | relative_url }}" alt="Vignan's Foundation for Science, Technology &amp; Research Online campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Vignan's Foundation for Science, Technology &amp; Research Online</h3><p>📍 Guntur, Andhra Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,30,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/sharda-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#D32F2F1f,#D32F2F47)"><span>SHARDA</span><img src="{{ '/images/universities/sharda-university-online.jpg' | relative_url }}" alt="Sharda University Online (Greater Noida) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Sharda University Online (Greater Noida)</h3><p>📍 Greater Noida, Uttar Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,40,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/mizoram-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#00796B1f,#00796B47)"><span>MIZORAM CENTRAL</span><img src="{{ '/images/universities/mizoram-university-online.jpg' | relative_url }}" alt="Mizoram University Online (A Central University) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Mizoram University Online (A Central University)</h3><p>📍 Aizawl, Mizoram</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹98,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/kurukshetra-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#C628281f,#C6282847)"><span>KUK ONLINE</span><img src="{{ '/images/universities/kurukshetra-university-online.jpg' | relative_url }}" alt="Kurukshetra University Online (KUK Online) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Kurukshetra University Online (KUK Online)</h3><p>📍 Kurukshetra, Haryana</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹1,08,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/andhra-university-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#1565C01f,#1565C047)"><span>ANDHRA UNI</span><img src="{{ '/images/universities/andhra-university-online.jpg' | relative_url }}" alt="Andhra University Online (School of Distance Education) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Andhra University Online (School of Distance Education)</h3><p>📍 Visakhapatnam, Andhra Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹85,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/amu-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#1B5E201f,#1B5E2047)"><span>AMU ONLINE</span><img src="{{ '/images/universities/amu-online.jpg' | relative_url }}" alt="Aligarh Muslim University Centre for Distance and Online Education campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Aligarh Muslim University Centre for Distance and Online Education</h3><p>📍 Aligarh, Uttar Pradesh</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹72,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/bvdu-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#0D47A11f,#0D47A147)"><span>BVDU</span><img src="{{ '/images/universities/bvdu-online.jpg' | relative_url }}" alt="Bharati Vidyapeeth Deemed University Online (BVDU) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Bharati Vidyapeeth Deemed University Online (BVDU)</h3><p>📍 Pune, Maharashtra</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹90,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/gndu-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#B71C1C1f,#B71C1C47)"><span>GNDU</span><img src="{{ '/images/universities/gndu-online.jpg' | relative_url }}" alt="Guru Nanak Dev University Online (GNDU Amritsar) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>Guru Nanak Dev University Online (GNDU Amritsar)</h3><p>📍 Amritsar, Punjab</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹98,000</span></div></div></a>
-<a class="uj-tile" href="{{ '/universities/ifhe-online.html' | relative_url }}">
-<div class="uj-tile-media" style="background:linear-gradient(135deg,#1B5E201f,#1B5E2047)"><span>ICFAI</span><img src="{{ '/images/universities/ifhe-online.jpg' | relative_url }}" alt="ICFAI Foundation for Higher Education Online (IFHE Hyderabad) campus" loading="lazy" decoding="async" onerror="this.remove()"></div>
-<div class="uj-tile-body"><h3>ICFAI Foundation for Higher Education Online (IFHE Hyderabad)</h3><p>📍 Hyderabad, Telangana</p><div class="uj-tile-meta"><span class="uj-chip">✓ UGC-DEB</span><span class="uj-fee">From ₹2,00,000</span></div></div></a>
-</div>
-<!-- uj-tiles:end -->
-<!-- University Listing Grid -->
-    <div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
-        <div style="font-size:1rem;color:#0b1b3d;font-weight:700;">
-          Showing all <strong>25</strong> UGC-DEB Approved Universities
-        </div>
-        <a href="{{ '/compare.html' | relative_url }}" class="btn btn-secondary btn-sm" style="text-decoration:none;">
-          ⚖️ Compare Colleges Side-by-Side &rarr;
-        </a>
-      </div>
-
-      
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #EE4326;color:#EE4326;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            MANIPAL
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.9</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">Ranked among Top 100</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="online-manipal.html" style="color:inherit;text-decoration:none;">Online Manipal (Manipal University Jaipur)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Jaipur, Rajasthan &bull; Est. 2011
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Proctored (Take from Home) &bull; 🤝 500+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,75,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹4,375/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹18.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="online-manipal.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Online%20Manipal%20(Manipal%20University%20Jaipur)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
+    <div class="ud-r2">
+      <div class="ud-g" data-g="n"><span>NAAC</span><button class="ud-chip" data-v="" aria-pressed="true">All</button><button class="ud-chip" data-v="A++" aria-pressed="false">A++</button><button class="ud-chip" data-v="A+" aria-pressed="false">A+</button><button class="ud-chip" data-v="A" aria-pressed="false">A</button></div>
+      <div class="ud-g" data-g="b"><span>Budget</span><button class="ud-chip" data-v="" aria-pressed="true">Any</button><button class="ud-chip" data-v="a" aria-pressed="false">Under ₹1.2L</button><button class="ud-chip" data-v="b" aria-pressed="false">₹1.2L–1.6L</button><button class="ud-chip" data-v="c" aria-pressed="false">₹1.6L+</button></div>
+      <div class="ud-cnt"><span id="cnt" aria-live="polite">Showing 25 of 25</span><button class="ud-reset" id="rs" type="button">Reset</button></div>
     </div>
+  </div></div>
 
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #FFA000;color:#FFA000;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            AMITY
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">Ranked Top 35 University in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="amity-online.html" style="color:inherit;text-decoration:none;">Amity University Online</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Noida, Uttar Pradesh &bull; Est. 2005
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Remote Proctored Exams &bull; 🤝 450+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,79,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹4,475/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹18.5 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="amity-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Amity%20University%20Online" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
+  <div class="ud-w">
+    <div class="ud-grid" id="grid">
+<article class="ud-c" style="--c:#EE4326" data-i="0" data-name="online manipal (manipal university jaipur) manipal jaipur, rajasthan" data-naac="A+" data-b="c" data-state="Rajasthan" data-fee="175000" data-ctc="18.0" data-rate="4.9"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">MA</div><div class="ud-tt"><h3 class="ud-name"><a href="online-manipal.html">Online Manipal (Manipal University Jaipur)</a></h3><div class="ud-loc">📍 Jaipur, Rajasthan</div></div><div class="ud-rate">★ 4.9</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2011 · Ranked among Top 100</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,75,000</b></div><div><small>EMI</small><b>₹4,375<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹18.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Proctored (Take from Home)<br>🤝 500+ Recruiters<br>Other courses from <b>₹1,35,000</b></p><div class="ud-act"><a class="ud-btn p" href="online-manipal.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Online%20Manipal%20%28Manipal%20University%20Jaipur%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#FFA000" data-i="1" data-name="amity university online amity noida, uttar pradesh" data-naac="A+" data-b="c" data-state="Uttar Pradesh" data-fee="179000" data-ctc="18.5" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#1b1b1b" aria-hidden="true">AM</div><div class="ud-tt"><h3 class="ud-name"><a href="amity-online.html">Amity University Online</a></h3><div class="ud-loc">📍 Noida, Uttar Pradesh</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2005 · Ranked Top 35 University in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,79,000</b></div><div><small>EMI</small><b>₹4,475<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹18.5 LPA</b></div></div><p class="ud-meta">💻 100% Online Remote Proctored Exams<br>🤝 450+ Recruiters<br>Other courses from <b>₹1,50,000</b></p><div class="ud-act"><a class="ud-btn p" href="amity-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Amity%20University%20Online" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#C62828" data-i="2" data-name="chandigarh university online (cu online) cu online mohali / chandigarh, punjab" data-naac="A+" data-b="b" data-state="Punjab" data-fee="150000" data-ctc="17.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">CU</div><div class="ud-tt"><h3 class="ud-name"><a href="chandigarh-university-online.html">Chandigarh University Online (CU Online)</a></h3><div class="ud-loc">📍 Mohali / Chandigarh, Punjab</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2012 · NIRF Rank #27 Overall in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,50,000</b></div><div><small>EMI</small><b>₹3,750<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹17.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 400+ Recruiters<br>Other courses from <b>₹1,30,000</b></p><div class="ud-act"><a class="ud-btn p" href="chandigarh-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Chandigarh%20University%20Online%20%28CU%20Online%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#1565C0" data-i="3" data-name="jain (deemed-to-be-university) online jain online bangalore, karnataka" data-naac="A++" data-b="c" data-state="Karnataka" data-fee="160000" data-ctc="21.5" data-rate="4.9"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">JA</div><div class="ud-tt"><h3 class="ud-name"><a href="jain-university-online.html">Jain (Deemed-to-be-University) Online</a></h3><div class="ud-loc">📍 Bangalore, Karnataka</div></div><div class="ud-rate">★ 4.9</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1990 · NIRF Top 68 University in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,60,000</b></div><div><small>EMI</small><b>₹4,000<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹21.5 LPA</b></div></div><p class="ud-meta">💻 100% Online AI-Proctored Exams<br>🤝 500+ Recruiters<br>Other courses from <b>₹1,40,000</b></p><div class="ud-act"><a class="ud-btn p" href="jain-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Jain%20%28Deemed-to-be-University%29%20Online" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#990000" data-i="4" data-name="nmims centre for distance &amp; online education (cdoe) nmims cdoe mumbai, maharashtra" data-naac="A+" data-b="c" data-state="Maharashtra" data-fee="196000" data-ctc="22.0" data-rate="4.9"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">NM</div><div class="ud-tt"><h3 class="ud-name"><a href="nmims-online.html">NMIMS Centre for Distance &amp; Online Education (CDOE)</a></h3><div class="ud-loc">📍 Mumbai, Maharashtra</div></div><div class="ud-rate">★ 4.9</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 1981 · NIRF Top 21 University in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,96,000</b></div><div><small>EMI</small><b>₹4,900<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹22.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Computer-Based Exam (At Home / Exam Centers)<br>🤝 600+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="nmims-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20NMIMS%20Centre%20for%20Distance%20%26%20Online%20Education%20%28CDOE%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#B71C1C" data-i="5" data-name="symbiosis online (ssodl / scdl) symbiosis pune, maharashtra" data-naac="A++" data-b="b" data-state="Maharashtra" data-fee="140000" data-ctc="16.5" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">SY</div><div class="ud-tt"><h3 class="ud-name"><a href="symbiosis-online.html">Symbiosis Online (SSODL / SCDL)</a></h3><div class="ud-loc">📍 Pune, Maharashtra</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 2001 · NIRF Top 32 University in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,40,000</b></div><div><small>EMI</small><b>₹3,500<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹16.5 LPA</b></div></div><p class="ud-meta">💻 100% Online Computer-Based Exam (On-Demand Examination)<br>🤝 420+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="symbiosis-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Symbiosis%20Online%20%28SSODL%20%2F%20SCDL%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#0D47A1" data-i="6" data-name="dr. d.y. patil vidyapeeth centre for online learning (dpu col) dpu online pune, maharashtra" data-naac="A++" data-b="b" data-state="Maharashtra" data-fee="140000" data-ctc="16.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">DPU</div><div class="ud-tt"><h3 class="ud-name"><a href="dy-patil-online.html">Dr. D.Y. Patil Vidyapeeth Centre for Online Learning (DPU COL)</a></h3><div class="ud-loc">📍 Pune, Maharashtra</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1984 · NIRF Rank #46 Overall in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,40,000</b></div><div><small>EMI</small><b>₹3,500<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹16.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 380+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="dy-patil-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Dr.%20D.Y.%20Patil%20Vidyapeeth%20Centre%20for%20Online%20Learning%20%28DPU%20COL%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#E65100" data-i="7" data-name="upes online (university of petroleum &amp; energy studies) upes on dehradun, uttarakhand" data-naac="A" data-b="c" data-state="Uttarakhand" data-fee="165000" data-ctc="19.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">UP</div><div class="ud-tt"><h3 class="ud-name"><a href="upes-online.html">UPES Online (University of Petroleum &amp; Energy Studies)</a></h3><div class="ud-loc">📍 Dehradun, Uttarakhand</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A</span></div><div class="ud-rank">Est. 2003 · NIRF Rank #52 University in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,65,000</b></div><div><small>EMI</small><b>₹4,125<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹19.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Proctored Semester Exams<br>🤝 350+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="upes-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20UPES%20Online%20%28University%20of%20Petroleum%20%26%20Energy%20Studies%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#D81B60" data-i="8" data-name="lovely professional university online (lpu online) lpu online jalandhar, punjab" data-naac="A++" data-b="b" data-state="Punjab" data-fee="120000" data-ctc="16.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">LPU</div><div class="ud-tt"><h3 class="ud-name"><a href="lpu-online.html">Lovely Professional University Online (LPU Online)</a></h3><div class="ud-loc">📍 Jalandhar, Punjab</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 2005 · NIRF Rank #38 Overall in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,20,000</b></div><div><small>EMI</small><b>₹3,000<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹16.0 LPA</b></div></div><p class="ud-meta">💻 100% Online AI-Proctored Exams<br>🤝 500+ Recruiters<br>Other courses from <b>₹1,12,000</b></p><div class="ud-act"><a class="ud-btn p" href="lpu-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Lovely%20Professional%20University%20Online%20%28LPU%20Online%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#00695C" data-i="9" data-name="uttaranchal university online uttaranchal dehradun, uttarakhand" data-naac="A+" data-b="a" data-state="Uttarakhand" data-fee="104000" data-ctc="14.0" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">UT</div><div class="ud-tt"><h3 class="ud-name"><a href="uttaranchal-university-online.html">Uttaranchal University Online</a></h3><div class="ud-loc">📍 Dehradun, Uttarakhand</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2013 · Ranked among Top 100</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,04,000</b></div><div><small>EMI</small><b>₹2,600<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹14.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 250+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="uttaranchal-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Uttaranchal%20University%20Online" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#1A237E" data-i="10" data-name="srm institute of science and technology online srm online chennai, tamil nadu" data-naac="A++" data-b="b" data-state="Tamil Nadu" data-fee="150000" data-ctc="18.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">SRM</div><div class="ud-tt"><h3 class="ud-name"><a href="srm-online.html">SRM Institute of Science and Technology Online</a></h3><div class="ud-loc">📍 Chennai, Tamil Nadu</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1985 · NIRF Rank #18 Overall in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,50,000</b></div><div><small>EMI</small><b>₹3,750<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹18.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Remote-Proctored Exams<br>🤝 400+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="srm-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20SRM%20Institute%20of%20Science%20and%20Technology%20Online" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#004D40" data-i="11" data-name="bits pilani wilp (work integrated learning programmes) bits pilani pilani, rajasthan" data-naac="A" data-b="c" data-state="Rajasthan" data-fee="268000" data-ctc="35.0" data-rate="4.9"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">BI</div><div class="ud-tt"><h3 class="ud-name"><a href="bits-pilani-wilp.html">BITS Pilani WILP (Work Integrated Learning Programmes)</a></h3><div class="ud-loc">📍 Pilani, Rajasthan</div></div><div class="ud-rate">★ 4.9</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A</span></div><div class="ud-rank">Est. 1964 · NIRF Top 20 Overall in India</div><div class="ud-stats"><div class="f"><small>M.Tech fee</small><b>₹2,68,000</b></div><div><small>EMI</small><b>₹6,700<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹35.0 LPA</b></div></div><p class="ud-meta">💻 Online Remote Proctored Exams + Digital Labs<br>🤝 600+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="bits-pilani-wilp.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20BITS%20Pilani%20WILP%20%28Work%20Integrated%20Learning%20Programmes%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#0D47A1" data-i="12" data-name="ignou (indira gandhi national open university) ignou new delhi, delhi" data-naac="A++" data-b="a" data-state="Delhi" data-fee="62000" data-ctc="10.0" data-rate="4.5"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">IG</div><div class="ud-tt"><h3 class="ud-name"><a href="ignou-online.html">IGNOU (Indira Gandhi National Open University)</a></h3><div class="ud-loc">📍 New Delhi, Delhi</div></div><div class="ud-rate">★ 4.5</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span><span class="ud-tag hot">💰 Lowest MBA fee</span></div><div class="ud-rank">Est. 1985 · India&#x27;s Premier Open University</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹62,000</b></div><div><small>EMI</small><b>—</b></div><div><small>Highest CTC</small><b>₹10.0 LPA</b></div></div><p class="ud-meta">💻 Pen &amp; Paper Term-End Exam at Designated Study Centers Across India<br>🤝 150+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="ignou-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20IGNOU%20%28Indira%20Gandhi%20National%20Open%20University%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#880E4F" data-i="13" data-name="amrita vishwa vidyapeetham ahead online amrita coimbatore, tamil nadu" data-naac="A++" data-b="c" data-state="Tamil Nadu" data-fee="170000" data-ctc="20.0" data-rate="4.9"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">AM</div><div class="ud-tt"><h3 class="ud-name"><a href="amrita-online.html">Amrita Vishwa Vidyapeetham Ahead Online</a></h3><div class="ud-loc">📍 Coimbatore, Tamil Nadu</div></div><div class="ud-rate">★ 4.9</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 2003 · NIRF Rank #7 Overall in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,70,000</b></div><div><small>EMI</small><b>₹4,250<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹20.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 450+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="amrita-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Amrita%20Vishwa%20Vidyapeetham%20Ahead%20Online" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#1B5E20" data-i="14" data-name="shiv nadar university online (snu online) snu online greater noida, uttar pradesh" data-naac="A" data-b="c" data-state="Uttar Pradesh" data-fee="210000" data-ctc="24.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">SNU</div><div class="ud-tt"><h3 class="ud-name"><a href="shiv-nadar-online.html">Shiv Nadar University Online (SNU Online)</a></h3><div class="ud-loc">📍 Greater Noida, Uttar Pradesh</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A</span><span class="ud-tag hot">🚀 Top MBA CTC</span></div><div class="ud-rank">Est. 2011 · NIRF Top 60 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹2,10,000</b></div><div><small>EMI</small><b>₹5,250<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹24.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 300+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="shiv-nadar-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Shiv%20Nadar%20University%20Online%20%28SNU%20Online%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#0277BD" data-i="15" data-name="gla university online (mathura) gla online mathura, uttar pradesh" data-naac="A+" data-b="b" data-state="Uttar Pradesh" data-fee="120000" data-ctc="15.0" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">GLA</div><div class="ud-tt"><h3 class="ud-name"><a href="gla-university-online.html">GLA University Online (Mathura)</a></h3><div class="ud-loc">📍 Mathura, Uttar Pradesh</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 1991 · Ranked Top 100 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,20,000</b></div><div><small>EMI</small><b>₹3,000<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹15.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 350+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="gla-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20GLA%20University%20Online%20%28Mathura%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#C2185B" data-i="16" data-name="vignan&#x27;s foundation for science, technology &amp; research online vignan guntur, andhra pradesh" data-naac="A+" data-b="b" data-state="Andhra Pradesh" data-fee="130000" data-ctc="14.5" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">VI</div><div class="ud-tt"><h3 class="ud-name"><a href="vignan-university-online.html">Vignan&#x27;s Foundation for Science, Technology &amp; Research Online</a></h3><div class="ud-loc">📍 Guntur, Andhra Pradesh</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2008 · NIRF Top 75 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,30,000</b></div><div><small>EMI</small><b>₹3,250<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹14.5 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 300+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="vignan-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Vignan%27s%20Foundation%20for%20Science%2C%20Technology%20%26%20Research%20Online" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#D32F2F" data-i="17" data-name="sharda university online (greater noida) sharda greater noida, uttar pradesh" data-naac="A+" data-b="b" data-state="Uttar Pradesh" data-fee="140000" data-ctc="15.0" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">SH</div><div class="ud-tt"><h3 class="ud-name"><a href="sharda-university-online.html">Sharda University Online (Greater Noida)</a></h3><div class="ud-loc">📍 Greater Noida, Uttar Pradesh</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2009 · NIRF Top 85 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,40,000</b></div><div><small>EMI</small><b>₹3,500<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹15.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 350+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="sharda-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Sharda%20University%20Online%20%28Greater%20Noida%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#00796B" data-i="18" data-name="mizoram university online (a central university) mizoram central aizawl, mizoram" data-naac="A+" data-b="a" data-state="Mizoram" data-fee="98000" data-ctc="12.0" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">MI</div><div class="ud-tt"><h3 class="ud-name"><a href="mizoram-university-online.html">Mizoram University Online (A Central University)</a></h3><div class="ud-loc">📍 Aizawl, Mizoram</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 2001 · NIRF Top 80 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹98,000</b></div><div><small>EMI</small><b>₹2,450<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹12.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 200+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="mizoram-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Mizoram%20University%20Online%20%28A%20Central%20University%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#C62828" data-i="19" data-name="kurukshetra university online (kuk online) kuk online kurukshetra, haryana" data-naac="A++" data-b="a" data-state="Haryana" data-fee="108000" data-ctc="12.5" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">KUK</div><div class="ud-tt"><h3 class="ud-name"><a href="kurukshetra-university-online.html">Kurukshetra University Online (KUK Online)</a></h3><div class="ud-loc">📍 Kurukshetra, Haryana</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1956 · NIRF Top 80 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,08,000</b></div><div><small>EMI</small><b>₹2,700<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹12.5 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 250+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="kurukshetra-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Kurukshetra%20University%20Online%20%28KUK%20Online%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#1565C0" data-i="20" data-name="andhra university online (school of distance education) andhra uni visakhapatnam, andhra pradesh" data-naac="A++" data-b="a" data-state="Andhra Pradesh" data-fee="85000" data-ctc="14.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">AN</div><div class="ud-tt"><h3 class="ud-name"><a href="andhra-university-online.html">Andhra University Online (School of Distance Education)</a></h3><div class="ud-loc">📍 Visakhapatnam, Andhra Pradesh</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1926 · NIRF Top 43 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹85,000</b></div><div><small>EMI</small><b>₹2,125<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹14.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 280+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="andhra-university-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Andhra%20University%20Online%20%28School%20of%20Distance%20Education%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#1B5E20" data-i="21" data-name="aligarh muslim university centre for distance and online education amu online aligarh, uttar pradesh" data-naac="A+" data-b="a" data-state="Uttar Pradesh" data-fee="78000" data-ctc="14.5" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">AMU</div><div class="ud-tt"><h3 class="ud-name"><a href="amu-online.html">Aligarh Muslim University Centre for Distance and Online Education</a></h3><div class="ud-loc">📍 Aligarh, Uttar Pradesh</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 1920 · NIRF Rank #19 Overall in India</div><div class="ud-stats"><div class="f"><small>BBA fee</small><b>₹78,000</b></div><div><small>EMI</small><b>₹1,300<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹14.5 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 300+ Recruiters<br>Other courses from <b>₹72,000</b></p><div class="ud-act"><a class="ud-btn p" href="amu-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Aligarh%20Muslim%20University%20Centre%20for%20Distance%20and%20Online%20Education" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#0D47A1" data-i="22" data-name="bharati vidyapeeth deemed university online (bvdu) bvdu pune, maharashtra" data-naac="A+" data-b="b" data-state="Maharashtra" data-fee="120000" data-ctc="15.0" data-rate="4.7"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">BV</div><div class="ud-tt"><h3 class="ud-name"><a href="bvdu-online.html">Bharati Vidyapeeth Deemed University Online (BVDU)</a></h3><div class="ud-loc">📍 Pune, Maharashtra</div></div><div class="ud-rate">★ 4.7</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A+</span></div><div class="ud-rank">Est. 1964 · NIRF Top 90 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,20,000</b></div><div><small>EMI</small><b>₹3,000<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹15.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 320+ Recruiters<br>Other courses from <b>₹90,000</b></p><div class="ud-act"><a class="ud-btn p" href="bvdu-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Bharati%20Vidyapeeth%20Deemed%20University%20Online%20%28BVDU%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#B71C1C" data-i="23" data-name="guru nanak dev university online (gndu amritsar) gndu amritsar, punjab" data-naac="A++" data-b="a" data-state="Punjab" data-fee="110000" data-ctc="16.0" data-rate="4.9"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">GN</div><div class="ud-tt"><h3 class="ud-name"><a href="gndu-online.html">Guru Nanak Dev University Online (GNDU Amritsar)</a></h3><div class="ud-loc">📍 Amritsar, Punjab</div></div><div class="ud-rate">★ 4.9</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1969 · NIRF Top 48 in India</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹1,10,000</b></div><div><small>EMI</small><b>₹2,750<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹16.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 350+ Recruiters<br>Other courses from <b>₹98,000</b></p><div class="ud-act"><a class="ud-btn p" href="gndu-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Guru%20Nanak%20Dev%20University%20Online%20%28GNDU%20Amritsar%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
+<article class="ud-c" style="--c:#1B5E20" data-i="24" data-name="icfai foundation for higher education online (ifhe hyderabad) icfai hyderabad, telangana" data-naac="A++" data-b="c" data-state="Telangana" data-fee="200000" data-ctc="18.0" data-rate="4.8"><div class="ud-top"><div class="ud-mono" style="color:#fff" aria-hidden="true">IC</div><div class="ud-tt"><h3 class="ud-name"><a href="ifhe-online.html">ICFAI Foundation for Higher Education Online (IFHE Hyderabad)</a></h3><div class="ud-loc">📍 Hyderabad, Telangana</div></div><div class="ud-rate">★ 4.8</div></div><div class="ud-tags"><span class="ud-tag ok">✓ UGC-DEB</span><span class="ud-tag na">NAAC A++</span></div><div class="ud-rank">Est. 1984 · NIRF Top 40 in Management</div><div class="ud-stats"><div class="f"><small>MBA fee</small><b>₹2,00,000</b></div><div><small>EMI</small><b>₹5,000<i>/mo</i></b></div><div><small>Highest CTC</small><b>₹18.0 LPA</b></div></div><p class="ud-meta">💻 100% Online Web-Proctored Exams<br>🤝 450+ Recruiters</p><div class="ud-act"><a class="ud-btn p" href="ifhe-online.html">Explore College →</a><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20ICFAI%20Foundation%20for%20Higher%20Education%20Online%20%28IFHE%20Hyderabad%29" target="_blank" rel="noopener">Apply on WhatsApp</a></div></article>
     </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #C62828;color:#C62828;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            CU ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #27 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="chandigarh-university-online.html" style="color:inherit;text-decoration:none;">Chandigarh University Online (CU Online)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Mohali / Chandigarh, Punjab &bull; Est. 2012
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 400+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,50,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,750/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹17.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="chandigarh-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Chandigarh%20University%20Online%20(CU%20Online)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #1565C0;color:#1565C0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            JAIN ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.9</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 68 University in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="jain-university-online.html" style="color:inherit;text-decoration:none;">Jain (Deemed-to-be-University) Online</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Bangalore, Karnataka &bull; Est. 1990
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online AI-Proctored Exams &bull; 🤝 500+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,60,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹4,000/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹21.5 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="jain-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Jain%20(Deemed-to-be-University)%20Online" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #990000;color:#990000;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            NMIMS CDOE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.9</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 21 University in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="nmims-online.html" style="color:inherit;text-decoration:none;">NMIMS Centre for Distance &amp; Online Education (CDOE)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Mumbai, Maharashtra &bull; Est. 1981
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Computer-Based Exam (At Home / Exam Centers) &bull; 🤝 600+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,96,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹4,900/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹22.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="nmims-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20NMIMS%20Centre%20for%20Distance%20%26%20Online%20Education%20(CDOE)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #B71C1C;color:#B71C1C;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            SYMBIOSIS
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 32 University in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="symbiosis-online.html" style="color:inherit;text-decoration:none;">Symbiosis Online (SSODL / SCDL)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Pune, Maharashtra &bull; Est. 2001
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Computer-Based Exam (On-Demand Examination) &bull; 🤝 420+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,40,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,500/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹16.5 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="symbiosis-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Symbiosis%20Online%20(SSODL%20%2F%20SCDL)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #0D47A1;color:#0D47A1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            DPU ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #46 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="dy-patil-online.html" style="color:inherit;text-decoration:none;">Dr. D.Y. Patil Vidyapeeth Centre for Online Learning (DPU COL)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Pune, Maharashtra &bull; Est. 1984
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 380+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,40,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,500/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹16.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="dy-patil-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Dr.%20D.Y.%20Patil%20Vidyapeeth%20Centre%20for%20Online%20Learning%20(DPU%20COL)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #E65100;color:#E65100;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            UPES ON
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #52 University in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="upes-online.html" style="color:inherit;text-decoration:none;">UPES Online (University of Petroleum &amp; Energy Studies)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Dehradun, Uttarakhand &bull; Est. 2003
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Proctored Semester Exams &bull; 🤝 350+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,65,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹4,125/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹19.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="upes-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20UPES%20Online%20(University%20of%20Petroleum%20%26%20Energy%20Studies)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #D81B60;color:#D81B60;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            LPU ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #38 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="lpu-online.html" style="color:inherit;text-decoration:none;">Lovely Professional University Online (LPU Online)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Jalandhar, Punjab &bull; Est. 2005
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online AI-Proctored Exams &bull; 🤝 500+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,20,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,000/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹16.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="lpu-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Lovely%20Professional%20University%20Online%20(LPU%20Online)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #00695C;color:#00695C;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            UTTARANCHAL
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">Ranked among Top 100</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="uttaranchal-university-online.html" style="color:inherit;text-decoration:none;">Uttaranchal University Online</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Dehradun, Uttarakhand &bull; Est. 2013
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 250+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,04,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹2,600/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹14.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="uttaranchal-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Uttaranchal%20University%20Online" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #1A237E;color:#1A237E;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            SRM ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #18 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="srm-online.html" style="color:inherit;text-decoration:none;">SRM Institute of Science and Technology Online</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Chennai, Tamil Nadu &bull; Est. 1985
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Remote-Proctored Exams &bull; 🤝 400+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,50,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,750/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹18.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="srm-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20SRM%20Institute%20of%20Science%20and%20Technology%20Online" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #004D40;color:#004D40;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            BITS PILANI
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.9</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 20 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="bits-pilani-wilp.html" style="color:inherit;text-decoration:none;">BITS Pilani WILP (Work Integrated Learning Programmes)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Pilani, Rajasthan &bull; Est. 1964
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 Online Remote Proctored Exams + Digital Labs &bull; 🤝 600+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online M.Tech</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹2,68,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹6,700/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹35.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="bits-pilani-wilp.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20BITS%20Pilani%20WILP%20(Work%20Integrated%20Learning%20Programmes)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #0D47A1;color:#0D47A1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            IGNOU
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.5</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">India's Premier Open University</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="ignou-online.html" style="color:inherit;text-decoration:none;">IGNOU (Indira Gandhi National Open University)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 New Delhi, Delhi &bull; Est. 1985
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 Pen &amp; Paper Term-End Exam at Designated Study Centers Across India &bull; 🤝 150+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹62,000</div>
-          
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹10.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="ignou-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20IGNOU%20(Indira%20Gandhi%20National%20Open%20University)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #880E4F;color:#880E4F;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            AMRITA
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.9</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #7 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="amrita-online.html" style="color:inherit;text-decoration:none;">Amrita Vishwa Vidyapeetham Ahead Online</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Coimbatore, Tamil Nadu &bull; Est. 2003
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 450+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,70,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹4,250/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹20.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="amrita-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Amrita%20Vishwa%20Vidyapeetham%20Ahead%20Online" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #1B5E20;color:#1B5E20;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            SNU ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 60 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="shiv-nadar-online.html" style="color:inherit;text-decoration:none;">Shiv Nadar University Online (SNU Online)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Greater Noida, Uttar Pradesh &bull; Est. 2011
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 300+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹2,10,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹5,250/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹24.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="shiv-nadar-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Shiv%20Nadar%20University%20Online%20(SNU%20Online)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #0277BD;color:#0277BD;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            GLA ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">Ranked Top 100 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="gla-university-online.html" style="color:inherit;text-decoration:none;">GLA University Online (Mathura)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Mathura, Uttar Pradesh &bull; Est. 1991
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 350+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,20,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,000/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹15.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="gla-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20GLA%20University%20Online%20(Mathura)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #C2185B;color:#C2185B;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            VIGNAN
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 75 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="vignan-university-online.html" style="color:inherit;text-decoration:none;">Vignan's Foundation for Science, Technology &amp; Research Online</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Guntur, Andhra Pradesh &bull; Est. 2008
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 300+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,30,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,250/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹14.5 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="vignan-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Vignan's%20Foundation%20for%20Science%2C%20Technology%20%26%20Research%20Online" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #D32F2F;color:#D32F2F;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            SHARDA
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 85 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="sharda-university-online.html" style="color:inherit;text-decoration:none;">Sharda University Online (Greater Noida)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Greater Noida, Uttar Pradesh &bull; Est. 2009
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 350+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,40,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,500/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹15.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="sharda-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Sharda%20University%20Online%20(Greater%20Noida)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #00796B;color:#00796B;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            MIZORAM CENTRAL
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 80 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="mizoram-university-online.html" style="color:inherit;text-decoration:none;">Mizoram University Online (A Central University)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Aizawl, Mizoram &bull; Est. 2001
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 200+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹98,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹2,450/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹12.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="mizoram-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Mizoram%20University%20Online%20(A%20Central%20University)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #C62828;color:#C62828;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            KUK ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 80 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="kurukshetra-university-online.html" style="color:inherit;text-decoration:none;">Kurukshetra University Online (KUK Online)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Kurukshetra, Haryana &bull; Est. 1956
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 250+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,08,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹2,700/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹12.5 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="kurukshetra-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Kurukshetra%20University%20Online%20(KUK%20Online)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #1565C0;color:#1565C0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            ANDHRA UNI
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 43 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="andhra-university-online.html" style="color:inherit;text-decoration:none;">Andhra University Online (School of Distance Education)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Visakhapatnam, Andhra Pradesh &bull; Est. 1926
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 280+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹85,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹2,125/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹14.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="andhra-university-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Andhra%20University%20Online%20(School%20of%20Distance%20Education)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #1B5E20;color:#1B5E20;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            AMU ONLINE
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Rank #19 Overall in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="amu-online.html" style="color:inherit;text-decoration:none;">Aligarh Muslim University Centre for Distance and Online Education</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Aligarh, Uttar Pradesh &bull; Est. 1920
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 300+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online BBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹78,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹1,300/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹14.5 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="amu-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Aligarh%20Muslim%20University%20Centre%20for%20Distance%20and%20Online%20Education" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #0D47A1;color:#0D47A1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            BVDU
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.7</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A+</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 90 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="bvdu-online.html" style="color:inherit;text-decoration:none;">Bharati Vidyapeeth Deemed University Online (BVDU)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Pune, Maharashtra &bull; Est. 1964
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 320+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,20,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹3,000/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹15.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="bvdu-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Bharati%20Vidyapeeth%20Deemed%20University%20Online%20(BVDU)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #B71C1C;color:#B71C1C;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            GNDU
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.9</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 48 in India</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="gndu-online.html" style="color:inherit;text-decoration:none;">Guru Nanak Dev University Online (GNDU Amritsar)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Amritsar, Punjab &bull; Est. 1969
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 350+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹1,10,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹2,750/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹16.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="gndu-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20Guru%20Nanak%20Dev%20University%20Online%20(GNDU%20Amritsar)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="uni-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.2s ease;">
-      <div class="uni-card-body" style="display:grid;grid-template-columns:100px 2fr 1.2fr 1fr;gap:1.5rem;align-items:center;">
-        <!-- Logo Col -->
-        <div style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:14px;background:#f8fafc;border:2px solid #1B5E20;color:#1B5E20;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;margin:0 auto 0.4rem;">
-            ICFAI
-          </div>
-          <div style="font-size:0.8rem;font-weight:700;color:#e06000;">★ 4.8</div>
-        </div>
-
-        <!-- Info Col -->
-        <div>
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-            <span class="badge badge-success" style="font-size:0.7rem;">✓ UGC-DEB</span>
-            <span class="badge badge-purple" style="font-size:0.7rem;">NAAC A++</span>
-            <span class="badge badge-blue" style="font-size:0.7rem;">NIRF Top 40 in Management</span>
-          </div>
-          <h3 style="margin:0 0 0.25rem 0;color:#0b1b3d;font-size:1.25rem;">
-            <a href="ifhe-online.html" style="color:inherit;text-decoration:none;">ICFAI Foundation for Higher Education Online (IFHE Hyderabad)</a>
-          </h3>
-          <div style="font-size:0.825rem;color:#64748b;margin-bottom:0.5rem;">
-            📍 Hyderabad, Telangana &bull; Est. 1984
-          </div>
-          <div style="font-size:0.825rem;color:#334155;">
-            💻 100% Online Web-Proctored Exams &bull; 🤝 450+ Recruiters
-          </div>
-        </div>
-
-        <!-- Fee & Placement Col -->
-        <div style="border-left:1px solid #f1f5f9;padding-left:1.25rem;">
-          <div style="font-size:0.75rem;color:#64748b;">Course: Online MBA</div>
-          <div style="font-size:1.2rem;font-weight:800;color:#0b1b3d;margin:0.15rem 0;">₹2,00,000</div>
-          <div style="font-size:0.8rem;color:#e06000;font-weight:700;">EMI: ₹5,000/mo</div>
-          <div style="font-size:0.8rem;color:#059669;font-weight:600;margin-top:0.35rem;">Highest CTC: ₹18.0 LPA</div>
-        </div>
-
-        <!-- Action Buttons Col -->
-        <div style="display:flex;flex-direction:column;gap:0.4rem;">
-          <a href="ifhe-online.html" class="btn btn-primary btn-sm btn-block" style="text-decoration:none;text-align:center;font-weight:700;">
-            Explore College &rarr;
-          </a>
-          <a href="https://wa.me/919599128500?text=Hi%2C%20I%20want%20to%20apply%20for%20ICFAI%20Foundation%20for%20Higher%20Education%20Online%20(IFHE%20Hyderabad)" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-decoration:none;text-align:center;">
-            Apply for Admission
-          </a>
-        </div>
-      </div>
-    </div>
+    <div class="ud-empty" id="emp" hidden>No university matches these filters. Try resetting them, or ask our counsellor for a free shortlist.</div>
+    <p class="ud-note">Fees shown are the official programme fee, without any discount or waiver (fee shown is for the flagship programme named on each card). Connect with a counsellor to know about current discounts. Ratings, rankings and CTC figures are as reported by the universities; always verify on the official website before paying.</p>
+    <div class="ud-cta">
+      <div><h2>Not sure which university fits you?</h2><p>Tell us your budget and goal. Get a free, unbiased shortlist in minutes, with zero agent bias.</p></div>
+      <div><a class="ud-btn w" href="https://wa.me/919599128500?text=Hi%2C%20please%20help%20me%20shortlist%20an%20online%20university" target="_blank" rel="noopener">Get free shortlist on WhatsApp</a><a class="ud-btn c" href="{{ '/compare.html' | relative_url }}">⚖️ Compare colleges</a></div>
     </div>
   </div>
 </div>
+
 {% include site-footer.html %}
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
 <script>
-  (function() {
-    var tabLinks = document.querySelectorAll('.uni-tab-link');
-    var sections = Array.prototype.map.call(tabLinks, function(link) {
-      return document.querySelector(link.getAttribute('href'));
-    }).filter(Boolean);
-    if (!tabLinks.length || !sections.length) return;
-
-    function setActive() {
-      var scrollPos = window.scrollY + 160;
-      var activeIndex = 0;
-      sections.forEach(function(sec, i) {
-        if (sec.offsetTop <= scrollPos) activeIndex = i;
-      });
-      tabLinks.forEach(function(link, i) {
-        link.classList.toggle('is-active', i === activeIndex);
-      });
-    }
-    window.addEventListener('scroll', setActive, { passive: true });
-    setActive();
-  })();
+(function(){
+  var g=document.getElementById('grid'),cards=[].slice.call(g.children),s={q:'',n:'',b:'',s:'',o:'rec'};
+  var cnt=document.getElementById('cnt'),emp=document.getElementById('emp');
+  function run(){
+    var v=cards.filter(function(c){var d=c.dataset;
+      return (!s.q||d.name.indexOf(s.q)>-1)&&(!s.n||d.naac===s.n)&&(!s.b||d.b===s.b)&&(!s.s||d.state===s.s)});
+    v.sort(function(a,b){var x=a.dataset,y=b.dataset;
+      return s.o==='feeA'?x.fee-y.fee:s.o==='feeD'?y.fee-x.fee:s.o==='ctc'?y.ctc-x.ctc:s.o==='rate'?y.rate-x.rate:x.i-y.i});
+    cards.forEach(function(c){c.hidden=true});
+    v.forEach(function(c){c.hidden=false;g.appendChild(c)});
+    cnt.textContent='Showing '+v.length+' of '+cards.length;emp.hidden=v.length>0;
+  }
+  document.querySelectorAll('.ud-g').forEach(function(grp){
+    grp.addEventListener('click',function(e){var b=e.target.closest('.ud-chip');if(!b)return;
+      grp.querySelectorAll('.ud-chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      s[grp.dataset.g]=b.dataset.v;run()});
+  });
+  document.getElementById('q').addEventListener('input',function(e){s.q=e.target.value.trim().toLowerCase();run()});
+  document.getElementById('st').addEventListener('change',function(e){s.s=e.target.value;run()});
+  document.getElementById('so').addEventListener('change',function(e){s.o=e.target.value;run()});
+  document.getElementById('rs').addEventListener('click',function(){
+    s={q:'',n:'',b:'',s:'',o:'rec'};document.getElementById('q').value='';document.getElementById('st').value='';document.getElementById('so').value='rec';
+    document.querySelectorAll('.ud-g').forEach(function(grp){grp.querySelectorAll('.ud-chip').forEach(function(x,i){x.setAttribute('aria-pressed',i===0?'true':'false')})});run();
+  });
+  /* production: offset the sticky bar below the site header */
+  var h=document.querySelector('header,.site-header');if(h&&getComputedStyle(h).position!=='static'&&!document.querySelector('.pv')){document.querySelector('.ud').style.setProperty('--ud-top',h.offsetHeight+'px')}
+})();
 </script>
 </body>
 </html>
