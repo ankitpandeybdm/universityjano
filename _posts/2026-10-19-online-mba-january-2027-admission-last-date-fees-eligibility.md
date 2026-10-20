@@ -335,6 +335,8 @@ coverImage: "REPLACE_WITH_COVER_IMAGE_URL"
 <li>Choosing only by brand without checking if the programme suits your job and schedule.</li>
 </ol>
 
+<p>Also make sure the university is not on UGC's fake list. You can search it on our <a href="/fake-universities-list.html">UGC fake universities list 2026</a>.</p>
+
 <h2>Frequently Asked Questions</h2>
 <h3>Is online MBA admission open for January 2027?</h3>
 <p>Most universities begin taking applications for the January-February 2027 session well in advance, and admission is subject to UGC-DEB's final dates. Confirm the university's own last date with the admission team.</p>

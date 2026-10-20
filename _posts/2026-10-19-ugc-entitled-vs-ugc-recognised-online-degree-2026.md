@@ -138,6 +138,8 @@ coverImage: "REPLACE_WITH_COVER_IMAGE_URL"
 <li>Payment is requested in a personal account or through a link you did not expect.</li>
 <li>The university name looks slightly different from the name on the official list.</li>
 </ul>
+
+<p>Not sure about a name? Check it against our searchable <a href="/fake-universities-list.html">UGC fake universities list 2026</a> first.</p>
 <p>If you see two or more of these, pause and verify before you pay.</p>
 
 <h2>Does This Affect Jobs, Government Exams and Higher Studies?</h2>
