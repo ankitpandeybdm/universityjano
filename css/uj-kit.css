@@ -1,0 +1,32 @@
+/* UniversityJano design kit: shared hero, motion, cards. Use on every page. */
+:root{--uj-navy:#0b1b3d;--uj-navy2:#17327a;--uj-or:#ff7a00;--uj-or2:#ff9a2e;--uj-ink:#1e293b;--uj-mut:#64748b;--uj-line:#e2e8f0}
+.ujk-hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,var(--uj-navy),var(--uj-navy2));padding:clamp(2rem,5vw,3.6rem) 0}
+.ujk-hero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover;opacity:.22}
+.ujk-hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1px);background-size:22px 22px;opacity:.45}
+.ujk-blob{position:absolute;border-radius:50%;filter:blur(55px);opacity:.5;animation:ujk-float 16s ease-in-out infinite alternate}
+.ujk-b1{width:420px;height:420px;right:-110px;top:-130px;background:var(--uj-or)}
+.ujk-b2{width:360px;height:360px;left:-120px;bottom:-170px;background:#3b7bff;animation-duration:21s}
+@keyframes ujk-float{to{transform:translate(34px,26px) scale(1.12)}}
+.ujk-in{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 1.25rem;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+.ujk-in>*{min-width:0}
+.ujk-bc{font-size:.85rem;opacity:.85;margin-bottom:.9rem}.ujk-bc a{color:#ffb066;font-weight:600;text-decoration:none}
+.ujk-hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.75rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 .8rem}
+.ujk-hero h1 span{color:var(--uj-or2)}
+.ujk-lead{color:#d6e0fa;font-size:1.06rem;line-height:1.65;margin:0 0 1.2rem;max-width:56ch}
+.ujk-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.3rem;padding:0;list-style:none}
+.ujk-chips li{font-size:.82rem;font-weight:700;padding:.35rem .8rem;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25)}
+.ujk-btn{display:inline-block;padding:.85rem 1.5rem;border-radius:12px;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.ujk-btn:hover{transform:translateY(-2px)}
+.ujk-btn.p{color:#fff;background:linear-gradient(180deg,var(--uj-or2),#e86500);box-shadow:0 8px 20px rgba(255,122,0,.4)}
+.ujk-btn.o{color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.ujk-art{width:100%;max-width:420px;height:auto;justify-self:center;animation:ujk-bob 6s ease-in-out infinite}
+@keyframes ujk-bob{50%{transform:translateY(-10px)}}
+.ujk-js .ujk-reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.ujk-js .ujk-reveal.in{opacity:1;transform:none}
+.ujk-card{background:#fff;border:1px solid var(--uj-line);border-radius:16px;transition:transform .25s,box-shadow .25s}
+.ujk-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(11,27,61,.12)}
+.ujk-kpi{display:flex;flex-wrap:wrap;gap:.7rem}
+.ujk-kpi div{padding:.7rem 1.1rem;border-radius:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.ujk-kpi b{display:block;font-size:1.6rem;font-weight:800}.ujk-kpi span{font-size:.78rem;color:#c3d1f3}
+@media(max-width:860px){.ujk-in{grid-template-columns:1fr}.ujk-art{max-width:290px}}
+@media(prefers-reduced-motion:reduce){.ujk-blob,.ujk-art{animation:none}.ujk-js .ujk-reveal{opacity:1;transform:none;transition:none}.ujk-card,.ujk-btn{transition:none}}
