@@ -30,3 +30,7 @@
 .ujk-kpi b{display:block;font-size:1.6rem;font-weight:800}.ujk-kpi span{font-size:.78rem;color:#c3d1f3}
 @media(max-width:860px){.ujk-in{grid-template-columns:1fr}.ujk-art{max-width:290px}}
 @media(prefers-reduced-motion:reduce){.ujk-blob,.ujk-art{animation:none}.ujk-js .ujk-reveal{opacity:1;transform:none;transition:none}.ujk-card,.ujk-btn{transition:none}}
+
+/* auto-reveal targets get this class from uj-kit.js */
+.ujk-auto{will-change:opacity,transform}
+.ujk-art{filter:drop-shadow(0 0 0 transparent)}
