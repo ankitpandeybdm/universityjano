@@ -1,5 +1,6 @@
 /* UniversityJano design kit: scroll reveal + count-up. Add class ujk-reveal / data-count. */
-(function(){var d=document,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;d.documentElement.classList.add('ujk-js');
+(function(){if(window.__ujk)return;window.__ujk=1;var d=document,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;d.documentElement.classList.add('ujk-js');
+[].forEach.call(d.querySelectorAll('main h2, main .card, main .uni-card, main .ud-c, main details, main .cmp-steps li, main .ujk-card'),function(e){if(!e.closest('.ujk-hero')&&!e.classList.contains('ujk-reveal')){e.classList.add('ujk-reveal','ujk-auto')}});
 var els=[].slice.call(d.querySelectorAll('.ujk-reveal'));
 if(!('IntersectionObserver' in window)||rm){els.forEach(function(e){e.classList.add('in')})}
 else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}
