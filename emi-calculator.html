@@ -24,15 +24,15 @@ title: "0% Interest Monthly EMI & Fee Budget Planner | UniversityJano.com"
 <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/uj-kit.css' | relative_url }}">
+<script src="{{ '/js/uj-kit.js' | relative_url }}" defer></script>
 </head>
 <body>
 {% include site-header.html %}
 
-    <div style="max-width:900px;margin:0 auto;padding:2rem 1.25rem 0;">
-      <h1 style="color:var(--navy-900);font-size:1.6rem;">0% Interest Monthly EMI &amp; Fee Budget Planner</h1>
-      <p style="color:var(--text-muted);">Calculate zero-cost monthly installments and check scholarship discount eligibility for your online degree.</p>
-    </div>
-    <div id="emi-app-root"></div>
+    {% include page-hero.html crumb="EMI Calculator" title="0% Interest Monthly EMI &amp;" accent="Fee Budget Planner" lead="Calculate zero-cost monthly instalments and check scholarship discount eligibility for your online degree." chips="Free to use|6 to 36 month tenures|No hidden cost" art="calc" cta_text="Calculate My EMI" cta_url="#emi-app-root" %}
+    <style>#emi-app-root .section-header{display:none}#emi-app-root>div>.container>div:first-child{display:none}</style>
+<div id="emi-app-root"></div>
     <script>
       (function() {
         function mountEmi() {

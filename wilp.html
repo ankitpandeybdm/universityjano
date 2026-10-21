@@ -31,6 +31,8 @@ sitemap: true
 <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/uj-kit.css' | relative_url }}">
+<script src="{{ '/js/uj-kit.js' | relative_url }}" defer></script>
 <link rel="stylesheet" href="{{ '/css/mobile-nav.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/blog.css' | relative_url }}">
 <style>
@@ -93,13 +95,7 @@ sitemap: true
 <body>
 {% include site-header.html %}
 
-<section class="blog-hero">
-  <div class="container">
-    <span class="badge badge-blue">Work Integrated Learning Programme</span>
-    <h1 style="margin-top:0.75rem;">WILP in India: Complete 2026 Guide for Working Professionals</h1>
-    <p>Everything you need to know about WILP (Work Integrated Learning Programme) — what it is, UGC approval, real fees, eligibility, top universities, specializations, and honest career outcomes.</p>
-  </div>
-</section>
+{% include page-hero.html crumb="WILP" title="WILP in India:" accent="Complete 2026 Guide for Working Professionals" lead="What WILP is, UGC approval, real fees, eligibility, top universities, specialisations and honest career outcomes." chips="For working professionals|Fees and eligibility|2026 guide" art="doc" cta_text="Read the guide" cta_url="#overview" %}
 
 <div class="blog-article" style="padding-top:2rem;">
 

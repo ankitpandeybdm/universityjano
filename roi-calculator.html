@@ -24,15 +24,15 @@ title: "Online Degree Salary Jump & ROI Calculator | UniversityJano.com"
 <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/uj-kit.css' | relative_url }}">
+<script src="{{ '/js/uj-kit.js' | relative_url }}" defer></script>
 </head>
 <body>
 {% include site-header.html %}
 
-    <div style="max-width:900px;margin:0 auto;padding:2rem 1.25rem 0;">
-      <h1 style="color:var(--navy-900);font-size:1.6rem;">Online Degree Salary Jump &amp; ROI Calculator</h1>
-      <p style="color:var(--text-muted);">Estimate your expected salary hike, payback period, and 5-year career return before investing in an online degree.</p>
-    </div>
-    <div id="roi-app-root"></div>
+    {% include page-hero.html crumb="ROI Calculator" title="Online Degree Salary Jump &amp;" accent="ROI Calculator" lead="Estimate your expected salary hike, payback period and 5-year career return before you invest." chips="Free to use|Payback in months|5-year return" art="chart" cta_text="Check My ROI" cta_url="#roi-app-root" %}
+    <style>#roi-app-root .section-header{display:none}#roi-app-root>div>.container>div:first-child{display:none}</style>
+<div id="roi-app-root"></div>
     <script>
       (function() {
         function mountRoi() {
