@@ -22,6 +22,7 @@ title: "Compare Online Universities in India (2026) | UniversityJano"
 <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/uj-kit.css' | relative_url }}">
 <style>
   .cmp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-bottom: 1.25rem; }
   .cmp-head > div { min-width: 0; flex: 1 1 320px; }
@@ -69,13 +70,14 @@ title: "Compare Online Universities in India (2026) | UniversityJano"
 .cmp-cta a{display:inline-block;margin:.25rem;padding:.8rem 1.5rem;border-radius:12px;font-weight:700;text-decoration:none}
 @media(max-width:860px){.cmp-hero{grid-template-columns:1fr;padding:2rem 1.3rem}.cmp-art{max-width:320px}}
 @media(max-width:520px){#compare-mount{padding:1rem!important}}
+.cmp-hero>.ujk-blob{position:absolute}
 </style>
 </head>
 <body>
 {% include site-header.html %}
 
 <main class="container section-padding">
-<section class="cmp-hero" aria-labelledby="cmp-h1"><div>
+<section class="cmp-hero" aria-labelledby="cmp-h1"><span class="ujk-blob ujk-b1"></span><span class="ujk-blob ujk-b2"></span><div>
 <nav class="cmp-bc" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> / Compare Online Universities</nav>
 <h1 id="cmp-h1">Compare Online Universities in India, <span>Side by Side</span></h1>
 <p class="lead">Pick up to 4 UGC-DEB approved universities and compare official fees, NAAC grades, 0% EMI instalments, placement support and exam mode. Free and unbiased.</p>
@@ -113,6 +115,7 @@ title: "Compare Online Universities in India (2026) | UniversityJano"
 </main>
 
 {% include site-footer.html %}
+<script src="{{ '/js/uj-kit.js' | relative_url }}"></script>
 <script src="{{ '/js/compare-tray.js' | relative_url }}"></script>
 <script src="{{ '/js/bundle.js' | relative_url }}"></script>
 <script>
