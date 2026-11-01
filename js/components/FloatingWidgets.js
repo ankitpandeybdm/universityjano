@@ -20,7 +20,7 @@ window.FloatingWidgets = function({ onOpenCounselling, onOpenWizard }) {
       {/* Floating WhatsApp Quick Action Button */}
       <div 
         className="floating-whatsapp-btn"
-        onClick={() => window.open('https://wa.me/919876543210?text=Hi%20UniversityJano,%20I%20need%20help%20choosing%20an%20online%20degree%20program', '_blank')}
+        onClick={() => window.open('https://wa.me/919599128500?text=Hi%20UniversityJano,%20I%20need%20help%20choosing%20an%20online%20degree%20program', '_blank')}
         title="Chat with Senior Counselor on WhatsApp"
       >
         <span style={{ fontSize: '1.75rem' }}>💬</span>
