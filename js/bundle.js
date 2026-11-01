@@ -3622,7 +3622,7 @@ window.FilterSidebar = function (_ref4) {
   }, "Talk to our senior admission counselors for free."), React.createElement("button", {
     className: "btn btn-primary btn-sm btn-block",
     onClick: function onClick() {
-      return window.open('https://wa.me/919876543210?text=Hi%20UniversityJano,%20I%20need%20help%20choosing%20an%20online%20degree', '_blank');
+      return window.open('https://wa.me/919599128500?text=Hi%20UniversityJano,%20I%20need%20help%20choosing%20an%20online%20degree', '_blank');
     }
   }, "\uD83D\uDCAC WhatsApp Counselor")));
 };
@@ -5780,7 +5780,7 @@ window.FloatingWidgets = function (_ref13) {
   return React.createElement(React.Fragment, null, React.createElement("div", {
     className: "floating-whatsapp-btn",
     onClick: function onClick() {
-      return window.open('https://wa.me/919876543210?text=Hi%20UniversityJano,%20I%20need%20help%20choosing%20an%20online%20degree%20program', '_blank');
+      return window.open('https://wa.me/919599128500?text=Hi%20UniversityJano,%20I%20need%20help%20choosing%20an%20online%20degree%20program', '_blank');
     },
     title: "Chat with Senior Counselor on WhatsApp"
   }, React.createElement("span", {
