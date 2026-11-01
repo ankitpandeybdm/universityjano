@@ -41,6 +41,7 @@
 .ujnav-opt--warn:hover { background: #fef2f2; }
 .ujnav-opt--warn:hover b { color: #b91c1c; }
 .ujnav-badge { display: inline-block; margin-left: .4rem; padding: .08rem .45rem; border-radius: 99px; font-size: .68rem; font-weight: 800; letter-spacing: .03em; vertical-align: middle; background: #fee2e2; color: #b91c1c; }
+.ujnav-badge--new { background: #dcfce7; color: #15803d; }
 .ujnav-foot { margin: 1rem -1.5rem 0; padding: .85rem 1.5rem; background: var(--bg-surface-alt, #f8fafc); border-top: 1px solid var(--border-light, #e2e8f0); border-radius: 0 0 17px 17px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: .88rem; color: var(--text-muted, #64748b); }
 .ujnav-foot a { font-weight: 800; color: var(--navy-900, #0b1b3d); text-decoration: none; }
 .ujnav-foot a:hover { color: var(--orange-500, #ff7a00); }
@@ -130,10 +131,29 @@
       </div>
     </div>
 
-    <a class="ujnav-link" href="/compare.html">Compare Colleges</a>
-    <a class="ujnav-link" href="/roi-calculator.html">Salary &amp; ROI</a>
-    <a class="ujnav-link" href="/emi-calculator.html">0% EMI Planner</a>
-    <a class="ujnav-link" href="/ugc-verifier.html">UGC Approvals</a>
+    <!-- TOOLS -->
+    <div class="ujnav-item ujnav-has-menu">
+      <button class="ujnav-trigger" type="button" aria-expanded="false" aria-controls="ujmenu-tools">Tools
+        <svg class="ujnav-chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ujnav-panel" id="ujmenu-tools">
+        <div class="ujnav-cols">
+          <div>
+            <p class="ujnav-col-title"><span class="ujnav-tag ujnav-tag--navy">&#8377;</span> Money Tools</p>
+            <a class="ujnav-opt" href="/emi-calculator.html"><span class="ujnav-ico">🧮</span><span><b>0% EMI Planner</b><small>Monthly payment for any course fee and tenure</small></span></a>
+            <a class="ujnav-opt" href="/loan-eligibility-checker.html"><span class="ujnav-ico">✅</span><span><b>Loan Eligibility Checker <span class="ujnav-badge ujnav-badge--new">NEW</span></b><small>Indicative loan amount and EMI · no PAN needed</small></span></a>
+            <a class="ujnav-opt" href="/roi-calculator.html"><span class="ujnav-ico">📈</span><span><b>Salary &amp; ROI Calculator</b><small>Payback period and 5-year earnings uplift</small></span></a>
+          </div>
+          <div>
+            <p class="ujnav-col-title"><span class="ujnav-tag ujnav-tag--orange">VS</span> Compare &amp; Verify</p>
+            <a class="ujnav-opt" href="/compare.html"><span class="ujnav-ico ujnav-ico--o">⚖️</span><span><b>Compare Universities</b><small>Fees, NAAC, NIRF, EMI and placements side by side</small></span></a>
+            <a class="ujnav-opt" href="/ugc-verifier.html"><span class="ujnav-ico ujnav-ico--o">🛡️</span><span><b>UGC-DEB Verifier</b><small>Check approval and UGC's fake-university list</small></span></a>
+          </div>
+        </div>
+        <div class="ujnav-foot"><span>Free tools for students and working professionals</span><a href="https://wa.me/919599128500?text=Hi%2C%20I%20need%20help%20choosing%20an%20online%20university" target="_blank" rel="noopener">Talk to a counsellor &rarr;</a></div>
+      </div>
+    </div>
+
     <a class="ujnav-link" href="/blog/">Blog</a>
     <a class="ujnav-wa" href="https://wa.me/919599128500?text=Hi%2C%20I%20need%20help%20choosing%20an%20online%20university" target="_blank" rel="noopener">WhatsApp</a>
   </nav>
