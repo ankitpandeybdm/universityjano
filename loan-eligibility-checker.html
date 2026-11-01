@@ -9,7 +9,7 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Education Loan Eligibility Checker for Online Degree | UniversityJano</title>
-<meta name="description" content="Free indicative education loan eligibility checker for online degrees in India. Enter your course fee, income and EMIs to see an estimated loan range and EMI. No PAN or Aadhaar needed.">
+<meta name="description" content="Free indicative education loan eligibility checker for online degrees in India. Enter your course fee, income and EMIs to see an estimated loan range and EMI, including 0% interest EMI plans. No PAN or Aadhaar needed.">
 <link rel="canonical" href="https://universityjano.com/loan-eligibility-checker.html">
 <meta property="og:title" content="Education Loan Eligibility Checker for Online Degree">
 <meta property="og:description" content="Check your indicative loan eligibility and EMI for an online degree in India. No PAN or Aadhaar needed.">
@@ -68,12 +68,38 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
 .lec-links{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem}
 .lec-links a{border:1px solid var(--lec-line);border-radius:999px;padding:0.35rem 0.8rem;font-size:0.9rem;text-decoration:none;color:var(--lec-pri);background:#fff}
 .lec-hidden{display:none}
+
+.ujk-hero{--hero-img:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=70')}
+.ujk-hero::before{opacity:.4}
+.lec-band{background:#fff;border-bottom:1px solid #e2e8f0;padding:.9rem 0 .7rem;text-align:center}
+.lec-band-t{margin:0 0 .5rem;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b}
+.lec-band-n{margin:.4rem 1rem 0;font-size:.72rem;color:#94a3b8}
+.lec-marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.lec-track{display:flex;width:max-content;animation:lec-scroll 34s linear infinite}
+.lec-half{display:flex;flex:0 0 auto}
+.lec-marq:hover .lec-track{animation-play-state:paused}
+@keyframes lec-scroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.lec-lender{display:inline-flex;align-items:center;justify-content:center;min-width:150px;height:56px;margin:0 1.4rem}
+.lec-lender img{height:34px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(.15)}
+.lec-lname{font-weight:800;font-size:1.15rem;color:#13306b;letter-spacing:-.01em;border:1px solid #e2e8f0;border-radius:10px;padding:.4rem .9rem;background:#f8fafc}
+@media(prefers-reduced-motion:reduce){.lec-track{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.lec-half{flex-wrap:wrap;justify-content:center}.lec-half+.lec-half{display:none}}
 </style>
 </head>
 <body>
 {% include site-header.html %}
 
-{% include page-hero.html crumb="Loan Eligibility Checker" title="Education Loan Eligibility" accent="Checker for Online Degrees" lead="Get an indicative idea of the loan amount and EMI that may suit your online degree fee. Takes under a minute. No PAN, Aadhaar or OTP needed." %}
+{% include page-hero.html crumb="Loan Eligibility Checker" title="Education Loan Eligibility" accent="Checker for Online Degrees" lead="Get an indicative idea of the loan amount and EMI that may suit your online degree fee. Takes under a minute. No PAN, Aadhaar or OTP needed." chips="No PAN or Aadhaar|0% interest option|1 to 5 year tenure" art="calc" %}
+
+<section class="lec-band" aria-label="Education loan lenders">
+  <p class="lec-band-t">Education loan options from leading banks and NBFCs</p>
+  <div class="lec-marq">
+    <div class="lec-track">
+      <div class="lec-half"><span class="lec-lender"><img src="{{ '/images/lenders/fibe.png' | relative_url }}" alt="Fibe" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Fibe</span></span><span class="lec-lender"><img src="{{ '/images/lenders/propelld.png' | relative_url }}" alt="Propelld" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Propelld</span></span><span class="lec-lender"><img src="{{ '/images/lenders/avanse.png' | relative_url }}" alt="Avanse" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Avanse</span></span><span class="lec-lender"><img src="{{ '/images/lenders/hdfc-bank.png' | relative_url }}" alt="HDFC Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">HDFC Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/axis-bank.png' | relative_url }}" alt="Axis Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Axis Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/icici-bank.png' | relative_url }}" alt="ICICI Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">ICICI Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/fibe.png' | relative_url }}" alt="Fibe" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Fibe</span></span><span class="lec-lender"><img src="{{ '/images/lenders/propelld.png' | relative_url }}" alt="Propelld" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Propelld</span></span><span class="lec-lender"><img src="{{ '/images/lenders/avanse.png' | relative_url }}" alt="Avanse" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Avanse</span></span><span class="lec-lender"><img src="{{ '/images/lenders/hdfc-bank.png' | relative_url }}" alt="HDFC Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">HDFC Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/axis-bank.png' | relative_url }}" alt="Axis Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Axis Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/icici-bank.png' | relative_url }}" alt="ICICI Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">ICICI Bank</span></span></div>
+      <div class="lec-half" aria-hidden="true"><span class="lec-lender"><img src="{{ '/images/lenders/fibe.png' | relative_url }}" alt="Fibe" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Fibe</span></span><span class="lec-lender"><img src="{{ '/images/lenders/propelld.png' | relative_url }}" alt="Propelld" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Propelld</span></span><span class="lec-lender"><img src="{{ '/images/lenders/avanse.png' | relative_url }}" alt="Avanse" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Avanse</span></span><span class="lec-lender"><img src="{{ '/images/lenders/hdfc-bank.png' | relative_url }}" alt="HDFC Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">HDFC Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/axis-bank.png' | relative_url }}" alt="Axis Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Axis Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/icici-bank.png' | relative_url }}" alt="ICICI Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">ICICI Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/fibe.png' | relative_url }}" alt="Fibe" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Fibe</span></span><span class="lec-lender"><img src="{{ '/images/lenders/propelld.png' | relative_url }}" alt="Propelld" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Propelld</span></span><span class="lec-lender"><img src="{{ '/images/lenders/avanse.png' | relative_url }}" alt="Avanse" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Avanse</span></span><span class="lec-lender"><img src="{{ '/images/lenders/hdfc-bank.png' | relative_url }}" alt="HDFC Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">HDFC Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/axis-bank.png' | relative_url }}" alt="Axis Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">Axis Bank</span></span><span class="lec-lender"><img src="{{ '/images/lenders/icici-bank.png' | relative_url }}" alt="ICICI Bank" height="34" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="lec-lname" style="display:none">ICICI Bank</span></span></div>
+    </div>
+  </div>
+  <p class="lec-band-n">Lender names are shown for reference. Approval, interest and terms are decided by each lender.</p>
+</section>
 
 <main class="lec">
 
@@ -114,16 +140,27 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
           <div class="lec-field">
             <label for="tenure">Repayment period</label>
             <select id="tenure">
-              <option value="3">3 years</option>
-              <option value="5" selected>5 years</option>
-              <option value="7">7 years</option>
+              <option value="1">1 year</option>
+              <option value="2">2 years</option>
+              <option value="3" selected>3 years</option>
+              <option value="4">4 years</option>
+              <option value="5">5 years</option>
             </select>
           </div>
           <div class="lec-field">
-            <label for="rate">Assumed interest (% a year)</label>
-            <input id="rate" inputmode="decimal" value="12">
+            <label for="mode">Interest type</label>
+            <select id="mode">
+              <option value="std" selected>Standard loan (interest applies)</option>
+              <option value="zero">0% interest (no-cost EMI plan)</option>
+            </select>
           </div>
         </div>
+        <div class="lec-field" id="rate-wrap">
+          <label for="rate">Assumed interest (% a year)</label>
+          <input id="rate" inputmode="decimal" value="12">
+          <small>Used only for standard loans. Change it to match your lender's offer.</small>
+        </div>
+        <div id="zero-note" class="lec-note lec-hidden" style="margin:0 0 1rem">0% (no-cost) EMI plans are offered by selected lenders for selected universities and programmes. Availability, tenure and any processing fee depend on the lender, so confirm the offer before you pay.</div>
         <div class="lec-field">
           <label for="collat">Can you offer collateral (property, FD)?</label>
           <select id="collat"><option value="no">No</option><option value="yes">Yes</option></select>
@@ -166,7 +203,7 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
   </div>
 
   <h2>How This Checker Works</h2>
-  <p>We take the repaying person's monthly income and subtract existing EMIs from a comfortable share of that income. That share is higher for a stronger credit score band and lower for a weaker one. We then work out the loan size that EMI can support over your chosen period, and compare it with the loan you need. We do not ask for PAN, Aadhaar or any ID, and we do not pull your credit report.</p>
+  <p>We take the repaying person's monthly income and subtract existing EMIs from a comfortable share of that income. That share is higher for a stronger credit score band and lower for a weaker one. We then work out the loan size that EMI can support over your chosen period, and compare it with the loan you need. You can choose a repayment period of 1 to 5 years, and either a standard interest rate or a 0% (no-cost) EMI plan. We do not ask for PAN, Aadhaar or any ID, and we do not pull your credit report.</p>
 
   <h2>Before You Take an Education Loan for an Online Degree</h2>
   <ul class="tips">
@@ -181,6 +218,7 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
   <details><summary>Is this the same as a bank approval?</summary><p>No. It is an indicative estimate only. Banks and NBFCs apply their own policies and check your documents and credit report before approving.</p></details>
   <details><summary>Do you need my PAN or Aadhaar?</summary><p>No. This checker never asks for PAN, Aadhaar or any ID, and it does not access your credit report.</p></details>
   <details><summary>Can I get an education loan for an online degree in India?</summary><p>Many lenders finance approved online programmes, but policies differ by lender, university and programme. Confirm with the lender before you pay any fee.</p></details>
+  <details><summary>Do any lenders offer 0% interest on education loans?</summary><p>Some lenders and fintech companies offer 0% (no-cost) EMI plans on selected university programmes, often for shorter periods and sometimes with a processing fee. Availability depends on the university, programme and lender, so confirm it before you pay.</p></details>
   <details><summary>What credit score is good for an education loan?</summary><p>Higher scores generally improve your chances and terms. Lenders set their own cut-offs, so a lower score does not always mean rejection, but it can make approval harder.</p></details>
   <details><summary>What if my result says approval is difficult?</summary><p>Try a smaller loan, a longer repayment period, adding a co-applicant with stable income, clearing existing EMIs, or offering collateral. A counsellor can help you compare options.</p></details>
 
@@ -244,6 +282,12 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
 
   var last = null;
 
+  $("mode").addEventListener("change", function () {
+    var zero = this.value === "zero";
+    $("rate-wrap").classList.toggle("lec-hidden", zero);
+    $("zero-note").classList.toggle("lec-hidden", !zero);
+  });
+
   $("lec-form").addEventListener("submit", function (e) {
     e.preventDefault();
     var err = $("lec-err");
@@ -252,14 +296,15 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
     var need = num($("need").value) || fee;
     var income = num($("income").value);
     var emis = num($("emis").value);
-    var rate = num($("rate").value);
+    var zero = $("mode").value === "zero";
+    var rate = zero ? 0 : num($("rate").value);
     var years = parseInt($("tenure").value, 10);
     var band = $("score").value;
     var collat = $("collat").value === "yes";
 
     if (need < 10000) { err.textContent = "Please enter the course fee or the loan amount you need (at least ₹10,000)."; return; }
     if (income < 5000) { err.textContent = "Please enter the monthly income of the repaying person."; return; }
-    if (rate < 5 || rate > 30) { err.textContent = "Please enter an interest rate between 5% and 30%."; return; }
+    if (!zero && (rate < 5 || rate > 30)) { err.textContent = "Please enter an interest rate between 5% and 30%."; return; }
 
     var share = CONFIG.foir[band] != null ? CONFIG.foir[band] : 0.4;
     var maxEmi = Math.max(0, income * share - emis);
@@ -298,7 +343,7 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
     var tips = [];
     if (key !== "likely") {
       if (fitLoan > 0 && fitLoan < need) tips.push("Reduce the loan to about " + money(fitLoan) + " and pay the rest from savings, or ask the university about instalment plans.");
-      if (years < 7) tips.push("Choose a longer repayment period, which lowers the monthly EMI (but raises total interest).");
+      if (years < 5) tips.push(zero ? "Choose a longer repayment period to lower the monthly EMI, if the 0% plan allows it." : "Choose a longer repayment period, which lowers the monthly EMI (but raises total interest).");
       tips.push("Add a co-applicant with stable income, such as a parent or spouse.");
       if (emis > 0) tips.push("Close or reduce existing EMIs before applying, if you can.");
       if (band === "low" || band === "650") tips.push("Improve your credit score by paying dues on time and keeping card usage low, then apply again.");
@@ -308,12 +353,13 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
       tips.push("Keep your documents ready: ID, address proof, income proof, bank statements and the university admission or fee letter.");
       tips.push("Compare interest rate, processing fee and pre-payment charges across lenders, not just the EMI.");
       tips.push("Confirm with the lender that it finances this particular online programme.");
+      if (zero) tips.push("Ask whether the 0% plan applies to your university and programme, and whether a processing fee is charged.");
     }
     var ul = $("lec-tips");
     ul.innerHTML = "";
     tips.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
 
-    last = { fee: fee, need: need, tenure: years, rate: rate, band: band, verdict: key, emi: Math.round(needEmi), fit: Math.round(fitLoan) };
+    last = { fee: fee, need: need, tenure: years, rate: rate, zero: zero, band: band, verdict: key, emi: Math.round(needEmi), fit: Math.round(fitLoan) };
     $("lec-empty").classList.add("lec-hidden");
     $("lec-result").classList.remove("lec-hidden");
     $("lec-done").classList.add("lec-hidden");
@@ -325,6 +371,7 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
     var msg = "Hi, I used the loan eligibility checker on UniversityJano." +
       (name ? " My name is " + name + "." : "") +
       " Loan needed: " + money(last.need) + ", period: " + last.tenure + " years, credit score band: " + bandText +
+      ", interest: " + (last.zero ? "0% (no-cost EMI)" : last.rate + "%") +
       ". Indicative result: " + last.verdict + ". Please help me with education loan options.";
     return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
   }
@@ -347,6 +394,7 @@ title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
     payload.append("course_fee", last.fee);
     payload.append("loan_needed", last.need);
     payload.append("tenure_years", last.tenure);
+    payload.append("interest_type", last.zero ? "0% no-cost EMI" : last.rate + "%");
     payload.append("score_band", last.band);
     payload.append("indicative_result", last.verdict);
     payload.append("page", location.href);
