@@ -432,6 +432,13 @@ sitemap: true
       <span class="section-tag blue">Free Student Tools</span>
       <h2 class="section-title">Everything You Need to Decide, in One Place</h2>
     </div>
+    <style>
+    @media (min-width: 1025px) {
+      .tools-showcase-grid { grid-template-columns: repeat(6, 1fr); }
+      .tools-showcase-grid > a { grid-column: span 2; }
+      .tools-showcase-grid > a:nth-child(n+4) { grid-column: span 3; }
+    }
+    </style>
     <div class="tools-showcase-grid">
         <a href="/compare.html" class="tool-feature-card uj-animate uj-d1" style="text-decoration:none;color:inherit;">
         <div><div class="tool-icon-wrap"><span class="material-symbols-outlined">balance</span></div><h3>Compare Universities</h3><p>Pick any 3 universities and compare fees, NAAC, NIRF, EMI and placements side by side.</p></div>
@@ -441,11 +448,15 @@ sitemap: true
         <div><div class="tool-icon-wrap"><span class="material-symbols-outlined">calculate</span></div><h3>0% EMI Calculator</h3><p>See your exact monthly payment for any course fee and tenure &mdash; live, right on this page.</p></div>
         <span style="color:var(--blue-600);font-weight:700;">Try it below &darr;</span>
       </a>
-      <a href="#roi-calc" class="tool-feature-card uj-animate uj-d3" style="text-decoration:none;color:inherit;">
+      <a href="/loan-eligibility-checker.html" class="tool-feature-card uj-animate uj-d3" style="text-decoration:none;color:inherit;">
+        <div><div class="tool-icon-wrap"><span class="material-symbols-outlined">request_quote</span></div><h3>Loan Eligibility Checker</h3><p>See your indicative education loan amount and EMI, including 0% interest plans. No PAN or Aadhaar needed.</p></div>
+        <span style="color:var(--blue-600);font-weight:700;">Check Eligibility &rarr;</span>
+      </a>
+      <a href="#roi-calc" class="tool-feature-card uj-animate uj-d4" style="text-decoration:none;color:inherit;">
         <div><div class="tool-icon-wrap"><span class="material-symbols-outlined">trending_up</span></div><h3>Salary &amp; ROI Calculator</h3><p>Estimate your payback period and 5-year earnings uplift from a new degree.</p></div>
         <span style="color:var(--blue-600);font-weight:700;">Try it below &darr;</span>
       </a>
-      <a href="/ugc-verifier.html" class="tool-feature-card uj-animate uj-d4" style="text-decoration:none;color:inherit;">
+      <a href="/ugc-verifier.html" class="tool-feature-card uj-animate uj-d5" style="text-decoration:none;color:inherit;">
         <div><div class="tool-icon-wrap"><span class="material-symbols-outlined">verified</span></div><h3>UGC-DEB Verifier</h3><p>Check any university against UGC's official fake-university and online-entitled lists.</p></div>
         <span style="color:var(--blue-600);font-weight:700;">Verify Now &rarr;</span>
       </a>
