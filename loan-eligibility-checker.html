@@ -1,0 +1,373 @@
+---
+layout: null
+permalink: /loan-eligibility-checker.html
+title: "Education Loan Eligibility Checker for Online Degrees (Indicative)"
+---
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Education Loan Eligibility Checker for Online Degree | UniversityJano</title>
+<meta name="description" content="Free indicative education loan eligibility checker for online degrees in India. Enter your course fee, income and EMIs to see an estimated loan range and EMI. No PAN or Aadhaar needed.">
+<link rel="canonical" href="https://universityjano.com/loan-eligibility-checker.html">
+<meta property="og:title" content="Education Loan Eligibility Checker for Online Degree">
+<meta property="og:description" content="Check your indicative loan eligibility and EMI for an online degree in India. No PAN or Aadhaar needed.">
+<meta property="og:url" content="https://universityjano.com/loan-eligibility-checker.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://universityjano.com/images/logo.png">
+<meta property="og:site_name" content="UniversityJano.com">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/design-system.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/components.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/uj-kit.css' | relative_url }}">
+<script src="{{ '/js/uj-kit.js' | relative_url }}" defer></script>
+<style>
+.lec{--lec-ink:#0f172a;--lec-mut:#475569;--lec-line:#e2e8f0;--lec-bg:#f8fafc;--lec-pri:#1d4ed8;--lec-ok:#15803d;--lec-warn:#b45309;--lec-bad:#b91c1c;max-width:960px;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--lec-ink);font-family:inherit;line-height:1.6}
+.lec h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:0.5rem 0 0.75rem}
+.lec h2{font-size:1.35rem;margin:2.25rem 0 0.75rem}
+.lec h3{font-size:1.05rem;margin:1.25rem 0 0.35rem}
+.lec .lead{color:var(--lec-mut);font-size:1.05rem;margin-bottom:1.25rem}
+.lec-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
+@media(min-width:820px){.lec-grid{grid-template-columns:1.1fr 0.9fr;align-items:start}}
+.lec-card{background:#fff;border:1px solid var(--lec-line);border-radius:14px;padding:1.25rem;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.lec-field{margin-bottom:1rem}
+.lec-field label{display:block;font-weight:600;margin-bottom:0.3rem;font-size:0.95rem}
+.lec-field small{display:block;color:var(--lec-mut);margin-top:0.25rem;font-size:0.82rem}
+.lec-field input,.lec-field select{width:100%;box-sizing:border-box;padding:0.7rem 0.8rem;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;background:#fff;color:var(--lec-ink)}
+.lec-field input:focus,.lec-field select:focus{outline:2px solid var(--lec-pri);outline-offset:1px}
+.lec-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.lec-btn{display:inline-block;width:100%;box-sizing:border-box;background:var(--lec-pri);color:#fff;border:0;border-radius:10px;padding:0.85rem 1.2rem;font-size:1rem;font-weight:700;cursor:pointer;text-align:center;text-decoration:none}
+.lec-btn:hover{filter:brightness(1.08)}
+.lec-btn.wa{background:#25D366;margin-top:0.6rem}
+.lec-btn.ghost{background:transparent;color:var(--lec-pri);border:2px solid var(--lec-pri)}
+.lec-err{color:var(--lec-bad);font-size:0.9rem;margin:0.4rem 0 0.8rem;min-height:1.2em}
+.lec-verdict{border-radius:12px;padding:1rem;margin-bottom:1rem;border:1px solid}
+.lec-verdict.likely{background:#f0fdf4;border-color:#86efac}
+.lec-verdict.possible{background:#fffbeb;border-color:#fcd34d}
+.lec-verdict.difficult{background:#fef2f2;border-color:#fca5a5}
+.lec-verdict strong{display:block;font-size:1.15rem;margin-bottom:0.2rem}
+.lec-verdict.likely strong{color:var(--lec-ok)}
+.lec-verdict.possible strong{color:var(--lec-warn)}
+.lec-verdict.difficult strong{color:var(--lec-bad)}
+.lec-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:0.75rem 0}
+.lec-stat{background:var(--lec-bg);border-radius:10px;padding:0.7rem}
+.lec-stat span{display:block;color:var(--lec-mut);font-size:0.8rem}
+.lec-stat b{font-size:1.1rem}
+.lec ul.tips{padding-left:1.1rem;margin:0.5rem 0}
+.lec ul.tips li{margin-bottom:0.35rem}
+.lec-note{font-size:0.82rem;color:var(--lec-mut);margin-top:0.75rem}
+.lec-consent{display:flex;gap:0.5rem;align-items:flex-start;font-size:0.85rem;color:var(--lec-mut);margin:0.5rem 0 0.75rem}
+.lec-consent input{margin-top:0.25rem;width:auto}
+.lec-empty{color:var(--lec-mut);text-align:center;padding:2rem 0.5rem}
+.lec details{border:1px solid var(--lec-line);border-radius:10px;padding:0.75rem 1rem;margin-bottom:0.6rem;background:#fff}
+.lec summary{font-weight:600;cursor:pointer}
+.lec a.in{color:var(--lec-pri);font-weight:600}
+.lec-links{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem}
+.lec-links a{border:1px solid var(--lec-line);border-radius:999px;padding:0.35rem 0.8rem;font-size:0.9rem;text-decoration:none;color:var(--lec-pri);background:#fff}
+.lec-hidden{display:none}
+</style>
+</head>
+<body>
+{% include site-header.html %}
+
+{% include page-hero.html crumb="Loan Eligibility Checker" title="Education Loan Eligibility" accent="Checker for Online Degrees" lead="Get an indicative idea of the loan amount and EMI that may suit your online degree fee. Takes under a minute. No PAN, Aadhaar or OTP needed." %}
+
+<main class="lec">
+
+  <div class="lec-grid">
+    <section class="lec-card" aria-labelledby="lec-form-title">
+      <h2 id="lec-form-title" style="margin-top:0">Your details</h2>
+      <form id="lec-form" novalidate>
+        <div class="lec-field">
+          <label for="fee">Total course fee (₹)</label>
+          <input id="fee" inputmode="numeric" autocomplete="off" placeholder="e.g. 200000">
+        </div>
+        <div class="lec-field">
+          <label for="need">Loan amount you need (₹)</label>
+          <input id="need" inputmode="numeric" autocomplete="off" placeholder="Leave blank to use the full fee">
+        </div>
+        <div class="lec-field">
+          <label for="income">Monthly income of the repaying person (₹)</label>
+          <input id="income" inputmode="numeric" autocomplete="off" placeholder="e.g. 45000">
+          <small>This is you if you are earning, or a co-applicant such as a parent or spouse.</small>
+        </div>
+        <div class="lec-field">
+          <label for="emis">Total existing monthly EMIs (₹)</label>
+          <input id="emis" inputmode="numeric" autocomplete="off" placeholder="0 if none">
+          <small>Home, car, personal loans and credit card EMIs.</small>
+        </div>
+        <div class="lec-field">
+          <label for="score">Approximate credit (CIBIL) score</label>
+          <select id="score">
+            <option value="750">750 or above</option>
+            <option value="700">700 to 749</option>
+            <option value="650">650 to 699</option>
+            <option value="low">Below 650</option>
+            <option value="unsure" selected>Not sure / no credit history</option>
+          </select>
+          <small>A rough band is enough. You can check your score for free with the credit bureaus.</small>
+        </div>
+        <div class="lec-row">
+          <div class="lec-field">
+            <label for="tenure">Repayment period</label>
+            <select id="tenure">
+              <option value="3">3 years</option>
+              <option value="5" selected>5 years</option>
+              <option value="7">7 years</option>
+            </select>
+          </div>
+          <div class="lec-field">
+            <label for="rate">Assumed interest (% a year)</label>
+            <input id="rate" inputmode="decimal" value="12">
+          </div>
+        </div>
+        <div class="lec-field">
+          <label for="collat">Can you offer collateral (property, FD)?</label>
+          <select id="collat"><option value="no">No</option><option value="yes">Yes</option></select>
+        </div>
+        <div id="lec-err" class="lec-err" role="alert"></div>
+        <button type="submit" class="lec-btn">Check My Eligibility</button>
+      </form>
+    </section>
+
+    <section class="lec-card" aria-live="polite">
+      <h2 style="margin-top:0">Your indicative result</h2>
+      <div id="lec-empty" class="lec-empty">Fill in your details and tap <strong>Check My Eligibility</strong> to see your result here.</div>
+      <div id="lec-result" class="lec-hidden">
+        <div id="lec-verdict" class="lec-verdict"><strong id="lec-vt"></strong><span id="lec-vd"></span></div>
+        <div class="lec-stats">
+          <div class="lec-stat"><span>EMI for the loan you need</span><b id="o-emi">-</b></div>
+          <div class="lec-stat"><span>Comfortable EMI limit</span><b id="o-max">-</b></div>
+          <div class="lec-stat"><span>Loan that fits that limit</span><b id="o-loan">-</b></div>
+          <div class="lec-stat"><span>Income going to EMIs after loan</span><b id="o-foir">-</b></div>
+        </div>
+        <h3>What could help</h3>
+        <ul id="lec-tips" class="tips"></ul>
+
+        <div id="lec-lead" style="margin-top:1.25rem;border-top:1px solid var(--lec-line);padding-top:1rem">
+          <h3 style="margin-top:0">Want real lender options?</h3>
+          <p style="margin:0 0 0.75rem;color:var(--lec-mut);font-size:0.95rem">A counsellor can check which banks and NBFCs may suit your profile, and help you with the documents.</p>
+          <div class="lec-field"><label for="ln">Your name</label><input id="ln" autocomplete="name"></div>
+          <div class="lec-field"><label for="lp">Mobile number</label><input id="lp" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="10-digit number"></div>
+          <label class="lec-consent"><input type="checkbox" id="lc"><span>I agree to be contacted by UniversityJano about education loan options. I understand my details are used only for this purpose.</span></label>
+          <div id="lec-lerr" class="lec-err" role="alert"></div>
+          <button type="button" id="lec-submit" class="lec-btn">Talk to a Counsellor</button>
+          <div id="lec-done" class="lec-hidden" style="margin-top:0.75rem">
+            <p style="margin:0 0 0.5rem"><strong>Thank you!</strong> We will contact you soon. For a faster reply, message us on WhatsApp.</p>
+            <a id="lec-wa" class="lec-btn wa" href="#" target="_blank" rel="noopener">💬 Continue on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <p class="lec-note">This is an indicative estimate based on general rules of thumb, not a loan approval or offer. Each bank or NBFC decides on its own criteria, and the final decision depends on your documents and credit report. UniversityJano is an admission counselling platform, not a lender.</p>
+    </section>
+  </div>
+
+  <h2>How This Checker Works</h2>
+  <p>We take the repaying person's monthly income and subtract existing EMIs from a comfortable share of that income. That share is higher for a stronger credit score band and lower for a weaker one. We then work out the loan size that EMI can support over your chosen period, and compare it with the loan you need. We do not ask for PAN, Aadhaar or any ID, and we do not pull your credit report.</p>
+
+  <h2>Before You Take an Education Loan for an Online Degree</h2>
+  <ul class="tips">
+    <li>Confirm the university and the exact programme are approved on the UGC-DEB portal. Use our <a class="in" href="/ugc-verifier.html">UGC-DEB approval checker</a>, because some lenders fund only approved programmes.</li>
+    <li>Ask the lender whether it finances online degrees, and whether it pays the university in instalments or in one go.</li>
+    <li>Compare the interest rate, processing fee, and any pre-payment charges, not just the EMI.</li>
+    <li>Plan the total cost with our <a class="in" href="/emi-calculator.html">EMI calculator</a> and read our <a class="in" href="/blog/2026/10/16/education-loan-for-online-degree-india-2026/">education loan guide for online degrees</a>.</li>
+    <li>Read the <a class="in" href="/blog/2026/10/21/ugc-refund-policy-online-degree-admission-cancel-refund/">UGC refund policy guide</a> so you know what happens to the fee if you withdraw.</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+  <details><summary>Is this the same as a bank approval?</summary><p>No. It is an indicative estimate only. Banks and NBFCs apply their own policies and check your documents and credit report before approving.</p></details>
+  <details><summary>Do you need my PAN or Aadhaar?</summary><p>No. This checker never asks for PAN, Aadhaar or any ID, and it does not access your credit report.</p></details>
+  <details><summary>Can I get an education loan for an online degree in India?</summary><p>Many lenders finance approved online programmes, but policies differ by lender, university and programme. Confirm with the lender before you pay any fee.</p></details>
+  <details><summary>What credit score is good for an education loan?</summary><p>Higher scores generally improve your chances and terms. Lenders set their own cut-offs, so a lower score does not always mean rejection, but it can make approval harder.</p></details>
+  <details><summary>What if my result says approval is difficult?</summary><p>Try a smaller loan, a longer repayment period, adding a co-applicant with stable income, clearing existing EMIs, or offering collateral. A counsellor can help you compare options.</p></details>
+
+  <h2>Explore More</h2>
+  <div class="lec-links">
+    <a href="/emi-calculator.html">0% EMI calculator</a>
+    <a href="/compare.html">Compare universities</a>
+    <a href="/universities/">All online universities</a>
+    <a href="/best-university-for-online-degree.html">Best universities for online degree</a>
+    <a href="/online-mba.html">Online MBA</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</main>
+
+{% include site-footer.html %}
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this the same as a bank approval?","acceptedAnswer":{"@type":"Answer","text":"No. It is an indicative estimate only. Banks and NBFCs apply their own policies and check your documents and credit report before approving."}},
+{"@type":"Question","name":"Do you need my PAN or Aadhaar?","acceptedAnswer":{"@type":"Answer","text":"No. This checker never asks for PAN, Aadhaar or any ID, and it does not access your credit report."}},
+{"@type":"Question","name":"Can I get an education loan for an online degree in India?","acceptedAnswer":{"@type":"Answer","text":"Many lenders finance approved online programmes, but policies differ by lender, university and programme. Confirm with the lender before you pay any fee."}},
+{"@type":"Question","name":"What if my result says approval is difficult?","acceptedAnswer":{"@type":"Answer","text":"Try a smaller loan, a longer repayment period, adding a co-applicant with stable income, clearing existing EMIs, or offering collateral. A counsellor can help you compare options."}}
+]}
+</script>
+
+<script>
+(function () {
+  /* ============ EDIT THESE ============ */
+  var CONFIG = {
+    // Share of monthly income that can go to EMIs, by credit score band (rule of thumb, edit to match your lenders)
+    foir: { "750": 0.50, "700": 0.45, "650": 0.35, "low": 0.25, "unsure": 0.40 },
+    // A verdict of "likely" is capped at "possible" for these bands
+    capLikelyFor: ["low"],
+    // If the EMI needed is within this multiple of the comfortable limit, the verdict is "possible"
+    possibleBand: 1.25,
+    whatsapp: "919599128500",
+    // Paste your Google Apps Script web app URL here to save leads to your Google Sheet. Leave "" to use WhatsApp only.
+    // After you deploy apps-script-leads.gs, paste its Web App URL here so leads are saved to your Google Sheet and emailed to you.
+    leadEndpoint: ""
+  };
+  /* ==================================== */
+
+  var $ = function (id) { return document.getElementById(id); };
+  var inr = new Intl.NumberFormat("en-IN");
+  function money(n) { return "₹" + inr.format(Math.round(n)); }
+  function num(v) { var x = parseFloat(String(v).replace(/[^0-9.]/g, "")); return isNaN(x) ? 0 : x; }
+
+  function emiFor(p, annualPct, years) {
+    var r = annualPct / 1200, n = years * 12;
+    if (r === 0) return p / n;
+    var f = Math.pow(1 + r, n);
+    return p * r * f / (f - 1);
+  }
+  function loanFor(emi, annualPct, years) {
+    var r = annualPct / 1200, n = years * 12;
+    if (emi <= 0) return 0;
+    if (r === 0) return emi * n;
+    var f = Math.pow(1 + r, n);
+    return emi * (f - 1) / (r * f);
+  }
+
+  var last = null;
+
+  $("lec-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var err = $("lec-err");
+    err.textContent = "";
+    var fee = num($("fee").value);
+    var need = num($("need").value) || fee;
+    var income = num($("income").value);
+    var emis = num($("emis").value);
+    var rate = num($("rate").value);
+    var years = parseInt($("tenure").value, 10);
+    var band = $("score").value;
+    var collat = $("collat").value === "yes";
+
+    if (need < 10000) { err.textContent = "Please enter the course fee or the loan amount you need (at least ₹10,000)."; return; }
+    if (income < 5000) { err.textContent = "Please enter the monthly income of the repaying person."; return; }
+    if (rate < 5 || rate > 30) { err.textContent = "Please enter an interest rate between 5% and 30%."; return; }
+
+    var share = CONFIG.foir[band] != null ? CONFIG.foir[band] : 0.4;
+    var maxEmi = Math.max(0, income * share - emis);
+    var needEmi = emiFor(need, rate, years);
+    var fitLoan = Math.min(need, loanFor(maxEmi, rate, years));
+    var foirAfter = (emis + needEmi) / income;
+
+    var key, title, desc;
+    if (maxEmi <= 0) {
+      key = "difficult"; title = "Approval looks difficult right now";
+      desc = "Your existing EMIs already use most of the income that lenders usually allow for repayments.";
+    } else if (needEmi <= maxEmi) {
+      key = "likely"; title = "You may be able to afford this loan";
+      desc = "The EMI for the loan you need fits within a comfortable share of your income.";
+      if (CONFIG.capLikelyFor.indexOf(band) !== -1) {
+        key = "possible"; title = "Possible, but your credit score may be a hurdle";
+        desc = "The EMI fits your income, but a score below 650 can lead lenders to decline or to ask for more security.";
+      }
+    } else if (needEmi <= maxEmi * CONFIG.possibleBand) {
+      key = "possible"; title = "Possible with a few changes";
+      desc = "The EMI is slightly above the comfortable limit. A smaller loan, a longer period or a co-applicant could help.";
+    } else {
+      key = "difficult"; title = "Approval looks difficult for this amount";
+      desc = "The EMI is well above the comfortable limit for the income and credit band you entered.";
+    }
+
+    var v = $("lec-verdict");
+    v.className = "lec-verdict " + key;
+    $("lec-vt").textContent = title;
+    $("lec-vd").textContent = desc;
+    $("o-emi").textContent = money(needEmi) + " / month";
+    $("o-max").textContent = maxEmi > 0 ? money(maxEmi) + " / month" : "None available";
+    $("o-loan").textContent = fitLoan > 0 ? money(fitLoan) : "-";
+    $("o-foir").textContent = Math.round(foirAfter * 100) + "%";
+
+    var tips = [];
+    if (key !== "likely") {
+      if (fitLoan > 0 && fitLoan < need) tips.push("Reduce the loan to about " + money(fitLoan) + " and pay the rest from savings, or ask the university about instalment plans.");
+      if (years < 7) tips.push("Choose a longer repayment period, which lowers the monthly EMI (but raises total interest).");
+      tips.push("Add a co-applicant with stable income, such as a parent or spouse.");
+      if (emis > 0) tips.push("Close or reduce existing EMIs before applying, if you can.");
+      if (band === "low" || band === "650") tips.push("Improve your credit score by paying dues on time and keeping card usage low, then apply again.");
+      if (collat) tips.push("Since you can offer collateral, ask lenders about secured education loans, which can allow larger amounts.");
+      else tips.push("Ask lenders whether offering collateral such as property or a fixed deposit could improve your chances.");
+    } else {
+      tips.push("Keep your documents ready: ID, address proof, income proof, bank statements and the university admission or fee letter.");
+      tips.push("Compare interest rate, processing fee and pre-payment charges across lenders, not just the EMI.");
+      tips.push("Confirm with the lender that it finances this particular online programme.");
+    }
+    var ul = $("lec-tips");
+    ul.innerHTML = "";
+    tips.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+
+    last = { fee: fee, need: need, tenure: years, rate: rate, band: band, verdict: key, emi: Math.round(needEmi), fit: Math.round(fitLoan) };
+    $("lec-empty").classList.add("lec-hidden");
+    $("lec-result").classList.remove("lec-hidden");
+    $("lec-done").classList.add("lec-hidden");
+    $("lec-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  function waLink(name) {
+    var bandText = { "750": "750+", "700": "700-749", "650": "650-699", "low": "below 650", "unsure": "not sure" }[last.band];
+    var msg = "Hi, I used the loan eligibility checker on UniversityJano." +
+      (name ? " My name is " + name + "." : "") +
+      " Loan needed: " + money(last.need) + ", period: " + last.tenure + " years, credit score band: " + bandText +
+      ". Indicative result: " + last.verdict + ". Please help me with education loan options.";
+    return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
+  }
+
+  $("lec-submit").addEventListener("click", function () {
+    var err = $("lec-lerr");
+    err.textContent = "";
+    if (!last) { err.textContent = "Please check your eligibility first."; return; }
+    var name = $("ln").value.trim();
+    var phone = $("lp").value.replace(/\D/g, "");
+    if (name.length < 2) { err.textContent = "Please enter your name."; return; }
+    if (!/^[6-9]\d{9}$/.test(phone)) { err.textContent = "Please enter a valid 10-digit mobile number."; return; }
+    if (!$("lc").checked) { err.textContent = "Please tick the consent box to continue."; return; }
+
+    // Only non-sensitive fields are sent. Income, EMIs and exact credit details are never sent.
+    var payload = new URLSearchParams();
+    payload.append("source", "loan-eligibility-checker");
+    payload.append("name", name);
+    payload.append("phone", phone);
+    payload.append("course_fee", last.fee);
+    payload.append("loan_needed", last.need);
+    payload.append("tenure_years", last.tenure);
+    payload.append("score_band", last.band);
+    payload.append("indicative_result", last.verdict);
+    payload.append("page", location.href);
+    payload.append("submitted_at", new Date().toISOString());
+
+    var btn = $("lec-submit");
+    btn.disabled = true;
+    function finish() {
+      btn.classList.add("lec-hidden");
+      $("lec-wa").href = waLink(name);
+      $("lec-done").classList.remove("lec-hidden");
+    }
+    if (CONFIG.leadEndpoint) {
+      fetch(CONFIG.leadEndpoint, { method: "POST", mode: "no-cors", body: payload })
+        .then(finish)
+        .catch(function () { btn.disabled = false; err.textContent = "Could not send right now. Please use WhatsApp instead."; $("lec-wa").href = waLink(name); $("lec-done").classList.remove("lec-hidden"); });
+    } else {
+      finish();
+    }
+  });
+})();
+</script>
+</body>
+</html>
